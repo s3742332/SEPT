@@ -30,6 +30,7 @@ class Register extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    console.log(e.target);
     const newUser = {
       username: this.state.username,
       fullName: this.state.fullName,
@@ -37,7 +38,7 @@ class Register extends Component {
       confirmPassword: this.state.confirmPassword
     };
 
-    this.props.createNewUser(newUser, this.props.history);
+    createNewUser(newUser, this.props.history);
   }
 
   onChange(e) {
@@ -52,7 +53,7 @@ class Register extends Component {
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Sign Up</h1>
               <p className="lead text-center">Create your Account</p>
-              <form action="create-profile.html">
+              <form>
                 <div className="form-group">
                   <input
                     type="text"

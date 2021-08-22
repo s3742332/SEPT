@@ -56,7 +56,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .headers().frameOptions().sameOrigin() //To enable H2 Database
                 .and()
-                .authorizeRequests()
+                .authorizeRequests()// Make H2-Console non-secured; for debug purposes
+
                 .antMatchers(
                         "/",
                         "/favicon.ico",
