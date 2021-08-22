@@ -32,7 +32,6 @@ class App extends Component {
             }
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/addPerson" component={AddPerson} />
-          
           </div>
         </Router>
       </Provider>
