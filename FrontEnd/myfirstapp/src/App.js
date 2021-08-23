@@ -11,6 +11,7 @@ import store from "./store";
 import Landing from "./components/Layout/Landing";
 import Register from "./components/UserManagement/Register";
 import Login from "./components/UserManagement/Login";
+import PendingUser from "./components/PendingUser";
 
 class App extends Component {
   render() {
@@ -31,7 +32,7 @@ class App extends Component {
               //Private Routes
             }
             <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/addPerson" component={AddPerson} />
+            <Route exact path="/pendingusers" component={PendingUser} />
           </div>
         </Router>
       </Provider>

@@ -13,6 +13,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import { Link } from 'react-router-dom'
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -27,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
     },
     menuItem: {
-        marginLeft: "1rem", 
+        marginLeft: "1rem",
         cursor: "pointer"
     }
 }));
@@ -60,24 +61,27 @@ export default function ButtonAppBar() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" className={classes.title} noWrap>
-                        Bookeroo
+                        <Link to={"/"}>
+                            Bookeroo
+                        </Link>
                     </Typography>
                     <Typography
                         className={classes.menuItem}
-                    >
-                        Dashboard
+                    ><Link to={"/dashboard"}>
+                            Dashboard
+                        </Link>
                     </Typography>
                     <Typography
                         className={classes.menuItem}
                         onClick={handleUserMenu}
                     >
-                        Users<ArrowDropDownIcon/>
+                        Users<ArrowDropDownIcon />
                     </Typography>
                     <Typography
                         className={classes.menuItem}
                         onClick={handleBookMenu}
                     >
-                        Books<ArrowDropDownIcon/>
+                        Books<ArrowDropDownIcon />
                     </Typography>
                     <Typography
                         className={classes.menuItem}
@@ -103,7 +107,7 @@ export default function ButtonAppBar() {
                 open={openUser}
                 onClose={handleUserClose}
             >
-                <MenuItem onClick={handleUserClose} >Pending Users</MenuItem>
+                <MenuItem onClick={handleUserClose} ><Link to={"/pendingusers"}>Pending Users</Link></MenuItem>
                 <MenuItem onClick={handleUserClose} >User Profiles</MenuItem>
             </Menu>
             <Menu
