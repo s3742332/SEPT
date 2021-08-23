@@ -1,44 +1,129 @@
-import React, { Component } from 'react'
-
- class Header extends Component {
-    render() {
-        return (
-            <div>
-            <nav className="navbar navbar-expand-sm navbar-dark bg-primary mb-4">
-            <div className="container">
-                <a className="navbar-brand" href="Dashboard.html">
-                    Person Management Tool
-                </a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav">
-                    <span className="navbar-toggler-icon" />
-                </button>
-    
-                <div className="collapse navbar-collapse" id="mobile-nav">
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item">
-                            <a className="nav-link" href="/dashboard">
-                                Dashboard
-                            </a>
-                        </li>
-                    </ul>
-    
-                    <ul className="navbar-nav ml-auto">
-                        <li className="nav-item">
-                            <a className="nav-link " href="register.html">
-                                Sign Up
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="login.html">
-                                Login
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-            </div>
-        )
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormGroup from '@material-ui/core/FormGroup';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+    },
+    title: {
+        display: 'block',
+    },
+    grow: {
+        flexGrow: 1,
+    },
+    menuItem: {
+        marginLeft: "1rem", 
+        cursor: "pointer"
     }
+}));
+
+export default function ButtonAppBar() {
+    const classes = useStyles();
+    const [anchorUserEl, setAnchorUserEl] = React.useState(null);
+    const [anchorBookEl, setAnchorBookEl] = React.useState(null);
+    const openUser = Boolean(anchorUserEl);
+    const openBook = Boolean(anchorBookEl);
+    const handleUserMenu = (event) => {
+        setAnchorUserEl(event.currentTarget);
+    };
+
+    const handleUserClose = () => {
+        setAnchorUserEl(null);
+    };
+    const handleBookMenu = (event) => {
+        setAnchorBookEl(event.currentTarget);
+    };
+
+    const handleBookClose = () => {
+        setAnchorBookEl(null);
+    };
+    return (
+        <div className={classes.root}>
+            <AppBar position="static">
+                <Toolbar>
+                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant="h6" className={classes.title} noWrap>
+                        Bookeroo
+                    </Typography>
+                    <Typography
+                        className={classes.menuItem}
+                    >
+                        Dashboard
+                    </Typography>
+                    <Typography
+                        className={classes.menuItem}
+                        onClick={handleUserMenu}
+                    >
+                        Users<ArrowDropDownIcon/>
+                    </Typography>
+                    <Typography
+                        className={classes.menuItem}
+                        onClick={handleBookMenu}
+                    >
+                        Books<ArrowDropDownIcon/>
+                    </Typography>
+                    <Typography
+                        className={classes.menuItem}
+                    >
+                        Reports
+                    </Typography>
+                    <div className={classes.grow} />
+                    <Button color="inherit">Login</Button>
+                </Toolbar>
+            </AppBar>
+            <Menu
+                id="menu-users"
+                anchorEl={anchorUserEl}
+                getContentAnchorEl={null}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                }}
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                }}
+                open={openUser}
+                onClose={handleUserClose}
+            >
+                <MenuItem onClick={handleUserClose} >Pending Users</MenuItem>
+                <MenuItem onClick={handleUserClose} >User Profiles</MenuItem>
+            </Menu>
+            <Menu
+                id="menu-books"
+                anchorEl={anchorBookEl}
+                getContentAnchorEl={null}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                }}
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                }}
+                open={openBook}
+                onClose={handleBookClose}
+            >
+                <MenuItem onClick={handleBookClose} >Pending Books</MenuItem>
+                <MenuItem onClick={handleBookClose} >Book Information</MenuItem>
+            </Menu>
+        </div>
+    );
 }
-export default Header;
