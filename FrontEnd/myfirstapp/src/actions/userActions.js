@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_USERS, GET_ERRORS} from "./types";
+import { GET_USERS, GET_ERRORS, INCREMENT} from "./types";
 
 export const userEdit = (user) => async dispatch => {
     try {
@@ -18,6 +18,20 @@ export const getUserPendingList = () => async dispatch => {
         dispatch({
             type: GET_USERS,
             payload: res.data
+        })
+    } catch (err) {
+        dispatch({
+            type: GET_ERRORS,
+            payload: err.response.data
+        });
+    }
+};
+
+export const increment = () => dispatch => {
+    try {
+        dispatch({
+            type: INCREMENT,
+            payload: 1,
         })
     } catch (err) {
         dispatch({
