@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import SelectedNewUserDetails from './SelectedNewUserDetails';
+import PendingUserDetails from './PendingUserDetails';
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserPendingList } from '../actions/userActions';
 import InputBase from '@material-ui/core/InputBase';
@@ -11,12 +11,14 @@ function PendingUser() {
 
     const [selectedUser, setSelectedUser] = useState([])
     const dispatch = useDispatch();
-    const user = useSelector(state => state.user)
-
+    const user = useSelector(state => state.user);
+    const [filteredData, setFilteredData] = useState([])
     useEffect(() => {
         dispatch(getUserPendingList())
     }, [dispatch])
-
+    useEffect(() => {
+        setFilteredData(user.pendingUsers)
+    }, [user])
     const useStyles = makeStyles((theme) => ({
         root: {
             flexGrow: 1,
@@ -25,7 +27,6 @@ function PendingUser() {
             height: "calc(100vh - 64px)",
             overflow: "auto",
             boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-            overflow: "none"
         },
         card: {
             margin: "1rem",
@@ -64,6 +65,9 @@ function PendingUser() {
     }));
     const classes = useStyles();
 
+    const handleSearch = (event) => {
+        setFilteredData(user.pendingUsers.filter(data => data.username.toLowerCase().includes(event.target.value.toLowerCase())))
+    }
     return (
         <Grid container className={classes.root}>
             <Grid item xs={3} className={classes.cardRoot}>
@@ -73,6 +77,7 @@ function PendingUser() {
                     </div>
                     <InputBase
                         placeholder="Search…"
+                        onChange={handleSearch}
                         classes={{
                             root: classes.inputRoot,
                             input: classes.inputInput,
@@ -81,12 +86,12 @@ function PendingUser() {
                     />
                 </div>
                 <div style={{ overflowY: "auto", height: "calc(100vh - 99px)" }}>
-                    <PendingUserList list={user} setSelectedUser={setSelectedUser} />
+                    <PendingUserList list={user} filteredList={filteredData} setSelectedUser={setSelectedUser} />
                 </div>
 
             </Grid>
             <Grid item xs={9}>
-                <SelectedNewUserDetails data={selectedUser} />
+                <PendingUserDetails data={selectedUser} />
             </Grid>
         </Grid>
     )

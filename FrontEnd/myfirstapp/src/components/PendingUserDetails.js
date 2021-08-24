@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { useEffect, useState } from 'react'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -8,17 +8,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import { userEdit } from '../actions/userActions';
 import { Typography } from '@material-ui/core';
 
-function SelectedNewUserDetails(props) {
+function PendingUserDetails(props) {
     const [data, setData] = useState([])
     const { id, name, address, phone, username, abn, company, email, website } = data;
     const dispatch = useDispatch();
-    const user = useSelector(state => state.user)
     useEffect(() => {
-
         setData(props.data)
     }, [props.data])
 
-    const useStyles = makeStyles((theme) => ({
+    const useStyles = makeStyles(() => ({
         details: {
             borderRadius: "1rem",
             height: "calc(100vh - 64px)",
@@ -48,7 +46,7 @@ function SelectedNewUserDetails(props) {
     const classes = useStyles();
 
     return (
-        (data ? data.length != 0 ?
+        (data ? data.length !== 0 ?
             <Grid container direction={"column"} className={classes.details}>
 
                 <Grid item xs={12} style={{ flex: "1 0 auto" }} className={classes.grid}>
@@ -213,4 +211,4 @@ function SelectedNewUserDetails(props) {
 }
 
 
-export default SelectedNewUserDetails
+export default PendingUserDetails

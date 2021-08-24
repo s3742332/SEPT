@@ -1,14 +1,11 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 function PendingUserList(props) {
-    const { loading, error, pendingUsers } = props.list
-    useEffect(() => {
-        console.log(props)
-    }, [])
+    const { loading } = props.list
     const useStyles = makeStyles((theme) => ({
         card: {
             margin: "1rem",
@@ -23,8 +20,8 @@ function PendingUserList(props) {
     const classes = useStyles();
     return (
         (loading ? "Loading" :
-        pendingUsers.map((data) => (
-            <Card className={classes.card} hoverable="true" onClick={() => { props.setSelectedUser(data) }}>
+        props.filteredList.map((data) => (
+            <Card key={data['id']} className={classes.card} hoverable="true" onClick={() => { props.setSelectedUser(data) }}>
                 <CardActionArea>
                     <div className={classes.details}>
                         <CardContent>
