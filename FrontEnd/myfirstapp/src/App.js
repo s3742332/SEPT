@@ -32,11 +32,11 @@ function App() {
             {isAdmin &&
               <Route exact path="/pendingusers" component={PendingUser} />
             }
-            {!isAdmin &&
+            {/* {!isAdmin &&
               <Route exact path="/register" component={Register} />}
-            {/* <Route exact path="/register" component={Register} /> */}
+            <Route exact path="/register" component={Register} /> */}
             <Route exact path="/login" component={Login} />
-
+            <Route exact path="/register" component={Register} />
             <Redirect to="/" />
           </Switch>
 
