@@ -6,12 +6,12 @@ import { createNewUser } from "../../actions/securityActions";
 function Register(props) {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState()
-  const [newUser, setNewUser] = useState([{
-    username: "",
+  const [newUser, setNewUser] = useState({
     fullName: "",
+    username: "",
     password: "",
     confirmPassword: "",
-  }])
+  })
 
   useEffect(() => {
     console.log(props)
@@ -25,7 +25,7 @@ function Register(props) {
   }
 
   const onChange = (e) => {
-    setNewUser({...props, [e.target.name]: e.target.value })
+    setNewUser({...newUser, [e.target.name]: e.target.value })
     console.log(newUser)
   }
   return (
@@ -41,7 +41,7 @@ function Register(props) {
                   type="text"
                   className={"form-control form-control-lg"}
                   placeholder="Name"
-                  name="name"
+                  name="fullName"
                   //value={newUser[0].username}
                   required
                   onChange={onChange}
@@ -52,7 +52,8 @@ function Register(props) {
                   type="email"
                   className="form-control form-control-lg"
                   placeholder="Email Address"
-                  name="email"
+                  name="username"
+                  onChange={onChange}
                 />
               </div>
               <div className="form-group">
@@ -61,6 +62,7 @@ function Register(props) {
                   className="form-control form-control-lg"
                   placeholder="Password"
                   name="password"
+                  onChange={onChange}
                 />
               </div>
               <div className="form-group">
@@ -68,7 +70,8 @@ function Register(props) {
                   type="password"
                   className="form-control form-control-lg"
                   placeholder="Confirm Password"
-                  name="password2"
+                  name="confirmPassword"
+                  onChange={onChange}
                 />
               </div>
               <input type="submit" onClick={onSubmit} className="btn btn-info btn-block mt-4" />

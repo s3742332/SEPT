@@ -7,8 +7,14 @@ import jwt_decode from "jwt-decode";
 export const createNewUser = (newUser, history) => async dispatch => {
 
     try{
-        console.log(newUser);
-        await axios.post("http://localhost:8080/api/users/register", newUser);
+        console.log("123123123", newUser);
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*"
+              }
+        }
+        await axios.post("http://localhost:8080/api/users/register", newUser, config);
         
         dispatch({
             type: GET_ERRORS,
