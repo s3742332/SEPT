@@ -95,7 +95,7 @@ export default function ButtonAppBar() {
                 open={openUser}
                 onClose={handleUserClose}
             >
-                <MenuItem onClick={handleUserClose} ><Link to={"/pendingusers"}>Pending Users</Link></MenuItem>
+                <MenuItem onClick={handleUserClose} ><Link to={"/pendingusers"}>Seller Account Approval</Link></MenuItem>
                 <MenuItem onClick={handleUserClose} >User Profiles</MenuItem>
             </Menu>
             <Menu
