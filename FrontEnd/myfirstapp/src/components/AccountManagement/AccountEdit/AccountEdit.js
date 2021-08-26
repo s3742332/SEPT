@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import PendingUserDetails from './PendingUserDetails';
+import AccountEditDetails from './AccountEditDetails';
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserPendingList } from '../../actions/userActions';
-import InputBase from '@material-ui/core/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
-import PendingUserList from './PendingUserList';
-function PendingUser() {
+import { getUserAccountsList } from '../../../actions/userActions';
+import AccountEditList from './AccountEditList';
+function AccountEdit() {
 
     const [selectedUser, setSelectedUser] = useState([])
     const dispatch = useDispatch();
@@ -16,10 +14,10 @@ function PendingUser() {
     const [search, setSearch] = useState("")
     const [clear, setClear] = useState("")
     useEffect(() => {
-        dispatch(getUserPendingList())
+        dispatch(getUserAccountsList())
     }, [dispatch])
     useEffect(() => {
-        setFilteredData(user.pendingUsers)
+        setFilteredData(user.userAccounts)
     }, [user])
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -51,6 +49,8 @@ function PendingUser() {
             height: "25px",
             width: "100%",
             padding: "2px 23px 2px 30px",
+            marginLeft: "1rem",
+            marginRight: "1rem",
             outline: 0,
             backgroundColor: "#f5f5f5",
             '&:hover, &:focus': {
@@ -61,13 +61,13 @@ function PendingUser() {
         searchIcon: {
             position: "absolute",
             top: "6px",
-            left: "6px",
+            left: "calc(1rem + 6px)",
             width: "14px",
         },
         clearIcon: {
             position: "absolute",
             top: "7px",
-            right: "6px",
+            right: "calc(1rem + 6px)",
             width: "12px",
             cursor: "pointer",
             visibility: clear,
@@ -77,15 +77,15 @@ function PendingUser() {
 
     const handleSearch = (event) => {
         setSearch(event.target.value)
-        setFilteredData(user.pendingUsers.filter(data => data.username.toLowerCase().includes(event.target.value.toLowerCase())))
+        setFilteredData(user.userAccounts.filter(data => data.username.toLowerCase().includes(event.target.value.toLowerCase())))
     }
 
     useEffect(() => {
-        search.length != 0? setClear("visible"): setClear("hidden")
+        search.length != 0 ? setClear("visible") : setClear("hidden")
     }, [search])
     const handleClear = () => {
         setSearch("")
-        setFilteredData(user.pendingUsers)
+        setFilteredData(user.userAccounts)
     }
     return (
         <Grid container className={classes.root}>
@@ -99,17 +99,17 @@ function PendingUser() {
                         className={classes.search} />
                     <img className={classes.clearIcon} onClick={handleClear} src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxLjk3NiA1MS45NzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxLjk3NiA1MS45NzY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDQuMzczLDcuNjAzYy0xMC4xMzctMTAuMTM3LTI2LjYzMi0xMC4xMzgtMzYuNzcsMGMtMTAuMTM4LDEwLjEzOC0xMC4xMzcsMjYuNjMyLDAsMzYuNzdzMjYuNjMyLDEwLjEzOCwzNi43NywwICAgQzU0LjUxLDM0LjIzNSw1NC41MSwxNy43NCw0NC4zNzMsNy42MDN6IE0zNi4yNDEsMzYuMjQxYy0wLjc4MSwwLjc4MS0yLjA0NywwLjc4MS0yLjgyOCwwbC03LjQyNS03LjQyNWwtNy43NzgsNy43NzggICBjLTAuNzgxLDAuNzgxLTIuMDQ3LDAuNzgxLTIuODI4LDBjLTAuNzgxLTAuNzgxLTAuNzgxLTIuMDQ3LDAtMi44MjhsNy43NzgtNy43NzhsLTcuNDI1LTcuNDI1Yy0wLjc4MS0wLjc4MS0wLjc4MS0yLjA0OCwwLTIuODI4ICAgYzAuNzgxLTAuNzgxLDIuMDQ3LTAuNzgxLDIuODI4LDBsNy40MjUsNy40MjVsNy4wNzEtNy4wNzFjMC43ODEtMC43ODEsMi4wNDctMC43ODEsMi44MjgsMGMwLjc4MSwwLjc4MSwwLjc4MSwyLjA0NywwLDIuODI4ICAgbC03LjA3MSw3LjA3MWw3LjQyNSw3LjQyNUMzNy4wMjIsMzQuMTk0LDM3LjAyMiwzNS40NiwzNi4yNDEsMzYuMjQxeiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
                 </div>
-                <div style={{ overflowY: "auto", height: "calc(100vh - 99px)" }}>
-                    <PendingUserList list={user} filteredList={filteredData} setSelectedUser={setSelectedUser} />
+                <div style={{ overflowY: "auto", height: "calc(100vh - 89px - 1rem)" }}>
+                    <AccountEditList list={user} filteredList={filteredData} setSelectedUser={setSelectedUser} />
                 </div>
 
             </Grid>
             <Grid item xs={9}>
-                <PendingUserDetails data={selectedUser} />
+                <AccountEditDetails data={selectedUser} />
             </Grid>
         </Grid>
     )
 }
 
 
-export default PendingUser;
+export default AccountEdit;

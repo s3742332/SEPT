@@ -11,7 +11,8 @@ import store from "./store";
 import Landing from "./components/Layout/Landing";
 import Register from "./components/UserManagement/Register";
 import Login from "./components/UserManagement/Login";
-import PendingUser from "./components/AccountManagement/PendingUser";
+import PendingSeller from "./components/AccountManagement/PendingSeller/PendingSeller";
+import AccountEdit from "./components/AccountManagement/AccountEdit/AccountEdit";
 
 function App() {
   const isAdmin = true;
@@ -30,8 +31,10 @@ function App() {
                 : <Route exact path="/" component={Landing} />
             }
             {isAdmin &&
-              <Route exact path="/pendingusers" component={PendingUser} />
+              <Route exact path="/pendingusers" component={PendingSeller} />
+              
             }
+            {isAdmin && <Route exact path="/accountedit" component={AccountEdit} />}
             {/* {!isAdmin &&
               <Route exact path="/register" component={Register} />}
             <Route exact path="/register" component={Register} /> */}
