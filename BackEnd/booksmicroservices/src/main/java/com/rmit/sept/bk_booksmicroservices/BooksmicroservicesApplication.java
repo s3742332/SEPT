@@ -10,4 +10,8 @@ public class BooksmicroservicesApplication {
         SpringApplication.run(BooksmicroservicesApplication.class, args);
     }
 
+//    @Bean
+//    BCryptPasswordEncoder bCryptPasswordEncoder(){
+//        return new BCryptPasswordEncoder();
+//    }
 }
