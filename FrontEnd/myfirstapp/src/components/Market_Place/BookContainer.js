@@ -16,14 +16,14 @@ const useStyles = makeStyles({
     maxWidth: 275,
   },
   media: {
-    height: 140,
-    //max-width: 25%,
-    //maxWidth: 25%
+    height: 200,
     
   },
 });
 
-export default function BookContainer() {
+
+
+export default function BookContainer(props) {
   const classes = useStyles();
 
   return (
@@ -37,10 +37,13 @@ export default function BookContainer() {
         />
         <CardContent>
           <Typography gutterBottom variant="h6" component="h2">
-            Book1
+            Title
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Book text
+            By author
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Price
           </Typography>
         </CardContent>
       </CardActionArea>
