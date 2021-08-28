@@ -13,6 +13,7 @@ import Register from "./components/UserManagement/Register";
 import Login from "./components/UserManagement/Login";
 import PendingSeller from "./components/AccountManagement/PendingSeller/PendingSeller";
 import AccountEdit from "./components/AccountManagement/AccountEdit/AccountEdit";
+import Marketplace from "./components/Market_Place/Marketplace.js";
 
 function App() {
   const isAdmin = true;
@@ -40,6 +41,7 @@ function App() {
             <Route exact path="/register" component={Register} /> */}
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/marketplace" component={Marketplace} />
             <Redirect to="/" />
           </Switch>
 
