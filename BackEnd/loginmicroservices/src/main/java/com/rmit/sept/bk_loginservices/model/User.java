@@ -30,9 +30,8 @@ public class User implements UserDetails {
     private String confirmPassword;
     private Date create_At;
     private Date update_At;
-    private Boolean business;
     private Boolean approved;
-    private Boolean isAdmin;
+    private String userType;
 
     //OneToMany with Project
 
@@ -95,12 +94,12 @@ public class User implements UserDetails {
         this.update_At = update_At;
     }
 
-    public void setBusiness(Boolean business) {
-        this.business = business;
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
-    public Boolean getBusiness() {
-        return business;
+    public String getUserType() {
+        return userType;
     }
 
     public void setApproved(Boolean approved) {
@@ -109,14 +108,6 @@ public class User implements UserDetails {
 
     public Boolean getApproved() {
         return approved;
-    }
-
-    public void setIsAdmin(Boolean isAdmin) {
-        this.isAdmin = isAdmin;
-    }
-
-    public Boolean getIsAdmin() {
-        return isAdmin;
     }
 
     @PrePersist

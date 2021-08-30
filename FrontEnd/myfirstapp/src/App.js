@@ -17,7 +17,7 @@ import SecuredRoute from "./securityUtils/SecureRoute";
 import jwt_decode from "jwt-decode";
 import setJWTToken from "./securityUtils/setJWTToken";
 import { SET_CURRENT_USER } from "./actions/types";
-
+import Marketplace from "./components/Market_Place/Marketplace.js";
 
 function App() {
   const isAdmin = true;
@@ -63,6 +63,7 @@ function App() {
             <Route exact path="/register" component={Register} /> */}
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/marketplace" component={Marketplace} />
             <Redirect to="/" />
           </Switch>
 
