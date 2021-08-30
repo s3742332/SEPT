@@ -4,13 +4,13 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-function PendingUserList(props) {
+function PendingSellerList(props) {
     const { loading } = props.list
     const useStyles = makeStyles((theme) => ({
         card: {
             margin: "1rem",
             boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-            borderRadius: "1em",
+            borderRadius: "1rem",
         },
         details: {
             display: 'flex',
@@ -40,4 +40,4 @@ function PendingUserList(props) {
     )
 }
 
-export default PendingUserList
+export default PendingSellerList

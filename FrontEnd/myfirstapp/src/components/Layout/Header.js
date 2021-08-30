@@ -77,7 +77,8 @@ export default function ButtonAppBar() {
                         Reports
                     </Typography>
                     <div className={classes.grow} />
-                    <Button color="inherit">Login</Button>
+                    <Button href='/login' color="inherit">Login</Button>
+                    <Button href='/register' color="inherit">Register</Button>
                 </Toolbar>
             </AppBar>
             <Menu
@@ -96,7 +97,7 @@ export default function ButtonAppBar() {
                 onClose={handleUserClose}
             >
                 <MenuItem onClick={handleUserClose} ><Link to={"/pendingusers"}>Seller Account Approval</Link></MenuItem>
-                <MenuItem onClick={handleUserClose} >User Profiles</MenuItem>
+                <MenuItem onClick={handleUserClose} ><Link to={"/accountedit"}>User Profiles</Link></MenuItem>
             </Menu>
             <Menu
                 id="menu-books"

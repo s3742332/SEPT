@@ -1,3 +1,4 @@
+
 package com.rmit.sept.bk_loginservices.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -29,6 +30,9 @@ public class User implements UserDetails {
     private String confirmPassword;
     private Date create_At;
     private Date update_At;
+    private Boolean business;
+    private Boolean approved;
+    private Boolean isAdmin;
 
     //OneToMany with Project
 
@@ -89,6 +93,30 @@ public class User implements UserDetails {
 
     public void setUpdate_At(Date update_At) {
         this.update_At = update_At;
+    }
+
+    public void setBusiness(Boolean business) {
+        this.business = business;
+    }
+
+    public Boolean getBusiness() {
+        return business;
+    }
+
+    public void setApproved(Boolean approved) {
+        this.approved = approved;
+    }
+
+    public Boolean getApproved() {
+        return approved;
+    }
+
+    public void setIsAdmin(Boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+    public Boolean getIsAdmin() {
+        return isAdmin;
     }
 
     @PrePersist

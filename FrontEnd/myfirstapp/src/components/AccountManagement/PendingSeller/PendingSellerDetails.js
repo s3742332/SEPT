@@ -5,10 +5,10 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import { userEdit } from '../../actions/userActions';
+import { userEdit } from '../../../actions/userActions';
 import { Typography } from '@material-ui/core';
 
-function PendingUserDetails(props) {
+function PendingSellerDetails(props) {
     const [data, setData] = useState([])
     const { id, name, address, phone, username, abn, company, email, website } = data;
     const dispatch = useDispatch();
@@ -212,4 +212,4 @@ function PendingUserDetails(props) {
 }
 
 
-export default PendingUserDetails
+export default PendingSellerDetails
