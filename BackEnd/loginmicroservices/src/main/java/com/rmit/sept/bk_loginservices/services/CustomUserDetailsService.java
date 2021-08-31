@@ -28,6 +28,13 @@ public class CustomUserDetailsService implements UserDetailsService {
         User user = userRepository.getById(id);
         if(user==null) new UsernameNotFoundException("User not found");
         return user;
+    }
 
+    @Transactional
+    public User loadUserByName(String fullName){
+        User user = userRepository.getByName(fullName);
+        if(user==null) new UsernameNotFoundException("User not found");
+        System.out.print(user);
+        return user;
     }
 }

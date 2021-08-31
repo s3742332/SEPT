@@ -5,6 +5,7 @@ import com.rmit.sept.bk_loginservices.model.User;
 import com.rmit.sept.bk_loginservices.payload.JWTLoginSucessReponse;
 import com.rmit.sept.bk_loginservices.payload.LoginRequest;
 import com.rmit.sept.bk_loginservices.security.JwtTokenProvider;
+import com.rmit.sept.bk_loginservices.services.CustomUserDetailsService;
 import com.rmit.sept.bk_loginservices.services.MapValidationErrorService;
 import com.rmit.sept.bk_loginservices.services.UserService;
 import com.rmit.sept.bk_loginservices.validator.UserValidator;
@@ -26,6 +27,8 @@ import javax.validation.Valid;
 
 import static com.rmit.sept.bk_loginservices.security.SecurityConstant.TOKEN_PREFIX;
 
+import java.sql.PreparedStatement;
+
 
 @RestController
 @RequestMapping("/api/users")
@@ -40,6 +43,9 @@ public class UserController {
     @Autowired
     private UserValidator userValidator;
 
+    @Autowired
+    private CustomUserDetailsService customUserDetailsService;
+
     @CrossOrigin(origins = "*")
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody User user, BindingResult result){
@@ -50,6 +56,7 @@ public class UserController {
         if(errorMap != null)return errorMap;
 
         User newUser = userService.saveUser(user);
+        customUserDetailsService.loadUserByUsername("batman");
 
         return  new ResponseEntity<User>(newUser, HttpStatus.CREATED);
     }
