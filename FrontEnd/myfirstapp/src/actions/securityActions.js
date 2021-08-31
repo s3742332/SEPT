@@ -6,14 +6,18 @@ import jwt_decode from "jwt-decode";
 
 export const createNewUser = (newUser, history) => async dispatch => {
 
+
     try {
         const config = {
             headers: {
                 "Content-Type": "application/json",
             }
         }
-        await axios.post("http://localhost:8080/api/users/register", newUser, config)
-        history.push("/")
+        await axios.post("http://localhost:8080/api/users/register", newUser, config).then((response)=> {
+            if (response.status === 201) {
+                history.push('/login')
+            }
+    });
         dispatch({
             type: GET_ERRORS,
             payload: {}
