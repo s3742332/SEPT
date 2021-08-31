@@ -1,6 +1,7 @@
 import axios from "axios";
 import { GET_PENDING_SELLERS, GET_ACCOUNTS, GET_ERRORS, INCREMENT} from "./types";
 
+import {getJWTToken} from './../securityUtils/setJWTToken';
 export const userEdit = (user) => async dispatch => {
     try {
         console.log("UserInfoAction", user)

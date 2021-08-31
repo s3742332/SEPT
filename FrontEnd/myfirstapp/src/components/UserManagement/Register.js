@@ -1,16 +1,23 @@
 
-import React, {useState, useEffect} from 'react'
-import classnames from "classnames";
-import {useDispatch} from 'react-redux'
+import React, { useState, useEffect } from 'react'
+
+import { useDispatch } from 'react-redux'
 import { createNewUser } from "../../actions/securityActions";
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 function Register(props) {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState()
+  const [isBusiness, setIsBusiness] = useState(false);
   const [newUser, setNewUser] = useState({
     fullName: "",
     username: "",
     password: "",
     confirmPassword: "",
+    phonenumber: "",
+    abn: "",
+    userType: isBusiness ? "seller" : "customer",
+    approved: isBusiness ? false : true
   })
 
   useEffect(() => {
@@ -25,9 +32,13 @@ function Register(props) {
   }
 
   const onChange = (e) => {
-    setNewUser({...newUser, [e.target.name]: e.target.value })
+    setNewUser({ ...newUser, [e.target.name]: e.target.value })
     console.log(newUser)
   }
+  const handleChange = (e) => {
+    setIsBusiness(!isBusiness);
+  }
+
   return (
     <div className="register">
       <div className="container">
@@ -42,7 +53,6 @@ function Register(props) {
                   className={"form-control form-control-lg"}
                   placeholder="Name"
                   name="fullName"
-                  //value={newUser[0].username}
                   required
                   onChange={onChange}
                 />
@@ -67,6 +77,24 @@ function Register(props) {
               </div>
               <div className="form-group">
                 <input
+                  type="text"
+                  className="form-control form-control-lg"
+                  placeholder="Phone Number"
+                  name="phonenumber"
+                  onChange={onChange}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  className="form-control form-control-lg"
+                  placeholder="Address"
+                  name="address"
+                  onChange={onChange}
+                />
+              </div>
+              <div className="form-group">
+                <input
                   type="password"
                   className="form-control form-control-lg"
                   placeholder="Confirm Password"
@@ -74,6 +102,27 @@ function Register(props) {
                   onChange={onChange}
                 />
               </div>
+
+              <FormControlLabel
+                value="start"
+                control={<Switch
+                  checked={isBusiness}
+                  onChange={handleChange}
+                  name="checkedB"
+                  color="primary"
+                />}
+                label="Representing a Business?"
+                labelPlacement="end"
+              />
+              {isBusiness ? <div className="form-group">
+                <input
+                  type="text"
+                  className="form-control form-control-lg"
+                  placeholder="ABN"
+                  name="abn"
+                  onChange={onChange}
+                />
+              </div> : null}
               <input type="submit" onClick={onSubmit} className="btn btn-info btn-block mt-4" />
             </form>
           </div>
