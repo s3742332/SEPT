@@ -6,11 +6,11 @@ import jwt_decode from "jwt-decode";
 
 export const createNewUser = (newUser, history) => async dispatch => {
 
-    try{
+
+    try {
         const config = {
             headers: {
                 "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*"
             }
         }
         await axios.post("http://localhost:8080/api/users/register", newUser, config).then((response)=> {
@@ -18,7 +18,6 @@ export const createNewUser = (newUser, history) => async dispatch => {
                 history.push('/login')
             }
     });
-        
         dispatch({
             type: GET_ERRORS,
             payload: {}
@@ -81,12 +80,18 @@ export const createNewUser = (newUser, history) => async dispatch => {
 // }
 
 //}
-export const login = LoginRequest => async dispatch => {
+export const login = (LoginRequest, history) => async dispatch => {
     try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
         // post => Login Request
-        const res = await axios.post("/api/users/login", LoginRequest);
+        const res = await axios.post("http://localhost:8080/api/users/login", LoginRequest, config)
         // extract token from res.data
         const { token } = res.data;
+        console.log(token)
         // store the token in the localStorage
         localStorage.setItem("jwtToken", token);
         // set our token in header ***
@@ -99,9 +104,10 @@ export const login = LoginRequest => async dispatch => {
             payload: decoded
         });
     } catch (err) {
+        console.log(err)
         dispatch({
             type: GET_ERRORS,
-            payload: err.response.data
+            payload: err.response
         });
     }
 };
