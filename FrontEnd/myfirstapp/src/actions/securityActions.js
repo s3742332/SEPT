@@ -13,17 +13,13 @@ export const createNewUser = (newUser, history) => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        await axios.post("http://localhost:8080/api/users/register", newUser, config).then((response)=> {
-            if (response.status === 201) {
-                history.push('/login')
-            }
-    });
-        dispatch({
-            type: GET_ERRORS,
-            payload: {}
-        });
+        const res = await axios.post("http://localhost:8080/api/users/register", newUser, config)
+        if (res.status === 201) {
+            history.push('/login')
+        }
     }
     catch (err) {
+        console.log("ERRORDISPATCH", err.response.data)
         dispatch({
             type: GET_ERRORS,
             payload: err.response.data
@@ -35,51 +31,6 @@ export const createNewUser = (newUser, history) => async dispatch => {
 
 };
 
-// export const login = LoginRequest => async dispatch => {
-//     try{
-//         const config = {
-//             headers: {
-//                 "Content-Type": "application/json",
-//                 "Access-Control-Allow-Origin": "*"
-//               }
-//         }
-//         await axios.post("http://localhost:8080/api/users/login", LoginRequest, config);
-
-//         dispatch({
-//             type: GET_ERRORS,
-//             payload: {}
-//         });
-//     }
-//     catch (err){
-//         dispatch ({
-//             type: GET_ERRORS,
-//             payload: err.response.data
-//         });
-
-
-
-//     }
-// try {
-
-//     //post => login request
-
-//     //extract token from res.data
-
-//     //set our token in the local storage
-
-//     // set our token in header 
-
-//     //decode the token on React
-
-//     // dispatch to our securityReducer
-
-// }
-// catch (err)
-// {
-
-// }
-
-//}
 export const login = (LoginRequest, history) => async dispatch => {
     try {
         const config = {
