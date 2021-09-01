@@ -4,6 +4,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import StoreIcon from '@material-ui/icons/Store';
 function PendingSellerList(props) {
     const { loading } = props.list
     const useStyles = makeStyles((theme) => ({
@@ -20,23 +21,23 @@ function PendingSellerList(props) {
     const classes = useStyles();
     return (
         (loading ? "Loading" :
-        props.filteredList.map((data) => (
-            <Card key={data['id']} className={classes.card} hoverable="true" onClick={() => { props.setSelectedUser(data) }}>
-                <CardActionArea>
-                    <div className={classes.details}>
-                        <CardContent>
-                            <Typography component="h5" variant="h5">
-                                {data['name']}
-                            </Typography>
-                            <Typography variant="subtitle1" color="textSecondary">
-                                {data['username']}
-                            </Typography>
-                        </CardContent>
-                    </div>
-                </CardActionArea>
+            props.filteredList.map((data) => (
+                <Card key={data['id']} className={classes.card} hoverable="true" onClick={() => { props.setSelectedUser(data) }}>
+                    <CardActionArea>
+                        <div className={classes.details}>
+                            <CardContent>
+                                <Typography component="h5" variant="h5">
+                                    {data['userType'] === "seller" ? <StoreIcon /> : null}{data['fullName']}
+                                </Typography>
+                                <Typography variant="subtitle1" color="textSecondary">
+                                    {data['username']}
+                                </Typography>
+                            </CardContent>
+                        </div>
+                    </CardActionArea>
 
-            </Card>
-        )))
+                </Card>
+            )))
     )
 }
 
