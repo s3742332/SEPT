@@ -77,7 +77,7 @@ function AccountEdit() {
 
     const handleSearch = (event) => {
         setSearch(event.target.value)
-        setFilteredData(user.userAccounts.filter(data => data.username.toLowerCase().includes(event.target.value.toLowerCase())))
+        setFilteredData(user.userAccounts.filter(data => data.fullName.toLowerCase().includes(event.target.value.toLowerCase())))
     }
 
     useEffect(() => {

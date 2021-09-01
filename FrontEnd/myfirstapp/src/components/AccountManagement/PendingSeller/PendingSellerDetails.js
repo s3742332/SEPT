@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -10,7 +10,7 @@ import { Typography } from '@material-ui/core';
 
 function PendingSellerDetails(props) {
     const [data, setData] = useState([])
-    const { id, name, address, phone, username, abn, company, email, website } = data;
+    const { id, fullName, address, phoneNumber, username, abn, userType, approved, create_At } = data;
     const dispatch = useDispatch();
     useEffect(() => {
         setData(props.data)
@@ -43,7 +43,7 @@ function PendingSellerDetails(props) {
         e.preventDefault();
         dispatch(userEdit({ ...data, approved: true }));
     }
-    
+
     const classes = useStyles();
 
     return (
@@ -55,8 +55,8 @@ function PendingSellerDetails(props) {
                         direction="row"
                         justifyContent="flex-start"
                         alignItems="flex-start">
-                        <Grid item xs={6} className={classes.grid}>
-                            <Typography variant="h4">User Information</Typography>
+                        <Grid item xs={12} className={classes.grid}>
+                            <Typography variant="h4" component="p">Seller Information</Typography>
                             <Grid item className={classes.textField}>
                                 <TextField
                                     id="id"
@@ -74,7 +74,9 @@ function PendingSellerDetails(props) {
                                         <TextField
                                             id="accountType"
                                             label="Account Type"
-                                            value={'Customer'}
+                                            value={
+                                                userType
+                                            }
                                             variant="filled"
                                             disabled
                                             fullWidth
@@ -83,7 +85,7 @@ function PendingSellerDetails(props) {
                                         <TextField
                                             id="accountStatus"
                                             label="Account Status"
-                                            value={'Customer'}
+                                            value={approved === null ? "PENDING" : approved ? "APPROVED" : "DENIED"}
                                             variant="filled"
                                             disabled
                                             fullWidth
@@ -92,9 +94,18 @@ function PendingSellerDetails(props) {
                             </Grid>
                             <Grid item className={classes.textField}>
                                 <TextField
+                                    id="created_at"
+                                    label="Account Creation Date"
+                                    value={create_At}
+                                    variant="filled"
+                                    disabled
+                                    fullWidth
+                                /></Grid>
+                            <Grid item className={classes.textField}>
+                                <TextField
                                     id="name"
-                                    label="Name"
-                                    value={name || ''}
+                                    label="Seller Business Name"
+                                    value={fullName || ''}
                                     variant="filled"
                                     onChange={handleChange}
                                     fullWidth
@@ -102,9 +113,9 @@ function PendingSellerDetails(props) {
                             </Grid>
                             <Grid item className={classes.textField}>
                                 <TextField
-                                    id="username"
-                                    label="Username"
-                                    value={username || ''}
+                                    id="abn"
+                                    label="ABN"
+                                    value={abn || '000000'}
                                     variant="filled"
                                     onChange={handleChange}
                                     fullWidth
@@ -112,93 +123,24 @@ function PendingSellerDetails(props) {
                             </Grid>
                             <Grid item className={classes.textField}>
                                 <TextField
-                                    id="email"
-                                    label="Email"
-                                    value={email || ''}
+                                    id="phone"
+                                    label="Phone Number"
+                                    value={phoneNumber || ''}
                                     variant="filled"
                                     onChange={handleChange}
                                     fullWidth
                                 />
                             </Grid>
-                            {company ? null
-                                : <>
-                                    <Grid item className={classes.textField}>
-                                        <TextField
-                                            id="phone"
-                                            label="Phone Number"
-                                            value={[phone] || ''}
-                                            variant="filled"
-                                            onChange={handleChange}
-                                            fullWidth
-                                        />
-                                    </Grid>
-                                    <Grid item className={classes.textField}>
-                                        <TextField
-                                            id="address"
-                                            label="Address"
-                                            value={`${address['suite']} ${address['street']}, ${address['city']} ${address['zipcode']}` || ''}
-                                            variant="filled"
-                                            onChange={handleChange}
-                                            fullWidth
-                                        />
-                                    </Grid>
-                                </>}
-                        </Grid>
-                        <Grid item xs={6} className={classes.grid}>
-                            {company ? <>
-                                <Typography variant="h4" component="p">Company Information</Typography>
-                                <Grid item className={classes.textField}>
-                                    <TextField
-                                        id="abn"
-                                        label="ABN"
-                                        value={abn || '000000'}
-                                        variant="filled"
-                                        onChange={handleChange}
-                                        fullWidth
-                                    />
-                                </Grid>
-                                <Grid item className={classes.textField}>
-                                    <TextField
-                                        id="businessName"
-                                        label="Business Name"
-                                        value={company['name'] || ''}
-                                        variant="filled"
-                                        onChange={handleChange}
-                                        fullWidth
-                                    />
-                                </Grid>
-                                <Grid item className={classes.textField}>
-                                    <TextField
-                                        id="phone"
-                                        label="Phone Number"
-                                        value={[phone] || ''}
-                                        variant="filled"
-                                        onChange={handleChange}
-                                        fullWidth
-                                    />
-                                </Grid>
-                                <Grid item className={classes.textField}>
-                                    <TextField
-                                        id="address"
-                                        label="Address"
-                                        value={`${address['suite']} ${address['street']}, ${address['city']} ${address['zipcode']}` || ''}
-                                        variant="filled"
-                                        onChange={handleChange}
-                                        fullWidth
-                                    />
-                                </Grid>
-                                <Grid item className={classes.textField}>
-                                    <TextField
-                                        id="website"
-                                        label="Website"
-                                        value={website || ''}
-                                        variant="filled"
-                                        onChange={handleChange}
-                                        fullWidth
-                                    />
-                                </Grid>
-                            </>
-                                : null}
+                            <Grid item className={classes.textField}>
+                                <TextField
+                                    id="address"
+                                    label="Address"
+                                    value={`${address}` || ''}
+                                    variant="filled"
+                                    onChange={handleChange}
+                                    fullWidth
+                                />
+                            </Grid>
                         </Grid>
                     </Grid>
                 </Grid>

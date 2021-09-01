@@ -1,7 +1,6 @@
 import axios from "axios";
 import { GET_PENDING_SELLERS, GET_ACCOUNTS, GET_ERRORS, INCREMENT} from "./types";
 
-import {getJWTToken} from './../securityUtils/setJWTToken';
 export const userEdit = (user) => async dispatch => {
     try {
         console.log("UserInfoAction", user)
@@ -15,7 +14,7 @@ export const userEdit = (user) => async dispatch => {
 
 export const getPendingSellerList = () => async dispatch => {
     try {
-        const res = await axios.get(`http://jsonplaceholder.typicode.com/users`)
+        const res = await axios.get(`http://localhost:8080/api/users/getAllUsers`)
         dispatch({
             type: GET_PENDING_SELLERS,
             payload: res.data
@@ -30,7 +29,7 @@ export const getPendingSellerList = () => async dispatch => {
 
 export const getUserAccountsList = () => async dispatch => {
     try {
-        const res = await axios.get(`http://jsonplaceholder.typicode.com/users`)
+        const res = await axios.get(`http://localhost:8080/api/users/getAllUsers`)
         dispatch({
             type: GET_ACCOUNTS,
             payload: res.data

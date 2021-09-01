@@ -4,6 +4,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import StoreIcon from '@material-ui/icons/Store';
 function AccountEditList(props) {
     const { loading } = props.list
     const useStyles = makeStyles((theme) => ({
@@ -26,7 +27,7 @@ function AccountEditList(props) {
                     <div className={classes.details}>
                         <CardContent>
                             <Typography component="h5" variant="h5">
-                                {data['name']}
+                                {data['userType'] === "seller" ? <StoreIcon/> : null }{data['fullName']}
                             </Typography>
                             <Typography variant="subtitle1" color="textSecondary">
                                 {data['username']}
