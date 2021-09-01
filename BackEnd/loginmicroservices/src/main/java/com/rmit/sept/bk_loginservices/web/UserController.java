@@ -29,6 +29,7 @@ import javax.validation.Valid;
 import static com.rmit.sept.bk_loginservices.security.SecurityConstant.TOKEN_PREFIX;
 
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
 
 
 @RestController
@@ -57,7 +58,6 @@ public class UserController {
         if(errorMap != null)return errorMap;
 
         User newUser = userService.saveUser(user);
-        customUserDetailsService.loadUserByUsername("batman");
 
         return  new ResponseEntity<User>(newUser, HttpStatus.CREATED);
     }
@@ -89,10 +89,25 @@ public class UserController {
         return ResponseEntity.ok(new JWTLoginSucessReponse(true, jwt));
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/getAllUsers")
     public ResponseEntity<?> getAllUsers(){
         Iterable<User> userList = userService.getAllUsers();
         
         return  new ResponseEntity<Iterable<User>>(userList, HttpStatus.OK);
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/getAllPendingBusiness")
+    public ResponseEntity<?> getAllPendingBusiness(){
+        Iterable<User> userList = userService.getAllUsers();
+        ArrayList<User> unapprovedBusiness = new ArrayList<User>();
+        for (User user : userList){
+            if (user.getUserType().equals("seller") && user.getApproved() == null) {
+                unapprovedBusiness.add(user);
+            }
+        }
+        
+        return  new ResponseEntity<Iterable<User>>(unapprovedBusiness, HttpStatus.OK);
     }
 }
