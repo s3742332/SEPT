@@ -13,15 +13,18 @@ export const createNewUser = (newUser, history) => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        await axios.post("http://localhost:8080/api/users/register", newUser, config).then((response)=> {
-            if (response.status === 201) {
+        const res = await axios.post("http://localhost:8080/api/users/register", newUser, config).then((response)=> {
+            if (res.status === 201) {
                 history.push('/login')
             }
+            if(res.status === 400) {
+                dispatch({
+                    type: GET_ERRORS,
+                    payload: res.data,
+                });
+            }
     });
-        dispatch({
-            type: GET_ERRORS,
-            payload: {}
-        });
+
     }
     catch (err) {
         dispatch({
