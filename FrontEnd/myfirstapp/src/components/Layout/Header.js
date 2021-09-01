@@ -77,7 +77,8 @@ export default function ButtonAppBar() {
                         Reports
                     </Typography>
                     <div className={classes.grow} />
-                    <Button color="inherit">Login</Button>
+                    <Button href='/login' color="inherit">Login</Button>
+                    <Button href='/register' color="inherit">Register</Button>
                 </Toolbar>
             </AppBar>
             <Menu

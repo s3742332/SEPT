@@ -3,6 +3,8 @@ package com.rmit.sept.bk_loginservices.services;
 
 
 
+import java.util.List;
+
 import com.rmit.sept.bk_loginservices.Repositories.UserRepository;
 import com.rmit.sept.bk_loginservices.exceptions.UsernameAlreadyExistsException;
 import com.rmit.sept.bk_loginservices.model.User;
@@ -41,6 +43,16 @@ public class UserService {
         }
 
     }
+
+    public Iterable<User> getAllUsers (){
+          try{
+              return userRepository.findAll();
+  
+          }catch (Exception e){
+              throw new UsernameAlreadyExistsException("Unable to retrieve user list");
+          }
+  
+      }
 
 
 }
