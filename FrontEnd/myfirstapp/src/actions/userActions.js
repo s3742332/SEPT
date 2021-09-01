@@ -14,7 +14,7 @@ export const userEdit = (user) => async dispatch => {
 
 export const getPendingSellerList = () => async dispatch => {
     try {
-        const res = await axios.get(`http://localhost:8080/api/users/getAllUsers`)
+        const res = await axios.get(`http://localhost:8080/api/users/getAllPendingBusiness`)
         dispatch({
             type: GET_PENDING_SELLERS,
             payload: res.data
