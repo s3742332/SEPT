@@ -10,12 +10,12 @@ function Register(props) {
   const [errors, setErrors] = useState()
   const [isBusiness, setIsBusiness] = useState(false);
   const [newUser, setNewUser] = useState({
-    fullName: "",
-    username: "",
-    password: "",
-    confirmPassword: "",
-    phonenumber: "",
-    abn: "",
+    fullName: null,
+    username: null,
+    password: null,
+    confirmPassword: null,
+    phoneNumber: null,
+    abn: null,
     userType: isBusiness ? "seller" : "customer",
     approved: isBusiness ? false : true
   })
@@ -51,7 +51,7 @@ function Register(props) {
                 <input
                   type="text"
                   className={"form-control form-control-lg"}
-                  placeholder="Name"
+                  placeholder="Full Name"
                   name="fullName"
                   required
                   onChange={onChange}
@@ -68,19 +68,10 @@ function Register(props) {
               </div>
               <div className="form-group">
                 <input
-                  type="password"
-                  className="form-control form-control-lg"
-                  placeholder="Password"
-                  name="password"
-                  onChange={onChange}
-                />
-              </div>
-              <div className="form-group">
-                <input
                   type="text"
                   className="form-control form-control-lg"
                   placeholder="Phone Number"
-                  name="phonenumber"
+                  name="phoneNumber"
                   onChange={onChange}
                 />
               </div>
@@ -90,6 +81,15 @@ function Register(props) {
                   className="form-control form-control-lg"
                   placeholder="Address"
                   name="address"
+                  onChange={onChange}
+                />
+              </div>
+              <div className="form-group">
+                <input
+                  type="password"
+                  className="form-control form-control-lg"
+                  placeholder="Password"
+                  name="password"
                   onChange={onChange}
                 />
               </div>
