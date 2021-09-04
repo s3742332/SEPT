@@ -3,11 +3,14 @@ import { GET_PENDING_SELLERS, GET_ACCOUNTS, GET_ERRORS, INCREMENT, UPDATE_APPROV
 
 export const userEdit = (user) => async dispatch => {
     try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
         console.log("UserInfoAction", user)
-        // console.log(user.id);
-        let params = { id: user.id, approved: user.approved };
-        const res = await axios.post(`http://localhost:8080/api/users/updateApproved`, params );
-        console.log('res')
+        // let params = { id: user.id, approved: user.approved };
+        const res = await axios.post(`http://localhost:8080/api/users/updateApproved/${user.id}`, config );
         dispatch({
             type: UPDATE_APPROVED,
             payload: res.data

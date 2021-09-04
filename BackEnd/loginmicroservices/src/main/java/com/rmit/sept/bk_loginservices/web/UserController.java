@@ -20,6 +20,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -116,10 +117,11 @@ public class UserController {
     }
 
     @CrossOrigin(origins = "*")
-    @PostMapping("/updateApproved")
-    public void updateApproved(@Valid @RequestBody int id, Boolean approved) {
-        Long longId = (long) id;
+    @PostMapping("/updateApproved/{id}")
+    public void updateApproved(@Valid @PathVariable("id") String id) {
+        Long longId = Long.valueOf(id);
         User user = userRepository.getById(longId);
-        user.setApproved(approved);
+        user.setApproved(true);
+        userService.saveUser(user);
     }
 }
