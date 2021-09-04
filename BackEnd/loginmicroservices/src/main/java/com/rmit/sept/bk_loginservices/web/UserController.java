@@ -117,8 +117,9 @@ public class UserController {
 
     @CrossOrigin(origins = "*")
     @PostMapping("/updateApproved")
-    public void updateApproved(@Valid @RequestBody long id, Boolean approved) {
-        User user = userRepository.getById(id);
+    public void updateApproved(@Valid @RequestBody int id, Boolean approved) {
+        Long longId = (long) id;
+        User user = userRepository.getById(longId);
         user.setApproved(approved);
     }
 }

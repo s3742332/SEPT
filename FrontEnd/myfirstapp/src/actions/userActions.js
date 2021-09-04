@@ -1,11 +1,19 @@
 import axios from "axios";
-import { GET_PENDING_SELLERS, GET_ACCOUNTS, GET_ERRORS, INCREMENT} from "./types";
+import { GET_PENDING_SELLERS, GET_ACCOUNTS, GET_ERRORS, INCREMENT, UPDATE_APPROVED } from "./types";
 
 export const userEdit = (user) => async dispatch => {
     try {
-        // console.log("UserInfoAction", user)
-        const res = await axios.post(`http://localhost:8080/api/users/updateApproved`, user.id, user.approved);
+        console.log("UserInfoAction", user)
+        // console.log(user.id);
+        let params = { id: user.id, approved: user.approved };
+        const res = await axios.post(`http://localhost:8080/api/users/updateApproved`, params );
+        console.log('res')
+        dispatch({
+            type: UPDATE_APPROVED,
+            payload: res.data
+        })
     } catch (err) {
+        console.log('error', err)
         dispatch({
             type: GET_ERRORS,
             payload: err.response.data

@@ -41,8 +41,17 @@ function PendingSellerDetails(props) {
     }
     const handleApprove = (e) => {
         e.preventDefault();
-        dispatch(userEdit({
-            id: data.id,
+        // console.log("i am user " + data)
+        // console.log("i am id " + data.id)
+        // console.log("i am name " + data.fullName)
+        // console.log("i am address " + data.address)
+        // console.log("i am phoneNumber " + data.phoneNumber)
+        // console.log("i am username " + data.username)
+        // console.log("i am abn " + data.abn)
+        // console.log("i am userType " + data.userType)
+        // console.log("i am approved " + data.approved)
+        // console.log("i am create_At " + data.create_At)
+        dispatch(userEdit({...data,
             approved: true
         }));
     }
