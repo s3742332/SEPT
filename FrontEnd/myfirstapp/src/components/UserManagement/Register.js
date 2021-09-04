@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react'
 
 import { useDispatch } from 'react-redux'
 import { createNewUser } from "../../actions/securityActions";
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 function Register(props) {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState()
@@ -112,7 +110,7 @@ return (
                 onChange={onChange}
               />
             </div>
-
+{/* 
             <FormControlLabel
               value="start"
               control={<Switch
@@ -123,7 +121,7 @@ return (
               />}
               label="Representing a Business?"
               labelPlacement="end"
-            />
+            /> */}
             {isBusiness ? <div className="form-group">
               <input
                 type="text"

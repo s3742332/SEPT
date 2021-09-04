@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import Dashboard from "./components/Dashboard";
-import Header from "./components/Layout/Header";
+import Dashboard from "./components/AdminDashboard";
+//import Header from "./components/Layout/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+import {  Redirect, Route, Switch } from "react-router-dom";
 import AddPerson from "./components/Persons/AddPerson";
 import { Provider } from "react-redux";
 import store from "./store";
@@ -17,7 +17,10 @@ import SecuredRoute from "./securityUtils/SecureRoute";
 import jwt_decode from "jwt-decode";
 import setJWTToken from "./securityUtils/setJWTToken";
 import { SET_CURRENT_USER } from "./actions/types";
-import Marketplace from "./components/Market_Place/Marketplace.js";
+import AdminDashboard from "./components/AdminDashboard";
+import { Layout, Menu, Breadcrumb } from 'antd';
+import NavBar from './components/Layout/NavBar';
+// import Marketplace from "./components/Market_Place/Marketplace.js";
 
 function App() {
   const isAdmin = true;
@@ -31,7 +34,7 @@ function App() {
         type: SET_CURRENT_USER,
         payload: decoded_jwtToken
       });
-    
+
       const currentTime = Date.now() / 1000;
       if (decoded_jwtToken.exp < currentTime) {
         store.dispatch(logout());
@@ -39,39 +42,38 @@ function App() {
       }
     }
   }, [])
-
-
+  const { Header, Content, Footer } = Layout;
+  const loadAdmin = () => {
+    return (
+      <Layout style={{ height: "100vh", overflow: "auto" }}>
+        <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+          <NavBar />
+        </Header>
+        <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
+          <Breadcrumb style={{ margin: '16px 0' }}>
+            <Breadcrumb.Item>Home</Breadcrumb.Item>
+            <Breadcrumb.Item>List</Breadcrumb.Item>
+            <Breadcrumb.Item>App</Breadcrumb.Item>
+          </Breadcrumb>
+          <div className="site-layout-background" style={{ padding: 24, minHeight: "100%" }}>
+              <Switch>
+                <Route exact path="/" component={AdminDashboard} />
+                <Route exact path="/accountedit" component={AccountEdit} />
+                <Route exact path="/pendingusers" component={PendingSeller} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/register" component={Register} />
+                <Redirect to="/" />
+              </Switch>
+          </div>
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+      </Layout>
+    )
+  }
   return (
     <Provider store={store}>
-      <Router>
-        <div className="App">
-          <Header />
-          <Switch>
-            {
-              //Public Routes
-            }
-            {
-              isAdmin ?
-                <Route exact path="/" component={Dashboard} />
-                : <Route exact path="/" component={Landing} />
-            }
-            {isAdmin &&
-              <Route exact path="/pendingusers" component={PendingSeller} />
-              
-            }
-            {isAdmin && <Route exact path="/accountedit" component={AccountEdit} />}
-            {/* {!isAdmin &&
-              <Route exact path="/register" component={Register} />}
-            <Route exact path="/register" component={Register} /> */}
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/marketplace" component={Marketplace} />
-            <Redirect to="/" />
-          </Switch>
+      {isAdmin ? loadAdmin() : null}
 
-
-        </div>
-      </Router>
     </Provider>
   );
 }
