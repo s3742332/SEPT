@@ -4,6 +4,7 @@ package com.rmit.sept.bk_loginservices.services;
 
 
 import java.util.List;
+import java.util.Calendar;
 
 import com.rmit.sept.bk_loginservices.Repositories.UserRepository;
 import com.rmit.sept.bk_loginservices.exceptions.UsernameAlreadyExistsException;
@@ -53,6 +54,10 @@ public class UserService {
           }
   
       }
+
+    public void deleteUser(User user) {
+        userRepository.delete(user);
+    }
 
 
 }

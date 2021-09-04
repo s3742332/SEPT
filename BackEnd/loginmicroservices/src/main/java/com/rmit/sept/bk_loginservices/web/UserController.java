@@ -1,6 +1,7 @@
 package com.rmit.sept.bk_loginservices.web;
 
 
+import com.rmit.sept.bk_loginservices.Repositories.UserRepository;
 import com.rmit.sept.bk_loginservices.model.User;
 import com.rmit.sept.bk_loginservices.payload.JWTLoginSucessReponse;
 import com.rmit.sept.bk_loginservices.payload.LoginRequest;
@@ -19,6 +20,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,6 +43,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     private UserValidator userValidator;
@@ -109,5 +114,15 @@ public class UserController {
         }
         
         return  new ResponseEntity<Iterable<User>>(unapprovedBusiness, HttpStatus.OK);
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/updateApproved")
+    public void updateApproved(@RequestBody User user, BindingResult result) {
+        if (user.getApproved()) {
+            userService.saveUser(user);
+        } else {
+            userService.deleteUser(user);
+        }
     }
 }

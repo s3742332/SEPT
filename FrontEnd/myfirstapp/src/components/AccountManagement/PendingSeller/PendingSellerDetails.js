@@ -41,7 +41,7 @@ function PendingSellerDetails(props) {
     }
     const handleApprove = (e) => {
         e.preventDefault();
-        dispatch(userEdit({ ...data, approved: true }));
+        dispatch(userEdit({...data, approved: true }));
     }
 
     const classes = useStyles();
