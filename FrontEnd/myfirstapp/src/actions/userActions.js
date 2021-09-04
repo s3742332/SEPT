@@ -3,7 +3,8 @@ import { GET_PENDING_SELLERS, GET_ACCOUNTS, GET_ERRORS, INCREMENT} from "./types
 
 export const userEdit = (user) => async dispatch => {
     try {
-        console.log("UserInfoAction", user)
+        // console.log("UserInfoAction", user)
+        const res = await axios.post(`http://localhost:8080/api/users/updateApproved`, user.id, user.approved);
     } catch (err) {
         dispatch({
             type: GET_ERRORS,
