@@ -10,7 +10,7 @@ export const userEdit = (user) => async dispatch => {
         }
         console.log("UserInfoAction", user)
         // let params = { id: user.id, approved: user.approved };
-        const res = await axios.post(`http://localhost:8080/api/users/updateApproved/${user.id}`, config );
+        const res = await axios.post(`http://localhost:8080/api/users/updateApproved/`, user, config );
         dispatch({
             type: UPDATE_APPROVED,
             payload: res.data

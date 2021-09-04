@@ -117,11 +117,8 @@ public class UserController {
     }
 
     @CrossOrigin(origins = "*")
-    @PostMapping("/updateApproved/{id}")
-    public void updateApproved(@Valid @PathVariable("id") String id) {
-        Long longId = Long.valueOf(id);
-        User user = userRepository.getById(longId);
-        user.setApproved(true);
+    @PostMapping("/updateApproved")
+    public void updateApproved(@RequestBody User user, BindingResult result) {
         userService.saveUser(user);
     }
 }
