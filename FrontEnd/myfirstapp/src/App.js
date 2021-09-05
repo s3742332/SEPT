@@ -1,13 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
-import Dashboard from "./components/Dashboard";
-import Header from "./components/Layout/Header";
+//import Header from "./components/Layout/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import AddPerson from "./components/Persons/AddPerson";
-import { Provider } from "react-redux";
-import store from "./store";
-import { logout } from "./actions/securityActions";
+
+import { logout, setUser } from "./actions/securityActions";
 import Landing from "./components/Layout/Landing";
 import Register from "./components/UserManagement/Register";
 import Login from "./components/UserManagement/Login";
@@ -16,63 +14,84 @@ import AccountEdit from "./components/AccountManagement/AccountEdit/AccountEdit"
 import SecuredRoute from "./securityUtils/SecureRoute";
 import jwt_decode from "jwt-decode";
 import setJWTToken from "./securityUtils/setJWTToken";
-import { SET_CURRENT_USER } from "./actions/types";
-import Marketplace from "./components/Market_Place/Marketplace.js";
+import AdminDashboard from "./components/AdminDashboard";
+import { Layout } from 'antd';
+import NavBar from './components/Layout/NavBar';
+import Home from "./components/Home";
+import { useDispatch, useSelector } from 'react-redux'
+import { getUser } from './actions/securityActions';
+import Marketplace from "./components/Market_Place/Marketplace";
+// import Marketplace from "./components/Market_Place/Marketplace.js";
 
 function App() {
-  const isAdmin = true;
+  const [isAdmin, setIsAdmin] = useState(false)
   const jwtToken = localStorage.jwtToken;
-
+  const dispatch = useDispatch();
+  const security = useSelector(state => state.security);
   useEffect(() => {
     if (jwtToken) {
       setJWTToken(jwtToken);
       const decoded_jwtToken = jwt_decode(jwtToken);
-      store.dispatch({
-        type: SET_CURRENT_USER,
-        payload: decoded_jwtToken
-      });
-    
+      console.log(decoded_jwtToken)
+      dispatch(setUser(decoded_jwtToken));
+
       const currentTime = Date.now() / 1000;
       if (decoded_jwtToken.exp < currentTime) {
-        store.dispatch(logout());
+        dispatch(logout());
         window.location.href = "/";
       }
     }
   }, [])
-
-
-  return (
-    <Provider store={store}>
-      <Router>
-        <div className="App">
-          <Header />
+  useEffect(() => {
+    dispatch(getUser())
+  }, [dispatch])
+  useEffect(() => {
+   security.user.userType === "admin" ? setIsAdmin(true):  setIsAdmin(false)
+  }, [security])
+  const { Header, Content, Footer } = Layout;
+  const loadAdmin = () => {
+    return (
+      <Layout style={{ height: "100vh", overflow: "auto" }}>
+        <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+          <NavBar  user={security.user} />
+        </Header>
+        <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
           <Switch>
-            {
-              //Public Routes
-            }
-            {
-              isAdmin ?
-                <Route exact path="/" component={Dashboard} />
-                : <Route exact path="/" component={Landing} />
-            }
-            {isAdmin &&
-              <Route exact path="/pendingusers" component={PendingSeller} />
-              
-            }
-            {isAdmin && <Route exact path="/accountedit" component={AccountEdit} />}
-            {/* {!isAdmin &&
-              <Route exact path="/register" component={Register} />}
-            <Route exact path="/register" component={Register} /> */}
+            <Route exact path="/" component={AdminDashboard} />
+            <Route exact path="/accountedit" component={AccountEdit} />
+            <Route exact path="/pendingusers" component={PendingSeller} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/marketplace" component={Marketplace} />
             <Redirect to="/" />
           </Switch>
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>SEPT Bookeroo 2021</Footer>
+      </Layout>
+    )
+  }
+  const loadUser = () => {
+    return (
+      <Layout style={{ height: "100vh", overflow: "auto" }}>
+        <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+          <NavBar user={security.user} />
+        </Header>
+        <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/buy" component={Marketplace} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+            <Redirect to="/" />
+          </Switch>
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>SEPT Bookeroo 2021</Footer>
+      </Layout>
+    )
+  }
+  return (
+ 
+      isAdmin ? loadAdmin() : loadUser()
 
-
-        </div>
-      </Router>
-    </Provider>
   );
 }
 

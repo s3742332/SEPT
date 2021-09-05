@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ERRORS, SET_CURRENT_USER } from "./types";
+import { GET_ERRORS, SET_CURRENT_USER, GET_CURRENT_USER } from "./types";
 import setJWTToken from "../securityUtils/setJWTToken";
 import jwt_decode from "jwt-decode";
 
@@ -50,6 +50,7 @@ export const login = (LoginRequest, history) => async dispatch => {
         // decode token on React
         const decoded = jwt_decode(token);
         // dispatch to our securityReducer
+        console.log("DECODED", decoded)
         dispatch({
             type: SET_CURRENT_USER,
             payload: decoded
@@ -64,8 +65,20 @@ export const login = (LoginRequest, history) => async dispatch => {
     }
 };
 
+export const setUser = (decoded) => dispatch => {
+    dispatch({
+        type: SET_CURRENT_USER,
+        payload: decoded
+    });
+};
+export const getUser = () => dispatch => {
+    dispatch({
+        type: GET_CURRENT_USER,
+        payload: {}
+    });
+};
 export const logout = () => dispatch => {
-    localStorage.removeItem("jwtToken");
+    localStorage.clear()
     setJWTToken(false);
     dispatch({
         type: SET_CURRENT_USER,
