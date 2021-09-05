@@ -10,12 +10,8 @@ function Login(props) {
   })
   const onSubmit = (e) => {
     e.preventDefault();
-
     dispatch(login(user, props.history));
   }
-  setInterval(() => {
-    console.log(dispatch(increment()))
-  }, 1000);
   const onChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value })
     console.log(user)

@@ -28,7 +28,12 @@ function PendingSellerDetails(props) {
 
     return (
         (data ? data.length !== 0 ?
-            <>
+            <Col style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                height: "100%",
+            }}>
                 <Col>
                     <Row className={"accountRow"}>
                         <Input
@@ -39,7 +44,7 @@ function PendingSellerDetails(props) {
                             disabled
                         />
                     </Row>
-                    <Row>
+                    <Row className={"accountRow"}>
                         <Col span={12}><Input
                             id="accountType"
                             addonBefore="Account Type"
@@ -59,7 +64,7 @@ function PendingSellerDetails(props) {
                         /></Col>
 
                     </Row>
-                    <Row>
+                    <Row className={"accountRow"}>
                         <Input
                             id="created_at"
                             addonBefore="Account Creation Date"
@@ -69,7 +74,7 @@ function PendingSellerDetails(props) {
                             
                         />
                     </Row>
-                    <Row>
+                    <Row className={"accountRow"}>
                         <Input
                             id="name"
                             addonBefore={userType === "seller" ? "Seller Business Name" : "Full Name"}
@@ -79,7 +84,7 @@ function PendingSellerDetails(props) {
                             
                         />
                     </Row>
-                    <Row>
+                    <Row className={"accountRow"}>
                         <Input
                             id="username"
                             addonBefore={"Username"}
@@ -89,7 +94,7 @@ function PendingSellerDetails(props) {
                             
                         />
                     </Row>
-                    {userType === "seller" ? <Row>
+                    {userType === "seller" ? <Row className={"accountRow"}>
                         <Input
                             id="abn"
                             addonBefore="ABN"
@@ -99,7 +104,7 @@ function PendingSellerDetails(props) {
                             
                         />
                     </Row> : null}
-                    <Row>
+                    <Row className={"accountRow"}>
                         <Input
                             id="phone"
                             addonBefore="Phone Number"
@@ -109,7 +114,7 @@ function PendingSellerDetails(props) {
                             
                         />
                     </Row>
-                    <Row>
+                    <Row className={"accountRow"}>
                         <Input
                             id="address"
                             addonBefore="Address"
@@ -124,7 +129,7 @@ function PendingSellerDetails(props) {
                         <Button style={{ marginRight: "1rem" }} size="large" type="danger" onClick={handleDeny}>Reject</Button>
                         <Button size="large" type="primary" onClick={handleApprove}>Approve</Button>
                     </Row>
-            </>
+            </Col>
             : null : null)
     )
 }
