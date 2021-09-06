@@ -2,7 +2,6 @@
 import React from 'react';
 import img from "./BookImages/DefaultCover.png";
 import { Button, Card } from 'antd';
-import { BookOutlined } from '@ant-design/icons';
 
 
 export default function BookDetails(props) {
