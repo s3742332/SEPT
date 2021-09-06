@@ -1,0 +1,8 @@
+com/rmit/sept/bk_booksmicroservices/web/BookController.class
+com/rmit/sept/bk_booksmicroservices/Exceptions/BookNotFoundException.class
+com/rmit/sept/bk_booksmicroservices/Repositories/BookRepository.class
+com/rmit/sept/bk_booksmicroservices/BooksmicroservicesApplication.class
+com/rmit/sept/bk_booksmicroservices/model/Book.class
+com/rmit/sept/bk_booksmicroservices/model/BookDetails.class
+com/rmit/sept/bk_booksmicroservices/Services/BookService.class
+com/rmit/sept/bk_booksmicroservices/Services/CustomBookServiceDetails.class
