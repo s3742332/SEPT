@@ -14,6 +14,21 @@ public class BookService {
     // TODO CUSTOM LOGIC
     public Book saveOrUpdateBook(Book book)
     {
+        try{
+            book.setBookTitle(book.getBookTitle());
+            book.setAuthor(book.getAuthor());
+            book.setBookCost(book.getBookCost());
+            book.setBookDescription(book.getBookDescription());
+            book.setBookCost(book.getBookCost());
+            book.setCompanyName(book.getCompanyName());
+
+            return bookRepository.save(book);
+
+        }catch (Exception e){
+            //TODO CREATE EXCEPTION
+        }
+
+
         return bookRepository.save(book);
     }
 }
