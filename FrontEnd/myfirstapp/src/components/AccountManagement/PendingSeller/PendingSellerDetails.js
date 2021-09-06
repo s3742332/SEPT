@@ -1,35 +1,17 @@
 import React from 'react'
-import { useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
+import { Button, Input, Row, Col } from 'antd';
 import { userEdit } from '../../../actions/userActions';
-import { Typography } from '@material-ui/core';
 
 function PendingSellerDetails(props) {
     const [data, setData] = useState([])
-    const { id, name, address, phone, username, abn, company, email, website } = data;
+    const { id, fullName, address, phoneNumber, username, abn, userType, approved, create_At } = data;
     const dispatch = useDispatch();
     useEffect(() => {
         setData(props.data)
     }, [props.data])
 
-    const useStyles = makeStyles(() => ({
-        details: {
-            borderRadius: "1rem",
-            height: "calc(100vh - 64px)",
-            padding: "0.5rem",
-            boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2)",
-        },
-        textField: {
-            marginBottom: "1rem",
-        },
-        grid: {
-            padding: "1rem",
-        }
-    }));
 
     const handleChange = (e) => {
         const { id, value } = e.target
@@ -43,170 +25,111 @@ function PendingSellerDetails(props) {
         e.preventDefault();
         dispatch(userEdit({ ...data, approved: true }));
     }
-    
-    const classes = useStyles();
 
     return (
         (data ? data.length !== 0 ?
-            <Grid container direction={"column"} className={classes.details}>
+            <Col style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                height: "100%",
+            }}>
+                <Col>
+                    <Row className={"accountRow"}>
+                        <Input
+                            id="id"
+                            addonBefore="ID"
+                            value={id || ''}
+                            variant="filled"
+                            disabled
+                        />
+                    </Row>
+                    <Row className={"accountRow"}>
+                        <Col span={12}><Input
+                            id="accountType"
+                            addonBefore="Account Type"
+                            value={
+                                userType
+                            }
+                            variant="filled"
+                            disabled
+                        /></Col>
+                        <Col span={12}><Input
+                            id="accountStatus"
+                            addonBefore="Account Status"
+                            value={approved === null ? "PENDING" : approved ? "APPROVED" : "DENIED"}
+                            variant="filled"
+                            disabled
+                            
+                        /></Col>
 
-                <Grid item xs={12} style={{ flex: "1 0 auto" }} className={classes.grid}>
-                    <Grid container
-                        direction="row"
-                        justifyContent="flex-start"
-                        alignItems="flex-start">
-                        <Grid item xs={6} className={classes.grid}>
-                            <Typography variant="h4">User Information</Typography>
-                            <Grid item className={classes.textField}>
-                                <TextField
-                                    id="id"
-                                    label="ID"
-                                    value={id || ''}
-                                    variant="filled"
-                                    disabled
-                                    fullWidth
-                                />
-                            </Grid>
-                            <Grid item className={classes.textField}>
-                                <Grid container
-                                    direction="row">
-                                    <Grid item xs={6}>
-                                        <TextField
-                                            id="accountType"
-                                            label="Account Type"
-                                            value={'Customer'}
-                                            variant="filled"
-                                            disabled
-                                            fullWidth
-                                        /></Grid>
-                                    <Grid item xs={6}>
-                                        <TextField
-                                            id="accountStatus"
-                                            label="Account Status"
-                                            value={'Customer'}
-                                            variant="filled"
-                                            disabled
-                                            fullWidth
-                                        /></Grid>
-                                </Grid>
-                            </Grid>
-                            <Grid item className={classes.textField}>
-                                <TextField
-                                    id="name"
-                                    label="Name"
-                                    value={name || ''}
-                                    variant="filled"
-                                    onChange={handleChange}
-                                    fullWidth
-                                />
-                            </Grid>
-                            <Grid item className={classes.textField}>
-                                <TextField
-                                    id="username"
-                                    label="Username"
-                                    value={username || ''}
-                                    variant="filled"
-                                    onChange={handleChange}
-                                    fullWidth
-                                />
-                            </Grid>
-                            <Grid item className={classes.textField}>
-                                <TextField
-                                    id="email"
-                                    label="Email"
-                                    value={email || ''}
-                                    variant="filled"
-                                    onChange={handleChange}
-                                    fullWidth
-                                />
-                            </Grid>
-                            {company ? null
-                                : <>
-                                    <Grid item className={classes.textField}>
-                                        <TextField
-                                            id="phone"
-                                            label="Phone Number"
-                                            value={[phone] || ''}
-                                            variant="filled"
-                                            onChange={handleChange}
-                                            fullWidth
-                                        />
-                                    </Grid>
-                                    <Grid item className={classes.textField}>
-                                        <TextField
-                                            id="address"
-                                            label="Address"
-                                            value={`${address['suite']} ${address['street']}, ${address['city']} ${address['zipcode']}` || ''}
-                                            variant="filled"
-                                            onChange={handleChange}
-                                            fullWidth
-                                        />
-                                    </Grid>
-                                </>}
-                        </Grid>
-                        <Grid item xs={6} className={classes.grid}>
-                            {company ? <>
-                                <Typography variant="h4" component="p">Company Information</Typography>
-                                <Grid item className={classes.textField}>
-                                    <TextField
-                                        id="abn"
-                                        label="ABN"
-                                        value={abn || '000000'}
-                                        variant="filled"
-                                        onChange={handleChange}
-                                        fullWidth
-                                    />
-                                </Grid>
-                                <Grid item className={classes.textField}>
-                                    <TextField
-                                        id="businessName"
-                                        label="Business Name"
-                                        value={company['name'] || ''}
-                                        variant="filled"
-                                        onChange={handleChange}
-                                        fullWidth
-                                    />
-                                </Grid>
-                                <Grid item className={classes.textField}>
-                                    <TextField
-                                        id="phone"
-                                        label="Phone Number"
-                                        value={[phone] || ''}
-                                        variant="filled"
-                                        onChange={handleChange}
-                                        fullWidth
-                                    />
-                                </Grid>
-                                <Grid item className={classes.textField}>
-                                    <TextField
-                                        id="address"
-                                        label="Address"
-                                        value={`${address['suite']} ${address['street']}, ${address['city']} ${address['zipcode']}` || ''}
-                                        variant="filled"
-                                        onChange={handleChange}
-                                        fullWidth
-                                    />
-                                </Grid>
-                                <Grid item className={classes.textField}>
-                                    <TextField
-                                        id="website"
-                                        label="Website"
-                                        value={website || ''}
-                                        variant="filled"
-                                        onChange={handleChange}
-                                        fullWidth
-                                    />
-                                </Grid>
-                            </>
-                                : null}
-                        </Grid>
-                    </Grid>
-                </Grid>
-                <Grid item xs={12} style={{ flex: "0 1 auto", alignSelf: "flex-end" }}>
-                    <Button style={{ marginRight: "1rem" }} variant="contained" color="secondary" onClick={handleDeny}>Deny</Button>
-                    <Button variant="contained" color="primary" onClick={handleApprove}>Approve</Button>
-                </Grid>
-            </Grid>
+                    </Row>
+                    <Row className={"accountRow"}>
+                        <Input
+                            id="created_at"
+                            addonBefore="Account Creation Date"
+                            value={create_At}
+                            variant="filled"
+                            disabled
+                            
+                        />
+                    </Row>
+                    <Row className={"accountRow"}>
+                        <Input
+                            id="name"
+                            addonBefore={userType === "seller" ? "Seller Business Name" : "Full Name"}
+                            value={fullName || ''}
+                            variant="filled"
+                            onChange={handleChange}
+                            
+                        />
+                    </Row>
+                    <Row className={"accountRow"}>
+                        <Input
+                            id="username"
+                            addonBefore={"Username"}
+                            value={username || ''}
+                            variant="filled"
+                            onChange={handleChange}
+                            
+                        />
+                    </Row>
+                    {userType === "seller" ? <Row className={"accountRow"}>
+                        <Input
+                            id="abn"
+                            addonBefore="ABN"
+                            value={abn || '000000'}
+                            variant="filled"
+                            onChange={handleChange}
+                            
+                        />
+                    </Row> : null}
+                    <Row className={"accountRow"}>
+                        <Input
+                            id="phone"
+                            addonBefore="Phone Number"
+                            value={phoneNumber || ''}
+                            variant="filled"
+                            onChange={handleChange}
+                            
+                        />
+                    </Row>
+                    <Row className={"accountRow"}>
+                        <Input
+                            id="address"
+                            addonBefore="Address"
+                            value={`${address}` || ''}
+                            variant="filled"
+                            onChange={handleChange}
+                            
+                        />
+                    </Row>
+                </Col>
+                <Row justify={"end"}>
+                        <Button style={{ marginRight: "1rem" }} size="large" type="danger" onClick={handleDeny}>Reject</Button>
+                        <Button size="large" type="primary" onClick={handleApprove}>Approve</Button>
+                    </Row>
+            </Col>
             : null : null)
     )
 }
