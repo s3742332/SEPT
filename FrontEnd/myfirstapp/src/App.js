@@ -21,6 +21,7 @@ import Home from "./components/Home";
 import { useDispatch, useSelector } from 'react-redux'
 import { getUser } from './actions/securityActions';
 import Marketplace from "./components/Market_Place/Marketplace";
+import BookDetails from "./components/Market_Place/BookDetails";
 // import Marketplace from "./components/Market_Place/Marketplace.js";
 
 function App() {
@@ -81,6 +82,7 @@ function App() {
             <Route exact path="/buy" component={Marketplace} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/details" component={BookDetails} />
             <Redirect to="/" />
           </Switch>
         </Content>
