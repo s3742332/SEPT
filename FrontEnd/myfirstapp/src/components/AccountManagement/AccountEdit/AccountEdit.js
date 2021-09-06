@@ -36,28 +36,19 @@ function AccountEdit() {
     }
     const { Title } = Typography;
     return (
-        <>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-                <Breadcrumb.Item>Bookeroo Admin</Breadcrumb.Item>
-                <Breadcrumb.Item>Users</Breadcrumb.Item>
-                <Breadcrumb.Item>Account Profiles</Breadcrumb.Item>
-            </Breadcrumb>
-            <div className="site-layout-background" style={{ padding: 24, minHeight: "100%" }}>
-                <Row>
-                    <Col xs={4}>
-                        <Input
-                            type="text"
-                            onChange={handleSearch}
-                            value={search}></Input>
-                        <AccountEditList list={user} filteredList={filteredData} setSelectedUser={setSelectedUser} />
-                    </Col>
-                    <Col xs={20} style={{ padding: "1rem" }}>
-                        <Title level={2}>Account Information</Title>
-                        <AccountEditDetails data={selectedUser} />
-                    </Col>
-                </Row>
-            </div>
-        </>
+        <Row>
+            <Col xs={4}>
+                <Input
+                    type="text"
+                    onChange={handleSearch}
+                    value={search}></Input>
+                <AccountEditList list={user} filteredList={filteredData} setSelectedUser={setSelectedUser} />
+            </Col>
+            <Col xs={20} style={{ padding: "1rem" }}>
+                <Title level={2} style={{textAlign: "center"}}>Account Information</Title>
+                <AccountEditDetails data={selectedUser} />
+            </Col>
+        </Row>
     )
 }
 

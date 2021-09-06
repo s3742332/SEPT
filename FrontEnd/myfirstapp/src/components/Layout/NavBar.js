@@ -1,87 +1,72 @@
-import { Menu, Dropdown, message, Row, Typography, Divider } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
-import React, { useEffect } from 'react'
+import { Menu, Dropdown, message, Row, Typography, Divider, Layout } from 'antd';
+
+import React, { useEffect, useState } from 'react'
 import { withRouter, useHistory, useLocation } from 'react-router-dom'
-import { useDispatch } from 'react-redux';
-import { logout } from '../../actions/securityActions';
+
+
+import AccountSettings from './AccountSettings';
 function NavBar(props) {
+    const [collapsed, setCollapsed] = useState(false)
     const { SubMenu } = Menu;
     const history = useHistory();
     const location = useLocation();
-    const dispatch = useDispatch();
-    useEffect(() => {
-        console.log(props.user)
-    }, [props.user])
-    const handleLogout = () => {
-        dispatch(logout())
+
+    const onCollapse = () => {
+        setCollapsed(!collapsed)
     }
-    const {Text} = Typography;
-    const menu = (
-        
-        <Menu style={{ padding: "1rem"}}>
-        
-            {props.user.fullName ? <>
-                <Text strong>Hello {props.user.fullName}</Text>
-                <Divider style={{margin: 0}}></Divider>
-                <Menu.Item key="/logout" onClick={handleLogout}>Logout</Menu.Item>
-            </> : <>
-
-                <Menu.Item key="/login" onClick={() => history.push('login')}>Login</Menu.Item>
-                <Menu.Item key="/register" onClick={() => history.push('register')}>Register</Menu.Item>
-            </>}
-
-        </Menu>
-    );
+    const { Header, Content, Footer, Sider } = Layout;
+    const { Text } = Typography;
 
 
-    return (
-        <Row style={{ display: "flex", maxHeight: "64px" }}>
-            <div style={{ display: "flex", flex: 1, justifyContent: "flex-start", alignItems: "center" }} >
-                <img src="logo192.png" style={{
-                    height: "auto",
-                    width: "auto",
-                    maxHeight: "64px"
-                }} />
-            </div>
 
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={[location.pathname]} style={{
-                display: "flex",
-                flex: 1,
-                justifyContent: "center",
-                alignItems: "center"
-            }} >
 
-                {props.user.userType === "admin" &&
-                    <>
-                        <Menu.Item key="/" onClick={() => history.push('/')}>Dashboard</Menu.Item>
-                        <SubMenu key={"users"} title="Users">
-                            <Menu.Item key="/pendingusers" onClick={() => history.push('pendingusers')}>Pending Seller Accounts</Menu.Item>
-                            <Menu.Item key="/accountedit" onClick={() => history.push('accountedit')}>Account Profiles</Menu.Item>
-                        </SubMenu>
-                        <SubMenu key={"books"} title="Books">
-                            <Menu.Item key="5">3rd menu item</Menu.Item>
-                            <Menu.Item key="6">4th menu item</Menu.Item>
-                        </SubMenu>
-                        <Menu.Item key="7">Reports</Menu.Item>
-                    </>
-                }
-                {props.user.userType === "customer" && <>
+    if (["seller", "customer", undefined].includes(props.user.userType)) {
+        return (
+            <Row style={{ display: "flex", maxHeight: "64px" }}>
+                <div style={{ display: "flex", flex: 1, justifyContent: "flex-start", alignItems: "center" }} >
+                    <img src="logo192.png" style={{
+                        height: "auto",
+                        width: "auto",
+                        maxHeight: "64px"
+                    }} />
+                </div>
+
+                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={[location.pathname]} style={{
+                    display: "flex",
+                    flex: 1,
+                    justifyContent: "center",
+                    alignItems: "center"
+                }} >
                     <Menu.Item key="/" onClick={() => history.push('/')}>Home</Menu.Item>
                     <Menu.Item key="/buy" onClick={() => history.push('buy')}>Buy</Menu.Item>
                     <Menu.Item key="/sell" onClick={() => history.push('sell')}>Sell</Menu.Item>
-                </>
-                }
+                </Menu>
+                <AccountSettings/>
+            </Row>)
+    }
 
-            </Menu>
-            <Dropdown.Button style={{
-                display: "flex",
-                flex: 1,
-                justifyContent: "flex-end",
-                alignItems: "center",
-
-            }} overlay={menu} placement="bottomRight" icon={<UserOutlined />} />
-        </Row>
-    )
+    if (["admin"].includes(props.user.userType)) {
+        return (
+            <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
+                <div style={{ height: "32px", margin: "16px" }}><img src="logo192.png" style={{
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    objectFit: "contain"
+                }} /></div>
+                <Menu theme="dark" defaultSelectedKeys={[location.pathname]} mode="inline">
+                    <Menu.Item key="/" onClick={() => history.push('/')}>Dashboard</Menu.Item>
+                    <SubMenu key={"users"} title="Users">
+                        <Menu.Item key="/users/pendingusers" onClick={() => history.push('/users/pendingusers')}>Pending Seller Accounts</Menu.Item>
+                        <Menu.Item key="/users/accountedit" onClick={() => history.push('/users/accountedit')}>Account Profiles</Menu.Item>
+                    </SubMenu>
+                    <SubMenu key={"books"} title="Books">
+                        <Menu.Item key="5">3rd menu item</Menu.Item>
+                        <Menu.Item key="6">4th menu item</Menu.Item>
+                    </SubMenu>
+                    <Menu.Item key="7">Reports</Menu.Item>
+                </Menu>
+            </Sider>)
+    }
 }
 
 export default withRouter(NavBar)

@@ -15,14 +15,17 @@ import SecuredRoute from "./securityUtils/SecureRoute";
 import jwt_decode from "jwt-decode";
 import setJWTToken from "./securityUtils/setJWTToken";
 import AdminDashboard from "./components/AdminDashboard";
-import { Layout } from 'antd';
+import { Breadcrumb, Layout } from 'antd';
 import NavBar from './components/Layout/NavBar';
 import Home from "./components/Home";
 import { useDispatch, useSelector } from 'react-redux'
 import { getUser } from './actions/securityActions';
 import Marketplace from "./components/Market_Place/Marketplace";
-// import Marketplace from "./components/Market_Place/Marketplace.js";
 
+// import Marketplace from "./components/Market_Place/Marketplace.js";
+import moment from "moment";
+import AccountSettings from "./components/Layout/AccountSettings";
+import AdminBreadcrumb from "./components/Layout/AdminBreadcrumb";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const jwtToken = localStorage.jwtToken;
@@ -35,37 +38,44 @@ function App() {
       console.log(decoded_jwtToken)
       dispatch(setUser(decoded_jwtToken));
 
-      const currentTime = Date.now() / 1000;
-      if (decoded_jwtToken.exp < currentTime) {
-        dispatch(logout());
-        window.location.href = "/";
-      }
+      // const currentTime = Date.now() / 1000;
+      // if (decoded_jwtToken.exp < currentTime) {
+      //   console.log("Logging Out");
+      //   console.log("TOKEN TIME" , moment(decoded_jwtToken.exp).toDate().toISOString())
+      //   dispatch(logout());
+      //   window.location.href = "/";
+      // }
     }
   }, [])
   useEffect(() => {
     dispatch(getUser())
   }, [dispatch])
   useEffect(() => {
-   security.user.userType === "admin" ? setIsAdmin(true):  setIsAdmin(false)
+    security.user.userType === "admin" ? setIsAdmin(true) : setIsAdmin(false)
   }, [security])
   const { Header, Content, Footer } = Layout;
   const loadAdmin = () => {
     return (
-      <Layout style={{ height: "100vh", overflow: "auto" }}>
-        <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
-          <NavBar  user={security.user} />
-        </Header>
-        <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
-          <Switch>
-            <Route exact path="/" component={AdminDashboard} />
-            <Route exact path="/accountedit" component={AccountEdit} />
-            <Route exact path="/pendingusers" component={PendingSeller} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-            <Redirect to="/" />
-          </Switch>
-        </Content>
-        <Footer style={{ textAlign: 'center' }}>SEPT Bookeroo 2021</Footer>
+      <Layout style={{ minHeight: '100vh' }}>
+        <NavBar user={security.user}/>
+        <Layout className="site-layout">
+          <Header className="site-layout-background" style={{ padding: '0 50px', display: "flex" }}>
+            <AccountSettings/>
+          </Header>
+          <Content style={{ margin: '0 16px' }}>
+          <AdminBreadcrumb/>
+            <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+              <Switch>
+                <Route exact path="/" component={AdminDashboard} />
+                <Route exact path="/users/accountedit" component={AccountEdit} />
+                <Route exact path="/users/pendingusers" component={PendingSeller} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/register" component={Register} />
+              </Switch>
+            </div>
+          </Content>
+          <Footer style={{ textAlign: 'center' }}>SEPT Bookeroo 2021</Footer>
+        </Layout>
       </Layout>
     )
   }
@@ -89,8 +99,8 @@ function App() {
     )
   }
   return (
- 
-      isAdmin ? loadAdmin() : loadUser()
+
+    isAdmin ? loadAdmin() : loadUser()
 
   );
 }
