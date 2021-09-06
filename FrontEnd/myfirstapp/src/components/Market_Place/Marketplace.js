@@ -2,6 +2,7 @@ import { Col, Row, Input } from 'antd';
 import React from 'react';
 import BookContainer from './BookContainer';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 const Marketplace = (props) => {
     return (<div>
@@ -10,12 +11,14 @@ const Marketplace = (props) => {
         <Input label="Search field" paddingBottom={10} margin="auto" type="search" variant="outlined" fullWidth />
         <Row>
             <Col sm={12} md={6} xs={24}>
-                <BookContainer
-                    image="./BookImages/DefaultCover.png"
-                    title="put title"
-                    author="put author"
-                    price="put price"
-                />
+                <Link to="/details">
+                    <BookContainer
+                        image="./BookImages/DefaultCover.png"
+                        title="put title"
+                        author="put author"
+                        price="put price"
+                    />
+                </Link>
             </Col>
             <Col sm={12} md={6} xs={24}>
                 <BookContainer />
