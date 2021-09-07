@@ -37,7 +37,7 @@ function NavBar(props) {
     return (
         <Row style={{ display: "flex", maxHeight: "64px" }}>
             <div style={{ display: "flex", flex: 1, justifyContent: "flex-start", alignItems: "center" }} >
-                <img src="logo192.png" style={{
+                <img src="logo192.png" alt='user' style={{
                     height: "auto",
                     width: "auto",
                     maxHeight: "64px"
@@ -69,6 +69,7 @@ function NavBar(props) {
                     <Menu.Item key="/" onClick={() => history.push('/')}>Home</Menu.Item>
                     <Menu.Item key="/buy" onClick={() => history.push('buy')}>Buy</Menu.Item>
                     <Menu.Item key="/sell" onClick={() => history.push('sell')}>Sell</Menu.Item>
+                    <Menu.Item key="/sell" onClick={() => history.push('inventory')}>Inventory</Menu.Item>
                 </>
                 }
 
