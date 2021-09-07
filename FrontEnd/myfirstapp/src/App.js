@@ -23,6 +23,7 @@ import { getUser } from './actions/securityActions';
 import Marketplace from "./components/Market_Place/Marketplace";
 import BookDetails from "./components/Market_Place/BookDetails";
 import Payment from "./components/Market_Place/Payment";
+import Inventory from "./components/Inventory/Inventory";
 // import Marketplace from "./components/Market_Place/Marketplace.js";
 
 function App() {
@@ -85,6 +86,7 @@ function App() {
             <Route exact path="/register" component={Register} />
             <Route exact path="/details" component={BookDetails} />
             <Route exact path="/payment" component={Payment} />
+            <Route exact path="/inventory" component={Inventory} />
             <Redirect to="/" />
           </Switch>
         </Content>
