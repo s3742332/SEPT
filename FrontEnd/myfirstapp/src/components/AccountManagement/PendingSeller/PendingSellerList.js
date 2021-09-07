@@ -7,7 +7,7 @@ function PendingSellerList(props) {
             <List
                 itemLayout="horizontal"
                 dataSource={props.filteredList}
-                style={{overflow: "auto", overflowX: "hidden", height: "calc(100vh - 244px)"}}
+                style={{overflow: "auto", overflowX: "hidden", height: "calc(100vh - 268px)"}}
                 renderItem={item => (
                     <List.Item onClick={() => props.setSelectedUser(item)} className="pendingItem">
                         <List.Item.Meta
