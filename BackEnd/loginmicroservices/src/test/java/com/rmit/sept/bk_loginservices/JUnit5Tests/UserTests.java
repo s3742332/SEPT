@@ -13,22 +13,9 @@ public class UserTests {
 
     @Test
     public void getFullNameTest(){
-        assertEquals(5, 5);
+        assertEquals(4 , 5);
     }
 
-    @Test
-    public void getIdTest(){
-        assertEquals(5, 5);
-    }
-
-    @Test
-    public void getIdTest(){
-        assertEquals(5, 5);
-    }
-
-    @Test
-    public void getIdTest(){
-        assertEquals(5, 5);
-    }
+    
 
 }
