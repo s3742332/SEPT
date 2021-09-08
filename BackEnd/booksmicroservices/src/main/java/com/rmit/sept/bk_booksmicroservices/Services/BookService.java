@@ -1,5 +1,6 @@
 package com.rmit.sept.bk_booksmicroservices.Services;
 
+import com.rmit.sept.bk_booksmicroservices.Exceptions.BookNotFoundException;
 import com.rmit.sept.bk_booksmicroservices.Repositories.BookRepository;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,6 @@ public class BookService {
     @Autowired
     private BookRepository bookRepository;
 
-    // TODO CUSTOM LOGIC
     public Book saveOrUpdateBook(Book book)
     {
         try{
@@ -25,10 +25,20 @@ public class BookService {
             return bookRepository.save(book);
 
         }catch (Exception e){
-            //TODO CREATE EXCEPTION
+            throw new BookNotFoundException("Unable to create book");
+        }
+    }
+
+    public Iterable<Book> getAllBooks ()
+    {
+        try
+        {
+            return bookRepository.findAll();
+        }
+        catch (Exception e)
+        {
+            throw new BookNotFoundException("Unable to retrieve book list");
         }
 
-
-        return bookRepository.save(book);
     }
 }
