@@ -20,6 +20,7 @@ public class BookService {
             book.setBookCost(book.getBookCost());
             book.setBookDescription(book.getBookDescription());
             book.setCompanyName(book.getCompanyName());
+            book.setStockLevel(book.getStockLevel());
 
             return bookRepository.save(book);
 

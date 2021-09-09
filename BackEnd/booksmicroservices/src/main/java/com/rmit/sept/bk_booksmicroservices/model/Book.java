@@ -13,15 +13,19 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "company name is required")
+    // @NotBlank(message = "company name is required")
     private String companyName;
-    @NotBlank(message = "book needs a title")
+    // @NotBlank(message = "book needs a title")
     private String bookTitle;
-    @NotBlank(message = "book needs an author")
+    // @NotBlank(message = "book needs an author")
     private String author;
     private String bookDescription;
-    @NotBlank(message = "book needs a price")
+    // @NotBlank(message = "book needs a price")
     private double bookCost;
+    private int stockLevel;
+
+    public Book() {
+    }
 
     public String getCompanyName() {
         return companyName;
@@ -63,15 +67,13 @@ public class Book {
         this.bookCost = bookCost;
     }
 
-    public boolean isInStock() {
-        return inStock;
+    public int getStockLevel() {
+        return stockLevel;
     }
 
-    public void setInStock(boolean inStock) {
-        this.inStock = inStock;
+    public void setStockLevel(int stockLevel) {
+        this.stockLevel = stockLevel;
     }
-
-    private boolean inStock;
 
     public void setId(Long id) {
         this.id = id;
