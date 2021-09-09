@@ -18,6 +18,8 @@ function NavBar(props) {
     const { Text } = Typography;
 
 
+
+
     if (["seller", "customer", undefined].includes(props.user.userType)) {
         return (
             <Row style={{ display: "flex", maxHeight: "64px" }}>
@@ -42,7 +44,6 @@ function NavBar(props) {
                 <AccountSettings/>
             </Row>)
     }
-
 
     if (["admin"].includes(props.user.userType)) {
         return (

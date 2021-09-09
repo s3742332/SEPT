@@ -61,13 +61,13 @@ function App() {
   const loadAdmin = () => {
     return (
       <Layout style={{ minHeight: '100vh' }}>
-        <NavBar user={security.user}/>
+        <NavBar user={security.user} />
         <Layout className="site-layout">
           <Header className="site-layout-background" style={{ padding: '0 50px', display: "flex" }}>
-            <AccountSettings/>
+            <AccountSettings />
           </Header>
           <Content style={{ margin: '0 16px' }}>
-          <AdminBreadcrumb/>
+            <AdminBreadcrumb />
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
               <Switch>
                 <Route exact path="/" component={AdminDashboard} />
@@ -85,11 +85,11 @@ function App() {
   }
   const loadUser = () => {
     return (
-      <Layout style={{ height: "100vh", overflow: "auto" }}>
+      <Layout style={{ height: "100%", overflow: "auto", }}>
         <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
           <NavBar user={security.user} />
         </Header>
-        <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
+        <Content className="site-layout" style={{ marginTop: 64 }}>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/buy" component={Marketplace} />
