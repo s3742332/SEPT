@@ -24,6 +24,7 @@ public class BookController {
         return new ResponseEntity<Book>(book1, HttpStatus.CREATED);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/getAllBooks")
     public ResponseEntity<?> getAllBook(){
         Iterable<Book> bookList = bookService.getAllBooks();
