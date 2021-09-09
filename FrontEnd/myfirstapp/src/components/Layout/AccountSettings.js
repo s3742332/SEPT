@@ -23,8 +23,9 @@ function AccountSettings() {
                 <Text strong>Hello {security.user.fullName}</Text>
                 <Divider style={{ margin: 0 }}></Divider>
                 <Menu.Item key="/profile" >Profile</Menu.Item>
-                <Menu.Item key="/inventory" >Inventory</Menu.Item>
-                <Menu.Item key="/transactions" >Transactions</Menu.Item>
+                {security.user.userType !== "admin" ?  <>
+                <Menu.Item key="/inventory" onClick={() => history.push('inventory')}>Inventory</Menu.Item>
+                <Menu.Item key="/transactions" >Transactions</Menu.Item> </>: null}
                 <Menu.Item key="/logout" onClick={handleLogout}>Logout</Menu.Item>
             </> : <>
 
