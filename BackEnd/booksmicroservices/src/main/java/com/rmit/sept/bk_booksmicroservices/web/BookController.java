@@ -14,19 +14,18 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
-    //TODO CUSTOM LOGIC
-    @PostMapping("")
+    @PostMapping("/saveBook")
     public ResponseEntity<Book> createNewBook(@RequestBody Book book)
     {
         Book book1 = bookService.saveOrUpdateBook(book);
-        return new ResponseEntity<Book>(book, HttpStatus.CREATED);
+        return new ResponseEntity<Book>(book1, HttpStatus.CREATED);
     }
 
     @GetMapping("/getAllBooks")
-    public ResponseEntity<?> getAllUsers(){
-        Iterable<Book> bookList = bookService.g;
+    public ResponseEntity<?> getAllBook(){
+        Iterable<Book> bookList = bookService.getAllBooks();
 
-        return  new ResponseEntity<Iterable<User>>(userList, HttpStatus.OK);
+        return  new ResponseEntity<Iterable<Book>>(bookList, HttpStatus.OK);
     }
 
 
