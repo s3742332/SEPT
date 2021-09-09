@@ -20,13 +20,13 @@ import NavBar from './components/Layout/NavBar';
 import Home from "./components/Home";
 import { useDispatch, useSelector } from 'react-redux'
 import { getUser } from './actions/securityActions';
-import Marketplace from "./components/Market_Place/Marketplace";
-import BookDetails from "./components/Market_Place/BookDetails";
-import Payment from "./components/Market_Place/Payment";
+import Marketplace from "./components/Marketplace/Marketplace";
+import BookDetails from "./components/Marketplace/BookDetails";
+import Payment from "./components/Marketplace/Payment";
 import Inventory from "./components/Inventory/Inventory";
 
 
-// import Marketplace from "./components/Market_Place/Marketplace.js";
+// import Marketplace from "./components/Marketplace/Marketplace.js";
 import moment from "moment";
 import AccountSettings from "./components/Layout/AccountSettings";
 import AdminBreadcrumb from "./components/Layout/AdminBreadcrumb";

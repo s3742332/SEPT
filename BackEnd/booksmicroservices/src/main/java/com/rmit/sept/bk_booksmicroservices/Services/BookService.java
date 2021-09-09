@@ -19,7 +19,6 @@ public class BookService {
             book.setAuthor(book.getAuthor());
             book.setBookCost(book.getBookCost());
             book.setBookDescription(book.getBookDescription());
-            book.setBookCost(book.getBookCost());
             book.setCompanyName(book.getCompanyName());
 
             return bookRepository.save(book);
