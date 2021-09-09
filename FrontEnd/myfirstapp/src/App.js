@@ -31,6 +31,7 @@ import moment from "moment";
 import AccountSettings from "./components/Layout/AccountSettings";
 import AdminBreadcrumb from "./components/Layout/AdminBreadcrumb";
 import Sell from "./components/Sell/Sell";
+import Categories from "./components/Search/Categories";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const jwtToken = localStorage.jwtToken;
@@ -93,7 +94,7 @@ function App() {
         <Content className="site-layout" style={{ marginTop: 64 }}>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/buy" component={Marketplace} />
+            <Route exact path="/browse" component={Marketplace} />
             <Route exact path="/sell" component={Sell} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
