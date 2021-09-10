@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Layout, Col, Row, Menu, Breadcrumb, List, Avatar, Input } from 'antd';
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
 import { getBookList } from '../../actions/bookActions';
+import Categories from '../Search/Categories';
 
 const Marketplace = (props) => {
 
@@ -22,9 +23,10 @@ const Marketplace = (props) => {
 
     return (<div>
         <h1 style={{ textAlign: 'center', paddingTop: '25px' }}>Book Catalogue</h1>
-
-        <Input label="Search field" paddingBottom={10} margin="auto" type="search" variant="outlined" fullWidth />
-        <Row>
+        <h3 style={{ textAlign: 'center', paddingTop: '25px' }}>Search by name, author, ISBN or select a genre </h3>
+        <Input label="Search field" paddingBottom={10} margin="auto" type="search" variant="outlined" />
+        <Categories/>
+        {/* <Row>
             <Col sm={12} md={6} xs={24}>
                 <List
                     itemLayout="vertical"
@@ -67,7 +69,7 @@ const Marketplace = (props) => {
                     )}
                 />
             </Col>
-        </Row>
+        </Row> */}
 
 
 
