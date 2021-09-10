@@ -9,3 +9,12 @@
 #macos
 .DS_Store
 FrontEnd/myfirstapp/package-lock.json
+BackEnd/booksmicroservices/target/booksmicroservices-0.0.1.jar
+BackEnd/booksmicroservices/target/booksmicroservices-0.0.1.jar
+BackEnd/booksmicroservices/target/booksmicroservices-0.0.1.jar.original
+*.class
+.DS_Store
+BackEnd/booksmicroservices/target/booksmicroservices-0.0.1.jar
+BackEnd/booksmicroservices/target/booksmicroservices-0.0.1.jar.original
+BackEnd/booksmicroservices/target/classes/com/rmit/sept/bk_booksmicroservices/web/BookController.class
+*.class

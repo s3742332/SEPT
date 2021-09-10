@@ -24,7 +24,7 @@ function NavBar(props) {
         return (
             <Row style={{ display: "flex", maxHeight: "64px" }}>
                 <div style={{ display: "flex", flex: 1, justifyContent: "flex-start", alignItems: "center" }} >
-                    <img src="logo192.png" style={{
+                    <img src="favicon.ico" style={{
                         height: "auto",
                         width: "auto",
                         maxHeight: "64px"

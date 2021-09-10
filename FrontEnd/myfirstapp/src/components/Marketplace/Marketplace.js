@@ -24,7 +24,10 @@ const Marketplace = (props) => {
     return (<div>
         <h1 style={{ textAlign: 'center', paddingTop: '25px' }}>Book Catalogue</h1>
         <h3 style={{ textAlign: 'center', paddingTop: '25px' }}>Search by name, author, ISBN or select a genre </h3>
-        <Input label="Search field" paddingBottom={10} margin="auto" type="search" variant="outlined" />
+        <Input 
+        label="Search field" paddingBottom={10} margin="auto" type="search" variant="outlined" 
+        style={{width: '75%', position: 'relative', left:'50%', transform:'translate(-50%)'}} 
+        />
         <Categories/>
         {/* <Row>
             <Col sm={12} md={6} xs={24}>
