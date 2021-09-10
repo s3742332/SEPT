@@ -14,13 +14,15 @@ public class TransactionController {
     @Autowired
     private TransactionService transactionService;
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/saveTransaction")
     public ResponseEntity<Transaction> createNewTransaction(@RequestBody Transaction transaction)
     {
         Transaction transaction1 = transactionService.saveTransaction(transaction);
-        return new ResponseEntity<>(transaction1, HttpStatus.CREATED);
+        return new ResponseEntity<Transaction>(transaction1, HttpStatus.CREATED);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/getAllTransactions")
     public ResponseEntity<?> getAllTransactions()
     {

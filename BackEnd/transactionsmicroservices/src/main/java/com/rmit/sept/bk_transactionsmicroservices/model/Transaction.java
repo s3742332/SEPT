@@ -13,11 +13,11 @@ public class Transaction {
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Order Number required")
+//    @NotBlank(message = "Order Number required")
     private int orderNumber;
-    @NotBlank(message = "Item purchased required")
+//    @NotBlank(message = "Item purchased required")
     private String itemPurchased;
-    @NotBlank(message = "Cost needed")
+//    @NotBlank(message = "Cost needed")
     private double transactionCost;
 
     public int getOrderNumber() {
