@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { Button, Input, Row, Col } from 'antd';
+import { Button, Input, Row, Col, Select } from 'antd';
 import { userEdit } from '../../../actions/userActions';
 
 function PendingSellerDetails(props) {
@@ -25,7 +25,10 @@ function PendingSellerDetails(props) {
         e.preventDefault();
         dispatch(userEdit({ ...data, approved: true }));
     }
-
+    const handleUserSelect = (e) => {
+        setData({ ...data, "userType": e });
+    }
+    const { Option } = Select;
     return (
         (data ? data.length !== 0 ?
             <Col style={{
@@ -45,22 +48,23 @@ function PendingSellerDetails(props) {
                         />
                     </Row>
                     <Row className={"accountRow"}>
-                        <Col span={12}><Input
-                            id="accountType"
-                            addonBefore="Account Type"
-                            value={
-                                userType
-                            }
-                            variant="filled"
-                            disabled
-                        /></Col>
+                        <Col span={12}>
+                            <Input.Group compact>
+                                <Input disabled value={"Account Type"} style={{ width: '25%', color: 'rgba(0, 0, 0, 0.85)', backgroundColor: "#fafafa", cursor: 'auto' }} />
+                                <Select defaultValue={userType} style={{ width: "75%" }} onChange={handleUserSelect}>
+                                    <Option value="customer" >Customer</Option>
+                                    <Option value="seller" >Seller</Option>
+                                    <Option value="admin" >Admin</Option>
+                                </Select>
+                            </Input.Group>
+                        </Col>
                         <Col span={12}><Input
                             id="accountStatus"
                             addonBefore="Account Status"
                             value={approved === null ? "PENDING" : approved ? "APPROVED" : "DENIED"}
                             variant="filled"
                             disabled
-                            
+
                         /></Col>
 
                     </Row>
@@ -71,7 +75,7 @@ function PendingSellerDetails(props) {
                             value={create_At}
                             variant="filled"
                             disabled
-                            
+
                         />
                     </Row>
                     <Row className={"accountRow"}>
@@ -81,7 +85,7 @@ function PendingSellerDetails(props) {
                             value={fullName || ''}
                             variant="filled"
                             onChange={handleChange}
-                            
+
                         />
                     </Row>
                     <Row className={"accountRow"}>
@@ -91,7 +95,7 @@ function PendingSellerDetails(props) {
                             value={username || ''}
                             variant="filled"
                             onChange={handleChange}
-                            
+
                         />
                     </Row>
                     {userType === "seller" ? <Row className={"accountRow"}>
@@ -101,7 +105,7 @@ function PendingSellerDetails(props) {
                             value={abn || '000000'}
                             variant="filled"
                             onChange={handleChange}
-                            
+
                         />
                     </Row> : null}
                     <Row className={"accountRow"}>
@@ -111,24 +115,25 @@ function PendingSellerDetails(props) {
                             value={phoneNumber || ''}
                             variant="filled"
                             onChange={handleChange}
-                            
+
                         />
                     </Row>
                     <Row className={"accountRow"}>
                         <Input
                             id="address"
                             addonBefore="Address"
-                            value={`${address}` || ''}
+                            value={address || ''}
                             variant="filled"
                             onChange={handleChange}
-                            
                         />
                     </Row>
                 </Col>
                 <Row justify={"end"}>
+                    <Col>
                         <Button style={{ marginRight: "1rem" }} size="large" type="danger" onClick={handleDeny}>Reject</Button>
                         <Button size="large" type="primary" onClick={handleApprove}>Approve</Button>
-                    </Row>
+                    </Col>
+                </Row>
             </Col>
             : null : null)
     )

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { Button, Input, Col, Row } from 'antd';
+import { Button, Input, Col, Row, Select  } from 'antd';
 import { userEdit } from '../../../actions/userActions';
 
 function AccountEditDetails(props) {
@@ -26,8 +26,10 @@ function AccountEditDetails(props) {
         e.preventDefault();
         dispatch(userEdit(data));
     }
-
-
+    const handleUserSelect = (e) => {
+        setData({ ...data, "userType": e });
+    }
+    const { Option } = Select;
     return (
         (data ? data.length !== 0 ?
             <Col style={{
@@ -47,15 +49,16 @@ function AccountEditDetails(props) {
                         />
                     </Row>
                     <Row className={"accountRow"}>
-                        <Col span={12}><Input
-                            id="accountType"
-                            addonBefore="Account Type"
-                            value={
-                                userType
-                            }
-                            variant="filled"
-                            disabled
-                        /></Col>
+                        <Col span={12}>
+                            <Input.Group compact>
+                                <Input disabled value={"Account Type"} style={{ width: '25%', color: 'rgba(0, 0, 0, 0.85)', backgroundColor: "#fafafa", cursor: 'auto' }} />
+                                <Select defaultValue={userType} style={{ width: "75%" }} onChange={handleUserSelect}>
+                                    <Option value="customer" >Customer</Option>
+                                    <Option value="seller" >Seller</Option>
+                                    <Option value="admin" >Admin</Option>
+                                </Select>
+                            </Input.Group>
+                        </Col>
                         <Col span={12}><Input
                             id="accountStatus"
                             addonBefore="Account Status"
@@ -120,10 +123,9 @@ function AccountEditDetails(props) {
                         <Input
                             id="address"
                             addonBefore="Address"
-                            value={`${address}` || ''}
+                            value={address || ''}
                             variant="filled"
                             onChange={handleChange}
-
                         />
                     </Row>
                 </Col>
