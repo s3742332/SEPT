@@ -30,6 +30,8 @@ import Inventory from "./components/Inventory/Inventory";
 import moment from "moment";
 import AccountSettings from "./components/Layout/AccountSettings";
 import AdminBreadcrumb from "./components/Layout/AdminBreadcrumb";
+import Sell from "./components/Sell/Sell";
+import Categories from "./components/Search/Categories";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const jwtToken = localStorage.jwtToken;
@@ -61,13 +63,13 @@ function App() {
   const loadAdmin = () => {
     return (
       <Layout style={{ minHeight: '100vh' }}>
-        <NavBar user={security.user}/>
+        <NavBar user={security.user} />
         <Layout className="site-layout">
           <Header className="site-layout-background" style={{ padding: '0 50px', display: "flex" }}>
-            <AccountSettings/>
+            <AccountSettings />
           </Header>
           <Content style={{ margin: '0 16px' }}>
-          <AdminBreadcrumb/>
+            <AdminBreadcrumb />
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
               <Switch>
                 <Route exact path="/" component={AdminDashboard} />
@@ -85,14 +87,15 @@ function App() {
   }
   const loadUser = () => {
     return (
-      <Layout style={{ height: "100vh", overflow: "auto" }}>
+      <Layout style={{ height: "100%", overflow: "auto", }}>
         <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
           <NavBar user={security.user} />
         </Header>
-        <Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
+        <Content className="site-layout" style={{ marginTop: 64 }}>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/buy" component={Marketplace} />
+            <Route exact path="/browse" component={Marketplace} />
+            <Route exact path="/sell" component={Sell} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/details" component={BookDetails} />

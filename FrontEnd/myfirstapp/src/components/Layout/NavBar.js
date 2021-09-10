@@ -18,6 +18,8 @@ function NavBar(props) {
     const { Text } = Typography;
 
 
+
+
     if (["seller", "customer", undefined].includes(props.user.userType)) {
         return (
             <Row style={{ display: "flex", maxHeight: "64px" }}>
@@ -36,13 +38,13 @@ function NavBar(props) {
                     alignItems: "center"
                 }} >
                     <Menu.Item key="/" onClick={() => history.push('/')}>Home</Menu.Item>
-                    <Menu.Item key="/buy" onClick={() => history.push('buy')}>Buy</Menu.Item>
-                    <Menu.Item key="/sell" onClick={() => history.push('sell')}>Sell</Menu.Item>
+                    <Menu.Item key="/browse" onClick={() => history.push('/browse')}>Browse</Menu.Item>
+                    {["seller"].includes(props.user.userType) && <Menu.Item key="/sell" onClick={() => history.push('/sell')}>Sell</Menu.Item>}
+                    <Menu.Item key="/about" onClick={() => history.push('/about')}>About</Menu.Item>
                 </Menu>
                 <AccountSettings/>
             </Row>)
     }
-
 
     if (["admin"].includes(props.user.userType)) {
         return (
