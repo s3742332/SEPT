@@ -23,6 +23,7 @@ public class Book {
     // @NotBlank(message = "book needs a price")
     private double bookCost;
     private int stockLevel;
+    private boolean approved;
 
     public Book() {
     }
@@ -81,5 +82,13 @@ public class Book {
 
     public Long getId() {
         return id;
+    }
+
+    public Boolean getApproved() {
+        return approved;
+    }
+
+    public void setApproved (Boolean approved) {
+        this.approved = approved;
     }
 }
