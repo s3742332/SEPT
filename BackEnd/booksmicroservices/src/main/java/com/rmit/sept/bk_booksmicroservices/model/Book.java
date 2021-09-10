@@ -91,4 +91,7 @@ public class Book {
     public void setApproved (Boolean approved) {
         this.approved = approved;
     }
+
+    public void setInStock(boolean b) {
+    }
 }
