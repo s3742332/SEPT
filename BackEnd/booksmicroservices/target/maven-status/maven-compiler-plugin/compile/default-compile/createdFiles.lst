@@ -1,5 +1,10 @@
-com/rmit/sept/bk_booksmicroservices/model/BookDetails.class
-com/rmit/sept/bk_booksmicroservices/Services/BookService.class
-com/rmit/sept/bk_loginservices/security/SecurityConstant.class
-com/rmit/sept/bk_booksmicroservices/Repositories/BookRepository.class
-com/rmit/sept/bk_booksmicroservices/model/Book.class
+com\rmit\sept\bk_booksmicroservices\Exceptions\InvalidLoginResponse.class
+com\rmit\sept\bk_booksmicroservices\model\Book.class
+com\rmit\sept\bk_booksmicroservices\security\JwtAuthenticationEntryPoint.class
+com\rmit\sept\bk_booksmicroservices\security\JwtTokenProvider.class
+com\rmit\sept\bk_booksmicroservices\security\JwtAuthenticationFilter.class
+com\rmit\sept\bk_booksmicroservices\Repositories\BookRepository.class
+com\rmit\sept\bk_booksmicroservices\model\BookDetails.class
+com\rmit\sept\bk_booksmicroservices\security\SecurityConstant.class
+com\rmit\sept\bk_booksmicroservices\security\SecurityConfig.class
+com\rmit\sept\bk_booksmicroservices\Services\BookService.class

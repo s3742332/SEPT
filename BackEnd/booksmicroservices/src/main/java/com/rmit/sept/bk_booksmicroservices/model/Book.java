@@ -6,8 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 
-@Entity
-public class Book {
+@Entity (name="Book")
+public class Book{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

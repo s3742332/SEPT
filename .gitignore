@@ -18,3 +18,15 @@ BackEnd/booksmicroservices/target/booksmicroservices-0.0.1.jar
 BackEnd/booksmicroservices/target/booksmicroservices-0.0.1.jar.original
 BackEnd/booksmicroservices/target/classes/com/rmit/sept/bk_booksmicroservices/web/BookController.class
 *.class
+BackEnd/booksmicroservices/target/booksmicroservices-0.0.1.jar
+BackEnd/booksmicroservices/target/booksmicroservices-0.0.1.jar.original
+BackEnd/booksmicroservices/target/classes/com/rmit/sept/bk_booksmicroservices/BooksmicroservicesApplication.class
+BackEnd/booksmicroservices/target/classes/com/rmit/sept/bk_booksmicroservices/Exceptions/BookNotFoundException.class
+BackEnd/booksmicroservices/target/classes/com/rmit/sept/bk_booksmicroservices/model/Book.class
+BackEnd/booksmicroservices/target/classes/com/rmit/sept/bk_booksmicroservices/Repositories/BookRepository.class
+BackEnd/booksmicroservices/target/classes/com/rmit/sept/bk_booksmicroservices/Services/BookService.class
+BackEnd/booksmicroservices/target/classes/com/rmit/sept/bk_booksmicroservices/Services/CustomBookServiceDetails.class
+BackEnd/booksmicroservices/target/classes/com/rmit/sept/bk_booksmicroservices/web/BookController.class
+BackEnd/booksmicroservices/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+BackEnd/booksmicroservices/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+BackEnd/booksmicroservices/target/test-classes/com/rmit/sept/bk_booksmicroservices/BooksmicroservicesApplicationTests.class

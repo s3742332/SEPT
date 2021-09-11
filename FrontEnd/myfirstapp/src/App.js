@@ -33,6 +33,8 @@ import AdminBreadcrumb from "./components/Layout/AdminBreadcrumb";
 import Sell from "./components/Sell/Sell";
 import Categories from "./components/Search/Categories";
 import SearchResult from "./components/Marketplace/SearchResult";
+import BookEdit from "./components/Books/BookEdit/BookEdit";
+import PendingBook from "./components/Books/PendingBook/PendingBook";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const jwtToken = localStorage.jwtToken;
@@ -74,8 +76,10 @@ function App() {
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
               <Switch>
                 <Route exact path="/" component={AdminDashboard} />
-                <Route exact path="/users/accountedit" component={AccountEdit} />
-                <Route exact path="/users/pendingusers" component={PendingSeller} />
+                <Route exact path="/users/edit" component={AccountEdit} />
+                <Route exact path="/users/pending" component={PendingSeller} />
+                <Route exact path="/books/pending" component={PendingBook} />
+                <Route exact path="/books/edit" component={BookEdit} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/register" component={Register} />
               </Switch>
