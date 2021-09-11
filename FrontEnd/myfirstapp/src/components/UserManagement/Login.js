@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import { login } from '../../actions/securityActions';
-import {useDispatch} from 'react-redux'
-import { increment } from '../../actions/userActions';
+import { useDispatch, useSelector } from 'react-redux'
 function Login(props) {
   const dispatch = useDispatch();
   const [user, setUser] = useState({
     username: "",
     password: "",
   })
+  const [errorMessage, setErrorMessage] = useState({})
+  const error = useSelector(state => state.errors);
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch(login(user, props.history));
   }
   const onChange = (e) => {
+    setErrorMessage({});
     setUser({ ...user, [e.target.name]: e.target.value })
     console.log(user)
   }
+  
+  useEffect(() => {
+    setErrorMessage(error.error)
+  }, [error])
   return (
     <div className="login">
       <div className="container">
@@ -41,6 +47,7 @@ function Login(props) {
                   onChange={onChange}
                 />
               </div>
+              {Object.keys(errorMessage)?.length > 0 && <p style={{ color: "red" }}>Invalid email or password!</p>}
               <input type="submit" onClick={onSubmit} className="btn btn-info btn-block mt-4" />
             </form>
           </div>

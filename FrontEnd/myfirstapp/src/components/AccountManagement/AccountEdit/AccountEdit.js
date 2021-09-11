@@ -20,6 +20,7 @@ function AccountEdit() {
     }, [dispatch])
     useEffect(() => {
         setFilteredData(user.userAccounts)
+        console.log(user.userAccounts)
     }, [user])
 
     const handleSearch = (event) => {

@@ -57,12 +57,12 @@ function NavBar(props) {
                 <Menu theme="dark" defaultSelectedKeys={[location.pathname]} mode="inline">
                     <Menu.Item key="/" onClick={() => history.push('/')}>Dashboard</Menu.Item>
                     <SubMenu key={"users"} title="Users">
-                        <Menu.Item key="/users/pendingusers" onClick={() => history.push('/users/pendingusers')}>Pending Seller Accounts</Menu.Item>
-                        <Menu.Item key="/users/accountedit" onClick={() => history.push('/users/accountedit')}>Account Profiles</Menu.Item>
+                        <Menu.Item key="/users/pending" onClick={() => history.push('/users/pending')}>Pending Account Approvals</Menu.Item>
+                        <Menu.Item key="/users/edit" onClick={() => history.push('/users/edit')}>Account Profiles</Menu.Item>
                     </SubMenu>
                     <SubMenu key={"books"} title="Books">
-                        <Menu.Item key="5">3rd menu item</Menu.Item>
-                        <Menu.Item key="6">4th menu item</Menu.Item>
+                        <Menu.Item key="/books/pending" onClick={() => history.push('/books/pending')}>Pending Book Approvals</Menu.Item>
+                        <Menu.Item key="/books/edit" onClick={() => history.push('/books/edit')}>Book Collection</Menu.Item>
                     </SubMenu>
                     <Menu.Item key="7">Reports</Menu.Item>
                 </Menu>
