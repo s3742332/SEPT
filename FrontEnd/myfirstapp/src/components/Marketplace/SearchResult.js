@@ -3,10 +3,9 @@ import './styles.css';
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Layout, Col, Row, Menu, Breadcrumb, List, Avatar, Input } from 'antd';
+import { Layout, Col, Row, Menu, Breadcrumb, List, Avatar, Input, Space } from 'antd';
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
 import { getBookList } from '../../actions/bookActions';
-import Categories from '../Search/Categories';
 
 const SearchResult = (props) => {
 
@@ -21,92 +20,58 @@ const SearchResult = (props) => {
         setFilteredData(book.bookList)
     }, [book])
 
-    return (<div>
-        <h1 style={{ textAlign: 'center', paddingTop: '25px' }}>Book Catalogue</h1>
-        <h3 style={{ textAlign: 'center', paddingTop: '25px' }}>Search by name, author, ISBN or select a genre </h3>
-        <Input
-            label="Search field" paddingBottom={10} margin="auto" type="search" variant="outlined"
-            style={{ width: '75%', position: 'relative', left: '50%', transform: 'translate(-50%)' }}
-        />
-        <Row>
-            <Col sm={12} md={6} xs={24}>
-                <List
-                    itemLayout="vertical"
-                    size="large"
-                    pagination={{
-                        onChange: page => {
-                            console.log(page);
-                        },
-                        pageSize: 3,
-                    }}
-                    dataSource={filteredData}
-                    footer={
-                        <div>
-                            <b>Total Books: </b> {filteredData.length}
-                        </div>
-                    }
-                    renderItem={book => (
-                        <List.Item
-                            key={book.Id}
-                            extra={ //TODO change me
-                                <img
-                                    width={272}
-                                    alt="logo"
-                                    src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-                                />
-                            }
-                            actions={[
-                                // <IconText icon={StarOutlined} text="156" key="list-vertical-star-o" />,
-                                // <IconText icon={LikeOutlined} text="156" key="list-vertical-like-o" />,
-                                // <IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
-                            ]}
+    const IconText = ({ icon, text }) => (
+        <Space>
+            {React.createElement(icon)}
+            {text}
+        </Space>
+    );
 
-                        >
-                            <List.Item.Meta
-                                title={book.bookTitle}
-                                description={book.author}
+    return (
+        <div
+            style={{ width: '65%' }}
+            className='search-results'
+        >
+
+            <List
+                itemLayout="horizontal"
+                size="large"
+                pagination={{
+                    onChange: page => {
+                        console.log(page);
+                    },
+                    pageSize: 4,
+                }}
+                dataSource={filteredData}
+                footer={
+                    <div>
+                        <b>Total Books: </b> {filteredData.length}
+                    </div>
+                }
+                renderItem={book => (
+                    <div className='search-result'>
+                    <List.Item
+                        key={book.Id}
+                        extra={ //TODO change me
+                            <img
+                                style={{width:'20%'}}
+                                alt="logo"
+                                src="https://assets.teenvogue.com/photos/5cd4384fac4d9e712fe2ebb0/2:3/w_1852,h_2778,c_limit/The%20Gravity%20of%20Us_.jpg"
                             />
-                            {book.bookDescription}
-                        </List.Item>
-                    )}
-                />
-            </Col>
-        </Row>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {/* <Row>
-            <Col sm={12} md={6} xs={24}>
-                <Link to="/details">
-                    <BookContainer
-                        image="./BookImages/DefaultCover.png"
-                        title="put title"
-                        author="put author"
-                        price="put price"
-                    />
-                </Link>
-            </Col>
-            <Col sm={12} md={6} xs={24}>
-                <BookContainer />
-            </Col>
-            <Col sm={12} md={6} xs={24}>
-                <BookContainer />
-            </Col>
-            <Col sm={12} md={6} xs={24}>
-                <BookContainer />
-            </Col>
-        </Row> */}
-    </div>
+                        }
+                    >
+                        <div style={{width:'70%', overflowWrap:'break-word'}}>
+                        <List.Item.Meta
+                            title={book.bookTitle}
+                            description={book.author}
+                        />
+                        {book.bookDescription}
+                        </div>
+                    </List.Item>
+                    </div>
+                )}
+            />
+        </div>
     );
 }
 
