@@ -6,7 +6,8 @@ import { bookEdit } from '../../../actions/bookActions';
 
 function PendingSellerDetails(props) {
     const [data, setData] = useState([])
-    const { id, title } = data;
+    const { TextArea } = Input;
+    const { id, bookTitle, author, bookDescription, bookCost, stockLevel, approved } = data;
     const dispatch = useDispatch();
     useEffect(() => {
         setData(props.data)
@@ -16,13 +17,13 @@ function PendingSellerDetails(props) {
         const { id, value } = e.target
         setData({ ...data, [id]: value });
     }
-    const handleBlock = (e) => {
+    const handleDeny = (e) => {
         e.preventDefault();
-        dispatch(bookEdit(data));
+        dispatch(bookEdit({ ...data, approved: false }));
     }
-    const handleEdit = (e) => {
+    const handleApprove = (e) => {
         e.preventDefault();
-        dispatch(bookEdit(data));
+        dispatch(bookEdit({ ...data, approved: true }));
     }
 
     return (
@@ -45,17 +46,71 @@ function PendingSellerDetails(props) {
                     </Row>
                     <Row className={"accountRow"}>
                         <Input
+                            id="approved"
+                            addonBefore="Status"
+                            value={approved ? "Approved" : "False"}
+                            variant="filled"
+                            onChange={handleChange}
+                            disabled
+                        />
+                    </Row>
+                    <Row className={"accountRow"}>
+                        <Input
                             id="title"
                             addonBefore="Title"
-                            value={title || ''}
+                            value={bookTitle || ''}
+                            variant="filled"
+                            onChange={handleChange}
+                        />
+                    </Row>
+                    <Row className={"accountRow"}>
+                        <Input
+                            id="author"
+                            addonBefore="Author"
+                            value={author || ''}
+                            variant="filled"
+                            onChange={handleChange}
+                        />
+                    </Row>
+                    <Row className={"accountRow"}>
+                        <Input.Group compact>
+                            <Input disabled value={"Description"} style={{ width: '25%', height: "100%", color: 'rgba(0, 0, 0, 0.85)', backgroundColor: "#fafafa", cursor: 'auto' }} />
+                            <TextArea
+                                style={{ width: "75%" }}
+                                id="bookDescription"
+                                value={bookDescription || ''}
+                                variant="filled"
+                                onChange={handleChange}
+                            />
+                        </Input.Group>
+
+                    </Row>
+                    <Row className={"accountRow"}>
+                        <Input
+                            id="stockLevel"
+                            addonBefore="Stock Level"
+                            type="number"
+                            value={stockLevel || ''}
+                            variant="filled"
+                            onChange={handleChange}
+                        />
+                    </Row>
+                    <Row className={"accountRow"}>
+                        <Input
+                            id="bookCost"
+                            addonBefore="Price"
+                            type="number"
+                            value={bookCost || ''}
                             variant="filled"
                             onChange={handleChange}
                         />
                     </Row>
                 </Col>
                 <Row justify={"end"}>
-                    <Button style={{ marginRight: "1rem" }} size="large" type="danger" onClick={handleBlock}>Delete</Button>
-                    <Button size="large" type="primary" onClick={handleEdit}>Edit</Button>
+                    <Col>
+                        <Button style={{ marginRight: "1rem" }} size="large" type="danger" onClick={handleDeny}>Reject</Button>
+                        <Button size="large" type="primary" onClick={handleApprove}>Approve</Button>
+                    </Col>
                 </Row>
             </Col>
             : null : null)

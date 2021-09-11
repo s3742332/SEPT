@@ -11,7 +11,7 @@ function BookEditList(props) {
             renderItem={item => (
                 <List.Item onClick={() => props.setSelectedBook(item)} className="pendingItem">
                     <List.Item.Meta
-                        title={item['title']}
+                        title={`${item['bookTitle']}, ${item['author']}`}
                         description={item['companyName']}
                     />
                 </List.Item>
