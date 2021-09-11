@@ -1,4 +1,5 @@
-com/rmit/sept/bk_booksmicroservices/Repositories/BookRepository.class
-com/rmit/sept/bk_booksmicroservices/model/Book.class
 com/rmit/sept/bk_booksmicroservices/model/BookDetails.class
 com/rmit/sept/bk_booksmicroservices/Services/BookService.class
+com/rmit/sept/bk_loginservices/security/SecurityConstant.class
+com/rmit/sept/bk_booksmicroservices/Repositories/BookRepository.class
+com/rmit/sept/bk_booksmicroservices/model/Book.class

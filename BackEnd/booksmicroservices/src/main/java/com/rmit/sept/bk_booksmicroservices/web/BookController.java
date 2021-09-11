@@ -1,5 +1,7 @@
 package com.rmit.sept.bk_booksmicroservices.web;
 
+import javax.validation.Valid;
+
 import com.rmit.sept.bk_booksmicroservices.Services.BookService;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +16,15 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/saveBook")
-    public ResponseEntity<Book> createNewBook(@RequestBody Book book)
+    public ResponseEntity<Book> createNewBook(@Valid @RequestBody Book book)
     {
         Book book1 = bookService.saveOrUpdateBook(book);
         return new ResponseEntity<Book>(book1, HttpStatus.CREATED);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/getAllBooks")
     public ResponseEntity<?> getAllBook(){
         Iterable<Book> bookList = bookService.getAllBooks();

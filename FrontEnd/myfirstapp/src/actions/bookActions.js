@@ -25,7 +25,12 @@ export const bookEdit = (book) => async dispatch => {
 
 export const getBookList = () => async dispatch => {
     try {
-        const res = await axios.get(`http://localhost:8082/api/books/getAllbooks`)
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
+        const res = await axios.get(`http://localhost:8082/api/books/getAllBooks`, config)
         dispatch({
             type: GET_BOOK_LIST,
             payload: res.data

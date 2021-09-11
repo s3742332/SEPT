@@ -32,6 +32,7 @@ import AccountSettings from "./components/Layout/AccountSettings";
 import AdminBreadcrumb from "./components/Layout/AdminBreadcrumb";
 import Sell from "./components/Sell/Sell";
 import Categories from "./components/Search/Categories";
+import SearchResult from "./components/Marketplace/SearchResult";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const jwtToken = localStorage.jwtToken;

@@ -52,7 +52,7 @@ public class CustomBookServiceDetails {
 //    }
 
     @Transactional
-    public Book loadUserById(Long id){
+    public Book loadBookById(Long id){
         Book book = bookRepository.getById(id);
         if(book==null) new BookNotFoundException("Book not found");
         return book;
