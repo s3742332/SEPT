@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,28 +31,8 @@ public class BookServiceTests {
     @MockBean
     private BookRepository bookRepository;
 
-
-    @Test
-    void saveOrUpdateBookTest() {
-        createDummyBooks();
-
-        when(bookRepository.save(book1)).thenReturn(book1);
-
-        assertEquals(book1, bookService.saveOrUpdateBook(book1));
-    }
-
-    @Test
-    void getAllBooksTest() {
-        createDummyBooks();
-
-        when(bookRepository.findAll()).thenReturn(Stream
-                .of(book1, book2).collect(Collectors.toList()));
-        
-        assertEquals(2, ((List<Book>) bookService.getAllBooks()).size());
-        
-    }
-
-    private void createDummyBooks() {
+    @BeforeEach
+    void setup() {
         book1 = new Book();
         book1.setBookTitle("Station Eleven");
         book1.setAuthor("Emily Mandel");
@@ -67,6 +48,21 @@ public class BookServiceTests {
         book2.setBookDescription("A new patriotic world where chosen women are forced to breed with high ranking men to create offspring.");
         book2.setCompanyName("Company 2");
         book2.setStockLevel(1);
+    }
+
+    @Test
+    void saveOrUpdateBookTest() {
+        when(bookRepository.save(book1)).thenReturn(book1);
+
+        assertEquals(book1, bookService.saveOrUpdateBook(book1));
+    }
+
+    @Test
+    void getAllBooksTest() {
+        when(bookRepository.findAll()).thenReturn(Stream
+                .of(book1, book2).collect(Collectors.toList()));
+        
+        assertEquals(2, ((List<Book>) bookService.getAllBooks()).size());
     }
 
 }
