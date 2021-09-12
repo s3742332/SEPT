@@ -5,13 +5,14 @@ import com.rmit.sept.bk_transactionsmicroservices.exceptions.TransactionExceptio
 import com.rmit.sept.bk_transactionsmicroservices.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 @Service
 public class TransactionService {
 
     @Autowired
     private TransactionRepository transactionRepository;
 
+    @Transactional
     public Transaction saveTransaction(Transaction transaction)
     {
         try {
@@ -27,7 +28,8 @@ public class TransactionService {
             throw new TransactionException("Unable to create transaction");
         }
     }
-
+    
+    @Transactional
     public Iterable<Transaction> getAllTransactions()
     {
         try
