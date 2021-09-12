@@ -30,3 +30,4 @@ BackEnd/booksmicroservices/target/classes/com/rmit/sept/bk_booksmicroservices/we
 BackEnd/booksmicroservices/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
 BackEnd/booksmicroservices/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
 BackEnd/booksmicroservices/target/test-classes/com/rmit/sept/bk_booksmicroservices/BooksmicroservicesApplicationTests.class
+.DS_Store

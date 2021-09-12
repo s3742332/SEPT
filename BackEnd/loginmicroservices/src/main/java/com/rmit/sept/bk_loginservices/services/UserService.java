@@ -43,7 +43,7 @@ public class UserService {
 
     }
 
-    public Iterable<User> getAllUsers() {
+    public ArrayList<User> getAllApprovedUsers() {
         try {
             Iterable<User> allUsers = userRepository.findAll();
             ArrayList<User> filteredUsers = new ArrayList<User>();
@@ -53,6 +53,18 @@ public class UserService {
                 }
             }
             return filteredUsers;
+
+        } catch (Exception e) {
+            throw new UsernameAlreadyExistsException("Unable to retrieve approved user list");
+        }
+
+    }
+
+    public Iterable<User> getAllUsers() {
+        try {
+            Iterable<User> allUsers = userRepository.findAll();
+            
+            return allUsers;
 
         } catch (Exception e) {
             throw new UsernameAlreadyExistsException("Unable to retrieve user list");

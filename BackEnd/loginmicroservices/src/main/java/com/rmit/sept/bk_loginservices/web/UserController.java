@@ -109,12 +109,14 @@ public class UserController {
         Iterable<User> userList = userService.getAllUsers();
         ArrayList<User> unapprovedBusiness = new ArrayList<User>();
         for (User user : userList){
-            if (user.getUserType().equals("seller") && user.getApproved() == null) {
+            if (user.getUserType().equals("seller") && user.getApproved() == false) {
                 unapprovedBusiness.add(user);
             }
         }
+
+        userList = unapprovedBusiness;
         
-        return  new ResponseEntity<Iterable<User>>(unapprovedBusiness, HttpStatus.OK);
+        return  new ResponseEntity<Iterable<User>>(userList, HttpStatus.OK);
     }
 
     @CrossOrigin(origins = "*")
