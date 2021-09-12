@@ -37,14 +37,14 @@ import BookEdit from "./components/Books/BookEdit/BookEdit";
 import PendingBook from "./components/Books/PendingBook/PendingBook";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
-  const jwtToken = localStorage.jwtToken;
+  const jwtToken = localStorage.getItem("jwtToken");
   const dispatch = useDispatch();
   const security = useSelector(state => state.security);
   useEffect(() => {
     if (jwtToken) {
       setJWTToken(jwtToken);
       const decoded_jwtToken = jwt_decode(jwtToken);
-      console.log(decoded_jwtToken)
+      console.log("TOKEN", decoded_jwtToken)
       dispatch(setUser(decoded_jwtToken));
 
       const currentTime = Date.now() / 1000;

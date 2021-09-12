@@ -31,6 +31,7 @@ export const getBookList = () => async dispatch => {
             }
         }
         const res = await axios.get(`http://localhost:8082/api/books/getAllApprovedBooks`, config)
+        console.log(res.data)
         dispatch({
             type: GET_BOOK_LIST,
             payload: res.data
@@ -45,7 +46,14 @@ export const getBookList = () => async dispatch => {
 
 export const getPendingBookList = () => async dispatch => {
     try {
-        const res = await axios.get(`http://localhost:8082/api/books/getAllPendingBooks`)
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
+        const res = await axios.get(`http://localhost:8082/api/books/getAllPendingBooks`, config)
+        console.log(res.data)
+        console.log(axios.defaults.headers.common)
         dispatch({
             type: GET_PENDING_BOOK_LIST,
             payload: res.data

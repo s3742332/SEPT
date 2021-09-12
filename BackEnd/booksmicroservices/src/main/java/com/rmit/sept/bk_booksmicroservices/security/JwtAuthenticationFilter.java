@@ -33,14 +33,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             String jwt = getJWTFromRequest(httpServletRequest);
 
             if(StringUtils.hasText(jwt)&& tokenProvider.validateToken(jwt)){
-                Long bookId = tokenProvider.getBookIdFromJWT(jwt);
-                Book bookDetails = customBookServiceDetails.loadBookById(bookId);
+                // Long bookId = tokenProvider.getBookIdFromJWT(jwt);
+                // Book bookDetails = customBookServiceDetails.loadBookById(bookId);
 
-                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-                        bookDetails, null, Collections.emptyList());
+                // UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
+                //         bookDetails, null, Collections.emptyList());
 
-                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
-                SecurityContextHolder.getContext().setAuthentication(authentication);
+                // authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
+                // SecurityContextHolder.getContext().setAuthentication(authentication);
 
             }
 

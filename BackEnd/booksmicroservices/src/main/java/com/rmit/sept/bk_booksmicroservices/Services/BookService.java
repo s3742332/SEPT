@@ -5,13 +5,14 @@ import com.rmit.sept.bk_booksmicroservices.Repositories.BookRepository;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 @Service
 public class BookService {
 
     @Autowired
     private BookRepository bookRepository;
-
+    
+    @Transactional
     public Book saveOrUpdateBook(Book book)
     {
         try{
@@ -29,6 +30,7 @@ public class BookService {
         }
     }
 
+    @Transactional
     public Iterable<Book> getAllBooks ()
     {
         try

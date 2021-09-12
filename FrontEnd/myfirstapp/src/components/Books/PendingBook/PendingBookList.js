@@ -8,7 +8,7 @@ function PendingSellerList(props) {
             dataSource={props.filteredList}
             style={{ overflow: "auto", overflowX: "hidden", height: "calc(100vh - 268px)" }}
             renderItem={item => (
-                <List.Item onClick={() => props.setSelectedBook(item)} className="pendingItem">
+                <List.Item onClick={() => props.setSelectedBook(item)} className="pendingItem" key={item.id}>
                     <List.Item.Meta
                         title={`${item['bookTitle']}, ${item['author']}`}
                         description={item['companyName']}
