@@ -10,6 +10,7 @@ function BookEditDetails(props) {
     const { id, bookTitle, author, bookDescription, bookCost, stockLevel, approved } = data;
     const dispatch = useDispatch();
     useEffect(() => {
+        console.log(props.data)
         setData(props.data)
     }, [props.data])
 
