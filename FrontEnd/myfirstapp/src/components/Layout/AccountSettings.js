@@ -57,7 +57,6 @@ function AccountSettings() {
                 fullName: faker.name.findName(),
                 username: faker.internet.email(),
                 userType: "seller",
-                approved: null,
                 password: password,
                 confirmPassword: password,
                 address: faker.address.streetAddress(),

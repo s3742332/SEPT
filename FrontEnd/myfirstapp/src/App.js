@@ -47,13 +47,13 @@ function App() {
       console.log(decoded_jwtToken)
       dispatch(setUser(decoded_jwtToken));
 
-      // const currentTime = Date.now() / 1000;
-      // if (decoded_jwtToken.exp < currentTime) {
-      //   console.log("Logging Out");
-      //   console.log("TOKEN TIME" , moment(decoded_jwtToken.exp).toDate().toISOString())
-      //   dispatch(logout());
-      //   window.location.href = "/";
-      // }
+      const currentTime = Date.now() / 1000;
+      if (decoded_jwtToken.exp < currentTime) {
+        console.log("Logging Out");
+        console.log("TOKEN TIME" , moment(decoded_jwtToken.exp).toDate().toISOString())
+        dispatch(logout());
+        window.location.href = "/";
+      }
     }
   }, [])
   useEffect(() => {
