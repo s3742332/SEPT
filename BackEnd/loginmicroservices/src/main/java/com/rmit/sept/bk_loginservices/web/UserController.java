@@ -120,6 +120,15 @@ public class UserController {
     }
 
     @CrossOrigin(origins = "*")
+    @GetMapping("/getAllApprovedUsers")
+    public ResponseEntity<?> getAllApprovedBusiness(){
+        Iterable<User> userList = userService.getAllApprovedUsers();
+        
+        return  new ResponseEntity<Iterable<User>>(userList, HttpStatus.OK);
+    }
+
+
+    @CrossOrigin(origins = "*")
     @PostMapping("/updateApproved")
     public void updateApproved(@RequestBody User user, BindingResult result) {
         if (user.getApproved()) {
