@@ -15,9 +15,10 @@ public class TransactionService {
     public Transaction saveTransaction(Transaction transaction)
     {
         try {
-            transaction.setOrderNumber(transaction.getOrderNumber());
-            transaction.setItemPurchased(transaction.getItemPurchased());
+            transaction.setAuthor(transaction.getAuthor());
+            transaction.setBookTitle(transaction.getBookTitle());
             transaction.setTransactionCost(transaction.getTransactionCost());
+            transaction.setUserName(transaction.getUserName());
 
             return transactionRepository.save(transaction);
         }
