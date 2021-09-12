@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +52,7 @@ public class BookServiceTests {
     }
 
     @Test
+    @DisplayName("Should pass if book being saved to repository is the same as book being provided")
     void saveOrUpdateBookTest() {
         when(bookRepository.save(book1)).thenReturn(book1);
 
@@ -58,6 +60,7 @@ public class BookServiceTests {
     }
 
     @Test
+    @DisplayName("Should pass if number of books in repository equals the amount that was added")
     void getAllBooksTest() {
         when(bookRepository.findAll()).thenReturn(Stream
                 .of(book1, book2).collect(Collectors.toList()));
