@@ -9,7 +9,7 @@ export const bookEdit = (book) => async dispatch => {
             }
         }
         console.log("bookInfoAction", book)
-        const res = await axios.post(`http://localhost:8082/api/books/saveBook/`, book, config );
+        const res = await axios.post(`http://localhost:8082/api/books/saveBook/`, book, config);
         dispatch({
             type: UPDATE_BOOK,
             payload: res.data
@@ -66,14 +66,23 @@ export const getPendingBookList = () => async dispatch => {
     }
 };
 
+//Define cancelToken outside the function so that the previous token is retained
+let cancelToken;
 export const getSearchedBook = (query) => async dispatch => {
+    //Check if there are any previous pending requests
+    if (typeof cancelToken != typeof undefined) {
+        cancelToken.cancel("Operation canceled due to new request.")
+    }
+
+    //Save the cancel token for the current request
+    cancelToken = axios.CancelToken.source()
     try {
         const config = {
             headers: {
                 "Content-Type": "application/json",
-            }
+            },
+            cancelToken: cancelToken.token
         }
-        console.log(query)
         const res = await axios.get(`http://localhost:8082/api/books/getSearchedBooks/${query}`, config)
         // console.log(res.data)
         dispatch({

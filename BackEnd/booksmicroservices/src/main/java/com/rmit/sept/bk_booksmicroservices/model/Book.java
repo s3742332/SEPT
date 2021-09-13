@@ -25,6 +25,7 @@ public class Book{
     private int stockLevel;
     private boolean approved;
     private String isbn;
+    private String cover;
 
     public Book() {
     }
@@ -91,6 +92,14 @@ public class Book{
 
     public String getIsbn() {
         return isbn;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
+
+    public String getCover() {
+        return cover;
     }
 
     public Boolean getApproved() {
