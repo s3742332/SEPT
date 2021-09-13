@@ -51,7 +51,7 @@ public class UserService {
             System.out.println("2");
             for (User user : allUsers) {
                 System.out.println("3");
-                if (user.getApproved().equals("true")) {
+                if (user.getApproved()) {
                     System.out.println("4");
                     filteredUsers.add(user);
                     System.out.println("5");

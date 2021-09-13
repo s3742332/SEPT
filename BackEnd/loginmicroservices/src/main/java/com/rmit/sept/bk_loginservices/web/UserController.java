@@ -131,7 +131,7 @@ public class UserController {
     @CrossOrigin(origins = "*")
     @PostMapping("/updateApproved")
     public void updateApproved(@RequestBody User user, BindingResult result) {
-        if (user.getApproved().equals("true")) {
+        if (user.getApproved()) {
             userService.saveUser(user);
         } else {
             userService.deleteUser(user);
