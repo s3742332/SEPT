@@ -43,16 +43,24 @@ public class UserService {
 
     }
 
-    public ArrayList<User> getAllApprovedUsers() {
+    public Iterable<User> getAllApprovedUsers() {
         try {
             Iterable<User> allUsers = userRepository.findAll();
+            System.out.println("1");
             ArrayList<User> filteredUsers = new ArrayList<User>();
+            System.out.println("2");
             for (User user : allUsers) {
-                if (user.getApproved()) {
+                System.out.println("3");
+                if (user.getApproved().equals("true")) {
+                    System.out.println("4");
                     filteredUsers.add(user);
+                    System.out.println("5");
                 }
+                System.out.println("6");
             }
-            return filteredUsers;
+            allUsers = filteredUsers;
+            System.out.println("7");
+            return allUsers;
 
         } catch (Exception e) {
             throw new UsernameAlreadyExistsException("Unable to retrieve approved user list");

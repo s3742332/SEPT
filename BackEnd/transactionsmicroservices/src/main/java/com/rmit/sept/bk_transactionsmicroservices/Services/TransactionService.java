@@ -20,6 +20,10 @@ public class TransactionService {
             transaction.setBookTitle(transaction.getBookTitle());
             transaction.setTransactionCost(transaction.getTransactionCost());
             transaction.setUserName(transaction.getUserName());
+            transaction.setSellerName(transaction.getSellerName());
+            transaction.setBookType(transaction.getBookType());
+            transaction.setBookSold(transaction.isBookSold());
+            transaction.setBookBought(transaction.isBookBought());
 
             return transactionRepository.save(transaction);
         }
