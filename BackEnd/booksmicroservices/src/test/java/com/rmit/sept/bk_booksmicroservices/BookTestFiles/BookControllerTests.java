@@ -1,36 +1,41 @@
 package com.rmit.sept.bk_booksmicroservices.BookTestFiles;
 
-import com.rmit.sept.bk_booksmicroservices.Services.BookService;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
-import com.rmit.sept.bk_booksmicroservices.Repositories.BookRepository;
+import com.rmit.sept.bk_booksmicroservices.web.BookController;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import com.rmit.sept.bk_booksmicroservices.Services.BookService;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.RequestBuilder;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.MvcResult;
 
 @ExtendWith(SpringExtension.class)
-@SpringBootTest
-public class BookServiceTests {
+@WebMvcTest(BookController.class)
+//@SpringBootTest
+public class BookControllerTests {
 
     private static Book book1, book2;
 
     @Autowired
-    private BookService bookService;
+    private MockMvc mockMvc;
 
     @MockBean
-    private BookRepository bookRepository;
+    private BookService bookService;
 
     @BeforeEach
     void setup() {
@@ -52,20 +57,21 @@ public class BookServiceTests {
     }
 
     @Test
-    @DisplayName("Should pass if book being saved to repository is the same as book being provided")
-    void saveOrUpdateBookTest() {
-        Mockito.when(bookRepository.save(book1)).thenReturn(book1);
-
-        assertEquals(book1, bookService.saveOrUpdateBook(book1));
-    }
-
-    @Test
-    @DisplayName("Should pass if number of books in repository equals the amount that was added")
-    void getAllBooksTest() {
-        Mockito.when(bookRepository.findAll()).thenReturn(Stream
-                .of(book1, book2).collect(Collectors.toList()));
+    void createNewBookTest() throws Exception {
         
-        assertEquals(2, ((List<Book>) bookService.getAllBooks()).size());
-    }
+        //when(bookService.saveOrUpdateBook(any())).thenReturn(book1);
+        
+        Mockito.when(bookService.saveOrUpdateBook(Mockito.any(Book.class))).thenReturn(book1);
 
+        RequestBuilder requestBuilder = MockMvcRequestBuilders
+                        .post("/saveBook")
+                        .accept(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON);
+
+        MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+
+        MockHttpServletResponse response = result.getResponse();
+
+        assertEquals(HttpStatus.CREATED.value(), response.getStatus());
+    }
 }
