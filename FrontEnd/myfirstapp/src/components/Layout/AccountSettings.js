@@ -59,6 +59,7 @@ function AccountSettings() {
                 username: faker.internet.email(),
                 userType: "seller",
                 password: password,
+                approved: false,
                 confirmPassword: password,
                 address: faker.address.streetAddress(),
                 phoneNumber: faker.phone.phoneNumber(),
