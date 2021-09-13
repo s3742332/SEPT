@@ -24,6 +24,7 @@ public class Book{
     private double bookCost;
     private int stockLevel;
     private boolean approved;
+    private String isbn;
 
     public Book() {
     }
@@ -82,6 +83,14 @@ public class Book{
 
     public Long getId() {
         return id;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public String getIsbn() {
+        return isbn;
     }
 
     public Boolean getApproved() {

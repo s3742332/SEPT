@@ -5,20 +5,23 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Layout, Col, Row, Menu, Breadcrumb, List, Avatar, Input, Space } from 'antd';
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
-import { getBookList } from '../../actions/bookActions';
+import { getSearchedBook } from '../../actions/bookActions';
 
 const SearchResult = (props) => {
 
     const dispatch = useDispatch();
     const book = useSelector(state => state.book);
     const [filteredData, setFilteredData] = useState([]);
+    
 
     useEffect(() => {
-        dispatch(getBookList())
-    }, [dispatch])
+        dispatch(getSearchedBook(props.search))
+        console.log('im in useeffect')
+    }, [dispatch, props.search])
     useEffect(() => {
         setFilteredData(book.bookList)
-    }, [book])
+        console.log('fd', filteredData)
+    }, [book,filteredData])
 
     const IconText = ({ icon, text }) => (
         <Space>

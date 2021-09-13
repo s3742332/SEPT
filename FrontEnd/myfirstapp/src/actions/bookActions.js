@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ERRORS, GET_PENDING_BOOK_LIST, GET_BOOK_LIST, UPDATE_BOOK } from "./types";
+import { GET_ERRORS, GET_PENDING_BOOK_LIST, GET_BOOK_LIST, UPDATE_BOOK, GET_SEARCHED_BOOKS } from "./types";
 
 export const bookEdit = (book) => async dispatch => {
     try {
@@ -56,6 +56,28 @@ export const getPendingBookList = () => async dispatch => {
         console.log(axios.defaults.headers.common)
         dispatch({
             type: GET_PENDING_BOOK_LIST,
+            payload: res.data
+        })
+    } catch (err) {
+        dispatch({
+            type: GET_ERRORS,
+            payload: err
+        });
+    }
+};
+
+export const getSearchedBook = (query) => async dispatch => {
+    try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
+        console.log(query)
+        const res = await axios.get(`http://localhost:8082/api/books/getSearchedBooks/${query}`, config)
+        // console.log(res.data)
+        dispatch({
+            type: GET_SEARCHED_BOOKS,
             payload: res.data
         })
     } catch (err) {
