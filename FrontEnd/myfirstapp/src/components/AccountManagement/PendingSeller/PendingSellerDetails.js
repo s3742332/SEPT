@@ -19,11 +19,11 @@ function PendingSellerDetails(props) {
     }
     const handleDeny = (e) => {
         e.preventDefault();
-        dispatch(userEdit({ ...data, approved: false }));
+        dispatch(userEdit({ ...data, approved: "false" }));
     }
     const handleApprove = (e) => {
         e.preventDefault();
-        dispatch(userEdit({ ...data, approved: true }));
+        dispatch(userEdit({ ...data, approved: "true" }));
     }
     const handleUserSelect = (e) => {
         setData({ ...data, "userType": e });
@@ -61,7 +61,7 @@ function PendingSellerDetails(props) {
                         <Col span={12}><Input
                             id="accountStatus"
                             addonBefore="Account Status"
-                            value={approved === null ? "PENDING" : approved ? "APPROVED" : "DENIED"}
+                            value={approved ? "APPROVED" : "PENDING"}
                             variant="filled"
                             disabled
 

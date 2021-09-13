@@ -7,6 +7,7 @@ import { Menu, Dropdown, Typography, Divider, Modal, Button } from 'antd';
 import { createNewUser } from "../../actions/securityActions";
 import { bookEdit } from "../../actions/bookActions";
 import faker from 'faker'
+import { transactionEdit } from '../../actions/transactionActions';
 function AccountSettings() {
     const dispatch = useDispatch();
     const security = useSelector(state => state.security);
@@ -32,7 +33,7 @@ function AccountSettings() {
     const handleCancel = () => {
         setIsModalVisible(false);
     };
-    const createUser = () => {
+    const createDummyUser = () => {
         for (let i = 0; i < 10; i++) {
             const password = faker.internet.password()
             const user = {
@@ -50,7 +51,7 @@ function AccountSettings() {
         }
     }
 
-    const createSeller = () => {
+    const createDummySeller = () => {
         for (let i = 0; i < 10; i++) {
             const password = faker.internet.password()
             const user = {
@@ -58,6 +59,7 @@ function AccountSettings() {
                 username: faker.internet.email(),
                 userType: "seller",
                 password: password,
+                approved: false,
                 confirmPassword: password,
                 address: faker.address.streetAddress(),
                 phoneNumber: faker.phone.phoneNumber(),
@@ -80,6 +82,34 @@ function AccountSettings() {
             dispatch(bookEdit(book, history, true))
         }
     }
+    const createUser = () => {
+        const user = {
+            fullName: faker.name.findName(),
+            username: "user@user.com",
+            userType: "customer",
+            approved: true,
+            password: "123123",
+            confirmPassword: "123123",
+            address: faker.address.streetAddress(),
+            phoneNumber: faker.phone.phoneNumber(),
+            abn: null
+        }
+        dispatch(createNewUser(user, history, true))
+    }
+    const createSeller = () => {
+        const user = {
+            fullName: faker.name.findName(),
+            username: "seller@seller.com",
+            userType: "seller",
+            approved: true,
+            password: "123123",
+            confirmPassword: "123123",
+            address: faker.address.streetAddress(),
+            phoneNumber: faker.phone.phoneNumber(),
+            abn: faker.datatype.number()
+        }
+        dispatch(createNewUser(user, history, true))
+    }
     const createAdmin = () => {
         const user = {
             fullName: faker.name.findName(),
@@ -93,6 +123,18 @@ function AccountSettings() {
             abn: null
         }
         dispatch(createNewUser(user, history, true))
+    }
+
+    const createTransaction = (size) => {
+        for (let i = 0; i < size; i++) {
+        const book = {
+            username: security.user.userName,
+            bookTitle: faker.name.title(),
+            author: faker.name.findName(),
+            transactionCost: faker.commerce.price(),
+        }
+        dispatch(transactionEdit(book, history, true))
+    }
     }
     const menu = (
         <Menu style={{ padding: "1rem" }}>
@@ -123,17 +165,29 @@ function AccountSettings() {
 
             }} overlay={menu} placement="bottomRight" icon={<UserOutlined />} />
             <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                <Button type="primary" onClick={createUser}>
-                    Insert 10 Users
+                <Button type="primary" onClick={createDummyUser}>
+                    Insert 10 Dummy Users
                 </Button>
-                <Button type="primary" onClick={createSeller}>
-                    Insert 10 Sellers
+                <Button type="primary" onClick={createDummySeller}>
+                    Insert 10 Dummy Sellers
+                </Button>
+                <Button type="primary" onClick={createBook}>
+                    Insert 10 Dummy Books
                 </Button>
                 <Button type="primary" onClick={createAdmin}>
                     Insert 1 Admin
                 </Button>
-                <Button type="primary" onClick={createBook}>
-                    Insert 10 Books
+                <Button type="primary" onClick={createUser}>
+                    Insert 1 User
+                </Button>
+                <Button type="primary" onClick={createSeller}>
+                    Insert 1 Seller
+                </Button>
+                <Button type="primary" onClick={createTransaction(1)}>
+                    Insert 1 Transaction
+                </Button>
+                <Button type="primary" onClick={createTransaction(10)}>
+                    Insert 10 Transaction
                 </Button>
             </Modal>
         </>

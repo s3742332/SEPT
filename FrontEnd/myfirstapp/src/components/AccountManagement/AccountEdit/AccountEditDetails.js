@@ -62,7 +62,7 @@ function AccountEditDetails(props) {
                         <Col span={12}><Input
                             id="accountStatus"
                             addonBefore="Account Status"
-                            value={approved === null ? "PENDING" : approved ? "APPROVED" : "DENIED"}
+                            value={approved ? "APPROVED" : "PENDING"}
                             variant="filled"
                             disabled
 
