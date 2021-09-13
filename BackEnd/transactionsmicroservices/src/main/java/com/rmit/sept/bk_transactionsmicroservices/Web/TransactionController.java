@@ -1,6 +1,7 @@
 package com.rmit.sept.bk_transactionsmicroservices.Web;
 
 import com.rmit.sept.bk_transactionsmicroservices.Services.TransactionService;
+import com.rmit.sept.bk_transactionsmicroservices.exceptions.TransactionException;
 import com.rmit.sept.bk_transactionsmicroservices.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,12 +35,12 @@ public class TransactionController {
     }
 
     @CrossOrigin(origins = "*")
-    @GetMapping("/getAllUserTransactions")
-    public ResponseEntity<?> getAllApprovedBooks(String username){
+    @GetMapping("/getAllUserSellerTransactions/{name}")
+    public ResponseEntity<?> getAllUserSellerTransactions(@PathVariable String name){
         Iterable<Transaction> transactionList = transactionService.getAllTransactions();
         ArrayList<Transaction> userTransactions = new ArrayList<Transaction>();
         for (Transaction transaction : transactionList){
-            if (transaction.getUserName().equals(username)) {
+            if (transaction.getUserName().equals(name) || transaction.getSellerName().equals(name)) {
                 userTransactions.add(transaction);
             }
         }
@@ -48,16 +49,40 @@ public class TransactionController {
     }
 
     @CrossOrigin(origins = "*")
-    @GetMapping("/getBookTransaction")
-    public ResponseEntity<?> getAllTransactionsOfBook(String title, String author){
+    @GetMapping("/getBooksSold/{sellerUserName}")
+    public ResponseEntity<?> getBooksBySeller(@PathVariable String sellerUserName){
         Iterable<Transaction> transactionList = transactionService.getAllTransactions();
         ArrayList<Transaction> bookTransactions = new ArrayList<Transaction>();
         for (Transaction transaction : transactionList){
-            if (transaction.getBookTitle().equals(title) && transaction.getAuthor().equals(author)) {
+            if (transaction.getSellerName().equals(sellerUserName)) {
                 bookTransactions.add(transaction);
             }
+        }
+        if (bookTransactions.isEmpty())
+        {
+            throw new TransactionException("No sellers with that name");
         }
 
         return  new ResponseEntity<Iterable<Transaction>>(bookTransactions, HttpStatus.OK);
     }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/getBooksBought/{buyerUserName}")
+    public ResponseEntity<?> getBooksByBuyer(@PathVariable String buyerUserName){
+        Iterable<Transaction> transactionList = transactionService.getAllTransactions();
+        ArrayList<Transaction> bookTransactions = new ArrayList<Transaction>();
+        for (Transaction transaction : transactionList){
+            if (transaction.getUserName().equals(buyerUserName)) {
+                bookTransactions.add(transaction);
+            }
+        }
+
+        if (bookTransactions.isEmpty())
+        {
+            throw new TransactionException("No buyers with that username");
+        }
+
+        return  new ResponseEntity<Iterable<Transaction>>(bookTransactions, HttpStatus.OK);
+    }
+
 }
