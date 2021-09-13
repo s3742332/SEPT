@@ -125,8 +125,7 @@ function AccountSettings() {
         dispatch(createNewUser(user, history, true))
     }
 
-    const createTransaction = (size) => {
-        for (let i = 0; i < size; i++) {
+    const createTransaction = () => {
         const book = {
             username: security.user.userName,
             bookTitle: faker.name.title(),
@@ -135,6 +134,17 @@ function AccountSettings() {
         }
         dispatch(transactionEdit(book, history, true))
     }
+
+    const createTransactions = () => {
+        for (let i = 0; i < 10; i++) {
+            const book = {
+                username: security.user.userName,
+                bookTitle: faker.name.title(),
+                author: faker.name.findName(),
+                transactionCost: faker.commerce.price(),
+            }
+            dispatch(transactionEdit(book, history, true))
+        }
     }
     const menu = (
         <Menu style={{ padding: "1rem" }}>
@@ -183,10 +193,10 @@ function AccountSettings() {
                 <Button type="primary" onClick={createSeller}>
                     Insert 1 Seller
                 </Button>
-                <Button type="primary" onClick={createTransaction(1)}>
+                <Button type="primary" onClick={createTransaction}>
                     Insert 1 Transaction
                 </Button>
-                <Button type="primary" onClick={createTransaction(10)}>
+                <Button type="primary" onClick={createTransactions}>
                     Insert 10 Transaction
                 </Button>
             </Modal>

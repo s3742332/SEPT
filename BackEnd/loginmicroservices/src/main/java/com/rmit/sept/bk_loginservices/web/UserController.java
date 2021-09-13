@@ -109,7 +109,7 @@ public class UserController {
         Iterable<User> userList = userService.getAllUsers();
         ArrayList<User> unapprovedBusiness = new ArrayList<User>();
         for (User user : userList){
-            if (user.getUserType().equals("seller") && user.getApproved() == null) {
+            if (user.getUserType().equals("seller") && !user.getApproved()) {
                 unapprovedBusiness.add(user);
             }
         }
