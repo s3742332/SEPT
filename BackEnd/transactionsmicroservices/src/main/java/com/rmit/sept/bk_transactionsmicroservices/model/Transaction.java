@@ -15,11 +15,43 @@ public class Transaction {
 //    @NotBlank(message = "Username required.")
     private String userName;
 //    @NotBlank(message = "Book Title required")
+    private String sellerName;
+
     private String bookTitle;
 //    @NotBlank(message = "Author required")
     private String author;
 //    @NotBlank(message = "Cost needed")
     private double transactionCost;
+
+    private String bookType;
+
+    private boolean bookSold;
+
+    private boolean bookBought;
+
+    public boolean isBookSold() {
+        return bookSold;
+    }
+
+    public void setBookSold(boolean bookSold) {
+        this.bookSold = bookSold;
+    }
+
+    public boolean isBookBought() {
+        return bookBought;
+    }
+
+    public void setBookBought(boolean bookBought) {
+        this.bookBought = bookBought;
+    }
+
+    public String getBookType() {
+        return bookType;
+    }
+
+    public void setBookType(String bookType) {
+        this.bookType = bookType;
+    }
 
     public String getUserName() {
         return userName;
@@ -53,4 +85,13 @@ public class Transaction {
     public void setTransactionCost(double transactionCost) {
         this.transactionCost = transactionCost;
     }
+
+    public String getSellerName() {
+        return sellerName;
+    }
+
+    public void setSellerName(String sellerName) {
+        this.sellerName = sellerName;
+    }
+
 }
