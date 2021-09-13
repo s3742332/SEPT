@@ -31,7 +31,7 @@ public class User implements UserDetails {
     private String confirmPassword;
     private Date create_At;
     private Calendar update_At;
-    private Boolean approved;
+    private String approved;
     private String userType;
     private String abn;
     private String phoneNumber;
@@ -107,11 +107,11 @@ public class User implements UserDetails {
         return userType;
     }
 
-    public void setApproved(Boolean approved) {
+    public void setApproved(String approved) {
         this.approved = approved;
     }
 
-    public Boolean getApproved() {
+    public String getApproved() {
         return approved;
     }
 
