@@ -113,9 +113,20 @@ public class UserController {
                 unapprovedBusiness.add(user);
             }
         }
+
+        userList = unapprovedBusiness;
         
-        return  new ResponseEntity<Iterable<User>>(unapprovedBusiness, HttpStatus.OK);
+        return  new ResponseEntity<Iterable<User>>(userList, HttpStatus.OK);
     }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/getAllApprovedUsers")
+    public ResponseEntity<?> getAllApprovedBusiness(){
+        Iterable<User> userList = userService.getAllApprovedUsers();
+        
+        return  new ResponseEntity<Iterable<User>>(userList, HttpStatus.OK);
+    }
+
 
     @CrossOrigin(origins = "*")
     @PostMapping("/updateApproved")

@@ -46,7 +46,7 @@ function AccountSettings() {
                 phoneNumber: faker.phone.phoneNumber(),
                 abn: null
             }
-            dispatch(createNewUser(user))
+            dispatch(createNewUser(user, history, true))
         }
     }
 
@@ -57,14 +57,13 @@ function AccountSettings() {
                 fullName: faker.name.findName(),
                 username: faker.internet.email(),
                 userType: "seller",
-                approved: null,
                 password: password,
                 confirmPassword: password,
                 address: faker.address.streetAddress(),
                 phoneNumber: faker.phone.phoneNumber(),
                 abn: faker.datatype.number(),
             }
-            dispatch(createNewUser(user))
+            dispatch(createNewUser(user, history, true))
         }
     }
     const createBook = () => {
@@ -78,7 +77,7 @@ function AccountSettings() {
                 stockLevel: faker.datatype.number(),
                 approved: false
             }
-            dispatch(bookEdit(book))
+            dispatch(bookEdit(book, history, true))
         }
     }
     const createAdmin = () => {
@@ -93,7 +92,7 @@ function AccountSettings() {
             phoneNumber: faker.phone.phoneNumber(),
             abn: null
         }
-        dispatch(createNewUser(user))
+        dispatch(createNewUser(user, history, true))
     }
     const menu = (
         <Menu style={{ padding: "1rem" }}>
@@ -103,7 +102,7 @@ function AccountSettings() {
                 <Menu.Item key="/profile" >Profile</Menu.Item>
                 {security.user.userType !== "admin" ? <>
                     <Menu.Item key="/inventory" onClick={() => history.push('inventory')}>Inventory</Menu.Item>
-                    <Menu.Item key="/transactions" >Transactions</Menu.Item> </> : null}
+                    <Menu.Item key="/transactions" onClick={() => history.push('transactions')}>Transactions</Menu.Item> </> : null}
                 <Menu.Item key="/logout" onClick={handleLogout}>Logout</Menu.Item>
             </> : <>
 

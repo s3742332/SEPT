@@ -41,7 +41,7 @@ export const getPendingSellerList = () => async dispatch => {
 
 export const getUserAccountsList = () => async dispatch => {
     try {
-        const res = await axios.get(`http://localhost:8080/api/users/getAllUsers`)
+        const res = await axios.get(`http://localhost:8080/api/users/getAllApprovedUsers`)
         dispatch({
             type: GET_ACCOUNTS,
             payload: res.data

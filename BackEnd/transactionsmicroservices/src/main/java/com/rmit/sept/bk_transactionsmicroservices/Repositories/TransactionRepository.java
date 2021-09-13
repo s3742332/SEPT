@@ -10,6 +10,6 @@ import java.util.List;
 public interface TransactionRepository extends CrudRepository<Transaction, Long> {
 
     Transaction getById(Long id);
-    List<Transaction> findBooksByOrderNumber(int orderNumber);
+    List<Transaction> findBooksByUserName(String username);
 
 }

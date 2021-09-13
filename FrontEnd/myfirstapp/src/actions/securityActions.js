@@ -4,7 +4,7 @@ import setJWTToken from "../securityUtils/setJWTToken";
 import jwt_decode from "jwt-decode";
 
 
-export const createNewUser = (newUser, history) => async dispatch => {
+export const createNewUser = (newUser, history, devTool) => async dispatch => {
 
 
     try {
@@ -14,7 +14,7 @@ export const createNewUser = (newUser, history) => async dispatch => {
             }
         }
         const res = await axios.post("http://localhost:8080/api/users/register", newUser, config)
-        if (res.status === 201) {
+        if (res.status === 201 && !devTool) {
             history.push('/login')
         }
     }

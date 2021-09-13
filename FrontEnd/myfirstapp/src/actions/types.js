@@ -18,3 +18,7 @@ export const INCREMENT = "INCREMENT";
 export const UPDATE_BOOK = "UPDATE_BOOK";
 export const GET_BOOK_LIST = "GET_BOOK_LIST";
 export const GET_PENDING_BOOK_LIST = "GET_PENDING_BOOK_LIST";
+
+// Transactions
+export const CREATE_TRANSACTION = "CREATE_TRANSACTION"; 
+export const GET_TRANSACTIONS = " GET_TRANSACTIONS";

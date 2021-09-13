@@ -12,27 +12,38 @@ public class Transaction {
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
 
-//    @NotBlank(message = "Order Number required")
-    private int orderNumber;
-//    @NotBlank(message = "Item purchased required")
-    private String itemPurchased;
+//    @NotBlank(message = "Username required.")
+    private String userName;
+//    @NotBlank(message = "Book Title required")
+    private String bookTitle;
+//    @NotBlank(message = "Author required")
+    private String author;
 //    @NotBlank(message = "Cost needed")
     private double transactionCost;
 
-    public int getOrderNumber() {
-        return orderNumber;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setOrderNumber(int orderNumber) {
-        this.orderNumber = orderNumber;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getItemPurchased() {
-        return itemPurchased;
+
+    public String getBookTitle() {
+        return bookTitle;
     }
 
-    public void setItemPurchased(String itemPurchased) {
-        this.itemPurchased = itemPurchased;
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public double getTransactionCost() {

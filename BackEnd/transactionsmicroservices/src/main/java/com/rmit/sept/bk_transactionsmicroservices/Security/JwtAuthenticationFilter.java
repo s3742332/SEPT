@@ -1,7 +1,7 @@
 package com.rmit.sept.bk_transactionsmicroservices.Security;
 
-import com.rmit.sept.bk_loginservices.model.User;
-import com.rmit.sept.bk_loginservices.services.CustomUserDetailsService;
+import com.rmit.sept.bk_transactionsmicroservices.Services.CustomTransactionServiceDetails;
+import com.rmit.sept.bk_transactionsmicroservices.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -22,7 +22,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private JwtTokenProvider tokenProvider;
 
     @Autowired
-    private CustomUserDetailsService customUserDetailsService;
+    private CustomTransactionServiceDetails customTransactionServiceDetails;
 
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
@@ -33,14 +33,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             String jwt = getJWTFromRequest(httpServletRequest);
 
             if(StringUtils.hasText(jwt)&& tokenProvider.validateToken(jwt)){
-                Long userId = tokenProvider.getUserIdFromJWT(jwt);
-                User userDetails = customUserDetailsService.loadUserById(userId);
+                // Long transactionId = tokenProvider.getTransactionIdFromJWT(jwt);
+                // Transaction transactionDetails = customTransactionServiceDetails.loadTransactionById(transactionId);
 
-                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-                        userDetails, null, Collections.emptyList());
+                // UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
+                //         transactionDetails, null, Collections.emptyList());
 
-                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
-                SecurityContextHolder.getContext().setAuthentication(authentication);
+                // authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
+                // SecurityContextHolder.getContext().setAuthentication(authentication);
 
             }
 

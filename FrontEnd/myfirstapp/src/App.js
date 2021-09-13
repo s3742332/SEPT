@@ -35,25 +35,26 @@ import Categories from "./components/Search/Categories";
 import SearchResult from "./components/Marketplace/SearchResult";
 import BookEdit from "./components/Books/BookEdit/BookEdit";
 import PendingBook from "./components/Books/PendingBook/PendingBook";
+import CustomerTransactions from "./components/Transactions/CustomerTransactions";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
-  const jwtToken = localStorage.jwtToken;
+  const jwtToken = localStorage.getItem("jwtToken");
   const dispatch = useDispatch();
   const security = useSelector(state => state.security);
   useEffect(() => {
     if (jwtToken) {
       setJWTToken(jwtToken);
       const decoded_jwtToken = jwt_decode(jwtToken);
-      console.log(decoded_jwtToken)
+      console.log("TOKEN", decoded_jwtToken)
       dispatch(setUser(decoded_jwtToken));
 
-      // const currentTime = Date.now() / 1000;
-      // if (decoded_jwtToken.exp < currentTime) {
-      //   console.log("Logging Out");
-      //   console.log("TOKEN TIME" , moment(decoded_jwtToken.exp).toDate().toISOString())
-      //   dispatch(logout());
-      //   window.location.href = "/";
-      // }
+      const currentTime = Date.now() / 1000;
+      if (decoded_jwtToken.exp < currentTime) {
+        console.log("Logging Out");
+        console.log("TOKEN TIME" , moment(decoded_jwtToken.exp).toDate().toISOString())
+        dispatch(logout());
+        window.location.href = "/";
+      }
     }
   }, [])
   useEffect(() => {
@@ -103,6 +104,7 @@ function App() {
             <Route exact path="/sell" component={Sell} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/transactions" component={CustomerTransactions} />
             <Route exact path="/details" component={BookDetails} />
             <Route exact path="/payment" component={Payment} />
             <Route exact path="/inventory" component={Inventory} />
