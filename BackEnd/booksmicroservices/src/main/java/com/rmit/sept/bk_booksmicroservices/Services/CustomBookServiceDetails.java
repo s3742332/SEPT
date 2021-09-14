@@ -14,7 +14,7 @@ public class CustomBookServiceDetails {
 
     @Autowired
     private BookRepository bookRepository;
-
+    @Transactional
     public List<Book> loadBooksByAuthor(String author)
     {
         List<Book> books = bookRepository.findBooksByAuthor(author);
@@ -26,7 +26,7 @@ public class CustomBookServiceDetails {
 
         return books;
     }
-
+    @Transactional
     public List<Book> loadBooksByTitle(String title)
     {
         List<Book> books = bookRepository.findBooksByAuthor(title);
