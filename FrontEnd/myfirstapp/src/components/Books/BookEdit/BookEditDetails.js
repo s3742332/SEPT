@@ -21,10 +21,12 @@ function BookEditDetails(props) {
     const handleBlock = (e) => {
         e.preventDefault();
         dispatch(bookEdit(data));
+        props.handleFetch();
     }
     const handleEdit = (e) => {
         e.preventDefault();
         dispatch(bookEdit(data));
+        props.handleFetch();
     }
 
     return (

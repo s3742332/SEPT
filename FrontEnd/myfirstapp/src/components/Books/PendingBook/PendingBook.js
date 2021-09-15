@@ -17,9 +17,18 @@ function PendingBook() {
         dispatch(getPendingBookList())
     }, [dispatch])
     useEffect(() => {
-        setFilteredData(book.pendingBookList)
-    }, [book])
+        if(!book.loading) {
+            console.log("LOADING DONE", book.pendingBookList)
+            setFilteredData(book.pendingBookList)
+        }
+    }, [book.loading])
 
+    useEffect(() => {
+        if(!book.editLoading) {
+            dispatch(getPendingBookList())
+            setSelectedBook([])
+        }
+    }, [book.editLoading])
     const handleSearch = (event) => {
         setSearch(event.target.value)
         setFilteredData(book.bookList.filter(data => data.title.toLowerCase().includes(event.target.value.toLowerCase())))
@@ -44,7 +53,7 @@ function PendingBook() {
             </Col>
             <Col xs={20} style={{ padding: "1rem" }}>
                 <Title level={2} style={{textAlign: "center"}}>Book Information</Title>
-                <PendingBookDetails data={selectedBook} />
+                <PendingBookDetails data={selectedBook}/>
             </Col>
         </Row>
     )
