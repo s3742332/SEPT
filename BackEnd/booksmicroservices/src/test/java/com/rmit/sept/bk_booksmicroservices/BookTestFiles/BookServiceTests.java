@@ -4,7 +4,8 @@ import com.rmit.sept.bk_booksmicroservices.Services.BookService;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
 import com.rmit.sept.bk_booksmicroservices.Repositories.BookRepository;
 
-import static org.junit.Assert.assertEquals;
+//import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -22,6 +23,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
+import org.springframework.boot.test.context.SpringBootTest;
 
 // @ExtendWith(SpringExtension.class)
 // @SpringBootTest
@@ -38,10 +40,10 @@ public class BookServiceTests {
     // private BookRepository bookRepository;
 
     @InjectMocks
-    BookService bookService;
+    private BookService bookService;
 
     @Mock
-    BookRepository bookRepository;
+    private BookRepository bookRepository;
 
     @BeforeEach
     void setup() {
