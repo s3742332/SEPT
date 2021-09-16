@@ -2,6 +2,9 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
 import { App } from '../../App'
+import { ItalicOutlined } from '@ant-design/icons'
+import { Provider } from 'react-redux'
+import store from "../../store";
     
 describe('App', () => {
   it('renders without crashing given the required props', () => {
@@ -11,7 +14,7 @@ describe('App', () => {
       selectedSubreddit: 'reactjs',
       posts: []
     }
-    const wrapper = shallow(<App {...props} />)
+    const wrapper = shallow(<Provider store={store}><App {...props} /></Provider>)
     expect(toJson(wrapper)).toMatchSnapshot()
   })
 })
