@@ -16,8 +16,7 @@ public class TransactionService {
     public Transaction saveTransaction(Transaction transaction)
     {
         try {
-            transaction.setAuthor(transaction.getAuthor());
-            transaction.setBookTitle(transaction.getBookTitle());
+            transaction.setBooks(transaction.getBooks());
             transaction.setTransactionCost(transaction.getTransactionCost());
             transaction.setUserName(transaction.getUserName());
             transaction.setSellerName(transaction.getSellerName());
