@@ -1,9 +1,7 @@
 package com.rmit.sept.bk_transactionsmicroservices.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Transaction {
@@ -17,11 +15,14 @@ public class Transaction {
 //    @NotBlank(message = "Book Title required")
     private String sellerName;
 
-    private String bookTitle;
-//    @NotBlank(message = "Author required")
-    private String author;
+//    private String bookTitle;
+////    @NotBlank(message = "Author required")
+//    private String author;
 //    @NotBlank(message = "Cost needed")
     private double transactionCost;
+
+    @ElementCollection
+    private List<String> books;
 
     private String bookType;
 
@@ -62,20 +63,12 @@ public class Transaction {
     }
 
 
-    public String getBookTitle() {
-        return bookTitle;
+    public List<String> getBooks() {
+        return books;
     }
 
-    public void setBookTitle(String bookTitle) {
-        this.bookTitle = bookTitle;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setBooks(List<String> books) {
+        this.books = books;
     }
 
     public double getTransactionCost() {
