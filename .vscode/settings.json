@@ -1,3 +1,42 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "restoreTerminals.runOnStartup": false, // true is the default
+    // set to false if using a keybinding or command palette
+    "restoreTerminals.terminals": [
+        {
+            "splitTerminals": [
+                {
+                    "name": "react",
+                    "commands": [
+                        "cd ./FrontEnd/myfirstapp",
+                        "npm start" // your git command(s)
+                    ]
+                },
+                {
+                    "name": "login",
+                    "commands": [
+                        "cd ./BackEnd/loginmicroservices",
+                        "./mvnw package",
+                        "java -jar ./target/loginmicroservices-0.0.1.jar"
+                    ]
+                },
+                {
+                    "name": "books",
+                    "commands": [
+                        "cd ./BackEnd/booksmicroservices",
+                        "./mvnw package",
+                        "java -jar ./target/booksmicroservices-0.0.1.jar"
+                    ]
+                },
+                {
+                    "name": "transactions",
+                    "commands": [
+                        "cd ./BackEnd/transactionsmicroservices",
+                        "./mvnw package",
+                        "java -jar ./target/transactionsmicroservices-0.0.1.jar"
+                    ]
+                }
+            ]
+        },
+    ]
 }

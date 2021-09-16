@@ -17,13 +17,22 @@ function PendingSeller() {
         dispatch(getPendingSellerList())
     }, [dispatch])
     useEffect(() => {
-        setFilteredData(user.pendingSellers)
-    }, [user])
+        if(!user.loading) {
+            console.log("LOADING DONE", user.pendingSellers)
+            setFilteredData( user.pendingSellers)
+        }
+    }, [user.loading])
 
     const handleSearch = (event) => {
         setSearch(event.target.value)
         setFilteredData(user.pendingSellers.filter(data => data.username.toLowerCase().includes(event.target.value.toLowerCase())))
     }
+    useEffect(() => {
+        if(!user.editLoading) {
+            dispatch(getPendingSellerList())
+            setSelectedUser([])
+        }
+    }, [user.editLoading])
     const { Title } = Typography;
     useEffect(() => {
         search.length != 0 ? setClear("visible") : setClear("hidden")

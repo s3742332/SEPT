@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_PENDING_SELLERS, GET_ACCOUNTS, GET_ERRORS, INCREMENT, UPDATE_APPROVED } from "./types";
+import { GET_PENDING_SELLERS, GET_ACCOUNTS, GET_ERRORS, INCREMENT, USER_EDIT, USER_EDIT_LOADING, USER_LOADING } from "./types";
 
 export const userEdit = (user) => async dispatch => {
     try {
@@ -8,11 +8,11 @@ export const userEdit = (user) => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        console.log("UserInfoAction", user)
+        dispatch({type: USER_EDIT_LOADING})
         // let params = { id: user.id, approved: user.approved };
         const res = await axios.post(`http://localhost:8080/api/users/updateApproved/`, user, config );
         dispatch({
-            type: UPDATE_APPROVED,
+            type: USER_EDIT,
             payload: res.data
         })
     } catch (err) {
@@ -25,7 +25,8 @@ export const userEdit = (user) => async dispatch => {
 };
 
 export const getPendingSellerList = () => async dispatch => {
-    try {
+    try { 
+        dispatch({type: USER_LOADING})
         const res = await axios.get(`http://localhost:8080/api/users/getAllPendingBusiness`)
         dispatch({
             type: GET_PENDING_SELLERS,
