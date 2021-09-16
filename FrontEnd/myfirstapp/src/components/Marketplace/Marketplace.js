@@ -21,12 +21,12 @@ const Marketplace = (props) => {
         setSearch(event.target.value);
     }
 
-    useEffect(() => {
-        dispatch(getBookList())
-    }, [dispatch])
-    useEffect(() => {
-        setFilteredData(book.bookList)
-    }, [book])
+    // useEffect(() => {
+    //     dispatch(getBookList())
+    // }, [dispatch])
+    // useEffect(() => {
+    //     setFilteredData(book.bookList)
+    // }, [book])
 
     return (<div>
         <h1 style={{ textAlign: 'center', paddingTop: '25px' }}>Book Catalogue</h1>
@@ -37,7 +37,7 @@ const Marketplace = (props) => {
         onChange={handleSearch}
         />
         {
-            !search ? <Categories/> : <SearchResult />
+            !search ? <Categories/> : <SearchResult search={search} />
         }
         
     </div>
