@@ -36,6 +36,7 @@ import SearchResult from "./components/Marketplace/SearchResult";
 import BookEdit from "./components/Books/BookEdit/BookEdit";
 import PendingBook from "./components/Books/PendingBook/PendingBook";
 import CustomerTransactions from "./components/Transactions/CustomerTransactions";
+
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const jwtToken = localStorage.getItem("jwtToken");
@@ -123,3 +124,4 @@ function App() {
 }
 
 export default App
+export { App };
