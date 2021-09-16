@@ -1,87 +1,76 @@
 package com.rmit.sept.bk_loginservices.JUnit5Tests;
-
+import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertEquals;
-
 import java.util.Date;
-
 import com.rmit.sept.bk_loginservices.model.User;
-
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 public class UserTests {
+    User user;
     
+    @BeforeEach 
+    void setUp() {
+        user = new User();
+        user.setId(34L);
+        user.setFullName("Max Maximus");
+        user.setUsername("Maxy");
+        user.setPassword("Daxy");
+        user.setConfirmPassword("Paxy");
+        user.setCreate_At( new Date());
+        user.setUserType("Customer");
+        user.setApproved(true);
+        user.setPhoneNumber("040118293");
+        user.setAddress("Max Street");
+    }
+
     @Test
     public void getIdTest(){
-        User user1 = new User();
-        user1.setId(34L);
-        Long value = (Long)user1.getId();
-        Long num = 34L;
-        assertEquals(num,  value);
+        assertEquals( (Long)34L,  user.getId());
     }
 
     @Test
     public void getFullNameTest(){
-        User user1 = new User();
-        user1.setFullName("Max Maximus");
-        assertEquals("Max Maximus" , user1.getFullName());
+       assertEquals("Max Maximus" , user.getFullName() );
     }
 
     
     @Test
     public void getUsernameTest(){
-        User user1 = new User();
-        user1.setUsername("Maxy");
-        assertEquals("Maxy" , user1.getUsername());
+        assertEquals("Maxy" , user.getUsername());
     }
     
     @Test
     public void getPasswordTest(){
-        User user1 = new User();
-        user1.setPassword("Daxy");
-        assertEquals("Daxy" , user1.getPassword());
+        assertEquals("Daxy" , user.getPassword());
     }
     
     @Test
     public void getConfirmPasswordTest(){
-        User user1 = new User();
-        user1.setConfirmPassword("Paxy");
-        assertEquals("Paxy" , user1.getConfirmPassword());
+        assertEquals("Paxy" , user.getConfirmPassword());
     }
     
-    //Use date object
     @Test
     public void getCreate_AtTest(){
-        User user1 = new User();
-        Date curDate = new Date();
-        user1.setCreate_At(curDate);
-        assertEquals(new Date() , user1.getCreate_At());
+        assertEquals(new Date() , user.getCreate_At());
     }
 
     @Test
     public void getUserTypeTest(){
-        User user1 = new User();
-        user1.setUserType("Customer");
-        assertEquals("Customer" , user1.getUserType());
+        assertEquals("Customer" , user.getUserType());
     }
 
     @Test
     public void getAprrovedTest(){
-        User user1 = new User();
-        user1.setApproved(true);
-        assertEquals(true , user1.getApproved());
+        assertEquals(true , user.getApproved());
     }
 
     @Test
     public void getPhoneNumberTest(){
-        User user1 = new User();
-        user1.setPhoneNumber("040118293");
-        assertEquals("040118293" , user1.getPhoneNumber());
+        assertEquals("040118293" , user.getPhoneNumber());
     }
 
     @Test
     public void getAddressTest(){
-        User user1 = new User();
-        user1.setAddress("Max Street");
-        assertEquals("Max Street" , user1.getAddress());
+        assertEquals("Max Street" , user.getAddress());
     }
 }
