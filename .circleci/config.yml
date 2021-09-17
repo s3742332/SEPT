@@ -6,15 +6,13 @@ version: 2.1
 jobs:
   backendbuild:
     docker:
-      - image: cimg/node:current
+      - image: cimg/openjdk:16.0.2
     steps:
       - checkout
       - run:
           name: Install Dependencies
           command: |
             sudo apt update
-            sudo apt install default-jdk
-            sudo apt install maven
             mvn -N io.takari:maven:wrapper
       - run:
           name: Login microservice
