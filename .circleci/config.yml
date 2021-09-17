@@ -23,7 +23,7 @@ jobs:
       - run:
           name: book microservice
           command: |
-            cd ~/project/BackEnd/bookmicroservices/
+            cd ~/project/BackEnd/bookmicroservices
             chmod u+x ~/project/BackEnd/bookmicroservices/mvnw
             ~/project/BackEnd/bookmicroservices/mvnw package
       - run:
