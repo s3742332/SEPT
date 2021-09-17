@@ -1,16 +1,38 @@
 import bookReducer from "../bookReducer";
-import { GET_PENDING_BOOK_LIST, GET_BOOK_LIST, GET_SEARCHED_BOOKS } from "../../actions/types";
+import { GET_PENDING_BOOK_LIST, GET_BOOK_LIST, GET_SEARCHED_BOOKS, BOOK_LOADING, BOOK_EDIT_LOADING, UPDATE_BOOK } from "../../actions/types";
 
 const initialState = {
     bookList: [],
     pendingBookList: [],
     searchedBooks: [],
-    loading: true
+    loading: false,
+    editLoading: false
 };
 
 describe('authenticate book reducer', () => {
     test('returns the initial state', () => {
         expect(bookReducer(undefined, {})).toEqual(initialState);
+    });
+
+    test('handles get book loading', () => {
+        expect(bookReducer(initialState, { type: BOOK_LOADING })).toEqual({
+            ...initialState,
+            loading: true,
+        });
+    });
+
+    test('handles get book edit loading', () => {
+        expect(bookReducer(initialState, { type: BOOK_EDIT_LOADING })).toEqual({
+            ...initialState,
+            editLoading: true,
+        });
+    });
+
+    test('handles get update book', () => {
+        expect(bookReducer(initialState, { type: UPDATE_BOOK })).toEqual({
+            ...initialState,
+            editLoading:false,
+        });
     });
 
     test('handles get book list', () => {

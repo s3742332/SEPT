@@ -1,13 +1,14 @@
 import { ItalicOutlined } from "@ant-design/icons";
 import ActionButton from "antd/lib/modal/ActionButton";
 import userReducer from "../userReducer";
-import { USER_EDIT, INCREMENT, GET_ACCOUNTS, GET_PENDING_SELLERS } from "../../actions/types";
+import { USER_EDIT, INCREMENT, GET_ACCOUNTS, GET_PENDING_SELLERS, USER_LOADING, USER_EDIT_LOADING } from "../../actions/types";
 
 const initialState = {
     pendingSellers: [],
     userAccounts: [],
     value: 0,
-    loading: true
+    loading: false,
+    editLoading: false
 };
 
 describe('authenticate user reducer', () => {
@@ -15,10 +16,24 @@ describe('authenticate user reducer', () => {
         expect(userReducer(undefined, {})).toEqual(initialState);
     });
 
+    test('handles user loading', () => {
+        expect(userReducer(initialState, { type: USER_LOADING })).toEqual({
+            ...initialState,
+            loading: true,
+        });
+    });
+
+    test('handles edit loading', () => {
+        expect(userReducer(initialState, { type: USER_EDIT_LOADING })).toEqual({
+            ...initialState,
+            editLoading: true,
+        });
+    });
+
     test('handles user edit', () => {
         expect(userReducer(initialState, { type: USER_EDIT })).toEqual({
             ...initialState,
-            pendingUsers: USER_EDIT.payload,
+            editLoading: false,
         });
     });
 
