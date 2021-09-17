@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ERRORS, GET_PENDING_BOOK_LIST, GET_BOOK_LIST, UPDATE_BOOK, GET_SEARCHED_BOOKS } from "./types";
+import { GET_ERRORS, GET_PENDING_BOOK_LIST, GET_BOOK_LIST, UPDATE_BOOK, GET_SEARCHED_BOOKS, BOOK_LOADING, BOOK_EDIT_LOADING } from "./types";
 
 export const bookEdit = (book) => async dispatch => {
     try {
@@ -8,7 +8,7 @@ export const bookEdit = (book) => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        console.log("bookInfoAction", book)
+        dispatch({type: BOOK_EDIT_LOADING})
         const res = await axios.post(`http://localhost:8082/api/books/saveBook/`, book, config);
         dispatch({
             type: UPDATE_BOOK,
@@ -51,12 +51,13 @@ export const getPendingBookList = () => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
+        dispatch({type: BOOK_LOADING})
         const res = await axios.get(`http://localhost:8082/api/books/getAllPendingBooks`, config)
         console.log(res.data)
         console.log(axios.defaults.headers.common)
         dispatch({
             type: GET_PENDING_BOOK_LIST,
-            payload: res.data
+            payload: res.data,
         })
     } catch (err) {
         dispatch({

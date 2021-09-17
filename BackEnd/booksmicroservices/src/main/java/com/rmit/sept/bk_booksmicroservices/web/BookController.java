@@ -78,4 +78,13 @@ public class BookController {
         return new ResponseEntity<Iterable<Book>>(bookList, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "*")
+    @GetMapping("/getBooksByCategory/{category}")
+    public ResponseEntity<?> getBooksInCategory(@PathVariable String category)
+    {
+        Iterable<Book> bookList = bookService.getAllBooksByCategory(category);
+
+        return new ResponseEntity<Iterable<Book>>(bookList, HttpStatus.OK);
+    }
+
 }

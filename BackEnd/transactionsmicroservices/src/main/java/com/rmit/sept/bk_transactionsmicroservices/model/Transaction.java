@@ -1,9 +1,7 @@
 package com.rmit.sept.bk_transactionsmicroservices.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Transaction {
@@ -14,43 +12,24 @@ public class Transaction {
 
 //    @NotBlank(message = "Username required.")
     private String userName;
-//    @NotBlank(message = "Book Title required")
-    private String sellerName;
 
-    private String bookTitle;
-//    @NotBlank(message = "Author required")
-    private String author;
+//    private String bookTitle;
+////    @NotBlank(message = "Author required")
+//    private String author;
 //    @NotBlank(message = "Cost needed")
     private double transactionCost;
 
-    private String bookType;
+    @ElementCollection
+    private List<String> books;
 
-    private boolean bookSold;
+    private boolean orderComplete;
 
-    private boolean bookBought;
-
-    public boolean isBookSold() {
-        return bookSold;
+    public boolean isOrderComplete() {
+        return orderComplete;
     }
 
-    public void setBookSold(boolean bookSold) {
-        this.bookSold = bookSold;
-    }
-
-    public boolean isBookBought() {
-        return bookBought;
-    }
-
-    public void setBookBought(boolean bookBought) {
-        this.bookBought = bookBought;
-    }
-
-    public String getBookType() {
-        return bookType;
-    }
-
-    public void setBookType(String bookType) {
-        this.bookType = bookType;
+    public void setOrderComplete(boolean orderComplete) {
+        this.orderComplete = orderComplete;
     }
 
     public String getUserName() {
@@ -62,20 +41,12 @@ public class Transaction {
     }
 
 
-    public String getBookTitle() {
-        return bookTitle;
+    public List<String> getBooks() {
+        return books;
     }
 
-    public void setBookTitle(String bookTitle) {
-        this.bookTitle = bookTitle;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setBooks(List<String> books) {
+        this.books = books;
     }
 
     public double getTransactionCost() {
@@ -84,14 +55,6 @@ public class Transaction {
 
     public void setTransactionCost(double transactionCost) {
         this.transactionCost = transactionCost;
-    }
-
-    public String getSellerName() {
-        return sellerName;
-    }
-
-    public void setSellerName(String sellerName) {
-        this.sellerName = sellerName;
     }
 
 }

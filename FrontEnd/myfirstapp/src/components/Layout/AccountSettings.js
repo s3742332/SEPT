@@ -77,7 +77,9 @@ function AccountSettings() {
                 bookDescription: faker.commerce.productDescription(),
                 bookCost: faker.commerce.price(),
                 stockLevel: faker.datatype.number(),
-                approved: false
+                approved: false,
+                cover: faker.image.imageUrl(),
+                isbn: faker.datatype.number()
             }
             dispatch(bookEdit(book, history, true))
         }

@@ -16,14 +16,10 @@ public class TransactionService {
     public Transaction saveTransaction(Transaction transaction)
     {
         try {
-            transaction.setAuthor(transaction.getAuthor());
-            transaction.setBookTitle(transaction.getBookTitle());
+            transaction.setBooks(transaction.getBooks());
             transaction.setTransactionCost(transaction.getTransactionCost());
             transaction.setUserName(transaction.getUserName());
-            transaction.setSellerName(transaction.getSellerName());
-            transaction.setBookType(transaction.getBookType());
-            transaction.setBookSold(transaction.isBookSold());
-            transaction.setBookBought(transaction.isBookBought());
+            transaction.setOrderComplete(transaction.isOrderComplete());
 
             return transactionRepository.save(transaction);
         }
@@ -43,6 +39,33 @@ public class TransactionService {
         catch (Exception e)
         {
             throw new TransactionException("Unable to retrieve transaction list.");
+        }
+    }
+
+    @Transactional
+    public Transaction getTransactionById(Long id)
+    {
+        try
+        {
+            return transactionRepository.getById(id);
+        }
+        catch(Exception e)
+        {
+            throw new TransactionException("No transaction with that ID.");
+        }
+    }
+
+    @Transactional
+    public Transaction updateOrderStatus(Transaction transaction)
+    {
+        try {
+            transaction.setOrderComplete(true);
+
+            return transactionRepository.save(transaction);
+        }
+        catch (Exception e)
+        {
+            throw new TransactionException("Unable to create transaction");
         }
     }
 }
