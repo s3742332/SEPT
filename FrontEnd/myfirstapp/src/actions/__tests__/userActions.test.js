@@ -1,5 +1,5 @@
 import axios from "axios"
-import { BASE_URL, fetchApprovedUsers, fetchPendingSellers } from "../../../utils"
+import { USER_BASE_URL, fetchApprovedUsers, fetchPendingSellers } from "../../../utils"
 
 jest.mock("axios");
 
@@ -16,7 +16,7 @@ describe("fetchPendingSellers", () => {
 
             const result = await fetchPendingSellers();
 
-            expect(axios.get).toHaveBeenCalledWith('${BASE_URL}/api/users/getAllPendingBusiness/');
+            expect(axios.get).toHaveBeenCalledWith('${USER_BASE_URL}/api/users/getAllPendingBusiness/');
             expect(result).toEqual(pendingSellers);
         });
     });
@@ -28,7 +28,7 @@ describe("fetchPendingSellers", () => {
 
             const result = await fetchPendingSellers();
 
-            expect(axios.get).toHaveBeenCalledWith('${BASE_URL}/api/users/getAllPendingBusiness/');
+            expect(axios.get).toHaveBeenCalledWith('${USER_BASE_URL}/api/users/getAllPendingBusiness/');
             expect(result).toEqual([]);
         })
     })
@@ -45,7 +45,7 @@ describe("fetchApprovedUsers", () => {
 
             const result = await fetchApprovedUsers();
 
-            expect(axios.get).toHaveBeenCalledWith('${BASE_URL}/api/users/getAllApprovedUsers/');
+            expect(axios.get).toHaveBeenCalledWith('${USER_BASE_URL}/api/users/getAllApprovedUsers/');
             expect(result).toEqual(users);
         });
     });
@@ -57,7 +57,7 @@ describe("fetchApprovedUsers", () => {
 
             const result = await fetchApprovedUsers();
 
-            expect(axios.get).toHaveBeenCalledWith('${BASE_URL}/api/users/getAllApprovedUsers/');
+            expect(axios.get).toHaveBeenCalledWith('${USER_BASE_URL}/api/users/getAllApprovedUsers/');
             expect(result).toEqual([]);
         })
     })
