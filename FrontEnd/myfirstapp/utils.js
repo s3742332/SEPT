@@ -2,6 +2,13 @@ import axios from "axios";
 
 export const USER_BASE_URL = "http://localhost:8080"
 export const BOOK_BASE_URL = "http://localhost:8082"
+export const TSCN_BASE_URL = "http://localhost:8081"
+
+export const config = {
+    headers: {
+        "Content-Type": "application/json",
+    }
+};
 
 // userAction Test Utils
 
@@ -42,13 +49,6 @@ export const fetchApprovedUsers = async () => {
 
 // bookAction Test Utils
 
-export const config = {
-    headers: {
-        "Content-Type": "application/json",
-    }
-};
-
-//TODO bookEdit test
 export const fetchBookEdit = async () => {
     try {
         const book = {id: 1, name: "Book 1"}
@@ -78,7 +78,23 @@ export const fetchPendingBookList = async () => {
 
 // transactionAction Test Utils
 
-//TODO createPerson test
+export const fetchTransactionEdit = async () => {
+    try {
+        const transaction = { id: 1, name: "Transaction 1"};
+        return await axios.post('${TSCN_BASE_URL}/api/transactions/saveTransaction', transaction, config)
+    } catch (e) {
+        return [];
+    }
+};
+
+export const fetchUserTransaction = async () => {
+    try {
+        const username = "User1";
+        return await axios.post(`${TSCN_BASE_URL}/api/transactions/getAllUserTransactions?userName=${username}`, config);
+    } catch (e) {
+        return [];
+    }
+};
 
 
 
