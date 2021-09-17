@@ -20,9 +20,10 @@ public class BookService {
             book.setAuthor(book.getAuthor());
             book.setBookCost(book.getBookCost());
             book.setBookDescription(book.getBookDescription());
-            book.setCompanyName(book.getCompanyName());
+            book.setSeller(book.getSeller());
             book.setStockLevel(book.getStockLevel());
             book.setCategory(book.getCategory());
+            book.setUsed(book.isUsed());
 
             return bookRepository.save(book);
 
@@ -51,6 +52,20 @@ public class BookService {
         try
         {
             return bookRepository.findBooksByCategory(category);
+        }
+        catch (Exception e)
+        {
+            throw new BookNotFoundException("Unable to retrieve book list");
+        }
+
+    }
+
+    @Transactional
+    public Iterable<Book> getAllBooksByCondition (Boolean used)
+    {
+        try
+        {
+            return bookRepository.findBooksByUsed(used);
         }
         catch (Exception e)
         {
