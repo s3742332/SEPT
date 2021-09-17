@@ -9,6 +9,9 @@ export const transactionEdit = (transaction, history, devTool) => async dispatch
             }
         }
         const res = await axios.post(`http://localhost:8081/api/transactions/saveTransaction`, transaction, config );
+        if(res.status === 201) {
+            history.push('/confirmation')
+        }
         dispatch({
             type: CREATE_TRANSACTION,
             payload: res.data
@@ -31,7 +34,7 @@ export const getUserTransaction = (username, history, devTool) => async dispatch
         }
 
         console.log(username)
-        const res = await axios.get(`http://localhost:8081/api/transactions/getAllUserTransactions?userName=${username}`,config)
+        const res = await axios.get(`http://localhost:8081/api/transactions/getAllUserTransactions/${username}`,config)
         console.log(res.data)
         dispatch({
             type: GET_TRANSACTIONS,

@@ -3,6 +3,7 @@ import { getUser } from '../../actions/securityActions';
 import { getUserTransaction } from '../../actions/transactionActions'
 import { useDispatch, useSelector } from 'react-redux'
 import { Table, Tag, Row, Col, Typography } from 'antd';
+
 function CustomerTransactions() {
     const dispatch = useDispatch();
     const user = useSelector(state => state.security);
@@ -21,20 +22,22 @@ function CustomerTransactions() {
 
     const columns = [
         {
-            title: 'Name',
+            title: 'ID',
             dataIndex: 'userName',
-            key: 'userName',
+            key: 'id',
             render: text => <a>{text}</a>,
         },
         {
-            title: 'Book Title',
-            dataIndex: 'bookTitle',
+            title: 'Order Size',
+            dataIndex: 'books',
             key: 'bookTitle',
+            render: text => <a>{text.map((i)=> {return i})}</a>,
         },
         {
-            title: 'Book Author',
-            dataIndex: 'author',
+            title: 'Order Status',
+            dataIndex: 'orderComplete',
             key: 'author',
+            render: text => <a>{text? "COMPLETE": "INCOMPLETE"}</a>,
         },
         {
             title: 'Cost',
