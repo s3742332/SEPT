@@ -10,16 +10,14 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Directory
-          command: |
-            cd ~/project/FrontEnd/myfirstapp
-      - run:
           name: Install Dependencies
           command: |
+            cd ~/project/FrontEnd/myfirstapp
             npm install
       - run:
           name: Run tests
-          command: |
+          command: 
+            cd ~/project/FrontEnd/myfirstapp|
             npm run test
 workflows:
   build:
