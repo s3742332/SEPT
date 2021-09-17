@@ -81,7 +81,7 @@ jobs:
           name: Run front end test
           command: |
             cd ~/project/FrontEnd/myfirstapp
-            npm test        
+            npm test -- --watchAll=false      
 workflows:
   build:
     jobs:
