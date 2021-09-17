@@ -57,12 +57,6 @@ jobs:
       - attach_workspace:
           at: ~/project/BackEnd
       - run:
-          name: Install Dependencies
-          command: |
-            sudo apt update
-            cd ~/project/FrontEnd/myfirstapp
-            npm install
-      - run:
           name: Run service
           background: yes
           command: |
@@ -77,6 +71,12 @@ jobs:
           background: yes
           command: |
             java -jar "~/project/BackEnd/transactionsmicroservices/target/transactionsmicroservices-0.0.1.jar" 
+      - run:
+          name: Install Dependencies
+          command: |
+            sudo apt update
+            cd ~/project/FrontEnd/myfirstapp
+            npm install
       - run:
           name: Run front end test
           command: |
