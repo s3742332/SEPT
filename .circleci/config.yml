@@ -7,7 +7,7 @@ jobs:
   install:
     working_directory: ~/FrontEnd/myfirstapp
     docker:
-      - image: cimg/base:stable
+      - image: cimg/node:current
     steps:
       - checkout
       - run:
