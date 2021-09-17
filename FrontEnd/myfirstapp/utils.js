@@ -5,13 +5,20 @@ export const BOOK_BASE_URL = "http://localhost:8082"
 
 // userAction Test Utils
 
-// export const editApprovedProfile = async () => {
-//     try {
-//         return await axios.post('${BASE_URL}/api/users/updateApproved/', user, config);
-//     } catch (e) {
-//         return [];
-//     }
-// }
+export const fetchUserEdit = async () => {
+    try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
+        const user = { id: 1, name: "User 1"}
+
+        return await axios.post('${USER_BASE_URL}/api/users/updateApproved/', user, config);
+    } catch (e) {
+        return [];
+    }
+}
 
 export const fetchPendingSellers = async () => {
     try {
@@ -44,6 +51,7 @@ export const config = {
 //TODO bookEdit test
 export const fetchBookEdit = async () => {
     try {
+        const book = {id: 1, name: "Book 1"}
         return await axios.post('${BOOK_BASE_URL}/api/books/saveBook', book, config);
     } catch (e) {
         return [];
@@ -68,7 +76,10 @@ export const fetchPendingBookList = async () => {
 
 //============================================================================================
 
-// personAction Test Utils
+// transactionAction Test Utils
+
+//TODO createPerson test
+
 
 
 

@@ -3,33 +3,33 @@ import { BOOK_BASE_URL, config, fetchBookEdit, fetchBookList, fetchPendingBookLi
 
 jest.mock("axios");
 
-//TODO bookEdit test
-// describe("fetchBookEdit", () => {
-//     describe("when API call is successful", () => {
-//         test("should return successful book edit", async () => {
-//             const book = {id: 1, name: "Book 1"}
-//             axios.post.mockResolvedValueOnce(book);
+describe("fetchBookEdit", () => {
+    describe("when API call is successful", () => {
+        test("should return successful book edit", async () => {
+            const book = {id: 1, name: "Book 1"}
+            axios.post.mockResolvedValueOnce(book, config);
+            
+            const result = await fetchBookEdit();
 
-//             const result = await fetchBookEdit();
+            expect(axios.post).toHaveBeenCalledWith('${BOOK_BASE_URL}/api/books/saveBook', book, config);
+            expect(result).toEqual(book);
+        });
+    });
 
-//             expect(axios.post).toHaveBeenCalledWith('${BOOK_BASE_URL}/api/books/saveBook', book, config);
-//             expect(result).toEqual(book);
-//         });
-//     });
 
-//     describe("when API call fails", () => {
-//         test("should return unsuccessful book edit", async () => {
-//             const book = {id: 1, name: "Book 1"}
-//             const message = "Error editing book";
-//             axios.post.mockRejectedValueOnce(new Error(message));
+    describe("when API call fails", () => {
+        test("should return unsuccessful book edit", async () => {
+            const book = {id: 1, name: "Book 1"}
+            const message = "Error editing book";
+            axios.post.mockRejectedValueOnce(new Error(message));
 
-//             const result = await fetchBookEdit();
+            const result = await fetchBookEdit();
 
-//             expect(axios.post).toHaveBeenCalledWith('${BOOK_BASE_URL}/api/books/saveBook', book, config);
-//             expect(result).toEqual([]);
-//         });
-//     });
-//});
+            expect(axios.post).toHaveBeenCalledWith('${BOOK_BASE_URL}/api/books/saveBook', book, config);
+            expect(result).toEqual([]);
+        });
+    });
+});
 
 describe("fetchBookList", () => {
     describe("when API call is successful", () => {

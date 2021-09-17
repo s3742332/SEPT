@@ -1,9 +1,28 @@
 import axios from "axios"
-import { USER_BASE_URL, fetchApprovedUsers, fetchPendingSellers } from "../../../utils"
+import { USER_BASE_URL, fetchApprovedUsers, fetchPendingSellers, fetchUserEdit } from "../../../utils"
 
 jest.mock("axios");
 
 //TODO userEdit test
+describe("fetchUserEdit", () => {
+    describe("when API call is successful", () => {
+        test("should return successful user edit", async () => {
+            const config = {
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            }
+            const user = { id: 1, name: "User 1"};
+
+            axios.post.mockResolvedValueOnce(user, config);
+
+            const result = await fetchUserEdit();
+
+            expect(axios.post).toHaveBeenCalledWith('${USER_BASE_URL}/api/users/updateApproved/', user, config );
+            expect(result).toEqual(user);
+        })
+    })
+})
 
 describe("fetchPendingSellers", () => {
     describe("when API call is successful", () => {
