@@ -16,8 +16,8 @@ jobs:
             npm install
       - run:
           name: Run tests
-          command: 
-            cd ~/project/FrontEnd/myfirstapp|
+          command: |
+            cd ~/project/FrontEnd/myfirstapp
             npm run test
 workflows:
   build:
