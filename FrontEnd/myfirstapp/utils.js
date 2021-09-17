@@ -96,6 +96,19 @@ export const fetchUserTransaction = async () => {
     }
 };
 
+//============================================================================================
+
+// securityAction Test Utils
+
+export const fetchCreateNewUser = async () => {
+    try {
+        const newUser = { id: 1, name: "New User"};
+        return await axios.post("${USER_BASE_URL}/api/users/register", newUser, config);
+    } catch (e) {
+        return [];
+    }
+}
+
 
 
 
