@@ -10,6 +10,12 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install Dependencies
+          command: |
+            sudo apt update
+            sudo apt install default-jdk
+            mvn -N io.takari:maven:wrapper
+      - run:
           name: Login microservice
           command: |
             cd ~/project/BackEnd/loginmicroservices
@@ -50,6 +56,11 @@ jobs:
           at: ~/project/BackEnd
       - run:
           name: Install Dependencies
+          command: |
+            sudo apt update
+            sudo apt install default-jdk
+      - run:
+          name: Run service
           background: yes
           command: |
             java -jar ~/project/BackEnd/loginmicroservices\target\loginmicroservices-0.0.1.jar
