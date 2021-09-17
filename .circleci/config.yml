@@ -14,6 +14,7 @@ jobs:
           command: |
             sudo apt update
             sudo apt install default-jdk
+            sudo apt install maven
             mvn -N io.takari:maven:wrapper
       - run:
           name: Login microservice
