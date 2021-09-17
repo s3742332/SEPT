@@ -1,7 +1,6 @@
 package com.rmit.sept.bk_transactionsmicroservices.Web;
 
 import com.rmit.sept.bk_transactionsmicroservices.Services.TransactionService;
-import com.rmit.sept.bk_transactionsmicroservices.exceptions.TransactionException;
 import com.rmit.sept.bk_transactionsmicroservices.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,12 +34,12 @@ public class TransactionController {
     }
 
     @CrossOrigin(origins = "*")
-    @GetMapping("/getAllUserSellerTransactions/{name}")
+    @GetMapping("/getAllUserTransactions/{name}")
     public ResponseEntity<?> getAllUserSellerTransactions(@PathVariable String name){
         Iterable<Transaction> transactionList = transactionService.getAllTransactions();
         ArrayList<Transaction> userTransactions = new ArrayList<Transaction>();
         for (Transaction transaction : transactionList){
-            if (transaction.getUserName().equals(name) || transaction.getSellerName().equals(name)) {
+            if (transaction.getUserName().equals(name)) {
                 userTransactions.add(transaction);
             }
         }
@@ -49,40 +48,13 @@ public class TransactionController {
     }
 
     @CrossOrigin(origins = "*")
-    @GetMapping("/getBooksSold/{sellerUserName}")
-    public ResponseEntity<?> getBooksBySeller(@PathVariable String sellerUserName){
-        Iterable<Transaction> transactionList = transactionService.getAllTransactions();
-        ArrayList<Transaction> bookTransactions = new ArrayList<Transaction>();
-        for (Transaction transaction : transactionList){
-            if (transaction.getSellerName().equals(sellerUserName)) {
-                bookTransactions.add(transaction);
-            }
-        }
-        if (bookTransactions.isEmpty())
-        {
-            throw new TransactionException("No sellers with that name");
-        }
+    @PostMapping("/completeOrder/{transactionId}")
+    public ResponseEntity<?> completeOrder(@PathVariable String transactionId)
+    {
+        Transaction transaction = transactionService.getTransactionById(Long.valueOf(transactionId));
+        Transaction transaction1 = transactionService.updateOrderStatus(transaction);
 
-        return  new ResponseEntity<Iterable<Transaction>>(bookTransactions, HttpStatus.OK);
-    }
-
-    @CrossOrigin(origins = "*")
-    @GetMapping("/getBooksBought/{buyerUserName}")
-    public ResponseEntity<?> getBooksByBuyer(@PathVariable String buyerUserName){
-        Iterable<Transaction> transactionList = transactionService.getAllTransactions();
-        ArrayList<Transaction> bookTransactions = new ArrayList<Transaction>();
-        for (Transaction transaction : transactionList){
-            if (transaction.getUserName().equals(buyerUserName)) {
-                bookTransactions.add(transaction);
-            }
-        }
-
-        if (bookTransactions.isEmpty())
-        {
-            throw new TransactionException("No buyers with that username");
-        }
-
-        return  new ResponseEntity<Iterable<Transaction>>(bookTransactions, HttpStatus.OK);
+        return new ResponseEntity<Transaction>(transaction1, HttpStatus.OK);
     }
 
 }
