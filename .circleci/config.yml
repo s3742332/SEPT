@@ -20,17 +20,17 @@ jobs:
           name: Login microservice
           command: |
             cd ~/project/BackEnd/loginmicroservices
-            .\mvnw package
+            ./mvnw package
       - run:
           name: book microservice
           command: |
             cd ~/project/BackEnd/bookmicroservices
-            .\mvnw package
+            ./mvnw package
       - run:
           name: transactions microservice
           command: |
             cd ~/project/BackEnd/transactionsmicroservices
-            .\mvnw package
+            ./mvnw package
       - persist_to_workspace:
           root: ~/project/BackEnd/
           paths:
