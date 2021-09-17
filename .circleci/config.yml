@@ -19,14 +19,17 @@ jobs:
       - run:
           name: Login microservice
           command: |
+            chmod u+x ~/project/BackEnd/loginmicroservices/mvnw
             ~/project/BackEnd/loginmicroservices/mvnw package
       - run:
           name: book microservice
           command: |
+            chmod u+x ~/project/BackEnd/bookmicroservices/mvnw
             ~/project/BackEnd/bookmicroservices/mvnw package
       - run:
           name: transactions microservice
           command: |
+            chmod u+x ~/project/BackEnd/transactionsmicroservices/mvnw
             ~/project/BackEnd/transactionsmicroservices/mvnw package
       - persist_to_workspace:
           root: ~/project/BackEnd/
