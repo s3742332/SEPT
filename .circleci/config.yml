@@ -61,12 +61,27 @@ jobs:
           command: |
             sudo apt update
             sudo apt install default-jdk
+            cd ~/project/FrontEnd/myfirstapp
+            npm install
       - run:
           name: Run service
           background: yes
           command: |
             java -jar ~/project/BackEnd/loginmicroservices\target\loginmicroservices-0.0.1.jar
-            
+      - run:
+          name: Run service
+          background: yes
+          command: |
+            java -jar ~/project/BackEnd/booksmicroservices\target\booksmicroservices-0.0.1.jar
+      - run:
+          name: Run service
+          background: yes
+          command: |
+            java -jar ~/project/BackEnd/transactionsmicroservices\target\transactionsmicroservices-0.0.1.jar 
+      - run:
+          name: Run front end test
+          command: |
+            npm test        
 workflows:
   build:
     jobs:
