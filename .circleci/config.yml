@@ -33,11 +33,11 @@ jobs:
             chmod u+x ~/project/BackEnd/transactionsmicroservices/mvnw
             ~/project/BackEnd/transactionsmicroservices/mvnw package
       - persist_to_workspace:
-          root: ~/project/BackEnd/
+          root: ~/project/BackEnd
           paths:
-            - ~/project/BackEnd/loginmicroservices/target/loginmicroservices-0.0.1.jar
-            - ~/project/BackEnd/transactionsmicroservices/target/transactionsmicroservices-0.0.1.jar
-            - ~/project/BackEnd/booksmicroservices/target/booksmicroservices-0.0.1.jar
+            - loginmicroservices/target/loginmicroservices-0.0.1.jar
+            - transactionsmicroservices/target/transactionsmicroservices-0.0.1.jar
+            - booksmicroservices/target/booksmicroservices-0.0.1.jar
   frontendbuild:
     docker:
       - image: cimg/node:current
