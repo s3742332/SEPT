@@ -6,7 +6,7 @@ version: 2.1
 jobs:
   install:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/node:current
     steps:
       - checkout
       - run:
