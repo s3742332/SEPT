@@ -9,11 +9,11 @@ jobs:
       - image: cimg/openjdk:16.0.2
     steps:
       - checkout
-      - run:
-          name: Install Dependencies
-          command: |
-            sudo apt update
-            mvn -N io.takari:maven:wrapper
+      # - run:
+      #     name: Install Dependencies
+      #     command: |
+      #       sudo apt update
+      #       mvn -N io.takari:maven:wrapper
       - run:
           name: Login microservice
           command: |
@@ -51,7 +51,7 @@ jobs:
 
   tests:
     docker:
-      - image: cimg/node:current
+      - image: cimg/node:current-browsers
     steps:
       - checkout
       - attach_workspace:
@@ -60,7 +60,6 @@ jobs:
           name: Install Dependencies
           command: |
             sudo apt update
-            sudo apt install default-jdk
             cd ~/project/FrontEnd/myfirstapp
             npm install
       - run:
