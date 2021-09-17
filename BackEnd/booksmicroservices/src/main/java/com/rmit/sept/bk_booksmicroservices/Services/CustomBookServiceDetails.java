@@ -39,6 +39,19 @@ public class CustomBookServiceDetails {
         return books;
     }
 
+    @Transactional
+    public List<Book> loadBooksByCategory(String category)
+    {
+        List<Book> books = bookRepository.findBooksByCategory(category);
+
+        if(books == null)
+        {
+            new BookNotFoundException("No books found");
+        }
+
+        return books;
+    }
+
 //    public Book loadBooksByAuthorAndTitle(String author, String title)
 //    {
 //        Book book = bookRepository.findByAuthorAndTitle(author, title);
