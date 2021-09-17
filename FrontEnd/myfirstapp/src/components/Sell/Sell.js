@@ -37,16 +37,14 @@ function Sell() {
         cover: null,
         category: null
     });
-    function handleChange(value) {
-        console.log(`Selected: ${value}`);
-    }
-    const children = [<Option key='fantasy'>fantasy</Option>, <Option key='adventure'>adventure</Option>, <Option key='thriller'>thriller</Option>, <Option key='romance'>romance</Option>, <Option key='contemporary'>contemporary</Option>, <Option key='distopian'>distopian</Option>, <Option key='mystery'>mystery</Option>, <Option key='horror'>horror</Option>];
+    
+    const children = [<Option value='fantasy'>fantasy</Option>, <Option value='adventure'>adventure</Option>, <Option value='thriller'>thriller</Option>, <Option value='romance'>romance</Option>, <Option value='contemporary'>contemporary</Option>, <Option value='distopian'>distopian</Option>, <Option value='mystery'>mystery</Option>, <Option value='horror'>horror</Option>];
 
     const [form] = Form.useForm();
 
     const onSubmit = (e) => {
         e.preventDefault();
-
+        //  console.log(newBook.category)
         dispatch(bookEdit(newBook));
     }
 
@@ -55,6 +53,13 @@ function Sell() {
         setNewBook({ ...newBook, [event.target.name]: event.target.value });
         console.log(newBook)
     }
+
+
+    const handleCategoryChanges = (event) => {
+        console.log('selected: ', event)
+        setNewBook({ ...newBook, category: event })
+    }
+
 
 
     return (
@@ -84,9 +89,9 @@ function Sell() {
                             mode="tags"
                             size="medium"
                             placeholder="Please select"
-                            onChange={handleChange}
+                            onChange={handleCategoryChanges}
                             style={{ width: '100%' }}
-                            name="cetegories"
+                            name="cetegory"
                         >
                             {children}
                         </Select>
@@ -103,7 +108,10 @@ function Sell() {
                         <InputNumber name="isbn" />
                     </Form.Item>
                     <Form.Item label="Cost">
-                        <InputNumber name="price" />
+                        <InputNumber name="bookCost" />
+                    </Form.Item>
+                    <Form.Item label="Stock">
+                        <InputNumber name="stockLevel" />
                     </Form.Item>
                     <Form.Item style={{ justifyContent: "center", textAlign: "center" }}>
                         <Button type='submit' onClick={onSubmit}>Add</Button>

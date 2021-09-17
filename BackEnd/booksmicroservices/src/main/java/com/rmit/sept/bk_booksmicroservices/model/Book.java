@@ -25,16 +25,16 @@ public class Book{
     private boolean approved;
     private String isbn;
     private String cover;
-    private String category;
+    private String[] category;
 
     public Book() {
     }
 
-    public String getCategory() {
+    public String[] getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(String[] category) {
         this.category = category;
     }
 
