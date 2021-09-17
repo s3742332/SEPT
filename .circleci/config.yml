@@ -66,20 +66,21 @@ jobs:
           name: Run service
           background: yes
           command: |
-            java -jar ~/project/BackEnd/loginmicroservices\target\loginmicroservices-0.0.1.jar
+            java -jar "~/project/BackEnd/loginmicroservices/target/loginmicroservices-0.0.1.jar"
       - run:
           name: Run service
           background: yes
           command: |
-            java -jar ~/project/BackEnd/booksmicroservices\target\booksmicroservices-0.0.1.jar
+            java -jar "~/project/BackEnd/booksmicroservices/target/booksmicroservices-0.0.1.jar"
       - run:
           name: Run service
           background: yes
           command: |
-            java -jar ~/project/BackEnd/transactionsmicroservices\target\transactionsmicroservices-0.0.1.jar 
+            java -jar "~/project/BackEnd/transactionsmicroservices/target/transactionsmicroservices-0.0.1.jar" 
       - run:
           name: Run front end test
           command: |
+            cd ~/project/FrontEnd/myfirstapp
             npm test        
 workflows:
   build:
