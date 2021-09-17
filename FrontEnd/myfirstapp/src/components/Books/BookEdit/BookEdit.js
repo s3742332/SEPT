@@ -18,6 +18,7 @@ function BookEdit() {
     }, [dispatch])
     useEffect(() => {
         setFilteredData(book.bookList)
+       console.log(book)
     }, [book])
 
     const handleSearch = (event) => {
@@ -32,6 +33,9 @@ function BookEdit() {
         setSearch("")
         setFilteredData(book.bookList)
     }
+    const handleFetch = () => {
+        dispatch(getBookList())
+    }
     const { Title } = Typography;
     return (
         <Row>
@@ -44,7 +48,7 @@ function BookEdit() {
             </Col>
             <Col xs={20} style={{ padding: "1rem" }}>
                 <Title level={2} style={{textAlign: "center"}}>Book Information</Title>
-                <BookEditDetails data={selectedBook} />
+                <BookEditDetails data={selectedBook} handleFetch={handleFetch} />
             </Col>
         </Row>
     )
