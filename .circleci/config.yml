@@ -19,18 +19,15 @@ jobs:
       - run:
           name: Login microservice
           command: |
-            cd ~/project/BackEnd/loginmicroservices
-            sudo ./mvnw package
+            sudo ~/project/BackEnd/loginmicroservices/mvnw package
       - run:
           name: book microservice
           command: |
-            cd ~/project/BackEnd/bookmicroservices
-            sudo ./mvnw package
+            sudo ~/project/BackEnd/bookmicroservices/mvnw package
       - run:
           name: transactions microservice
           command: |
-            cd ~/project/BackEnd/transactionsmicroservices
-            sudo ./mvnw package
+            sudo ~/project/BackEnd/transactionsmicroservices/mvnw package
       - persist_to_workspace:
           root: ~/project/BackEnd/
           paths:
