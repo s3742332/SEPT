@@ -23,9 +23,9 @@ jobs:
       - run:
           name: book microservice
           command: |
-            cd ~/project/BackEnd/bookmicroservices
-            chmod u+x ~/project/BackEnd/bookmicroservices/mvnw
-            ~/project/BackEnd/bookmicroservices/mvnw package
+            cd ~/project/BackEnd/booksmicroservices
+            chmod u+x ~/project/BackEnd/booksmicroservices/mvnw
+            ~/project/BackEnd/booksmicroservices/mvnw package
       - run:
           name: transactions microservice
           command: |
@@ -37,7 +37,7 @@ jobs:
           paths:
             - loginmicroservices\target\loginmicroservices-0.0.1.jar
             - transactionsmicroservices\target\transactionsmicroservices-0.0.1.jar
-            - bookmicroservices\target\bookmicroservices-0.0.1.jar
+            - booksmicroservices\target\booksmicroservices-0.0.1.jar
   frontendbuild:
     docker:
       - image: cimg/node:current
