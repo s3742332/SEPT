@@ -66,6 +66,15 @@ export const fetchBookList = async () => {
     }
 };
 
+export const fetchCategory = async () => {
+    try {
+        const category = 'Dystopian';
+        return await axios.get(`http://localhost:8082/api/books/getBooksInCategory/${category.category}`, config);
+    } catch (e) {
+        return [];
+    }
+};
+
 export const fetchPendingBookList = async () => {
     try {
         return await axios.get('${BOOK_BASE_URL}/api/books/getAllPendingBooks', config);
@@ -74,13 +83,23 @@ export const fetchPendingBookList = async () => {
     }
 };
 
+export const fetchSearchedBook = async () => {
+    try {
+        const query = "asdf";
+        const response = await axios.get(`http://localhost:8082/api/books/getSearchedBooks/${query}`, config);
+        return response;
+    } catch (e) {
+        return [];
+    }
+}
+
 //============================================================================================
 
 // transactionAction Test Utils
 
 export const fetchTransactionEdit = async () => {
     try {
-        const transaction = { id: 1, name: "Transaction 1"};
+        const transaction = { id: 1, userName: "Transaction 1"};
         return await axios.post('${TSCN_BASE_URL}/api/transactions/saveTransaction', transaction, config)
     } catch (e) {
         return [];
@@ -89,8 +108,8 @@ export const fetchTransactionEdit = async () => {
 
 export const fetchUserTransaction = async () => {
     try {
-        const username = "User1";
-        return await axios.post(`${TSCN_BASE_URL}/api/transactions/getAllUserTransactions?userName=${username}`, config);
+        const username = "user@user.com";
+        return await axios.get(`${TSCN_BASE_URL}/api/transactions/getAllUserTransactions/${username}`,config);
     } catch (e) {
         return [];
     }

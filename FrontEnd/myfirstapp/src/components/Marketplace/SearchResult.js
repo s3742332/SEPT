@@ -61,7 +61,7 @@ const SearchResult = (props) => {
                                 extra={
                                     //top is book cover, bottom is default image
                                     <object data={book.cover} style={{ width: '20%' }}>
-                                        <img src="https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg" />
+                                        <img src={book.cover} />
                                     </object>
                                 }
                             >

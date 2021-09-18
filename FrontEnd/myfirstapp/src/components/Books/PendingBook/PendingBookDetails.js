@@ -56,7 +56,7 @@ function PendingSellerDetails(props) {
                     </Row>
                     <Row className={"accountRow"}>
                         <Input
-                            id="title"
+                            id="bookTitle"
                             addonBefore="Title"
                             value={bookTitle || ''}
                             variant="filled"

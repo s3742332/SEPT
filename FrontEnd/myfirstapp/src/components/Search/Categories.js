@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Row, Col, Typography } from 'antd'
 function Categories() {
     const categories = [
@@ -42,21 +43,29 @@ function Categories() {
         for (let category in categories) {
             render.push(
                 <Col xs={6} style={{ "padding": "8px 8px" }}>
-                    <div style={{
-                        "backgroundImage": `linear-gradient(
+                    <Link to={{
+                        pathname: "/category",
+                        category: {
+                            category: categories[category].title.toLowerCase()
+                        }
+                    }}
+                    >
+                        <div style={{
+                            "backgroundImage": `linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ), url("${categories[category].image}")`,
-                        "width": "100%",
-                        "height": "300px",
-                        "display": "flex",
-                        "justifyContent": "center",
-                        "backgroundPosition": "center",
-                        "backgroundRepeat": "no-repeat",
-                        "backgroundSize": "cover",
-                    }}>
-                        <Title style={{ "display": "flex", "alignItems": "center", color: "white" }}>{categories[category].title}</Title>
-                    </div>
+                            "width": "100%",
+                            "height": "300px",
+                            "display": "flex",
+                            "justifyContent": "center",
+                            "backgroundPosition": "center",
+                            "backgroundRepeat": "no-repeat",
+                            "backgroundSize": "cover",
+                        }}>
+                            <Title style={{ "display": "flex", "alignItems": "center", color: "white" }}>{categories[category].title}</Title>
+                        </div>
+                    </Link>
                 </Col>
             )
         }
@@ -67,7 +76,7 @@ function Categories() {
             <Col span={24}>
                 <Row>
                     {loadCatergories()}
-                    </Row>
+                </Row>
             </Col>
 
 

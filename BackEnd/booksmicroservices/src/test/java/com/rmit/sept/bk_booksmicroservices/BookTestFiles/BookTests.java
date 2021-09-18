@@ -14,7 +14,7 @@ public class BookTests {
     @BeforeAll
     static void setup() {
         book = new Book();
-        book.setCompanyName("Test Company");
+        book.setSeller("Test Company");
         book.setBookTitle("Test Book");
         book.setAuthor("Test Author");
         book.setBookDescription("Test Description");
