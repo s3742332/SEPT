@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ERRORS, GET_PENDING_BOOK_LIST, GET_BOOK_LIST, UPDATE_BOOK, GET_SEARCHED_BOOKS, BOOK_LOADING, BOOK_EDIT_LOADING } from "./types";
+import { GET_ERRORS, GET_PENDING_BOOK_LIST, GET_BOOK_LIST, UPDATE_BOOK, GET_SEARCHED_BOOKS, BOOK_LOADING, BOOK_EDIT_LOADING, GET_CATEGORY } from "./types";
 
 export const bookEdit = (book) => async dispatch => {
     try {
@@ -55,7 +55,7 @@ export const getCategory = (category) => async dispatch => {
         const res = await axios.get(`http://localhost:8082/getBooksInCategory/${category.category}`, config)
         console.log(res.data)
         dispatch({
-            type: GET_BOOK_LIST,
+            type: GET_CATEGORY,
             payload: res.data
         })
     } catch (err) {

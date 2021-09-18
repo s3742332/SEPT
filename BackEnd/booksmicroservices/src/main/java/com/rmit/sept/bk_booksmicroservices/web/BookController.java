@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/books")
@@ -82,9 +84,20 @@ public class BookController {
     @GetMapping("/getBooksInCategory/{category}")
     public ResponseEntity<?> getBooksInCategory(@PathVariable String category)
     {
-        Iterable<Book> bookList = bookService.getAllBooksByCategory(category);
+        // System.out.println(category);
+        // Iterable<Book> bookList = bookService.getAllBooksByCategory(category);
 
-        return new ResponseEntity<Iterable<Book>>(bookList, HttpStatus.OK);
+        Iterable<Book> bookList = bookService.getAllBooks();
+        ArrayList<Book> approvedBooks = new ArrayList<Book>();
+        for (Book book : bookList) {
+            List<String> arrayList = Arrays.asList(book.getCategory());
+            if (book.getApproved().equals(true) && arrayList != null && arrayList.contains(category)) {
+                approvedBooks.add(book);
+            }
+        }
+
+        return new ResponseEntity<Iterable<Book>>(approvedBooks, HttpStatus.OK);
+        // return "helo";
     }
 
 }
