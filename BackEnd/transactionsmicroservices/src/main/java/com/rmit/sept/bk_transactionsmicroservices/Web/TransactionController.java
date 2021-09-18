@@ -57,4 +57,14 @@ public class TransactionController {
         return new ResponseEntity<Transaction>(transaction1, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "*")
+    @GetMapping("/getByOrderId/{orderId}")
+    public ResponseEntity<?> getByOrderId(@PathVariable String orderId)
+    {
+        int ordId = Integer.parseInt(orderId);
+        Transaction transaction = transactionService.getTransactionByOrderId(ordId);
+        
+        return new ResponseEntity<Transaction>(transaction, HttpStatus.OK);
+    }
+
 }

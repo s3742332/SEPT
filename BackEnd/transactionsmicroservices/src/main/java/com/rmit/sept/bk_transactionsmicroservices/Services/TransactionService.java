@@ -56,6 +56,19 @@ public class TransactionService {
     }
 
     @Transactional
+    public Transaction getTransactionByOrderId(int id)
+    {
+        try
+        {
+            return transactionRepository.findTransactionByOrderId(id);
+        }
+        catch(Exception e)
+        {
+            throw new TransactionException("No transaction with that order ID.");
+        }
+    }
+
+    @Transactional
     public Transaction updateOrderStatus(Transaction transaction)
     {
         try {

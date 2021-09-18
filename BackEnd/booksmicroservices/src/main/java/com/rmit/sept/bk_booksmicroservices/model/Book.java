@@ -13,7 +13,7 @@ public class Book{
     private Long id;
 
     // @NotBlank(message = "company name is required")
-    private String companyName;
+    private String seller;
     // @NotBlank(message = "book needs a title")
     private String bookTitle;
     // @NotBlank(message = "book needs an author")
@@ -25,25 +25,34 @@ public class Book{
     private boolean approved;
     private String isbn;
     private String cover;
-    private String category;
+    private String[] category;
+    private boolean used;
 
     public Book() {
     }
 
-    public String getCategory() {
+    public boolean isUsed() {
+        return used;
+    }
+
+    public void setUsed(boolean used) {
+        this.used = used;
+    }
+
+    public String[] getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(String[] category) {
         this.category = category;
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public String getSeller() {
+        return seller;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setSeller(String companyName) {
+        this.seller = companyName;
     }
 
     public String getBookTitle() {
