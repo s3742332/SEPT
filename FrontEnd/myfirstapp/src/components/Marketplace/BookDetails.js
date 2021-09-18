@@ -25,7 +25,7 @@ function BookDetails(props) {
                         to={{
                             pathname: "/checkout",
                             state: { cart: [bookData] }
-                        }}><Button type="primary" shape="round" style={{ width: '20%' }}>Buy Now</Button></Link>
+                        }}><Button type="primary" shape="round">Buy Now</Button></Link>
                 </div>
             </div>
         </Card>
