@@ -52,6 +52,7 @@ public class BookServiceTests {
         book1.setBookDescription("A disease kills 95% of humanity. A group of travellers suffer through the new technology-less world.");
         book1.setSeller("Company 1");
         book1.setStockLevel(1);
+        book1.setCategory(new String[]{"Dystopian", "Adventure"});
 
         book2 = new Book();
         book2.setBookTitle("Handmaids Tale");
@@ -60,6 +61,7 @@ public class BookServiceTests {
         book2.setBookDescription("A new patriotic world where chosen women are forced to breed with high ranking men to create offspring.");
         book2.setSeller("Company 2");
         book2.setStockLevel(1);
+        book1.setCategory(new String[]{"Dystopian", "Drama"});
     }
 
     // Commented out tests stopped working -> 
@@ -98,5 +100,14 @@ public class BookServiceTests {
                  .of(book1, book2).collect(Collectors.toList()));
 
         assertEquals(2, ((List<Book>) bookService.getAllBooks()).size());
+    }
+
+    @Test
+    @DisplayName("Should pass if books returned has the correct categories")
+    void getAllBooksByCategoryTest() {
+        when(bookRepository.findBooksByCategory("Dystopian")).thenReturn(Stream
+                .of(book1, book2).collect(Collectors.toList()));
+
+        assertEquals(2, ((List<Book>) bookService.getAllBooksByCategory("Dystopian")).size());
     }
 }
