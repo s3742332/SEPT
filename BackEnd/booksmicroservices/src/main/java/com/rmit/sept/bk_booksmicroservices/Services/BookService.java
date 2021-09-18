@@ -51,6 +51,7 @@ public class BookService {
     {
         try
         {
+            System.out.println(bookRepository.findBooksByCategory(category));
             return bookRepository.findBooksByCategory(category);
         }
         catch (Exception e)
