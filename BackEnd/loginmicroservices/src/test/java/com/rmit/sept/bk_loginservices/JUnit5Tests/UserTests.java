@@ -33,7 +33,6 @@ public class UserTests {
        assertEquals("Max Maximus" , user.getFullName() );
     }
 
-    
     @Test
     public void getUsernameTest(){
         assertEquals("Maxy" , user.getUsername());
