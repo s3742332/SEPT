@@ -5,9 +5,9 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Layout, Col, Row, Menu, Breadcrumb, List, Avatar, Input, Space } from 'antd';
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
-import { getSearchedBook } from '../../actions/bookActions';
+import { getCategory } from '../../actions/bookActions';
 
-const SearchResult = (props) => {
+const CategoryResult = (props) => {
 
     const dispatch = useDispatch();
     const book = useSelector(state => state.book);
@@ -15,8 +15,9 @@ const SearchResult = (props) => {
 
 
     useEffect(() => {
-        dispatch(getSearchedBook(props.search))
-    }, [dispatch, props.search])
+        console.log(props.location.category)
+        dispatch(getCategory(props.location.category))
+    }, [dispatch, props.category])
     useEffect(() => {
         setFilteredData(book.searchedBooks)
     }, [book, filteredData])
@@ -81,4 +82,4 @@ const SearchResult = (props) => {
     );
 }
 
-export default SearchResult;
+export default CategoryResult;

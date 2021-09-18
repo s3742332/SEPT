@@ -79,7 +79,7 @@ public class BookController {
     }
 
     @CrossOrigin(origins = "*")
-    @GetMapping("/getBooksByCategory/{category}")
+    @GetMapping("/getBooksInCategory/{category}")
     public ResponseEntity<?> getBooksInCategory(@PathVariable String category)
     {
         Iterable<Book> bookList = bookService.getAllBooksByCategory(category);

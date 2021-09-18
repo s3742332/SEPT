@@ -44,6 +44,28 @@ export const getBookList = () => async dispatch => {
     }
 };
 
+export const getCategory = (category) => async dispatch => {
+    try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
+        console.log('inside', category.category)
+        const res = await axios.get(`/getBooksInCategory/${category.category}`, config)
+        console.log(res.data)
+        dispatch({
+            type: GET_BOOK_LIST,
+            payload: res.data
+        })
+    } catch (err) {
+        dispatch({
+            type: GET_ERRORS,
+            payload: err
+        });
+    }
+};
+
 export const getPendingBookList = () => async dispatch => {
     try {
         const config = {

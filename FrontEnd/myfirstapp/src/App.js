@@ -37,6 +37,7 @@ import BookEdit from "./components/Books/BookEdit/BookEdit";
 import PendingBook from "./components/Books/PendingBook/PendingBook";
 import CustomerTransactions from "./components/Transactions/CustomerTransactions";
 import Checkout from "./components/Checkout/Checkout";
+import CategoryResult from "./components/Marketplace/CategoryResult";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const jwtToken = localStorage.getItem("jwtToken");
@@ -111,6 +112,7 @@ function App() {
             <Route exact path="/details" component={BookDetails} />
             <Route exact path="/payment" component={Payment} />
             <Route exact path="/inventory" component={Inventory} />
+            <Route exact path="/category" component={CategoryResult} />
             <Redirect to="/" />
           </Switch>
         </Content>
