@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
@@ -63,22 +64,22 @@ public class BookServiceTests {
 
     // Commented out tests stopped working -> 
     // Throws stackoverflow error after pulling latest dev branch
-    // @Test
-    // @DisplayName("Should pass if book being saved to repository is the same as book being provided")
-    // void saveOrUpdateBookTest() {
-    //     Mockito.when(bookRepository.save(book1)).thenReturn(book1);
+    @Test
+    @DisplayName("Should pass if book being saved to repository is the same as book being provided")
+    void saveOrUpdateBookTest() {
+        Mockito.when(bookRepository.save(book1)).thenReturn(book1);
 
-    //     assertEquals(book1, bookService.saveOrUpdateBook(book1));
-    // }
+        assertEquals(book1, bookService.saveOrUpdateBook(book1));
+    }
 
-    // @Test
-    // @DisplayName("Should pass if number of books in repository equals the amount that was added")
-    // void getAllBooksTest() {
-    //     Mockito.when(bookRepository.findAll()).thenReturn(Stream
-    //             .of(book1, book2).collect(Collectors.toList()));
+    @Test
+    @DisplayName("Should pass if number of books in repository equals the amount that was added")
+    void getAllBooksTest() {
+        Mockito.when(bookRepository.findAll()).thenReturn(Stream
+                .of(book1, book2).collect(Collectors.toList()));
         
-    //     assertEquals(2, ((List<Book>) bookService.getAllBooks()).size());
-    // }
+        assertEquals(2, ((List<Book>) bookService.getAllBooks()).size());
+    }
 
     @Test
     @DisplayName("Should pass if book being saved to repository is the same as book being provided")

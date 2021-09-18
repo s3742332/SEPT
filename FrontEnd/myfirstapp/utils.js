@@ -80,7 +80,7 @@ export const fetchPendingBookList = async () => {
 
 export const fetchTransactionEdit = async () => {
     try {
-        const transaction = { id: 1, name: "Transaction 1"};
+        const transaction = { id: 1, userName: "Transaction 1"};
         return await axios.post('${TSCN_BASE_URL}/api/transactions/saveTransaction', transaction, config)
     } catch (e) {
         return [];
@@ -89,8 +89,8 @@ export const fetchTransactionEdit = async () => {
 
 export const fetchUserTransaction = async () => {
     try {
-        const username = "User1";
-        return await axios.post(`${TSCN_BASE_URL}/api/transactions/getAllUserTransactions?userName=${username}`, config);
+        const username = "user@user.com";
+        return await axios.get(`${TSCN_BASE_URL}/api/transactions/getAllUserTransactions/${username}`,config);
     } catch (e) {
         return [];
     }
