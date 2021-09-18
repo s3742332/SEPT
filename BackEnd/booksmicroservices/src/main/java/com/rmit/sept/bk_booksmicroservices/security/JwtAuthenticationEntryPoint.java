@@ -3,6 +3,7 @@ package com.rmit.sept.bk_booksmicroservices.security;
 import com.google.gson.Gson;
 import com.rmit.sept.bk_booksmicroservices.Exceptions.InvalidLoginResponse;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,7 @@ import java.io.IOException;
 
 @Component
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
+
 
     @Override
     public void commence(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
