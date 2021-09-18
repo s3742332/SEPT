@@ -1,3 +1,4 @@
+
 package com.rmit.sept.bk_loginservices.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -8,6 +9,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
+import java.util.Calendar;
 import java.util.Collection;
 
 
@@ -28,7 +30,13 @@ public class User implements UserDetails {
     @Transient
     private String confirmPassword;
     private Date create_At;
-    private Date update_At;
+    private Calendar update_At;
+    private Boolean approved;
+    private String userType;
+    private String abn;
+    private String phoneNumber;
+    private String address;
+
 
     //OneToMany with Project
 
@@ -83,12 +91,52 @@ public class User implements UserDetails {
         this.create_At = create_At;
     }
 
-    public Date getUpdate_At() {
+    public Calendar getUpdate_At() {
         return update_At;
     }
 
-    public void setUpdate_At(Date update_At) {
-        this.update_At = update_At;
+    public void setUpdate_At(Calendar calendar) {
+        this.update_At = calendar;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setApproved(Boolean approved) {
+        this.approved = approved;
+    }
+
+    public Boolean getApproved() {
+        return approved;
+    }
+
+    public String getAbn() {
+        return abn;
+    }
+
+    public void setAbn(String abn) {
+        this.abn = abn;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @PrePersist
@@ -98,7 +146,7 @@ public class User implements UserDetails {
 
     @PreUpdate
     protected void onUpdate(){
-        this.update_At = new Date();
+        this.update_At = Calendar.getInstance();
     }
 
     /*

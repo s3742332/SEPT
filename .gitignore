@@ -5,6 +5,6 @@
 *.iml
 *.ipr
 
-
-#macos
 .DS_Store
+*.jar
+*.class
