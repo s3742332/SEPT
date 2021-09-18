@@ -66,6 +66,15 @@ export const fetchBookList = async () => {
     }
 };
 
+export const fetchCategory = async () => {
+    try {
+        const category = 'Dystopian';
+        return await axios.get(`http://localhost:8082/api/books/getBooksInCategory/${category.category}`, config);
+    } catch (e) {
+        return [];
+    }
+};
+
 export const fetchPendingBookList = async () => {
     try {
         return await axios.get('${BOOK_BASE_URL}/api/books/getAllPendingBooks', config);
@@ -73,6 +82,16 @@ export const fetchPendingBookList = async () => {
         return [];
     }
 };
+
+export const fetchSearchedBook = async () => {
+    try {
+        const query = "asdf";
+        const response = await axios.get(`http://localhost:8082/api/books/getSearchedBooks/${query}`, config);
+        return response;
+    } catch (e) {
+        return [];
+    }
+}
 
 //============================================================================================
 

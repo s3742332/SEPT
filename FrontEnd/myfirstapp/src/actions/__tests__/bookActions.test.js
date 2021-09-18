@@ -1,21 +1,20 @@
 import axios from "axios"
-import { BOOK_BASE_URL, config, fetchBookEdit, fetchBookList, fetchPendingBookList } from "../../../utils"
+import {BOOK_BASE_URL, config, fetchBookEdit, fetchBookList, fetchCategory, fetchPendingBookList, fetchSearchedBook} from "../../../utils"
 
 jest.mock("axios");
 
 describe("fetchBookEdit", () => {
     describe("when API call is successful", () => {
-        test("should return successful book edit", async () => {
+        test("should return successful save book", async () => {
             const book = {id: 1, name: "Book 1"}
             axios.post.mockResolvedValueOnce(book, config);
-            
+
             const result = await fetchBookEdit();
 
             expect(axios.post).toHaveBeenCalledWith('${BOOK_BASE_URL}/api/books/saveBook', book, config);
             expect(result).toEqual(book);
         });
     });
-
 
     describe("when API call fails", () => {
         test("should return unsuccessful book edit", async () => {
@@ -26,6 +25,38 @@ describe("fetchBookEdit", () => {
             const result = await fetchBookEdit();
 
             expect(axios.post).toHaveBeenCalledWith('${BOOK_BASE_URL}/api/books/saveBook', book, config);
+            expect(result).toEqual([]);
+        });
+    });
+});
+
+describe("fetchCategory", () => {
+    describe("when API call is successful", () => {
+        test("should return books in category", async () => {
+            const category = 'Dystopian';
+            const books = [
+                { id: 1, name: "Book 1", category: category },
+                { id: 3, name: "Book 3", category: category }
+            ];
+
+            axios.get.mockResolvedValueOnce(books);
+
+            const result = await fetchCategory(category);
+
+            expect(axios.get).toHaveBeenCalledWith(`http://localhost:8082/api/books/getBooksInCategory/${category.category}`, config);
+            expect(result).toEqual(books);
+        });
+    });
+
+    describe("when API call fails", () => {
+        test("should return empty category book", async () => {
+            const category = 'Horror';
+            const message = "Error retrieving category book";
+            axios.get.mockRejectedValueOnce(new Error(message));
+
+            const result = await fetchCategory();
+
+            expect(axios.get).toHaveBeenCalledWith(`http://localhost:8082/api/books/getBooksInCategory/${category.category}`, config);
             expect(result).toEqual([]);
         });
     });
@@ -90,4 +121,28 @@ describe("fetchPendingBookList", () => {
 });
 
 //TODO getSearchedBook
+describe("fetchSearchedBook", () => {
+    describe("when API call is successful", () => {
+        test("should return searched book", async () => {
+            const book = {bookName: "asdf", bookDescription: "qwerty"};
+            axios.get.mockResolvedValueOnce(book);
+
+            const result = await fetchSearchedBook();
+
+            expect(result).toEqual(book);
+        });
+    });
+
+    describe("when API call fails", () => {
+        test("should return empty searched book", async () => {
+            const message = "Error retrieving pending books";
+            axios.get.mockRejectedValueOnce(new Error(message));
+
+            const result = await fetchSearchedBook();
+
+            expect(result).toEqual([]);
+        });
+    });
+});
+
 
