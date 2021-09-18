@@ -52,7 +52,7 @@ export const getCategory = (category) => async dispatch => {
             }
         }
         console.log('inside', category.category)
-        const res = await axios.get(`http://localhost:8082/getBooksInCategory/${category.category}`, config)
+        const res = await axios.get(`http://localhost:8082/api/books/getBooksInCategory/${category.category}`, config)
         console.log(res.data)
         dispatch({
             type: GET_CATEGORY,

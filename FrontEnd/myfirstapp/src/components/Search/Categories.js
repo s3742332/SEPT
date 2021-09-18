@@ -46,7 +46,7 @@ function Categories() {
                     <Link to={{
                         pathname: "/category",
                         category: {
-                            category: categories[category].title
+                            category: categories[category].title.toLowerCase()
                         }
                     }}
                     >
@@ -66,7 +66,7 @@ function Categories() {
                             <Title style={{ "display": "flex", "alignItems": "center", color: "white" }}>{categories[category].title}</Title>
                         </div>
                     </Link>
-                </Col >
+                </Col>
             )
         }
         return render;

@@ -77,7 +77,8 @@ function AccountSettings() {
                 bookDescription: faker.commerce.productDescription(),
                 bookCost: faker.commerce.price(),
                 stockLevel: faker.datatype.number(),
-                approved: false,
+                category: ["Fantasy", "Romance"],
+                approved: true,
                 cover: faker.image.imageUrl(),
                 isbn: faker.datatype.number()
             }
