@@ -87,4 +87,14 @@ public class BookController {
         return new ResponseEntity<Iterable<Book>>(bookList, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "*")
+    @GetMapping("/getBooksByCondition/{used}")
+    public ResponseEntity<?> getBooksByCondition(@PathVariable String used)
+    {
+        boolean usedStatus = Boolean.valueOf(used);
+        Iterable<Book> bookList = bookService.getAllBooksByCondition(usedStatus);
+
+        return new ResponseEntity<Iterable<Book>>(bookList, HttpStatus.OK);
+    }
+
 }

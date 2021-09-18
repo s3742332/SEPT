@@ -24,6 +24,16 @@ public class Transaction {
 
     private boolean orderComplete;
 
+    private int orderId;
+
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
     public boolean isOrderComplete() {
         return orderComplete;
     }
