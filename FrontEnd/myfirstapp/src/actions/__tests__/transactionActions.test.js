@@ -31,30 +31,30 @@ describe("fetchTransactionEdit", () => {
     });
 });
 
-// describe("fetchUserTransaction", () => {
-//     describe("when API call is successful", () => {
-//         test("should return user transaction", async () => {
-//             const username = "User1";
-//             axios.get.mockResolvedValueOnce(username, config);
+describe("fetchUserTransaction", () => {
+    describe("when API call is successful", () => {
+        test("should return user transaction", async () => {
+            const username = "user@user.com";
+            axios.get.mockResolvedValueOnce(username, config);
 
-//             const result = await fetchUserTransaction();
+            const result = await fetchUserTransaction();
 
-//             expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getAllUserTransactions/${username}`,config);
-//             expect(result).toEqual(username);
-//         });
-//     });
+            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getAllUserTransactions/${username}`,config);
+            expect(result).toEqual(username);
+        });
+    });
 
-//     describe("when API call fails", () => {
-//         test("should return empty transaction", async () => {
-//             const username = "User1";
-//             const message = "Error retrieving user transaction";
-//             axios.get.mockRejectedValueOnce(new Error(message));
+    describe("when API call fails", () => {
+        test("should return empty transaction", async () => {
+            const username = "user@user.com";
+            const message = "Error retrieving user transaction";
+            axios.get.mockRejectedValueOnce(new Error(message));
 
-//             const result = await fetchUserTransaction();
+            const result = await fetchUserTransaction();
 
-//             expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getAllUserTransactions/${username}`,config);
-//             expect(result).toEqual([]);
-//         });
-//     });
-// });
+            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getAllUserTransactions/${username}`,config);
+            expect(result).toEqual([]);
+        });
+    });
+});
 
