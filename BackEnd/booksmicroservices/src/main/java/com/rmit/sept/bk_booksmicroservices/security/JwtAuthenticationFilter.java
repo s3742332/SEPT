@@ -1,7 +1,5 @@
 package com.rmit.sept.bk_booksmicroservices.security;
 
-import com.rmit.sept.bk_booksmicroservices.Services.CustomBookServiceDetails;
-import com.rmit.sept.bk_booksmicroservices.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -21,28 +19,25 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Autowired
     private JwtTokenProvider tokenProvider;
 
-    @Autowired
-    private CustomBookServiceDetails customBookServiceDetails;
-
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
                                     FilterChain filterChain) throws ServletException, IOException {
 
         try {
 
-            String jwt = getJWTFromRequest(httpServletRequest);
+            // String jwt = getJWTFromRequest(httpServletRequest);
 
-            if(StringUtils.hasText(jwt)&& tokenProvider.validateToken(jwt)){
-                // Long bookId = tokenProvider.getBookIdFromJWT(jwt);
-                // Book bookDetails = customBookServiceDetails.loadBookById(bookId);
+            // if(StringUtils.hasText(jwt)&& tokenProvider.validateToken(jwt)){
+            //     Long userId = tokenProvider.getUserIdFromJWT(jwt);
+            //     User userDetails = customUserDetailsService.loadUserById(userId);
 
-                // UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-                //         bookDetails, null, Collections.emptyList());
+            //     UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
+            //             userDetails, null, Collections.emptyList());
 
-                // authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
-                // SecurityContextHolder.getContext().setAuthentication(authentication);
+            //     authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
+            //     SecurityContextHolder.getContext().setAuthentication(authentication);
 
-            }
+            // }
 
         }catch (Exception ex){
             logger.error("Could not set user authentication in security context", ex);
