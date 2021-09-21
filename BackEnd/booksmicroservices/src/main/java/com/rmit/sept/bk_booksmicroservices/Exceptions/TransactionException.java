@@ -1,4 +1,4 @@
-package com.rmit.sept.bk_transactionsmicroservices.exceptions;
+package com.rmit.sept.bk_booksmicroservices.Exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
