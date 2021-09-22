@@ -15,17 +15,17 @@ public class CustomTransactionServiceDetails {
     @Autowired
     private TransactionRepository transactionRepository;
 
-    public List<Transaction> loadTransactionByUserName(String username)
-    {
-        List<Transaction> transactions = transactionRepository.findBooksByUserName(username);
+    // public List<Transaction> loadTransactionByUserName(String username)
+    // {
+    //     List<Transaction> transactions = transactionRepository.findBooksByUserName(username);
 
-        if(transactions == null)
-        {
-            new TransactionException("Unable to find transaction");
-        }
+    //     if(transactions == null)
+    //     {
+    //         new TransactionException("Unable to find transaction");
+    //     }
 
-        return transactions;
-    }
+    //     return transactions;
+    // }
 
     @Transactional
     public Transaction loadTransactionById(Long id)
