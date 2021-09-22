@@ -19,7 +19,6 @@ public class TransactionService {
             transaction.setBooks(transaction.getBooks());
             transaction.setTransactionCost(transaction.getTransactionCost());
             transaction.setUserName(transaction.getUserName());
-            transaction.setOrderComplete(transaction.isOrderComplete());
 
             return transactionRepository.save(transaction);
         }
@@ -55,30 +54,30 @@ public class TransactionService {
         }
     }
 
-    @Transactional
-    public Transaction getTransactionByOrderId(int id)
-    {
-        try
-        {
-            return transactionRepository.findTransactionByOrderId(id);
-        }
-        catch(Exception e)
-        {
-            throw new TransactionException("No transaction with that order ID.");
-        }
-    }
+//     @Transactional
+//     public Transaction getTransactionByOrderId(int id)
+//     {
+//         try
+//         {
+//             return transactionRepository.getById(id);
+//         }
+//         catch(Exception e)
+//         {
+//             throw new TransactionException("No transaction with that order ID.");
+//         }
+//     }
 
-    @Transactional
-    public Transaction updateOrderStatus(Transaction transaction)
-    {
-        try {
-            transaction.setOrderComplete(true);
+//     @Transactional
+//     public Transaction updateOrderStatus(Transaction transaction)
+//     {
+//         try {
+//             transaction.setOrderComplete(true);
 
-            return transactionRepository.save(transaction);
-        }
-        catch (Exception e)
-        {
-            throw new TransactionException("Unable to create transaction");
-        }
-    }
+//             return transactionRepository.save(transaction);
+//         }
+//         catch (Exception e)
+//         {
+//             throw new TransactionException("Unable to create transaction");
+//         }
+//     }
 }

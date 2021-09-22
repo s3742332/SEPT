@@ -10,53 +10,38 @@ public class Transaction {
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
 
-//    @NotBlank(message = "Username required.")
-    private String userName;
-
-//    private String bookTitle;
-////    @NotBlank(message = "Author required")
-//    private String author;
-//    @NotBlank(message = "Cost needed")
     private double transactionCost;
 
     @ElementCollection
-    private List<String> books;
+    private List<Book> books;
 
-    private boolean orderComplete;
+    private String username;
 
-    private int orderId;
+    private List<String> sellers;
 
-    public int getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
-    }
-
-    public boolean isOrderComplete() {
-        return orderComplete;
-    }
-
-    public void setOrderComplete(boolean orderComplete) {
-        this.orderComplete = orderComplete;
-    }
 
     public String getUserName() {
-        return userName;
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String username) {
+        this.username = username;
     }
 
-
-    public List<String> getBooks() {
+    public List<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(List<String> books) {
+    public void setBooks(List<Book> books) {
         this.books = books;
+    }
+
+    public List<String> getSellers() {
+        return sellers;
+    }
+
+    public void setSellers(List<String> sellers) {
+        this.sellers = sellers;
     }
 
     public double getTransactionCost() {

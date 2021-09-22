@@ -47,24 +47,24 @@ public class TransactionController {
         return  new ResponseEntity<Iterable<Transaction>>(userTransactions, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "*")
-    @PostMapping("/completeOrder/{transactionId}")
-    public ResponseEntity<?> completeOrder(@PathVariable String transactionId)
-    {
-        Transaction transaction = transactionService.getTransactionById(Long.valueOf(transactionId));
-        Transaction transaction1 = transactionService.updateOrderStatus(transaction);
+    // @CrossOrigin(origins = "*")
+    // @PostMapping("/completeOrder/{transactionId}")
+    // public ResponseEntity<?> completeOrder(@PathVariable String transactionId)
+    // {
+    //     Transaction transaction = transactionService.getTransactionById(Long.valueOf(transactionId));
+    //     Transaction transaction1 = transactionService.updateOrderStatus(transaction);
 
-        return new ResponseEntity<Transaction>(transaction1, HttpStatus.OK);
-    }
+    //     return new ResponseEntity<Transaction>(transaction1, HttpStatus.OK);
+    // }
 
-    @CrossOrigin(origins = "*")
-    @GetMapping("/getByOrderId/{orderId}")
-    public ResponseEntity<?> getByOrderId(@PathVariable String orderId)
-    {
-        int ordId = Integer.parseInt(orderId);
-        Transaction transaction = transactionService.getTransactionByOrderId(ordId);
+    // @CrossOrigin(origins = "*")
+    // @GetMapping("/getByOrderId/{orderId}")
+    // public ResponseEntity<?> getByOrderId(@PathVariable String orderId)
+    // {
+    //     int ordId = Integer.parseInt(orderId);
+    //     Transaction transaction = transactionService.getTransactionByOrderId(ordId);
         
-        return new ResponseEntity<Transaction>(transaction, HttpStatus.OK);
-    }
+    //     return new ResponseEntity<Transaction>(transaction, HttpStatus.OK);
+    // }
 
 }
