@@ -1,6 +1,7 @@
 package com.rmit.sept.bk_booksmicroservices.web;
 
 import com.rmit.sept.bk_booksmicroservices.Services.TransactionService;
+import com.rmit.sept.bk_booksmicroservices.model.Book;
 import com.rmit.sept.bk_booksmicroservices.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -45,6 +46,22 @@ public class TransactionController {
         }
 
         return  new ResponseEntity<Iterable<Transaction>>(userTransactions, HttpStatus.OK);
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/getUserOwnedBooks/{name}")
+    public ResponseEntity<?> getUserOwnedBooks(@PathVariable String name){
+        Iterable<Transaction> transactionList = transactionService.getAllTransactions();
+        ArrayList<Book> bookList = new ArrayList<Book>();
+        for (Transaction transaction : transactionList){
+            if (transaction.getUserName().equals(name)) {
+                for (Book book : transaction.getBooks()) {
+                    bookList.add(book);
+                }
+            }
+        }
+
+        return  new ResponseEntity<Iterable<Book>>(bookList, HttpStatus.OK);
     }
 
     // @CrossOrigin(origins = "*")

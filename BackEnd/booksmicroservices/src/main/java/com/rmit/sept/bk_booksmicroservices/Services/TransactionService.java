@@ -2,6 +2,7 @@ package com.rmit.sept.bk_booksmicroservices.Services;
 
 import com.rmit.sept.bk_booksmicroservices.Repositories.TransactionRepository;
 import com.rmit.sept.bk_booksmicroservices.Exceptions.TransactionException;
+import com.rmit.sept.bk_booksmicroservices.model.Book;
 import com.rmit.sept.bk_booksmicroservices.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,9 +17,12 @@ public class TransactionService {
     public Transaction saveTransaction(Transaction transaction)
     {
         try {
-            transaction.setBooks(transaction.getBooks());
-            transaction.setTransactionCost(transaction.getTransactionCost());
-            transaction.setUserName(transaction.getUserName());
+            // transaction.setBooks(transaction.getBooks());
+            // transaction.setTransactionCost(transaction.getTransactionCost());
+            // transaction.setUserName(transaction.getUserName());
+            for (Book book : transaction.getBooks()) {
+                book.setStockLevel(book.getStockLevel() - 1);
+            }
 
             return transactionRepository.save(transaction);
         }
