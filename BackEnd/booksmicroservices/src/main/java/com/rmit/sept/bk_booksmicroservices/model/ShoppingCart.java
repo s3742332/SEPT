@@ -10,8 +10,7 @@ public class ShoppingCart {
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
 
-    @ElementCollection
-    private List<Book> cartContents;
+    private Long[] cartContents;
 
     private String userName;
 
@@ -25,11 +24,11 @@ public class ShoppingCart {
         this.cartTotal = cartTotal;
     }
 
-    public List<Book> getCartContents() {
+    public Long[] getCartContents() {
         return cartContents;
     }
 
-    public void setCartContents(List<Book> cartContents) {
+    public void setCartContents(Long[] cartContents) {
         this.cartContents = cartContents;
     }
 

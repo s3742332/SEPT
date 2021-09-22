@@ -2,9 +2,6 @@ package com.rmit.sept.bk_booksmicroservices.Services;
 
 import com.rmit.sept.bk_booksmicroservices.Repositories.TransactionRepository;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import com.rmit.sept.bk_booksmicroservices.Exceptions.TransactionException;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
 import com.rmit.sept.bk_booksmicroservices.model.Transaction;
@@ -25,7 +22,6 @@ public class TransactionService {
     public Transaction saveTransaction(Transaction transaction) {
         try {
 
-            System.out.println("BOOK IDS:");
             System.out.println(transaction.getBookIds());
             Iterable<Book> books = bookService.getBookFromIds(transaction.getBookIds());
             double totalCost = 0;
