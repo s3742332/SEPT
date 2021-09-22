@@ -10,20 +10,12 @@ public class ShoppingCart {
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
 
-    private double cartTotal;
-
     @ElementCollection
-    private List<String> cartContents;
+    private List<Book> cartContents;
 
     private String userName;
 
-    private String name;
-
-    private String address;
-
-    private int phoneNumber;
-
-    private String emailAddress;
+    private double cartTotal;
 
     public double getCartTotal() {
         return cartTotal;
@@ -33,44 +25,12 @@ public class ShoppingCart {
         this.cartTotal = cartTotal;
     }
 
-    public List<String> getCartContents() {
+    public List<Book> getCartContents() {
         return cartContents;
     }
 
-    public void setCartContents(List<String> cartContents) {
+    public void setCartContents(List<Book> cartContents) {
         this.cartContents = cartContents;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public int getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getEmailAddress() {
-        return emailAddress;
-    }
-
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
     }
 
     public String getUserName() {

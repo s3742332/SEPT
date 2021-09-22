@@ -19,11 +19,7 @@ public class ShoppingCartService {
         try{
             shoppingCart.setCartContents(shoppingCart.getCartContents());
             shoppingCart.setCartTotal(shoppingCart.getCartTotal());
-            shoppingCart.setCartContents(shoppingCart.getCartContents());
-            shoppingCart.setAddress(shoppingCart.getAddress());
             shoppingCart.setUserName(shoppingCart.getUserName());
-            shoppingCart.setName(shoppingCart.getName());
-            shoppingCart.setPhoneNumber(shoppingCart.getPhoneNumber());
 
             return shoppingCartRepository.save(shoppingCart);
         }
