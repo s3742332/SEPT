@@ -3,6 +3,7 @@ package com.rmit.sept.bk_booksmicroservices.model;
 import javax.persistence.*;
 import java.util.List;
 
+
 @Entity
 public class Transaction {
 
@@ -10,53 +11,26 @@ public class Transaction {
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Long id;
 
-//    @NotBlank(message = "Username required.")
-    private String userName;
-
-//    private String bookTitle;
-////    @NotBlank(message = "Author required")
-//    private String author;
-//    @NotBlank(message = "Cost needed")
     private double transactionCost;
 
-    @ElementCollection
-    private List<String> books;
+    private Long[] bookIds;
 
-    private boolean orderComplete;
-
-    private int orderId;
-
-    public int getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
-    }
-
-    public boolean isOrderComplete() {
-        return orderComplete;
-    }
-
-    public void setOrderComplete(boolean orderComplete) {
-        this.orderComplete = orderComplete;
-    }
+    private String username;
 
     public String getUserName() {
-        return userName;
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String username) {
+        this.username = username;
     }
 
-
-    public List<String> getBooks() {
-        return books;
+    public Long[] getBookIds() {
+        return bookIds;
     }
 
-    public void setBooks(List<String> books) {
-        this.books = books;
+    public void setBooks(Long[] bookIds) {
+        this.bookIds = bookIds;
     }
 
     public double getTransactionCost() {
@@ -66,5 +40,4 @@ public class Transaction {
     public void setTransactionCost(double transactionCost) {
         this.transactionCost = transactionCost;
     }
-
 }
