@@ -54,34 +54,34 @@ public class ShoppingCartController {
         return new ResponseEntity<Iterable<Book>>(bookList, HttpStatus.OK);
     }
 
-    @CrossOrigin(origins = "*")
-    @PostMapping("/addToCart")
-    public ResponseEntity<ShoppingCart> addToCart(@RequestBody String name, Long id) {
-        Iterable<ShoppingCart> carts = shoppingCartService.getAllShoppingCarts();
+    // @CrossOrigin(origins = "*")
+    // @PostMapping("/addToCart")
+    // public ResponseEntity<ShoppingCart> addToCart(@RequestBody String name, Long id) {
+    //     Iterable<ShoppingCart> carts = shoppingCartService.getAllShoppingCarts();
 
-         for (ShoppingCart shoppingCart : carts) {
-            if (shoppingCart.getUserName().equals(name)) {
-                Long[] newContent = Arrays.copyOf(shoppingCart.getCartContents(), shoppingCart.getCartContents().length + 1);
-                newContent[newContent.length - 1 ] = id;
-                shoppingCart.setCartContents(newContent);
-                return new ResponseEntity<ShoppingCart>(shoppingCart, HttpStatus.CREATED);
-            }
-        }
-        return null;
-    }
+    //      for (ShoppingCart shoppingCart : carts) {
+    //         if (shoppingCart.getUserName().equals(name)) {
+    //             Long[] newContent = Arrays.copyOf(shoppingCart.getCartContents(), shoppingCart.getCartContents().length + 1);
+    //             newContent[newContent.length - 1 ] = id;
+    //             shoppingCart.setCartContents(newContent);
+    //             return new ResponseEntity<ShoppingCart>(shoppingCart, HttpStatus.CREATED);
+    //         }
+    //     }
+    //     return null;
+    // }
 
-    @CrossOrigin(origins = "*")
-    @PostMapping("/removeFromCart")
-    public ResponseEntity<ShoppingCart> removeFromCart(@RequestBody String name, Long id) {
-        Iterable<ShoppingCart> carts = shoppingCartService.getAllShoppingCarts();
+    // @CrossOrigin(origins = "*")
+    // @PostMapping("/removeFromCart")
+    // public ResponseEntity<ShoppingCart> removeFromCart(@RequestBody String name, Long id) {
+    //     Iterable<ShoppingCart> carts = shoppingCartService.getAllShoppingCarts();
 
-         for (ShoppingCart shoppingCart : carts) {
-            if (shoppingCart.getUserName().equals(name)) {
-                Long[] newContent = Arrays.copyOf(shoppingCart.getCartContents(), shoppingCart.getCartContents().length - 1);
-                shoppingCart.setCartContents(newContent);
-                return new ResponseEntity<ShoppingCart>(shoppingCart, HttpStatus.CREATED);
-            }
-        }
-        return null;
-    }
+    //      for (ShoppingCart shoppingCart : carts) {
+    //         if (shoppingCart.getUserName().equals(name)) {
+    //             Long[] newContent = Arrays.copyOf(shoppingCart.getCartContents(), shoppingCart.getCartContents().length - 1);
+    //             shoppingCart.setCartContents(newContent);
+    //             return new ResponseEntity<ShoppingCart>(shoppingCart, HttpStatus.CREATED);
+    //         }
+    //     }
+    //     return null;
+    // }
 }
