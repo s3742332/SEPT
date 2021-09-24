@@ -39,19 +39,16 @@ public class ShoppingCartController {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/getUserCart/{name}")
-    public ResponseEntity<?> getAllShoppingCarts(@PathVariable String name) {
+    public ResponseEntity<?> getUserCart(@PathVariable String name) {
         Iterable<ShoppingCart> carts = shoppingCartService.getAllShoppingCarts();
-        ArrayList<Book> bookList = new ArrayList<Book>();
+        ShoppingCart cart = new ShoppingCart();
         for (ShoppingCart shoppingCart : carts) {
             if (shoppingCart.getUserName().equals(name)) {
-                ShoppingCart cart = shoppingCart;
-                for (Book book : bookService.getBookFromIds(cart.getCartContents())) {
-                    bookList.add(book);
-                }
+                cart = shoppingCart;
             }
         }
 
-        return new ResponseEntity<Iterable<Book>>(bookList, HttpStatus.OK);
+        return new ResponseEntity<ShoppingCart>(cart, HttpStatus.OK);
     }
 
     // @CrossOrigin(origins = "*")
