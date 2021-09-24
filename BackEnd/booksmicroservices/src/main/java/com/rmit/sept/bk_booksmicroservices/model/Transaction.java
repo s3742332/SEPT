@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 
-@Entity
+@Entity  (name="Transaction")
 public class Transaction {
 
     @Id
@@ -17,12 +17,16 @@ public class Transaction {
 
     private String username;
 
-    public Long getId() {
-        return id;
-    }
+    public Transaction() {
 
+    }
+    
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getUserName() {

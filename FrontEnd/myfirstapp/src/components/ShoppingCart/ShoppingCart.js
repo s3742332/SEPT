@@ -1,9 +1,29 @@
 import { Col, Row, List, Typography, Button } from 'antd'
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
-function Checkout(props) {
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useHistory } from 'react-router-dom';
+import { cartEdit, getUserCart } from '../../actions/cartActions';
+import { getUser } from '../../actions/securityActions';
+
+function ShoppingCart(props) {
+    const dispatch = useDispatch();
+    const history = useHistory();
     const [bookList, setBookList] = useState([])
     const [totalPrice, setTotalPrice] = useState(0)
+    const user = useSelector(state => state.security);
+    const cart = useSelector(state => state.cart);
+    useEffect(() => {
+        dispatch(getUser())
+    }, [dispatch])
+    useEffect(() => {
+        if (user.user.username) {
+            dispatch(getUserCart(user.user.username, history, false))
+            console.log("123")
+        }
+    }, [user])
+    useEffect(() => {
+        console.log(cart)
+    }, [cart])
     useEffect(() => {
         const cart = props.location.state?.cart
         console.log(cart)
@@ -18,13 +38,17 @@ function Checkout(props) {
 
         setBookList(data)
     }, [props.location.state])
+
+    useEffect(() => {
+        setBookList(cart.cart)
+    }, [cart])
     useEffect(() => {
         console.log(totalPrice)
     }, [totalPrice])
     const { Title, Text } = Typography
     return (
-        <Row justify="center" style={{marginTop: "2rem"}}>
-            <Col xs={18} style={{backgroundColor: "white", padding: "1rem"}}>
+        <Row justify="center" style={{ marginTop: "2rem" }}>
+            <Col xs={18} style={{ backgroundColor: "white", padding: "1rem" }}>
                 <Row>
                     <Title variant="h1">Shopping Cart</Title>
                 </Row>
@@ -66,9 +90,9 @@ function Checkout(props) {
                             </Link>
                         )}
                     />
-                </Row>  
+                </Row>
             </Col>
-            <Col xs={4} style={{backgroundColor: "white", padding: "1rem"}}>
+            <Col xs={4} style={{ backgroundColor: "white", padding: "1rem" }}>
                 <Row>
                     <Title variant="h1">Order Summary</Title>
 
@@ -90,4 +114,4 @@ function Checkout(props) {
     )
 }
 
-export default Checkout
+export default ShoppingCart

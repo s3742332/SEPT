@@ -3,7 +3,7 @@ package com.rmit.sept.bk_booksmicroservices.model;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity (name="ShoppingCart")
 public class ShoppingCart {
 
     @Id
@@ -16,6 +16,18 @@ public class ShoppingCart {
 
     private double cartTotal;
 
+    public ShoppingCart() {
+
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
+    
     public double getCartTotal() {
         return cartTotal;
     }
