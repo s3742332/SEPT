@@ -22,6 +22,7 @@ public class TransactionController {
     @Autowired
     private TransactionService transactionService;
 
+    //adding or removing a book - pass through username (email) + array of book ids
     @CrossOrigin(origins = "*")
     @PostMapping("/saveTransaction")
     public ResponseEntity<Transaction> createNewTransaction(@RequestBody Transaction transaction) {
