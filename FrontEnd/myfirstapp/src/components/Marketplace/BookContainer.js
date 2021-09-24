@@ -10,9 +10,9 @@ export default function BookContainer(props) {
     <Card
       hoverable
       style={{ width: 240 }}
-      cover={<img src={img}></img>}
+      cover={<img src={props.image}></img>}
     >
-      <Meta title={props.title} description={props.author + props.price} />
+      <Meta title={props.title} description={props.author} />
     </Card>
   );
 }

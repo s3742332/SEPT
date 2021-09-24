@@ -22,7 +22,6 @@ public class TransactionService {
     public Transaction saveTransaction(Transaction transaction) {
         try {
 
-            System.out.println(transaction.getBookIds());
             Iterable<Book> books = bookService.getBookFromIds(transaction.getBookIds());
             double totalCost = 0;
             for (Book book : books) {
