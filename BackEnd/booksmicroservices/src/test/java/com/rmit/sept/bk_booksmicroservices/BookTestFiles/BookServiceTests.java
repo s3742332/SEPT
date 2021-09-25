@@ -68,8 +68,8 @@
      void saveOrUpdateBookTest() {
          Book book = new Book();
          Mockito.when(bookRepository.save(book)).thenReturn(book);
- //        bookService.saveOrUpdateBook(book);
- //        verify(bookRepository, times(1)).save(any(Book.class));
+         bookService.saveOrUpdateBook(book);
+         verify(bookRepository, times(1)).save(any(Book.class));
      }
 
      @Test
