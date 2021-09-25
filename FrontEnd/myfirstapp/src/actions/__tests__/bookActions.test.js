@@ -16,8 +16,23 @@ describe("fetchBookEdit", () => {
         });
     });
 
+    describe("when API call is successful", () => {
+        test("should return successful edit book", async () => {
+            let book = {bookName: "asdf", bookDescription: "qwerty"};
+            axios.post.mockResolvedValueOnce(book, config);
+            const savedBook = await fetchBookEdit();
+
+            book = {bookName: "asdf", bookDescription: "updated"};
+            axios.post.mockResolvedValueOnce(book, config);
+            const editedBook = await fetchBookEdit();
+
+            expect(savedBook).toEqual(editedBook);
+
+        });
+    });
+
     describe("when API call fails", () => {
-        test("should return unsuccessful book edit", async () => {
+        test("should return unsuccessful book save/edit", async () => {
             const book = {id: 1, name: "Book 1"}
             const message = "Error editing book";
             axios.post.mockRejectedValueOnce(new Error(message));
