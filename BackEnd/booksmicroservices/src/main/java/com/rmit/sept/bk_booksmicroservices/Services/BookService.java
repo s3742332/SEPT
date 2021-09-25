@@ -1,11 +1,15 @@
 package com.rmit.sept.bk_booksmicroservices.Services;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import com.rmit.sept.bk_booksmicroservices.Exceptions.BookNotFoundException;
 import com.rmit.sept.bk_booksmicroservices.Repositories.BookRepository;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.SystemPropertyUtils;
 @Service
 public class BookService {
 
@@ -37,6 +41,8 @@ public class BookService {
     {
         try
         {
+            // System.out.println("GET ALL BOOKS");
+            // System.out.println(bookRepository);
             return bookRepository.findAll();
         }
         catch (Exception e)
@@ -72,6 +78,19 @@ public class BookService {
         {
             throw new BookNotFoundException("Unable to retrieve book list");
         }
+    }
 
+    @Transactional
+    public Iterable<Book> getBookFromIds (Long[] idList) {
+        try
+        {
+            return bookRepository.findBooksByIds(idList);
+        }
+        catch (Exception e)
+        {
+            System.out.println("ERROR IN BOOK RETRIEVAL");
+            System.out.println(e);
+            throw new BookNotFoundException("Unable to retrieve book list");
+        }
     }
 }

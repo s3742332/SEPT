@@ -36,7 +36,7 @@ import SearchResult from "./components/Marketplace/SearchResult";
 import BookEdit from "./components/Books/BookEdit/BookEdit";
 import PendingBook from "./components/Books/PendingBook/PendingBook";
 import CustomerTransactions from "./components/Transactions/CustomerTransactions";
-import Checkout from "./components/Checkout/Checkout";
+import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import CategoryResult from "./components/Marketplace/CategoryResult";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
@@ -105,7 +105,7 @@ function App() {
             <Route exact path="/browse" component={Marketplace} />
             <Route exact path="/sell" component={Sell} />
             <Route exact path="/buy" component={BookDetails} />
-            <Route exact path="/checkout" component={Checkout} />
+            <Route exact path="/shoppingcart" component={ShoppingCart} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/transactions" component={CustomerTransactions} />

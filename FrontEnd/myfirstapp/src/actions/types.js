@@ -25,4 +25,9 @@ export const GET_CATEGORY = "GET_CATEGORY";
 
 // Transactions
 export const CREATE_TRANSACTION = "CREATE_TRANSACTION"; 
-export const GET_TRANSACTIONS = " GET_TRANSACTIONS";
+export const GET_TRANSACTIONS = "GET_TRANSACTIONS";
+export const GET_USER_BOOKS = "GET_USER_BOOKS"
+
+// Cart
+export const UPDATE_CART = "UDATE_CART"
+export const GET_CART = "GET_CART";

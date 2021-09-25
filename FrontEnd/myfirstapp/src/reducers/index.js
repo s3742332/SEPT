@@ -5,6 +5,7 @@ import securityReducer from "./securityReducer";
 import userReducer from "./userReducer";
 import bookReducer from "./bookReducer";
 import transactionReducer from "./transactionReducer";
+import cartReducer from "./cartReducer";
 
 export default combineReducers({
   errors: errorReducer,
@@ -12,6 +13,7 @@ export default combineReducers({
   security: securityReducer,
   user: userReducer,
   book: bookReducer,
-  transaction: transactionReducer
+  transaction: transactionReducer,
+  cart: cartReducer
 });
 

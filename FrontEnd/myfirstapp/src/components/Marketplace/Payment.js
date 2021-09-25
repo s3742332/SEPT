@@ -99,7 +99,6 @@ function Payment(props) {
         const data = {
             userName: user.user.username,
             books: bookList.map((i) => { return i.id }),
-            orderComplete: true,
             transactionCost: totalPrice,
         }
         console.log(errorMessage)

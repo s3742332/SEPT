@@ -9,11 +9,6 @@ jobs:
       - image: cimg/openjdk:16.0.2
     steps:
       - checkout
-      # - run:
-      #     name: Install Dependencies
-      #     command: |
-      #       sudo apt update
-      #       mvn -N io.takari:maven:wrapper
       - run:
           name: Login microservice
           command: |
@@ -26,17 +21,10 @@ jobs:
             cd ~/project/BackEnd/booksmicroservices
             chmod u+x ~/project/BackEnd/booksmicroservices/mvnw
             ~/project/BackEnd/booksmicroservices/mvnw package
-      - run:
-          name: transactions microservice
-          command: |
-            cd ~/project/BackEnd/transactionsmicroservices
-            chmod u+x ~/project/BackEnd/transactionsmicroservices/mvnw
-            ~/project/BackEnd/transactionsmicroservices/mvnw package
       - persist_to_workspace:
           root: ~/project/BackEnd
           paths:
             - loginmicroservices/target/loginmicroservices-0.0.1.jar
-            - transactionsmicroservices/target/transactionsmicroservices-0.0.1.jar
             - booksmicroservices/target/booksmicroservices-0.0.1.jar
   frontendbuild:
     docker:
@@ -66,11 +54,6 @@ jobs:
           background: yes
           command: |
             java -jar ~/project/BackEnd/booksmicroservices/target/booksmicroservices-0.0.1.jar
-      - run:
-          name: Run service
-          background: yes
-          command: |
-            java -jar ~/project/BackEnd/transactionsmicroservices/target/transactionsmicroservices-0.0.1.jar
       - run:
           name: Install Dependencies
           command: |
