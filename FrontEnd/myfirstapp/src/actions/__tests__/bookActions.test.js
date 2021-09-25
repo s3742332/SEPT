@@ -26,8 +26,8 @@ describe("fetchBookEdit", () => {
             axios.post.mockResolvedValueOnce(book, config);
             const editedBook = await fetchBookEdit();
 
-            expect(savedBook).toEqual(editedBook);
-
+            //savedBook should be different to editedBook - changed bookDescription
+            expect(savedBook).not.toEqual(editedBook);
         });
     });
 
