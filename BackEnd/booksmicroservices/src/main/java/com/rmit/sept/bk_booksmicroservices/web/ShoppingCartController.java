@@ -2,6 +2,7 @@ package com.rmit.sept.bk_booksmicroservices.web;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 
 import com.rmit.sept.bk_booksmicroservices.Services.BookService;
 import com.rmit.sept.bk_booksmicroservices.Services.ShoppingCartService;
@@ -38,47 +39,70 @@ public class ShoppingCartController {
     }
 
     @CrossOrigin(origins = "*")
+
     @GetMapping("/getUserCart/{name}")
+
     public ResponseEntity<?> getUserCart(@PathVariable String name) {
+
         Iterable<ShoppingCart> carts = shoppingCartService.getAllShoppingCarts();
+
         ShoppingCart cart = new ShoppingCart();
+
         for (ShoppingCart shoppingCart : carts) {
+
             if (shoppingCart.getUserName().equals(name)) {
+
                 cart = shoppingCart;
+
+                ArrayList<Book> bookData = new ArrayList<Book>();
+                Iterable<Book> bookData1 = bookService.getBookFromIds(cart.getCartContents());
+                Iterator<Book> bookIter = bookData1.iterator();
+                while(bookIter.hasNext()) {
+                    bookData.add(bookIter.next());
+                    System.out.println(bookData.size());
+                }
+                Book[] temp = new Book[bookData.size()];
+                temp = bookData.toArray(temp);
+                cart.setBooks(temp);
             }
+
         }
 
         return new ResponseEntity<ShoppingCart>(cart, HttpStatus.OK);
-    }
 
+    }
     // @CrossOrigin(origins = "*")
     // @PostMapping("/addToCart")
-    // public ResponseEntity<ShoppingCart> addToCart(@RequestBody String name, Long id) {
-    //     Iterable<ShoppingCart> carts = shoppingCartService.getAllShoppingCarts();
+    // public ResponseEntity<ShoppingCart> addToCart(@RequestBody String name, Long
+    // id) {
+    // Iterable<ShoppingCart> carts = shoppingCartService.getAllShoppingCarts();
 
-    //      for (ShoppingCart shoppingCart : carts) {
-    //         if (shoppingCart.getUserName().equals(name)) {
-    //             Long[] newContent = Arrays.copyOf(shoppingCart.getCartContents(), shoppingCart.getCartContents().length + 1);
-    //             newContent[newContent.length - 1 ] = id;
-    //             shoppingCart.setCartContents(newContent);
-    //             return new ResponseEntity<ShoppingCart>(shoppingCart, HttpStatus.CREATED);
-    //         }
-    //     }
-    //     return null;
+    // for (ShoppingCart shoppingCart : carts) {
+    // if (shoppingCart.getUserName().equals(name)) {
+    // Long[] newContent = Arrays.copyOf(shoppingCart.getCartContents(),
+    // shoppingCart.getCartContents().length + 1);
+    // newContent[newContent.length - 1 ] = id;
+    // shoppingCart.setCartContents(newContent);
+    // return new ResponseEntity<ShoppingCart>(shoppingCart, HttpStatus.CREATED);
+    // }
+    // }
+    // return null;
     // }
 
     // @CrossOrigin(origins = "*")
     // @PostMapping("/removeFromCart")
-    // public ResponseEntity<ShoppingCart> removeFromCart(@RequestBody String name, Long id) {
-    //     Iterable<ShoppingCart> carts = shoppingCartService.getAllShoppingCarts();
+    // public ResponseEntity<ShoppingCart> removeFromCart(@RequestBody String name,
+    // Long id) {
+    // Iterable<ShoppingCart> carts = shoppingCartService.getAllShoppingCarts();
 
-    //      for (ShoppingCart shoppingCart : carts) {
-    //         if (shoppingCart.getUserName().equals(name)) {
-    //             Long[] newContent = Arrays.copyOf(shoppingCart.getCartContents(), shoppingCart.getCartContents().length - 1);
-    //             shoppingCart.setCartContents(newContent);
-    //             return new ResponseEntity<ShoppingCart>(shoppingCart, HttpStatus.CREATED);
-    //         }
-    //     }
-    //     return null;
+    // for (ShoppingCart shoppingCart : carts) {
+    // if (shoppingCart.getUserName().equals(name)) {
+    // Long[] newContent = Arrays.copyOf(shoppingCart.getCartContents(),
+    // shoppingCart.getCartContents().length - 1);
+    // shoppingCart.setCartContents(newContent);
+    // return new ResponseEntity<ShoppingCart>(shoppingCart, HttpStatus.CREATED);
+    // }
+    // }
+    // return null;
     // }
 }

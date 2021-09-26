@@ -1,3 +1,4 @@
+import { ShoppingCartOutlined } from '@ant-design/icons';
 import { Menu, Dropdown, message, Row, Typography, Divider, Layout } from 'antd';
 
 import React, { useEffect, useState } from 'react'
@@ -43,6 +44,7 @@ function NavBar(props) {
                     <Menu.Item key="/about" onClick={() => history.push('/about')}>About</Menu.Item>
                 </Menu>
                 <AccountSettings/>
+                
             </Row>)
     }
 

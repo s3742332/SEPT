@@ -13,6 +13,9 @@ export const cartEdit = (cart, history, devTool) => async dispatch => {
             type: UPDATE_CART,
             payload: res.data
         })
+        console.log("FETCHING CART AFTER EDIT")
+        dispatch(getUserCart(cart.userName, history, devTool))
+        
     } catch (err) {
         console.log('error', err)
         dispatch({
@@ -29,10 +32,7 @@ export const getUserCart = (username, history, devTool) => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        
-        console.log("HERE")
         const res = await axios.get(`http://localhost:8081/api/shoppingcarts/getUserCart/${username}`,config)
-        console.log(res.data)
         dispatch({
             type: GET_CART,
             payload: res.data
