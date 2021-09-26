@@ -3,6 +3,7 @@ package com.rmit.sept.bk_booksmicroservices.web;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
 import com.rmit.sept.bk_booksmicroservices.Services.BookService;
 import com.rmit.sept.bk_booksmicroservices.Services.ShoppingCartService;
@@ -43,24 +44,23 @@ public class ShoppingCartController {
     @GetMapping("/getUserCart/{name}")
 
     public ResponseEntity<?> getUserCart(@PathVariable String name) {
-
         Iterable<ShoppingCart> carts = shoppingCartService.getAllShoppingCarts();
-
         ShoppingCart cart = new ShoppingCart();
-
         for (ShoppingCart shoppingCart : carts) {
-
             if (shoppingCart.getUserName().equals(name)) {
-
                 cart = shoppingCart;
-
                 ArrayList<Book> bookData = new ArrayList<Book>();
                 Iterable<Book> bookData1 = bookService.getBookFromIds(cart.getCartContents());
-                Iterator<Book> bookIter = bookData1.iterator();
-                while(bookIter.hasNext()) {
-                    bookData.add(bookIter.next());
-                    System.out.println(bookData.size());
+                List<Long> IdList = new ArrayList<>(Arrays.asList(shoppingCart.getCartContents()));
+
+                for (Long id : IdList) {
+                    for (Book book : bookData1) {
+                        if (book.getId().equals(id)) {
+                            bookData.add(book);
+                        }
+                    }
                 }
+
                 Book[] temp = new Book[bookData.size()];
                 temp = bookData.toArray(temp);
                 cart.setBooks(temp);
