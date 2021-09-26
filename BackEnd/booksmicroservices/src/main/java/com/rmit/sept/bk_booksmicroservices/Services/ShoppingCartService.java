@@ -23,9 +23,13 @@ public class ShoppingCartService {
         try{
             Iterable<Book> books = bookService.getBookFromIds(shoppingCart.getCartContents());
             double totalCost = 0;
-            for (Book book : books) {
-                book.setStockLevel(book.getStockLevel() - 1);
-                totalCost += book.getBookCost();
+            for (Long id: shoppingCart.getCartContents()) {
+                for (Book book : books) {
+                    if (id == book.getId()) {
+                        book.setStockLevel(book.getStockLevel() - 1);
+                        totalCost += book.getBookCost();
+                    }
+                }
             }
             shoppingCart.setCartTotal(totalCost);
 

@@ -9,32 +9,48 @@ import { getUser } from '../../actions/securityActions';
 function BookDetails(props) {
     const dispatch = useDispatch();
     const [bookData, setBookData] = useState([])
-    useEffect(() => {
-        setBookData(props.location.state.book)
-        console.log(props.location.state.book)
-    }, [props])
     const user = useSelector(state => state.security);
     const cart = useSelector(state => state.cart);
+    const [cartStatus, setCartStatus] = useState("Add to cart")
+    const [cartDisable, setButtonDisable] = useState(false)
     const { Title } = Typography;
     useEffect(() => {
         dispatch(getUser())
     }, [dispatch])
     const history = useHistory();
     useEffect(() => {
-        if(user.user.username) {
+        if (user.user.username) {
             dispatch(getUserCart(user.user.username, history, false))
-            console.log("123")
         }
 
     }, [user])
     useEffect(() => {
-        console.log(cart)
+        setBookData(props.location.state.book)
+        console.log("BOOK SELECTED", props.location.state.book)
+    }, [props])
+    useEffect(() => {
+        console.log("CART DETECTED", cart.cart.cartContents)
     }, [cart])
     const addToCart = () => {
-        const data = {
-            userName: user.user.username,
-            cartContents: props.location.state.book.id
+        setCartStatus("Added!")
+        setButtonDisable(true)
+        setTimeout(() => {
+            setCartStatus("Add to cart")
+            setButtonDisable(false);
+        }, 2000);
+        const cartData = cart.cart.cartContents;
+
+        if (cartData) {
+
+            cartData.push(props.location.state.book.id)
+            console.log("CART DETECTED", cartData)
         }
+        const data = {
+            id: cart.cart.id,
+            userName: user.user.username,
+            cartContents: cartData ? cartData : [props.location.state.book.id]
+        }
+        //console.log("cart", cart.cart.cartContent)
         dispatch(cartEdit(data, history, false))
     }
     return (
@@ -53,9 +69,9 @@ function BookDetails(props) {
                     <Link
                         to={{
                             pathname: "/shoppingcart",
-                            state: { cart: [bookData] }
+                            state: { book: bookData }
                         }}><Button type="primary" shape="round">Buy Now</Button></Link>
-                        <Button type="primary" shape="round" onClick={addToCart}>Add to Cart</Button>
+                    <Button type="primary" disabled={cartDisable} shape="round" onClick={addToCart}>{cartStatus}</Button>
                 </div>
             </div>
         </Card>

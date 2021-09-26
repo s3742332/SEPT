@@ -3,11 +3,11 @@ package com.rmit.sept.bk_booksmicroservices.model;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity (name="ShoppingCart")
+@Entity(name = "ShoppingCart")
 public class ShoppingCart {
 
     @Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long[] cartContents;
@@ -15,6 +15,8 @@ public class ShoppingCart {
     private String userName;
 
     private double cartTotal;
+
+    private Book[] books;
 
     public ShoppingCart() {
 
@@ -27,7 +29,7 @@ public class ShoppingCart {
     public Long getId() {
         return id;
     }
-    
+
     public double getCartTotal() {
         return cartTotal;
     }
@@ -50,5 +52,17 @@ public class ShoppingCart {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public void setBooks(Book[] books) {
+
+        this.books = books;
+
+    }
+
+    public Book[] getBooks() {
+
+        return books;
+
     }
 }
