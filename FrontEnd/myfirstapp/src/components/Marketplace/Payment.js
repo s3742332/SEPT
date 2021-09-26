@@ -23,6 +23,7 @@ function Payment(props) {
     const user = useSelector(state => state.security);
     const [errorMessage, setErrorMessage] = useState([])
     useEffect(() => {
+        console.log(props.location.state.cart)
         setBookList(props.location.state.cart)
         setTotalPrice(props.location.state.totalPrice)
     }, [props.location.state])
@@ -98,7 +99,7 @@ function Payment(props) {
         setErrorMessage(error)
         const data = {
             userName: user.user.username,
-            books: bookList.map((i) => { return i.id }),
+            books: props.location.state.cart,
             transactionCost: totalPrice,
         }
         console.log(errorMessage)

@@ -69,7 +69,7 @@ function BookDetails(props) {
                     <Link
                         to={{
                             pathname: "/shoppingcart",
-                            state: { cart: [bookData] }
+                            state: { book: bookData }
                         }}><Button type="primary" shape="round">Buy Now</Button></Link>
                     <Button type="primary" disabled={cartDisable} shape="round" onClick={addToCart}>{cartStatus}</Button>
                 </div>

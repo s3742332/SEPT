@@ -12,6 +12,7 @@ function ShoppingCart(props) {
     const [totalPrice, setTotalPrice] = useState(0)
     const user = useSelector(state => state.security);
     const cart = useSelector(state => state.cart);
+    const [decrementDisable, setDecrementDisable] = useState({});
     useEffect(() => {
         dispatch(getUser())
     }, [dispatch])
@@ -21,98 +22,106 @@ function ShoppingCart(props) {
         }
     }, [user])
     useEffect(() => {
-        const cart = props.location.state?.cart
-        console.log("SINGLE ITEM FOUND", cart)
-        const data = []
-        if (props.location.state?.cart) {
-            for (const book in cart) {
-                console.log("Added:", book)
-                data.push(cart[book])
-                setTotalPrice(totalPrice + cart[book].bookCost)
+        if (user.user.username && cart.cart) {
+
+            if (props.location.state?.book) {
+                const book = props.location.state?.book
+                console.log("SINGLE ITEM FOUND", book)
+                setTotalPrice(book.bookCost)
+                setBookList([book])
+                return;
+            } else {
+                if (cart?.cart?.books) {
+                    console.log("SHOPPING CART DETECTED", cart.cart?.books)
+                    var groupBy = function (xs, key) {
+                        return xs.reduce(function (rv, x) {
+                            (rv[x[key]] = rv[x[key]] || []).push(x);
+                            return rv;
+                        }, []);
+                    };
+                    var groubedByTeam = groupBy(cart.cart.books, 'id');
+                    var filtered = groubedByTeam.filter(function (x) {
+                        return x !== undefined;
+                    });
+                    setBookList(filtered);
+                    setTotalPrice(cart.cart.cartTotal)
+                    for (let i in filtered) {
+                        if (filtered[i].length === 1) {
+                            setDecrementDisable({ ...decrementDisable, [i]: false });
+                        }
+                    }
+                    console.log("GROUP", filtered);
+                }
+
             }
         }
 
-        setBookList(data)
-    }, [props.location.state?.cart])
+    }, [props.location.state?.book, cart.cart?.books, user.user?.username])
 
 
-    useEffect(() => {
-        if (!props.location.state?.cart) {
-            const array = [
-                {
-                    id: 3,
-                    seller: "Kuphal - Kutch",
-                    bookTitle: "Lead Marketing Associate",
-                    author: "Dolores O'Hara",
-                    bookDescription: "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                    bookCost: 374.0,
-                    stockLevel: 72286,
-                    approved: true,
-                    isbn: "1084",
-                    cover: "http://placeimg.com/640/480",
-                    category: [
-                        "Fantasy",
-                        "Romance"
-                    ],
-                    used: false
-                },
-                {
-                    id: 3,
-                    seller: "Kuphal - Kutch",
-                    bookTitle: "Lead Marketing Associate",
-                    author: "Dolores O'Hara",
-                    bookDescription: "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-                    bookCost: 374.0,
-                    stockLevel: 72286,
-                    approved: true,
-                    isbn: "1084",
-                    cover: "http://placeimg.com/640/480",
-                    category: [
-                        "Fantasy",
-                        "Romance"
-                    ],
-                    used: false
-                },
-                {
-                    id: 4,
-                    seller: "Hartmann LLC",
-                    bookTitle: "Central Security Manager",
-                    author: "Ms. Terri Jaskolski",
-                    bookDescription: "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
-                    bookCost: 11.0,
-                    stockLevel: 73566,
-                    approved: true,
-                    isbn: "99509",
-                    cover: "http://placeimg.com/640/480",
-                    category: [
-                        "Fantasy",
-                        "Romance"
-                    ],
-                    used: false
-                },
-            ]
-
-            var groupBy = function (xs, key) {
-                return xs.reduce(function (rv, x) {
-                    (rv[x[key]] = rv[x[key]] || []).push(x);
-                    return rv;
-                }, []);
-            };
-            var groubedByTeam = groupBy(array, 'id');
-            var filtered = groubedByTeam.filter(function (x) {
-                return x !== undefined;
-            });
-
-            setBookList(filtered)
-            console.log("GROUP", filtered);
+    const increment = (count, bookID) => {
+        if (count >= 1) {
+            let disable = { ...decrementDisable, [bookID]: false }
+            setDecrementDisable(disable);
         }
-    }, [])
+        console.log("Incrementing")
+        const cartData = cart.cart.cartContents;
 
+        if (props.location.state?.book) {
+           
+            const data = [...bookList, props.location.state.book]
+            console.log("AE",data)
+            setBookList(data)
+            return;
+        } else
+            if (cart?.cart?.books) {
+                cartData.push(bookID)
+                console.log("CART DETECTED", cartData)
+                const data = {
+                    id: cart.cart.id,
+                    userName: user.user.username,
+                    cartContents: cartData ? cartData : [bookID]
+                }
+                //console.log("cart", cart.cart.cartContent)
+                dispatch(cartEdit(data, history, false))
+
+            }
+
+    }
+
+    const decrement = (count, bookID) => {
+        if ((count - 1) === 1) {
+            let disable = { ...decrementDisable, [bookID]: true }
+            setDecrementDisable(disable);
+        }
+        console.log("Decrementing")
+        const cartData = cart.cart.cartContents;
+
+        if (cartData) {
+            cartData.sort().reverse();
+            for (let i = 0; i < cartData.length; i++) {
+                if (cartData[i] === bookID) {
+                    //console.log("FOUND", cartData.splice(i,1))
+                    cartData.splice(i, 1)
+                    break;
+                }
+            }
+            console.log("CART DETECTED", cartData)
+            const data = {
+                id: cart.cart.id,
+                userName: user.user.username,
+                cartContents: cartData ? cartData : [bookID]
+            }
+            //console.log("cart", cart.cart.cartContent)
+            dispatch(cartEdit(data, history, false))
+        }
+
+    }
     useEffect(() => {
         console.log(totalPrice)
     }, [totalPrice])
     useEffect(() => {
-        console.log("booklist", bookList)
+        console.log("disable", bookList)
     }, [bookList])
     const { Title, Text } = Typography
 
@@ -123,7 +132,7 @@ function ShoppingCart(props) {
                     <Title variant="h1">Shopping Cart</Title>
                 </Row>
                 <Row>
-                    {props.location.state?.cart ?
+                    {props.location.state?.book ?
                         <List
                             itemLayout="vertical"
                             size="large"
@@ -138,7 +147,7 @@ function ShoppingCart(props) {
 
                                 <List.Item
                                     style={{ height: "250px" }}
-                                    key={book.Id}
+                                    key={book.id}
                                     extra={
                                         //top is book cover, bottom is default image       
                                         <img src={book.cover} alt={book.cover} style={{
@@ -146,16 +155,10 @@ function ShoppingCart(props) {
                                             objectFit: "scale-down"
                                         }} />
                                     }
-                                    actions={[
-                                        <Space><Button>-</Button></Space>,
-                                        <Space>{book.length}</Space>,
-                                        <Space><Button>+</Button></Space>,
-                                    ]}
                                 >
                                     <List.Item.Meta
 
                                         title={<>
-                                            <Space><Button type={"danger"} size={"small"}>Remove</Button></Space><br />
                                             <Link
                                                 to={{
                                                     pathname: "/buy",
@@ -176,7 +179,7 @@ function ShoppingCart(props) {
                             dataSource={bookList}
                             footer={
                                 <div>
-                                    <b>Total Books: </b> {bookList.length}
+                                    <b>Total Books: </b> {cart?.cart?.books?.length}
                                 </div>
                             }
                             renderItem={book => (
@@ -184,7 +187,7 @@ function ShoppingCart(props) {
 
                                 <List.Item
                                     style={{ height: "250px" }}
-                                    key={book[0].Id}
+                                    key={book[0].id}
                                     extra={
                                         //top is book cover, bottom is default image       
                                         <img src={book[0].cover} alt={book[0].cover} style={{
@@ -193,9 +196,9 @@ function ShoppingCart(props) {
                                         }} />
                                     }
                                     actions={[
-                                        <Space><Button>-</Button></Space>,
+                                        <Space><Button disabled={decrementDisable ? decrementDisable[book[0].id] : true} onClick={() => { decrement(book.length, book[0].id) }}>-</Button></Space>,
                                         <Space>{book.length}</Space>,
-                                        <Space><Button>+</Button></Space>,
+                                        <Space><Button onClick={() => { increment(book.length, book[0].id) }}>+</Button></Space>,
                                     ]}
                                 >
                                     <List.Item.Meta
@@ -229,7 +232,7 @@ function ShoppingCart(props) {
                     <Link
                         to={{
                             pathname: "/payment",
-                            state: { cart: bookList, totalPrice: totalPrice }
+                            state: { cart: (props.location.state?.book) ? [props.location.state?.book.id] : cart.cart?.cartContents, totalPrice: totalPrice }
                         }}>
                         <Button>Proceed to Checkout</Button>
                     </Link>
