@@ -154,7 +154,7 @@ function AccountSettings() {
             {security.user.fullName ? <>
                 <Text strong>Hello {security.user.fullName}</Text>
                 <Divider style={{ margin: 0 }}></Divider>
-                <Menu.Item key="/profile" >Profile</Menu.Item>
+                <Menu.Item key="/profile" onClick={() => history.push('profile')}>Profile</Menu.Item>
                 {security.user.userType !== "admin" ? <>
                     <Menu.Item key="/inventory" onClick={() => history.push('inventory')}>Inventory</Menu.Item>
                     <Menu.Item key="/transactions" onClick={() => history.push('transactions')}>Transactions</Menu.Item> </> : null}

@@ -1,8 +1,9 @@
-import { SET_CURRENT_USER, GET_CURRENT_USER } from "../actions/types";
+import { SET_CURRENT_USER, GET_CURRENT_USER, SET_CURRENT_USER_DETAILS, GET_CURRENT_USER_DETAILS } from "../actions/types";
 
 const initialState = {
   validToken: false,
-  user: {}
+  user: {},
+  userDetails: {}
 };
 
 const booleanActionPayload = payload => {
@@ -13,7 +14,7 @@ const booleanActionPayload = payload => {
   }
 };
 
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
   switch (action.type) {
     case SET_CURRENT_USER:
       return {
@@ -21,11 +22,21 @@ export default function(state = initialState, action) {
         validToken: booleanActionPayload(action.payload),
         user: action.payload
       };
-      case GET_CURRENT_USER:
-        return {
-          ...state,
-        };
-  
+    case SET_CURRENT_USER_DETAILS:
+      return {
+        ...state,
+        userDetails: action.payload
+      };
+    case GET_CURRENT_USER_DETAILS:
+      return {
+        ...state,
+        userDetails: state.userDetails
+      };
+    case GET_CURRENT_USER:
+      return {
+        ...state,
+      };
+
     default:
       return state;
   }

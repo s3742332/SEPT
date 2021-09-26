@@ -129,10 +129,23 @@ public class UserController {
 
 
     @CrossOrigin(origins = "*")
+    @GetMapping("/getUser/{name}")
+    public ResponseEntity<?> getUser(@PathVariable String name){
+        Iterable<User> userList = userService.getAllUsers();
+        ArrayList<User> user = new ArrayList<User>();
+        for (User user1 : userList){
+            if (user1.getUsername().equals(name) ) {
+                user.add(user1);
+            }
+        }
+        userList = user;
+        return  new ResponseEntity<Iterable<User>>(userList, HttpStatus.OK);
+    }
+    @CrossOrigin(origins = "*")
     @PostMapping("/updateApproved")
     public void updateApproved(@RequestBody User user, BindingResult result) {
         if (user.getApproved()) {
-            userService.saveUser(user);
+            userService.saveUserDetails(user);
         } else {
             userService.deleteUser(user);
         }
