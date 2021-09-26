@@ -55,7 +55,6 @@ export const getUserOwnedBooks = (username) => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        console.log(`http://localhost:8081/api/transactions/getUserOwnedBooks/${username}`)
         const res = await axios.get(`http://localhost:8081/api/transactions/getUserOwnedBooks/${username}`,config)
         dispatch({
             type: GET_USER_BOOKS,
