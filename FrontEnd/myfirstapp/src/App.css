@@ -124,3 +124,8 @@ a {
 .hero .container-fluid {
     z-index: 10;
 }
+
+.ant-list-item-extra {
+    height: 100% !important;
+    width: 30% !important;
+}

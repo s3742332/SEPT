@@ -23,21 +23,21 @@ function CustomerTransactions() {
     const columns = [
         {
             title: 'ID',
-            dataIndex: 'userName',
+            dataIndex: 'id',
             key: 'id',
             render: text => <a>{text}</a>,
         },
         {
-            title: 'Order Size',
-            dataIndex: 'books',
+            title: 'Book IDs',
+            dataIndex: 'bookIds',
             key: 'bookTitle',
-            render: text => <a>{text.map((i)=> {return i})}</a>,
+            render: text => <a>{text.map((i)=> {return i +" "})}</a>,
         },
         {
             title: 'Order Status',
             dataIndex: 'orderComplete',
             key: 'author',
-            render: text => <a>{text? "COMPLETE": "INCOMPLETE"}</a>,
+            render: text => <a>{"COMPLETED"}</a>,
         },
         {
             title: 'Cost',

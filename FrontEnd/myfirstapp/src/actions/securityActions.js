@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ERRORS, SET_CURRENT_USER, GET_CURRENT_USER } from "./types";
+import { GET_ERRORS, SET_CURRENT_USER, GET_CURRENT_USER,SET_CURRENT_USER_DETAILS, GET_CURRENT_USER_DETAILS } from "./types";
 import setJWTToken from "../securityUtils/setJWTToken";
 import jwt_decode from "jwt-decode";
 
@@ -62,6 +62,35 @@ export const login = (LoginRequest, history) => async dispatch => {
             payload: err.response
         });
     }
+};
+
+export const fetchUserDetails = (username) => async dispatch => {
+
+
+    try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
+        const res = await axios.get(`http://localhost:8080/api/users/getUser/${username}`, config)
+        dispatch({
+            type: SET_CURRENT_USER_DETAILS,
+            payload: res.data[0]
+        });
+    }
+    catch (err) {
+        dispatch({
+            type: GET_ERRORS,
+            payload: err?.response?.data
+        });
+    }
+};
+export const getUserDetails = () => dispatch => {
+    dispatch({
+        type: GET_CURRENT_USER_DETAILS,
+        payload: {}
+    });
 };
 
 export const setUser = (decoded) => dispatch => {

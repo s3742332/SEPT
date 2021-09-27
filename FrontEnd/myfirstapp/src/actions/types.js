@@ -1,7 +1,4 @@
 export const GET_ERRORS = "GET_ERRORS";
-
-export const GET_PERSONS = "GET_PERSONS";
-export const GET_PERSON = "GET_PERSON";
 // Admin users
 export const USER_EDIT = "USER_EDIT";
 export const GET_ACCOUNTS = "GET_ACCOUNTS";
@@ -11,7 +8,8 @@ export const USER_EDIT_LOADING = "USER_EDIT_LOADING";
 // Login
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
 export const GET_CURRENT_USER = "GET_CURRENT_USER";
-
+export const SET_CURRENT_USER_DETAILS = "SET_CURRENT_USER_DETAILS";
+export const GET_CURRENT_USER_DETAILS = "GET_CURRENT_USER_DETAILS";
 export const INCREMENT = "INCREMENT";
 
 // Book

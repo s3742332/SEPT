@@ -3,7 +3,6 @@ import "./App.css";
 //import Header from "./components/Layout/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Redirect, Route, Switch } from "react-router-dom";
-import AddPerson from "./components/Persons/AddPerson";
 
 import { logout, setUser } from "./actions/securityActions";
 import Landing from "./components/Layout/Landing";
@@ -38,6 +37,7 @@ import PendingBook from "./components/Books/PendingBook/PendingBook";
 import CustomerTransactions from "./components/Transactions/CustomerTransactions";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import CategoryResult from "./components/Marketplace/CategoryResult";
+import Profile from "./components/Profile/Profile";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const jwtToken = localStorage.getItem("jwtToken");
@@ -113,6 +113,7 @@ function App() {
             <Route exact path="/payment" component={Payment} />
             <Route exact path="/inventory" component={Inventory} />
             <Route exact path="/category" component={CategoryResult} />
+            <Route exact path="/profile" component={Profile} />
             <Redirect to="/" />
           </Switch>
         </Content>

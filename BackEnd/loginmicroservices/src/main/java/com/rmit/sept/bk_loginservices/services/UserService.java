@@ -40,7 +40,22 @@ public class UserService {
         } catch (Exception e) {
             throw new UsernameAlreadyExistsException("Username '" + newUser.getUsername() + "' already exists");
         }
+    }
 
+    public User saveUserDetails(User newUser) {
+
+        /*
+         * newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
+         * //Username has to be unique (exception) // Make sure that password and
+         * confirmPassword match // We don't persist or show the confirmPassword return
+         * userRepository.save(newUser);
+         */
+        try {
+            return userRepository.save(newUser);
+
+        } catch (Exception e) {
+            throw new UsernameAlreadyExistsException("Username '" + newUser.getUsername() + "' already exists");
+        }
     }
 
     public Iterable<User> getAllApprovedUsers() {
