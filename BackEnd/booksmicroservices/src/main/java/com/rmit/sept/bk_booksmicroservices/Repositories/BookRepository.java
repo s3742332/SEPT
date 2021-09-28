@@ -1,7 +1,6 @@
 package com.rmit.sept.bk_booksmicroservices.Repositories;
 
 import com.rmit.sept.bk_booksmicroservices.model.Book;
-
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
