@@ -5,6 +5,7 @@ import { Link, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { cartEdit, getUserCart } from '../../actions/cartActions';
 import { getUser } from '../../actions/securityActions';
+import BookReview from '../../Review/BookReview';
 
 function BookDetails(props) {
     const dispatch = useDispatch();
@@ -72,6 +73,7 @@ function BookDetails(props) {
                             state: { book: bookData }
                         }}><Button type="primary" shape="round">Buy Now</Button></Link>
                     <Button type="primary" disabled={cartDisable} shape="round" onClick={addToCart}>{cartStatus}</Button>
+                    <BookReview bookID={bookData.id}/>
                 </div>
             </div>
         </Card>

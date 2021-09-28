@@ -5,6 +5,7 @@ import userReducer from "./userReducer";
 import bookReducer from "./bookReducer";
 import transactionReducer from "./transactionReducer";
 import cartReducer from "./cartReducer";
+import reviewReducer from "./reviewReducer";
 
 export default combineReducers({
   errors: errorReducer,
@@ -12,6 +13,7 @@ export default combineReducers({
   user: userReducer,
   book: bookReducer,
   transaction: transactionReducer,
-  cart: cartReducer
+  cart: cartReducer,
+  review: reviewReducer
 });
 
