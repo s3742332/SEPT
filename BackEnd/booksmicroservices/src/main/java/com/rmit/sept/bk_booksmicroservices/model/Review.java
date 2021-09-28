@@ -16,6 +16,7 @@ public class Review
     private String username;
     private String review;
     private int bookId;
+    private int rating;
     @Column(updatable = false)
     @CreationTimestamp
     private LocalDateTime createdAt;
@@ -60,5 +61,14 @@ public class Review
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 }
