@@ -1,8 +1,9 @@
 import axios from "axios";
 
 export const USER_BASE_URL = "http://localhost:8080"
-export const BOOK_BASE_URL = "http://localhost:8082"
+export const BOOK_BASE_URL = "http://localhost:8081"
 export const TSCN_BASE_URL = "http://localhost:8081"
+export const CART_BASE_URL = "http://localhost:8081"
 
 export const config = {
     headers: {
@@ -123,6 +124,26 @@ export const fetchCreateNewUser = async () => {
     try {
         const newUser = { id: 1, name: "New User"};
         return await axios.post("${USER_BASE_URL}/api/users/register", newUser, config);
+    } catch (e) {
+        return [];
+    }
+}
+
+//============================================================================================
+
+export const fetchCartEdit = async () => {
+    try {
+        const cart = { id: 1, cartTotal: 39.99}
+        return await axios.post("${CART_BASE_URL}/api/shoppingcarts/saveShoppingCart", cart, config);
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchGetUserCart = async () => {
+    try {
+        const username = "user@user.com";
+        return await axios.get(`${CART_BASE_URL}/api/shoppingcarts/getUserCart/${username}`,config);
     } catch (e) {
         return [];
     }

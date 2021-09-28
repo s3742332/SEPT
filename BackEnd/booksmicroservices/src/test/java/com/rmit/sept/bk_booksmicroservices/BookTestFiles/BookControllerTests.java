@@ -18,10 +18,10 @@ public class BookControllerTests {
     @Autowired
     MockMvc mockMvc;
 
-    // @Test
-    // public void getAllBooksTest() throws Exception {
-    //     mockMvc.perform(MockMvcRequestBuilders.get("/api/books/getAllBooks"))
-    //             .andExpect(MockMvcResultMatchers.status().isOk());
-    // }
+//     @Test
+//     public void getAllBooksTest() throws Exception {
+//         mockMvc.perform(MockMvcRequestBuilders.get("/api/books/getAllBooks"))
+//                 .andExpect(MockMvcResultMatchers.status().isOk());
+//     }
 }
     
