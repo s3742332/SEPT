@@ -1,15 +1,11 @@
 package com.rmit.sept.bk_booksmicroservices.Services;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import com.rmit.sept.bk_booksmicroservices.Exceptions.BookNotFoundException;
 import com.rmit.sept.bk_booksmicroservices.Repositories.BookRepository;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.SystemPropertyUtils;
 @Service
 public class BookService {
 
