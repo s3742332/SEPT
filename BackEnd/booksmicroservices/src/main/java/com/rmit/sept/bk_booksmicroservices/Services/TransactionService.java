@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class TransactionService {
@@ -59,10 +58,10 @@ public class TransactionService {
     }
 
     @Transactional
-    public List<Book> getTransactionByBookSeller(String seller) {
+    public ArrayList<Book> getTransactionByBookSeller(String seller) {
         try {
             Iterable<Transaction> transactions = transactionRepository.findAll();
-            List<Book> soldBySeller = new ArrayList<>();
+            ArrayList<Book> soldBySeller = new ArrayList<>();
 
             for (Transaction transaction : transactions)
             {
@@ -83,39 +82,9 @@ public class TransactionService {
 
         } catch (Exception e)
         {
-            throw new TransactionException("No transaction with that ID.");
+            throw new TransactionException("No transactions for that seller.");
         }
     }
-
-    @Transactional
-    public List<Transaction> getTransactionBySeller(String seller) {
-        try {
-            Iterable<Transaction> transactions = transactionRepository.findAll();
-            List<Transaction> soldBySeller = new ArrayList<>();
-
-            for (Transaction transaction : transactions)
-            {
-                Long[] ids = transaction.getBookIds();
-
-                Iterable<Book> books = bookService.getBookFromIds(ids);
-
-                for (Book book : books)
-                {
-                    if (book.getSeller().equals(seller))
-                    {
-                        soldBySeller.add(transaction);
-                    }
-                }
-            }
-
-            return soldBySeller;
-
-        } catch (Exception e)
-        {
-            throw new TransactionException("No transaction with that ID.");
-        }
-    }
-
 
 
     // @Transactional

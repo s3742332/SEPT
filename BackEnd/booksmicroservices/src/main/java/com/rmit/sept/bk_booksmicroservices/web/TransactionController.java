@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 @RestController
 @RequestMapping("/api/transactions")
@@ -66,6 +65,14 @@ public class TransactionController {
         }
 
         return new ResponseEntity<Iterable<Book>>(bookList, HttpStatus.OK);
+    }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/getSellerTransactions/{seller}")
+    public ResponseEntity<?> getSellerTransactions(@PathVariable String seller)
+    {
+        ArrayList<Book> sellerBookTransactions = transactionService.getTransactionByBookSeller(seller);
+        return new ResponseEntity<Iterable<Book>>(sellerBookTransactions, HttpStatus.OK);
     }
 
     // @CrossOrigin(origins = "*")
