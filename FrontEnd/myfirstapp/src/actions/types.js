@@ -30,6 +30,6 @@ export const GET_USER_BOOKS = "GET_USER_BOOKS"
 export const UPDATE_CART = "UPDATE_CART"
 export const GET_CART = "GET_CART";
 
-// Rewview
+// Review
 export const UPDATE_REVIEW = "UPDATE_REVIEW"
 export const GET_REVIEW = "GET_REVIEW";
