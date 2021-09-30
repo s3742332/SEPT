@@ -1,13 +1,15 @@
 package com.rmit.sept.bk_booksmicroservices.Services;
 
-import com.rmit.sept.bk_booksmicroservices.Repositories.TransactionRepository;
-
 import com.rmit.sept.bk_booksmicroservices.Exceptions.TransactionException;
+import com.rmit.sept.bk_booksmicroservices.Repositories.TransactionRepository;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
 import com.rmit.sept.bk_booksmicroservices.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class TransactionService {
@@ -55,6 +57,66 @@ public class TransactionService {
             throw new TransactionException("No transaction with that ID.");
         }
     }
+
+    @Transactional
+    public List<Book> getTransactionByBookSeller(String seller) {
+        try {
+            Iterable<Transaction> transactions = transactionRepository.findAll();
+            List<Book> soldBySeller = new ArrayList<>();
+
+            for (Transaction transaction : transactions)
+            {
+                Long[] ids = transaction.getBookIds();
+
+                Iterable<Book> books = bookService.getBookFromIds(ids);
+
+                for (Book book : books)
+                {
+                    if (book.getSeller().equals(seller))
+                    {
+                        soldBySeller.add(book);
+                    }
+                }
+            }
+
+            return soldBySeller;
+
+        } catch (Exception e)
+        {
+            throw new TransactionException("No transaction with that ID.");
+        }
+    }
+
+    @Transactional
+    public List<Transaction> getTransactionBySeller(String seller) {
+        try {
+            Iterable<Transaction> transactions = transactionRepository.findAll();
+            List<Transaction> soldBySeller = new ArrayList<>();
+
+            for (Transaction transaction : transactions)
+            {
+                Long[] ids = transaction.getBookIds();
+
+                Iterable<Book> books = bookService.getBookFromIds(ids);
+
+                for (Book book : books)
+                {
+                    if (book.getSeller().equals(seller))
+                    {
+                        soldBySeller.add(transaction);
+                    }
+                }
+            }
+
+            return soldBySeller;
+
+        } catch (Exception e)
+        {
+            throw new TransactionException("No transaction with that ID.");
+        }
+    }
+
+
 
     // @Transactional
     // public Transaction getTransactionByOrderId(int id)
