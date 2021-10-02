@@ -38,6 +38,7 @@ import CustomerTransactions from "./components/Transactions/CustomerTransactions
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import CategoryResult from "./components/Marketplace/CategoryResult";
 import Profile from "./components/Profile/Profile";
+import SellerTransactions from "./components/Transactions/SellerTransactions";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const jwtToken = localStorage.getItem("jwtToken");
@@ -108,7 +109,10 @@ function App() {
             <Route exact path="/shoppingcart" component={ShoppingCart} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/transactions" component={CustomerTransactions} />
+            {security.user.userType === "customer"?
+            <Route exact path="/transactions" component={CustomerTransactions} />: 
+            <Route exact path="/transactions" component={SellerTransactions} />}
+            
             <Route exact path="/details" component={BookDetails} />
             <Route exact path="/payment" component={Payment} />
             <Route exact path="/inventory" component={Inventory} />

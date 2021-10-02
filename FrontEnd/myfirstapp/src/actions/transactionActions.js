@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ERRORS, CREATE_TRANSACTION, GET_TRANSACTIONS, GET_USER_BOOKS } from "./types";
+import { GET_ERRORS, CREATE_TRANSACTION, GET_TRANSACTIONS,GET_SELLER_TRANSACTIONS, GET_USER_BOOKS } from "./types";
 
 export const transactionEdit = (transaction, history, devTool) => async dispatch => {
     try {
@@ -47,7 +47,28 @@ export const getUserTransaction = (username, history, devTool) => async dispatch
         });
     }
 };
+export const getSellerTransaction = (username) => async dispatch => {
+    try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
 
+        console.log(username)
+        const res = await axios.get(`http://localhost:8081/api/transactions/getSellerTransactions/${username}`,config)
+        console.log(res.data)
+        dispatch({
+            type: GET_SELLER_TRANSACTIONS,
+            payload: res.data
+        })
+    } catch (err) {
+        dispatch({
+            type: GET_ERRORS,
+            payload: err
+        });
+    }
+};
 export const getUserOwnedBooks = (username) => async dispatch => {
     try {
         const config = {
