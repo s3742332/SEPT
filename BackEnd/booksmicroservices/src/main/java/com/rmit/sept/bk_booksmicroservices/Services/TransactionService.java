@@ -71,9 +71,13 @@ public class TransactionService {
 
                 for (Book book : books)
                 {
+                    Long bookId = book.getId();
                     if (book.getSeller().equals(seller))
                     {
-                        soldBySeller.add(book);
+                        if (!soldBySeller.contains(bookId))
+                        {
+                            soldBySeller.add(book);
+                        }
                     }
                 }
             }

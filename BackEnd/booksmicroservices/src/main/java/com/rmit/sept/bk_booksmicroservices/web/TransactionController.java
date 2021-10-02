@@ -72,6 +72,8 @@ public class TransactionController {
     public ResponseEntity<?> getSellerTransactions(@PathVariable String seller)
     {
         ArrayList<Book> sellerBookTransactions = transactionService.getTransactionByBookSeller(seller);
+
+
         return new ResponseEntity<Iterable<Book>>(sellerBookTransactions, HttpStatus.OK);
     }
 
