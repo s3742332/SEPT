@@ -113,7 +113,16 @@ public class BookController {
     @CrossOrigin(origins = "*")
     @PostMapping("/sellUsedBook")
     public ResponseEntity<Book> createNewUsedBook(@Valid @RequestBody Book book) {
-        book.setUsed(true);
+        Iterable<Book> bookList = bookService.getAllBooks();
+        for (Book item : bookList) {
+            if (item.getBookTitle().equals(book.getBookTitle())) {
+                book.setAuthor(item.getAuthor());
+                book.setBookDescription(item.getBookDescription());
+                book.setCategory(item.getCategory());
+                book.setUsed(true);
+                book.setCover(item.getCover());
+            }
+        }
         Book book1 = bookService.saveOrUpdateBook(book);
         return new ResponseEntity<Book>(book1, HttpStatus.CREATED);
     }
