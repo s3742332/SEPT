@@ -110,4 +110,12 @@ public class BookController {
         return new ResponseEntity<Iterable<Book>>(bookList, HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "*")
+    @PostMapping("/sellUsedBook")
+    public ResponseEntity<Book> createNewUsedBook(@Valid @RequestBody Book book) {
+        book.setUsed(true);
+        Book book1 = bookService.saveOrUpdateBook(book);
+        return new ResponseEntity<Book>(book1, HttpStatus.CREATED);
+    }
+
 }
