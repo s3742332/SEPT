@@ -121,6 +121,7 @@ export const getSearchedBook = (query) => async dispatch => {
 };
 
 export const sellUsed = (book) => async dispatch => {
+    console.log("in front end")
     try {
         const config = {
             headers: {

@@ -10,19 +10,20 @@ import { sellUsed } from '../../actions/bookActions';
 export default function Inventory(props) {
     const [modal, setModal] = useState(false);
     const [books, setBooks] = useState([])
+    const [selectedBookTitle, setSelectedBookTitle] = useState('')
     const [price, setPrice] = useState(0)
 
     const dispatch = useDispatch();
     const user = useSelector(state => state.security);
     const transaction = useSelector(state => state.transaction);
+    const security = useSelector(state => state.security);
 
-    const handleModal = (event) => {
-        event.preventDefault();
+    const handleModal = (bookTitle) => {
         setModal(!modal);
+        setSelectedBookTitle(bookTitle)
     }
 
     useEffect(() => {
-        // console.log(user)
         dispatch(getUserOwnedBooks(user.user.username))
     }, [dispatch, user])
     useEffect(() => {
@@ -34,15 +35,17 @@ export default function Inventory(props) {
         setPrice(event.target.value)
     }
 
-    const sellBook = () => {
+    const sellBook = (title) => {
+        console.log(security.user.fullName)
         let book = {
-            seller: user.fullName,
+            seller: security.user.fullName,
             bookCost: price,
             stockLevel: 1,
-            bookTitle: "TEST"
+            bookTitle: title
         }
 
-        sellUsed(book);
+        dispatch(sellUsed(book));
+        handleModal(title);
     }
 
     const showBooks = () => {
@@ -58,7 +61,7 @@ export default function Inventory(props) {
                             />
                             <div style={{ display: 'flex' }}>
                                 <Button type="primary" href='/details' shape="round" style={{ width: '30%', margin: '2%', marginTop: '4%' }}>Details</Button>
-                                <Button onClick={handleModal} type="primary" shape="round"
+                                <Button onClick={() => handleModal(books[i].bookTitle)} type="primary" shape="round"
                                     style={{ width: '30%', margin: '2%', marginTop: '4%' }}>Sell</Button>
                             </div>
                         </div>
@@ -80,14 +83,14 @@ export default function Inventory(props) {
             <Modal
                 title="Modal"
                 visible={modal}
-                onOk={sellBook}
+                onOk={() => sellBook(selectedBookTitle)}
                 onCancel={handleModal}
                 okText="Okay"
                 cancelText="Cancel"
             >
                 <h4>Are you sure you want to sell your book?</h4>
                 <p>Enter sale amount</p>
-                $ <input type='number' onChange={{handlePrice}}></input>
+                $ <input type='number' onChange={handlePrice}></input>
 
             </Modal>
         </div>
