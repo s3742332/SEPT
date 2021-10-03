@@ -149,6 +149,26 @@ export const fetchGetUserCart = async () => {
     }
 }
 
+//=================================================================================================
+// reviewActions Test utils
+// both test utils same should they be different? or just keep one.
+export const fetchReviewEdit = async () => {
+    try {
+        const review = { bookId: 1} //use bookID or id (Long).
+        return await axios.post("${BOOK_BASE_URL}/api/reviews/saveReview", review, config);
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchGetReview = async () => {
+    try {
+        const review =  1;
+        return await axios.get(`${BOOK_BASE_URL}/api/reviews/getBookReviews/${review}`, config);
+    } catch (e) {
+        return [];
+    }
+}
 
 
 
