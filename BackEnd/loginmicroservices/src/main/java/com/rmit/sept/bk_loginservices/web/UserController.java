@@ -2,6 +2,7 @@ package com.rmit.sept.bk_loginservices.web;
 
 
 import com.rmit.sept.bk_loginservices.Repositories.UserRepository;
+import com.rmit.sept.bk_loginservices.exceptions.UserIsBannedException;
 import com.rmit.sept.bk_loginservices.model.User;
 import com.rmit.sept.bk_loginservices.payload.JWTLoginSucessReponse;
 import com.rmit.sept.bk_loginservices.payload.LoginRequest;
@@ -51,9 +52,6 @@ public class UserController {
     @Autowired
     private UserValidator userValidator;
 
-    @Autowired
-    private CustomUserDetailsService customUserDetailsService;
-
     @CrossOrigin(origins = "*")
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody User user, BindingResult result){
@@ -81,6 +79,15 @@ public class UserController {
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest, BindingResult result){
         ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
         if(errorMap != null) return errorMap;
+
+        Iterable<User> userList = userService.getAllUsers();
+        for (User user : userList) {
+            if (user.getUsername().equals(loginRequest.getUsername())) {
+                if (!user.getApproved()) {
+                    throw new UserIsBannedException("Username '" + loginRequest.getUsername() + "' is Banned");
+                }
+            }
+        }
 
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -148,6 +155,16 @@ public class UserController {
             userService.saveUserDetails(user);
         } else {
             userService.deleteUser(user);
+        }
+    }
+    @CrossOrigin(origins = "*")
+    @PostMapping("/blockUser")
+    public void blockUser(@RequestBody Long id) {
+        Iterable<User> userList = userService.getAllApprovedUsers();
+        for (User user : userList) {
+            if (user.getId() == id) {
+                user.setApproved(false);
+            }
         }
     }
 }
