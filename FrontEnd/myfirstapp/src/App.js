@@ -35,7 +35,7 @@ import SearchResult from "./components/Marketplace/SearchResult";
 import BookEdit from "./components/Books/BookEdit/BookEdit";
 import PendingBook from "./components/Books/PendingBook/PendingBook";
 import CustomerTransactions from "./components/Transactions/CustomerTransactions";
-import ShoppingCart from "./components/ShoppingCart/ShoppingCart 2";
+import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import CategoryResult from "./components/Marketplace/CategoryResult";
 import Profile from "./components/Profile/Profile";
 function App() {
