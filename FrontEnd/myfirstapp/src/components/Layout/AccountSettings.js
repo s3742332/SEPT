@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getUser, logout } from '../../actions/securityActions';
-import { UserOutlined } from '@ant-design/icons';
+import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { withRouter, useHistory } from 'react-router-dom'
 import { Menu, Dropdown, Typography, Divider, Modal, Button } from 'antd';
@@ -71,7 +71,7 @@ function AccountSettings() {
     const createBook = () => {
         for (let i = 0; i < 10; i++) {
             const book = {
-                companyName: faker.company.companyName(),
+                seller: faker.company.companyName(),
                 bookTitle: faker.name.title(),
                 author: faker.name.findName(),
                 bookDescription: faker.commerce.productDescription(),
@@ -154,7 +154,7 @@ function AccountSettings() {
             {security.user.fullName ? <>
                 <Text strong>Hello {security.user.fullName}</Text>
                 <Divider style={{ margin: 0 }}></Divider>
-                <Menu.Item key="/profile" >Profile</Menu.Item>
+                <Menu.Item key="/profile" onClick={() => history.push('profile')}>Profile</Menu.Item>
                 {security.user.userType !== "admin" ? <>
                     <Menu.Item key="/inventory" onClick={() => history.push('inventory')}>Inventory</Menu.Item>
                     <Menu.Item key="/transactions" onClick={() => history.push('transactions')}>Transactions</Menu.Item> </> : null}
@@ -169,14 +169,15 @@ function AccountSettings() {
 
     );
     return (
-        <>
-            <Dropdown.Button style={{
-                display: "flex",
-                flex: 1,
-                justifyContent: "flex-end",
-                alignItems: "center",
+        <div style={{
+            display: "flex",
+            flex: 1,
+            justifyContent: "flex-end",
+            alignItems: "center",
 
-            }} overlay={menu} placement="bottomRight" icon={<UserOutlined />} />
+        }}>
+            <Button onClick={()=>history.push("/shoppingcart")} icon={<ShoppingCartOutlined />} />
+            <Dropdown.Button  overlay={menu} placement="bottomRight" icon={<UserOutlined />} />
             <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                 <Button type="primary" onClick={createDummyUser}>
                     Insert 10 Dummy Users
@@ -203,7 +204,7 @@ function AccountSettings() {
                     Insert 10 Transaction
                 </Button>
             </Modal>
-        </>
+        </div>
     )
 }
 

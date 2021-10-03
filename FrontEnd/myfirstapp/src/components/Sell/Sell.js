@@ -61,7 +61,7 @@ function Sell() {
     }
 
 
-
+    
     return (
         <Row justify="center" style={{ height: "100%" }}>
             <Col>

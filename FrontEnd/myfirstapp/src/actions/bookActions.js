@@ -8,8 +8,8 @@ export const bookEdit = (book) => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        dispatch({type: BOOK_EDIT_LOADING})
-        const res = await axios.post(`http://localhost:8082/api/books/saveBook/`, book, config);
+        dispatch({ type: BOOK_EDIT_LOADING })
+        const res = await axios.post(`http://localhost:8081/api/books/saveBook/`, book, config);
         dispatch({
             type: UPDATE_BOOK,
             payload: res.data
@@ -30,7 +30,7 @@ export const getBookList = () => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        const res = await axios.get(`http://localhost:8082/api/books/getAllApprovedBooks`, config)
+        const res = await axios.get(`http://localhost:8081/api/books/getAllApprovedBooks`, config)
         console.log(res.data)
         dispatch({
             type: GET_BOOK_LIST,
@@ -52,7 +52,7 @@ export const getCategory = (category) => async dispatch => {
             }
         }
         console.log('inside', category.category)
-        const res = await axios.get(`http://localhost:8082/api/books/getBooksInCategory/${category.category}`, config)
+        const res = await axios.get(`http://localhost:8081/api/books/getBooksInCategory/${category.category}`, config)
         console.log(res.data)
         dispatch({
             type: GET_CATEGORY,
@@ -73,8 +73,8 @@ export const getPendingBookList = () => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        dispatch({type: BOOK_LOADING})
-        const res = await axios.get(`http://localhost:8082/api/books/getAllPendingBooks`, config)
+        dispatch({ type: BOOK_LOADING })
+        const res = await axios.get(`http://localhost:8081/api/books/getAllPendingBooks`, config)
         console.log(res.data)
         console.log(axios.defaults.headers.common)
         dispatch({
@@ -106,7 +106,7 @@ export const getSearchedBook = (query) => async dispatch => {
             },
             cancelToken: cancelToken.token
         }
-        const res = await axios.get(`http://localhost:8082/api/books/getSearchedBooks/${query}`, config)
+        const res = await axios.get(`http://localhost:8081/api/books/getSearchedBooks/${query}`, config)
         // console.log(res.data)
         dispatch({
             type: GET_SEARCHED_BOOKS,
@@ -116,6 +116,29 @@ export const getSearchedBook = (query) => async dispatch => {
         dispatch({
             type: GET_ERRORS,
             payload: err
+        });
+    }
+};
+
+export const sellUsed = (book) => async dispatch => {
+    console.log("in front end")
+    try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
+        dispatch({ type: BOOK_EDIT_LOADING })
+        const res = await axios.post(`http://localhost:8081/api/books/sellUsedBook/`, book, config);
+        dispatch({
+            type: UPDATE_BOOK,
+            payload: res.data
+        })
+    } catch (err) {
+        console.log('error', err)
+        dispatch({
+            type: GET_ERRORS,
+            payload: err.response.data
         });
     }
 };

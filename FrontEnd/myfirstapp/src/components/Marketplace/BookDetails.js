@@ -1,13 +1,59 @@
 import React, { useEffect, useState } from 'react'
 import { Row, Col, Image, Button, Typography, Card } from 'antd'
-import { Link } from 'react-router-dom'
+
+import { Link, useHistory } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { cartEdit, getUserCart } from '../../actions/cartActions';
+import { getUser } from '../../actions/securityActions';
+import BookReview from '../../Review/BookReview';
+
 function BookDetails(props) {
+    const dispatch = useDispatch();
     const [bookData, setBookData] = useState([])
+    const user = useSelector(state => state.security);
+    const cart = useSelector(state => state.cart);
+    const [cartStatus, setCartStatus] = useState("Add to cart")
+    const [cartDisable, setButtonDisable] = useState(false)
+    const { Title } = Typography;
+    useEffect(() => {
+        dispatch(getUser())
+    }, [dispatch])
+    const history = useHistory();
+    useEffect(() => {
+        if (user.user.username) {
+            dispatch(getUserCart(user.user.username, history, false))
+        }
+
+    }, [user])
     useEffect(() => {
         setBookData(props.location.state.book)
-        console.log(props.location.state.book)
+        console.log("BOOK SELECTED", props.location.state.book)
     }, [props])
-    const { Title } = Typography;
+    useEffect(() => {
+        console.log("CART DETECTED", cart.cart.cartContents)
+    }, [cart])
+    const addToCart = () => {
+        setCartStatus("Added!")
+        setButtonDisable(true)
+        setTimeout(() => {
+            setCartStatus("Add to cart")
+            setButtonDisable(false);
+        }, 2000);
+        const cartData = cart.cart.cartContents;
+
+        if (cartData) {
+
+            cartData.push(props.location.state.book.id)
+            console.log("CART DETECTED", cartData)
+        }
+        const data = {
+            id: cart.cart.id,
+            userName: user.user.username,
+            cartContents: cartData ? cartData : [props.location.state.book.id]
+        }
+        //console.log("cart", cart.cart.cartContent)
+        dispatch(cartEdit(data, history, false))
+    }
     return (
         <Card>
             <div style={{ display: 'flex', padding: "1%" }}>
@@ -23,9 +69,11 @@ function BookDetails(props) {
                     <h3>Price: {bookData.bookCost}</h3>
                     <Link
                         to={{
-                            pathname: "/checkout",
-                            state: { cart: [bookData] }
+                            pathname: "/shoppingcart",
+                            state: { book: bookData }
                         }}><Button type="primary" shape="round">Buy Now</Button></Link>
+                    <Button type="primary" disabled={cartDisable} shape="round" onClick={addToCart}>{cartStatus}</Button>
+                    <BookReview bookID={bookData.id}/>
                 </div>
             </div>
         </Card>

@@ -1,8 +1,9 @@
 import axios from "axios";
 
 export const USER_BASE_URL = "http://localhost:8080"
-export const BOOK_BASE_URL = "http://localhost:8082"
+export const BOOK_BASE_URL = "http://localhost:8081"
 export const TSCN_BASE_URL = "http://localhost:8081"
+export const CART_BASE_URL = "http://localhost:8081"
 
 export const config = {
     headers: {
@@ -128,6 +129,46 @@ export const fetchCreateNewUser = async () => {
     }
 }
 
+//============================================================================================
+
+export const fetchCartEdit = async () => {
+    try {
+        const cart = { id: 1, cartTotal: 39.99}
+        return await axios.post("${CART_BASE_URL}/api/shoppingcarts/saveShoppingCart", cart, config);
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchGetUserCart = async () => {
+    try {
+        const username = "user@user.com";
+        return await axios.get(`${CART_BASE_URL}/api/shoppingcarts/getUserCart/${username}`,config);
+    } catch (e) {
+        return [];
+    }
+}
+
+//=================================================================================================
+// reviewActions Test utils
+// both test utils same should they be different? or just keep one.
+export const fetchReviewEdit = async () => {
+    try {
+        const review = { bookId: 1} //use bookID or id (Long).
+        return await axios.post("${BOOK_BASE_URL}/api/reviews/saveReview", review, config);
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchGetReview = async () => {
+    try {
+        const review =  1;
+        return await axios.get(`${BOOK_BASE_URL}/api/reviews/getBookReviews/${review}`, config);
+    } catch (e) {
+        return [];
+    }
+}
 
 
 

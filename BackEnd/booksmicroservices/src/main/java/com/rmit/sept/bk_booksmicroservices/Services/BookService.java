@@ -37,6 +37,8 @@ public class BookService {
     {
         try
         {
+            // System.out.println("GET ALL BOOKS");
+            // System.out.println(bookRepository);
             return bookRepository.findAll();
         }
         catch (Exception e)
@@ -72,6 +74,19 @@ public class BookService {
         {
             throw new BookNotFoundException("Unable to retrieve book list");
         }
+    }
 
+    @Transactional
+    public Iterable<Book> getBookFromIds (Long[] idList) {
+        try
+        {
+            return bookRepository.findBooksByIds(idList);
+        }
+        catch (Exception e)
+        {
+            System.out.println("ERROR IN BOOK RETRIEVAL");
+            System.out.println(e);
+            throw new BookNotFoundException("Unable to retrieve book list");
+        }
     }
 }

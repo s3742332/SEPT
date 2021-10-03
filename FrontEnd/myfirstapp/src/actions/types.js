@@ -1,7 +1,4 @@
 export const GET_ERRORS = "GET_ERRORS";
-
-export const GET_PERSONS = "GET_PERSONS";
-export const GET_PERSON = "GET_PERSON";
 // Admin users
 export const USER_EDIT = "USER_EDIT";
 export const GET_ACCOUNTS = "GET_ACCOUNTS";
@@ -11,7 +8,8 @@ export const USER_EDIT_LOADING = "USER_EDIT_LOADING";
 // Login
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
 export const GET_CURRENT_USER = "GET_CURRENT_USER";
-
+export const SET_CURRENT_USER_DETAILS = "SET_CURRENT_USER_DETAILS";
+export const GET_CURRENT_USER_DETAILS = "GET_CURRENT_USER_DETAILS";
 export const INCREMENT = "INCREMENT";
 
 // Book
@@ -25,4 +23,13 @@ export const GET_CATEGORY = "GET_CATEGORY";
 
 // Transactions
 export const CREATE_TRANSACTION = "CREATE_TRANSACTION"; 
-export const GET_TRANSACTIONS = " GET_TRANSACTIONS";
+export const GET_TRANSACTIONS = "GET_TRANSACTIONS";
+export const GET_USER_BOOKS = "GET_USER_BOOKS"
+
+// Cart
+export const UPDATE_CART = "UPDATE_CART"
+export const GET_CART = "GET_CART";
+
+// Review
+export const UPDATE_REVIEW = "UPDATE_REVIEW"
+export const GET_REVIEW = "GET_REVIEW";

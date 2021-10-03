@@ -1,5 +1,13 @@
 import bookReducer from "../bookReducer";
-import { GET_PENDING_BOOK_LIST, GET_BOOK_LIST, GET_SEARCHED_BOOKS, BOOK_LOADING, BOOK_EDIT_LOADING, UPDATE_BOOK } from "../../actions/types";
+import {
+    GET_PENDING_BOOK_LIST,
+    GET_BOOK_LIST,
+    GET_SEARCHED_BOOKS,
+    BOOK_LOADING,
+    BOOK_EDIT_LOADING,
+    UPDATE_BOOK,
+    GET_CATEGORY
+} from "../../actions/types";
 
 const initialState = {
     bookList: [],
@@ -55,6 +63,14 @@ describe('authenticate book reducer', () => {
         expect(bookReducer(initialState, { type: GET_SEARCHED_BOOKS })).toEqual({
             ...initialState,
             searchedBooks: GET_SEARCHED_BOOKS.payload,
+            loading: false,
+        });
+    });
+
+    test('handles get category', () => {
+        expect(bookReducer(initialState, { type: GET_CATEGORY })).toEqual({
+            ...initialState,
+            searchedBooks: GET_CATEGORY.payload,
             loading: false,
         });
     });

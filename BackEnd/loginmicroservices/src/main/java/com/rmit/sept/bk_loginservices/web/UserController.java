@@ -2,6 +2,7 @@ package com.rmit.sept.bk_loginservices.web;
 
 
 import com.rmit.sept.bk_loginservices.Repositories.UserRepository;
+import com.rmit.sept.bk_loginservices.exceptions.UserIsBannedException;
 import com.rmit.sept.bk_loginservices.model.User;
 import com.rmit.sept.bk_loginservices.payload.JWTLoginSucessReponse;
 import com.rmit.sept.bk_loginservices.payload.LoginRequest;
@@ -51,9 +52,6 @@ public class UserController {
     @Autowired
     private UserValidator userValidator;
 
-    @Autowired
-    private CustomUserDetailsService customUserDetailsService;
-
     @CrossOrigin(origins = "*")
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody User user, BindingResult result){
@@ -81,6 +79,15 @@ public class UserController {
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest, BindingResult result){
         ResponseEntity<?> errorMap = mapValidationErrorService.MapValidationService(result);
         if(errorMap != null) return errorMap;
+
+        Iterable<User> userList = userService.getAllUsers();
+        for (User user : userList) {
+            if (user.getUsername().equals(loginRequest.getUsername())) {
+                if (!user.getApproved()) {
+                    throw new UserIsBannedException("Username '" + loginRequest.getUsername() + "' is Banned");
+                }
+            }
+        }
 
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -129,12 +136,35 @@ public class UserController {
 
 
     @CrossOrigin(origins = "*")
+    @GetMapping("/getUser/{name}")
+    public ResponseEntity<?> getUser(@PathVariable String name){
+        Iterable<User> userList = userService.getAllUsers();
+        ArrayList<User> user = new ArrayList<User>();
+        for (User user1 : userList){
+            if (user1.getUsername().equals(name) ) {
+                user.add(user1);
+            }
+        }
+        userList = user;
+        return  new ResponseEntity<Iterable<User>>(userList, HttpStatus.OK);
+    }
+    @CrossOrigin(origins = "*")
     @PostMapping("/updateApproved")
     public void updateApproved(@RequestBody User user, BindingResult result) {
         if (user.getApproved()) {
-            userService.saveUser(user);
+            userService.saveUserDetails(user);
         } else {
             userService.deleteUser(user);
+        }
+    }
+    @CrossOrigin(origins = "*")
+    @PostMapping("/blockUser")
+    public void blockUser(@RequestBody Long id) {
+        Iterable<User> userList = userService.getAllApprovedUsers();
+        for (User user : userList) {
+            if (user.getId() == id) {
+                user.setApproved(false);
+            }
         }
     }
 }

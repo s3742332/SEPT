@@ -71,6 +71,8 @@ public class BookController {
         for (Book book : bookList) {
             if (book.getApproved().equals(true) && (book.getAuthor().toLowerCase().contains(query.toLowerCase())
                     || book.getBookDescription().toLowerCase().contains(query.toLowerCase())
+                    || book.getSeller().toLowerCase().contains(query.toLowerCase())
+                    || book.getIsbn().toLowerCase().contains(query.toLowerCase())
                     || book.getBookTitle().toLowerCase().contains(query.toLowerCase()))) {
                 searchedBooks.add(book);
             }
@@ -82,8 +84,7 @@ public class BookController {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/getBooksInCategory/{category}")
-    public ResponseEntity<?> getBooksInCategory(@PathVariable String category)
-    {
+    public ResponseEntity<?> getBooksInCategory(@PathVariable String category) {
         // System.out.println(category);
         // Iterable<Book> bookList = bookService.getAllBooksByCategory(category);
 
@@ -102,12 +103,28 @@ public class BookController {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/getBooksByCondition/{used}")
-    public ResponseEntity<?> getBooksByCondition(@PathVariable String used)
-    {
+    public ResponseEntity<?> getBooksByCondition(@PathVariable String used) {
         boolean usedStatus = Boolean.valueOf(used);
         Iterable<Book> bookList = bookService.getAllBooksByCondition(usedStatus);
 
         return new ResponseEntity<Iterable<Book>>(bookList, HttpStatus.OK);
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/sellUsedBook")
+    public ResponseEntity<Book> createNewUsedBook(@Valid @RequestBody Book book) {
+        Iterable<Book> bookList = bookService.getAllBooks();
+        for (Book item : bookList) {
+            if (item.getBookTitle().equals(book.getBookTitle())) {
+                book.setAuthor(item.getAuthor());
+                book.setBookDescription(item.getBookDescription());
+                book.setCategory(item.getCategory());
+                book.setUsed(true);
+                book.setCover(item.getCover());
+            }
+        }
+        Book book1 = bookService.saveOrUpdateBook(book);
+        return new ResponseEntity<Book>(book1, HttpStatus.CREATED);
     }
 
 }

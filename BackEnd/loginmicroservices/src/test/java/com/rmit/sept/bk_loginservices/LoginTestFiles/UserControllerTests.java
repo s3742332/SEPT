@@ -55,29 +55,29 @@ public class UserControllerTests {
         user.setPhoneNumber("040118293");
         user.setAddress("Max Street");
     }
-    @Test
-    @DisplayName("should authenticate the User and return responseEntity.ok")
-    void testRegisterUser(){
-        assertEquals(1, 1);
-    }
-    @Test
-    @DisplayName("should authenticate the User and return responseEntity.ok")
-    void testAuthenticateUser(){
-        assertEquals(1, 1);
-    }
-    @Test
-    @DisplayName("")
-    void testGetAllUsers(){
-        assertEquals("", "");
-    }
-    @Test
-    @DisplayName("")
-    void testGetAllPendingBusiness(){
-        assertEquals("", "");
-    }
-    @Test
-    @DisplayName("")
-    void testUpdateApproved(){
-        assertEquals("", "");
-    }
+//    @Test
+//    @DisplayName("should authenticate the User and return responseEntity.ok")
+//    void testRegisterUser(){
+//        assertEquals(1, 1);
+//    }
+//    @Test
+//    @DisplayName("should authenticate the User and return responseEntity.ok")
+//    void testAuthenticateUser(){
+//        assertEquals(1, 1);
+//    }
+//    @Test
+//    @DisplayName("")
+//    void testGetAllUsers(){
+//        assertEquals("", "");
+//    }
+//    @Test
+//    @DisplayName("")
+//    void testGetAllPendingBusiness(){
+//        assertEquals("", "");
+//    }
+//    @Test
+//    @DisplayName("")
+//    void testUpdateApproved(){
+//        assertEquals("", "");
+//    }
 }
