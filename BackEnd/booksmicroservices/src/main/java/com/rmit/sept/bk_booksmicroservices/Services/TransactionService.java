@@ -67,17 +67,24 @@ public class TransactionService {
             {
                 Long[] ids = transaction.getBookIds();
 
-                Iterable<Book> books = bookService.getBookFromIds(ids);
+                ArrayList<Book> bookIds = new ArrayList<>();
 
-                for (Book book : books)
+                for (Long id : ids)
+                {
+                    bookIds.add(bookService.getBookFromId(id));
+                }
+
+                System.out.println(bookIds.size());
+
+//                Iterable<Book> books = bookService.getBookFromIds(ids);
+                for (Book book : bookIds)
                 {
                     Long bookId = book.getId();
                     if (book.getSeller().equals(seller))
                     {
-                        if (!soldBySeller.contains(bookId))
-                        {
+
                             soldBySeller.add(book);
-                        }
+
                     }
                 }
             }

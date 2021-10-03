@@ -91,6 +91,20 @@ public class BookService {
     }
 
     @Transactional
+    public Book getBookFromId (Long id) {
+        try
+        {
+            return bookRepository.findById(id).get();
+        }
+        catch (Exception e)
+        {
+            System.out.println("ERROR IN BOOK RETRIEVAL");
+            System.out.println(e);
+            throw new BookNotFoundException("Unable to retrieve book list");
+        }
+    }
+
+    @Transactional
     public Iterable<Book> getBookFromIdsAndSeller (Long[] idList, String seller) {
         try
         {
