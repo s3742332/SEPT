@@ -28,5 +28,9 @@ export const GET_SELLER_TRANSACTIONS = "GET_SELLER_TRANSACTIONS";
 export const GET_USER_BOOKS = "GET_USER_BOOKS"
 
 // Cart
-export const UPDATE_CART = "UDATE_CART"
+export const UPDATE_CART = "UPDATE_CART"
 export const GET_CART = "GET_CART";
+
+// Review
+export const UPDATE_REVIEW = "UPDATE_REVIEW"
+export const GET_REVIEW = "GET_REVIEW";

@@ -45,4 +45,5 @@
      void getTransactionCost() {
          assertEquals(39.99, transaction.getTransactionCost());
      }
+
  }

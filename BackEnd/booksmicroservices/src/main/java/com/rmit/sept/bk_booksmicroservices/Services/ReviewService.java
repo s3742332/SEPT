@@ -20,6 +20,7 @@ public class ReviewService
         try
         {
             review.setReview(review.getReview());
+            review.setRating(review.getRating());
             review.setUsername(review.getUsername());
             review.setBookId(review.getBookId());
 
