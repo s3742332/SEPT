@@ -8,7 +8,7 @@ export const bookEdit = (book) => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        dispatch({type: BOOK_EDIT_LOADING})
+        dispatch({ type: BOOK_EDIT_LOADING })
         const res = await axios.post(`http://localhost:8081/api/books/saveBook/`, book, config);
         dispatch({
             type: UPDATE_BOOK,
@@ -73,7 +73,7 @@ export const getPendingBookList = () => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        dispatch({type: BOOK_LOADING})
+        dispatch({ type: BOOK_LOADING })
         const res = await axios.get(`http://localhost:8081/api/books/getAllPendingBooks`, config)
         console.log(res.data)
         console.log(axios.defaults.headers.common)
@@ -116,6 +116,28 @@ export const getSearchedBook = (query) => async dispatch => {
         dispatch({
             type: GET_ERRORS,
             payload: err
+        });
+    }
+};
+
+export const sellUsed = (book) => async dispatch => {
+    try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
+        dispatch({ type: BOOK_EDIT_LOADING })
+        const res = await axios.post(`http://localhost:8081/api/books/sellUsedBook/`, book, config);
+        dispatch({
+            type: UPDATE_BOOK,
+            payload: res.data
+        })
+    } catch (err) {
+        console.log('error', err)
+        dispatch({
+            type: GET_ERRORS,
+            payload: err.response.data
         });
     }
 };
