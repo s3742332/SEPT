@@ -89,3 +89,22 @@ export const getUserOwnedBooks = (username) => async dispatch => {
     }
 };
 
+export const cancelOrder = (id) => async dispatch => {
+    try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
+        const res = await axios.get(`http://localhost:8081/api/transactions/cancelOrder/${id}`,config)
+        dispatch({
+            type: GET_ERRORS,
+            payload: res.data
+        });
+    } catch (err) {
+        dispatch({
+            type: GET_ERRORS,
+            payload: err
+        });
+    }
+};
