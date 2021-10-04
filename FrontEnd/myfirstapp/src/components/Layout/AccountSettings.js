@@ -71,7 +71,7 @@ function AccountSettings() {
     const createBook = () => {
         for (let i = 0; i < 10; i++) {
             const book = {
-                seller: faker.company.companyName(),
+                seller: "seller@seller.com",
                 bookTitle: faker.name.title(),
                 author: faker.name.findName(),
                 bookDescription: faker.commerce.productDescription(),

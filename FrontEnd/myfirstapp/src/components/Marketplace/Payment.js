@@ -102,6 +102,7 @@ function Payment(props) {
             books: props.location.state.cart,
             transactionCost: totalPrice,
         }
+        console.log(data)
         console.log(errorMessage)
         if ((name && address && cardNumber && CVV && expDate && email) && Object.keys(errorMessage).length === 0) {
             console.log("PASS")

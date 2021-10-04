@@ -1,13 +1,14 @@
 package com.rmit.sept.bk_booksmicroservices.Services;
 
-import com.rmit.sept.bk_booksmicroservices.Repositories.TransactionRepository;
-
 import com.rmit.sept.bk_booksmicroservices.Exceptions.TransactionException;
+import com.rmit.sept.bk_booksmicroservices.Repositories.TransactionRepository;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
 import com.rmit.sept.bk_booksmicroservices.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
 
 @Service
 public class TransactionService {
@@ -55,6 +56,47 @@ public class TransactionService {
             throw new TransactionException("No transaction with that ID.");
         }
     }
+
+    @Transactional
+    public ArrayList<Book> getTransactionByBookSeller(String seller) {
+        try {
+            Iterable<Transaction> transactions = transactionRepository.findAll();
+            ArrayList<Book> soldBySeller = new ArrayList<>();
+
+            for (Transaction transaction : transactions)
+            {
+                Long[] ids = transaction.getBookIds();
+
+                ArrayList<Book> bookIds = new ArrayList<>();
+
+                for (Long id : ids)
+                {
+                    bookIds.add(bookService.getBookFromId(id));
+                }
+
+                System.out.println(bookIds.size());
+
+//                Iterable<Book> books = bookService.getBookFromIds(ids);
+                for (Book book : bookIds)
+                {
+                    Long bookId = book.getId();
+                    if (book.getSeller().equals(seller))
+                    {
+
+                            soldBySeller.add(book);
+
+                    }
+                }
+            }
+
+            return soldBySeller;
+
+        } catch (Exception e)
+        {
+            throw new TransactionException("No transactions for that seller.");
+        }
+    }
+
 
     // @Transactional
     // public Transaction getTransactionByOrderId(int id)
