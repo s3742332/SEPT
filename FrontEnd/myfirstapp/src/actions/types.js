@@ -2,7 +2,7 @@ export const GET_ERRORS = "GET_ERRORS";
 // Admin users
 export const USER_EDIT = "USER_EDIT";
 export const GET_ACCOUNTS = "GET_ACCOUNTS";
-export const GET_PENDING_SELLERS = "GET_PENDING_SELLERS"
+export const GET_UNAPPROVED_USERS = "GET_UNAPPROVED_USERS"
 export const USER_LOADING = "USER_LOADING";
 export const USER_EDIT_LOADING = "USER_EDIT_LOADING";
 // Login

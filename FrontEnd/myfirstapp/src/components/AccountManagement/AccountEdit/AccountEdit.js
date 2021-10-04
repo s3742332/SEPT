@@ -19,15 +19,22 @@ function AccountEdit() {
         dispatch(getUserAccountsList())
     }, [dispatch])
     useEffect(() => {
+        if(!user.loading) {
         setFilteredData(user.userAccounts)
-        console.log(user.userAccounts)
-    }, [user])
+        }
+    }, [user.loading])
 
     const handleSearch = (event) => {
         setSearch(event.target.value)
         setFilteredData(user.userAccounts.filter(data => data.fullName.toLowerCase().includes(event.target.value.toLowerCase())))
     }
-
+    useEffect(() => {
+        if(!user.editLoading) {
+            console.log("LOADING NEW LIST")
+            dispatch(getUserAccountsList())
+            setSelectedUser([])
+        }
+    }, [user.editLoading])
     useEffect(() => {
         search.length != 0 ? setClear("visible") : setClear("hidden")
     }, [search])

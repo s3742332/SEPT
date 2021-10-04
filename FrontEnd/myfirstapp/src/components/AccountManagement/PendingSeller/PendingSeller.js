@@ -1,7 +1,7 @@
 import { Col, Row } from 'antd';
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getPendingSellerList } from '../../../actions/userActions';
+import { getUnapprovedList } from '../../../actions/userActions';
 import PendingSellerList from './PendingSellerList';
 import PendingSellerDetails from './PendingSellerDetails'
 import { Input, Typography, Breadcrumb } from 'antd';
@@ -14,7 +14,7 @@ function PendingSeller() {
     const [search, setSearch] = useState("")
     const [clear, setClear] = useState("")
     useEffect(() => {
-        dispatch(getPendingSellerList())
+        dispatch(getUnapprovedList())
     }, [dispatch])
     useEffect(() => {
         if(!user.loading) {
@@ -29,7 +29,7 @@ function PendingSeller() {
     }
     useEffect(() => {
         if(!user.editLoading) {
-            dispatch(getPendingSellerList())
+            dispatch(getUnapprovedList())
             setSelectedUser([])
         }
     }, [user.editLoading])
@@ -52,7 +52,7 @@ function PendingSeller() {
                 <PendingSellerList list={user} filteredList={filteredData} setSelectedUser={setSelectedUser} />
             </Col>
             <Col xs={20} style={{ padding: "1rem" }}>
-                <Title level={2} style={{textAlign: "center"}}>Seller Information</Title>
+                <Title level={2} style={{textAlign: "center"}}>Pending Account Information</Title>
                 <PendingSellerDetails data={selectedUser} />
             </Col>
         </Row>

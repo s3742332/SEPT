@@ -59,7 +59,7 @@ export const login = (LoginRequest, history) => async dispatch => {
         console.log(err)
         dispatch({
             type: GET_ERRORS,
-            payload: err.response
+            payload: err?.response?.data
         });
     }
 };
