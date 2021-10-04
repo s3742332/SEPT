@@ -1,5 +1,5 @@
 import axios from "axios"
-import { TSCN_BASE_URL, config, fetchTransactionEdit, fetchUserTransaction } from "../../../utils"
+import { TSCN_BASE_URL, config, fetchTransactionEdit, fetchUserTransaction, fetchSellerTransaction, fetchUserOwnedBooks } from "../../../utils"
 
 jest.mock("axios");
 
@@ -53,6 +53,60 @@ describe("fetchUserTransaction", () => {
             const result = await fetchUserTransaction();
 
             expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getAllUserTransactions/${username}`,config);
+            expect(result).toEqual([]);
+        });
+    });
+});
+
+describe("fetchSellerTransaction", () => {
+    describe("when API call is successful", () => {
+        test("should return seller transaction", async () => {
+            const username = "user@user.com";
+            axios.get.mockResolvedValueOnce(username, config);
+
+            const result = await fetchSellerTransaction();
+
+            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getSellerTransactions/${username}`,config);
+            expect(result).toEqual(username);
+        });
+    });
+
+    describe("when API call fails", () => {
+        test("should return empty seller transaction", async () => {
+            const username = "user@user.com";
+            const message = "Error retrieving user transaction";
+            axios.get.mockRejectedValueOnce(new Error(message));
+
+            const result = await fetchSellerTransaction();
+
+            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getSellerTransactions/${username}`,config);
+            expect(result).toEqual([]);
+        });
+    });
+});
+
+describe("fetchUserOwnedBooks", () => {
+    describe("when API call is successful", () => {
+        test("should return user owned books", async () => {
+            const username = "user@user.com";
+            axios.get.mockResolvedValueOnce(username, config);
+
+            const result = await fetchUserOwnedBooks();
+
+            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getUserOwnedBooks/${username}`,config);
+            expect(result).toEqual(username);
+        });
+    });
+
+    describe("when API call fails", () => {
+        test("should return empty user owned books", async () => {
+            const username = "user@user.com";
+            const message = "Error retrieving user transaction";
+            axios.get.mockRejectedValueOnce(new Error(message));
+
+            const result = await fetchUserOwnedBooks();
+
+            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getUserOwnedBooks/${username}`,config);
             expect(result).toEqual([]);
         });
     });

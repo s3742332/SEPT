@@ -1,7 +1,14 @@
 import { ItalicOutlined } from "@ant-design/icons";
 import ActionButton from "antd/lib/modal/ActionButton";
 import userReducer from "../userReducer";
-import { USER_EDIT, INCREMENT, GET_ACCOUNTS, GET_PENDING_SELLERS, USER_LOADING, USER_EDIT_LOADING } from "../../actions/types";
+import {
+    USER_EDIT,
+    INCREMENT,
+    GET_ACCOUNTS,
+    USER_LOADING,
+    USER_EDIT_LOADING,
+    GET_UNAPPROVED_USERS
+} from "../../actions/types";
 
 const initialState = {
     pendingSellers: [],
@@ -37,10 +44,10 @@ describe('authenticate user reducer', () => {
         });
     });
 
-    test('handles get pending sellers', () => {
-        expect(userReducer(initialState, { type: GET_PENDING_SELLERS})).toEqual({
+    test('handles get unapproved users', () => {
+        expect(userReducer(initialState, { type: GET_UNAPPROVED_USERS})).toEqual({
             ...initialState,
-            pendingSellers: GET_PENDING_SELLERS.payload,
+            pendingSellers: GET_UNAPPROVED_USERS.payload,
             loading: false,
         });
     });

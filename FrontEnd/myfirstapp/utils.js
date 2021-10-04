@@ -15,11 +15,6 @@ export const config = {
 
 export const fetchUserEdit = async () => {
     try {
-        const config = {
-            headers: {
-                "Content-Type": "application/json",
-            }
-        }
         const user = { id: 1, name: "User 1"}
 
         return await axios.post('${USER_BASE_URL}/api/users/updateApproved/', user, config);
@@ -28,21 +23,30 @@ export const fetchUserEdit = async () => {
     }
 }
 
-export const fetchPendingSellers = async () => {
+export const fetchUnapprovedList = async () => {
     try {
-        return await axios.get('${USER_BASE_URL}/api/users/getAllPendingBusiness/');
+        return await axios.get('${USER_BASE_URL}/api/users/getAllUnapprovedUsers')
     } catch (e) {
         return [];
     }
-};
+}
 
-export const fetchApprovedUsers = async () => {
+export const fetchUserAccountsList = async () => {
     try {
         return await axios.get('${USER_BASE_URL}/api/users/getAllApprovedUsers/');
     } catch (e) {
         return [];
     }
 };
+
+export const fetchBlockUser = async () => {
+    try {
+        const user = { id: 1, name: "User 1"}
+        return await axios.post('${USER_BASE_URL}/api/users/blockUser', user, config)
+    } catch (e) {
+        return [];
+    }
+}
 
 //TODO increment test
 
@@ -116,6 +120,24 @@ export const fetchUserTransaction = async () => {
     }
 };
 
+export const fetchSellerTransaction = async () => {
+    try {
+        const username = "user@user.com";
+        return await axios.get(`${TSCN_BASE_URL}/api/transactions/getSellerTransactions/${username}`,config);
+    } catch (e) {
+        return [];
+    }
+};
+
+export const fetchUserOwnedBooks = async () => {
+    try {
+        const username = "user@user.com";
+        return await axios.get(`${TSCN_BASE_URL}/api/transactions/getUserOwnedBooks/${username}`,config);
+    } catch (e) {
+        return [];
+    }
+};
+
 //============================================================================================
 
 // securityAction Test Utils
@@ -130,6 +152,8 @@ export const fetchCreateNewUser = async () => {
 }
 
 //============================================================================================
+
+// cartAction Test Utils
 
 export const fetchCartEdit = async () => {
     try {
