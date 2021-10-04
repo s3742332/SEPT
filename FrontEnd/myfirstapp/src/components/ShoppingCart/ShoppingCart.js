@@ -68,9 +68,9 @@ function ShoppingCart(props) {
         const cartData = cart.cart.cartContents;
 
         if (props.location.state?.book) {
-           
+
             const data = [...bookList, props.location.state.book]
-            console.log("AE",data)
+            console.log("AE", data)
             setBookList(data)
             return;
         } else
@@ -115,7 +115,35 @@ function ShoppingCart(props) {
             //console.log("cart", cart.cart.cartContent)
             dispatch(cartEdit(data, history, false))
         }
+    }
 
+    const removeBookFromCart = (id) => {
+        const cartData = cart.cart.cartContents;
+        if(props.location.state?.book) {
+            setBookList([])
+            return;
+        }
+        else if (cartData) {
+            
+            var i = 0;
+            while (i < cartData.length) {
+                if (cartData[i] === id) {
+                    cartData.splice(i, 1);
+                } else {
+                    ++i;
+                }
+            }
+            const data = {
+                id: cart.cart.id,
+                userName: user.user.username,
+                cartContents: cartData ? cartData : [id]
+            }
+            dispatch(cartEdit(data, history, false))
+        }
+
+        //console.log("cart", cart.cart.cartContent)
+        
+       
     }
     useEffect(() => {
         console.log(totalPrice)
@@ -159,6 +187,7 @@ function ShoppingCart(props) {
                                     <List.Item.Meta
 
                                         title={<>
+                                        <Space><Button type={"danger"} size={"small"} onClick={() => removeBookFromCart(book.id)}>Remove</Button></Space><br />
                                             <Link
                                                 to={{
                                                     pathname: "/buy",
@@ -204,7 +233,7 @@ function ShoppingCart(props) {
                                     <List.Item.Meta
 
                                         title={<>
-                                            <Space><Button type={"danger"} size={"small"}>Remove</Button></Space><br />
+                                            <Space><Button type={"danger"} size={"small"} onClick={() => removeBookFromCart(book[0].id)}>Remove</Button></Space><br />
                                             <Link
                                                 to={{
                                                     pathname: "/buy",

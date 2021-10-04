@@ -34,3 +34,4 @@ export const GET_CART = "GET_CART";
 // Review
 export const UPDATE_REVIEW = "UPDATE_REVIEW"
 export const GET_REVIEW = "GET_REVIEW";
+export const  GET_ALL_REVIEWS = "GET_ALL_REVIEWS";
