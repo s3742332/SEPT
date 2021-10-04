@@ -111,17 +111,17 @@ public class UserController {
     }
 
     @CrossOrigin(origins = "*")
-    @GetMapping("/getAllPendingBusiness")
-    public ResponseEntity<?> getAllPendingBusiness(){
+    @GetMapping("/getAllUnapprovedUsers")
+    public ResponseEntity<?> getAllUnapprovedUsers(){
         Iterable<User> userList = userService.getAllUsers();
-        ArrayList<User> unapprovedBusiness = new ArrayList<User>();
+        ArrayList<User> unapprovedUser = new ArrayList<User>();
         for (User user : userList){
-            if (user.getUserType().equals("seller") && !user.getApproved()) {
-                unapprovedBusiness.add(user);
+            if (!user.getApproved()) {
+                unapprovedUser.add(user);
             }
         }
 
-        userList = unapprovedBusiness;
+        userList = unapprovedUser;
         
         return  new ResponseEntity<Iterable<User>>(userList, HttpStatus.OK);
     }
@@ -164,6 +164,7 @@ public class UserController {
         for (User user : userList) {
             if (user.getId() == id) {
                 user.setApproved(false);
+                userRepository.save(user);
             }
         }
     }

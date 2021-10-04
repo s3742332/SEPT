@@ -17,9 +17,9 @@ function PendingSellerDetails(props) {
         const { id, value } = e.target
         setData({ ...data, [id]: value });
     }
-    const handleDeny = (e) => {
+    const handleDelete = (e) => {
         e.preventDefault();
-        dispatch(userEdit({ ...data, approved: "false" }));
+        dispatch(userEdit(data));
     }
     const handleApprove = (e) => {
         e.preventDefault();
@@ -130,7 +130,7 @@ function PendingSellerDetails(props) {
                 </Col>
                 <Row justify={"end"}>
                     <Col>
-                        <Button style={{ marginRight: "1rem" }} size="large" type="danger" onClick={handleDeny}>Reject</Button>
+                    <Button style={{ marginRight: "1rem" }} size="large" type="danger" onClick={handleDelete}>Delete</Button>
                         <Button size="large" type="primary" onClick={handleApprove}>Approve</Button>
                     </Col>
                 </Row>
