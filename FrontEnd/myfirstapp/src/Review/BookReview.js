@@ -3,6 +3,7 @@ import { Button, List, Modal, Input, Rate, Typography } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { getReview, reviewEdit } from '../actions/reviewActions';
 import { useHistory } from 'react-router';
+import moment from 'moment';
 
 function BookReview(props) {
     const history = useHistory();
@@ -69,7 +70,11 @@ function BookReview(props) {
                     <List.Item>
                         <List.Item.Meta
                             title={item.username}
-                            description={<><Rate disabled defaultValue={item.rating} /><br />{item.review}</>}
+                            description={<><Rate disabled defaultValue={item.rating} />
+                            <br/>
+                            
+                            {moment(item.createdAt).format("DD-MM-YYYY")}
+                            <br />{item.review}</>}
                         />
                     </List.Item>
                 )}

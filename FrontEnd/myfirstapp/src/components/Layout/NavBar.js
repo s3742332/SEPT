@@ -66,6 +66,14 @@ function NavBar(props) {
                         <Menu.Item key="/books/pending" onClick={() => history.push('/books/pending')}>Pending Book Approvals</Menu.Item>
                         <Menu.Item key="/books/edit" onClick={() => history.push('/books/edit')}>Book Collection</Menu.Item>
                     </SubMenu>
+                    <SubMenu key={"moderation"} title="Moderation">
+                        <Menu.Item key="/moderation/bookreviews" onClick={() => history.push('/moderation/bookreviews')}>Book Reviews</Menu.Item>
+                        
+                    </SubMenu>
+                    <SubMenu key={"reports"} title="Reports">
+                        <Menu.Item key="/reports/transactions" onClick={() => history.push('/reports/transactions')}>Generate Transaction Report</Menu.Item>
+                        
+                    </SubMenu>
                     <Menu.Item key="7">Reports</Menu.Item>
                 </Menu>
             </Sider>)
