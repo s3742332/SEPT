@@ -54,7 +54,7 @@ export const login = (LoginRequest, history) => async dispatch => {
             type: SET_CURRENT_USER,
             payload: decoded
         });
-        history.push("/");
+            history.push("/");        
     } catch (err) {
         console.log(err)
         dispatch({
