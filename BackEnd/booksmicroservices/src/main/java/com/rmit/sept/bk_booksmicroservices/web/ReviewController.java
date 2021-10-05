@@ -32,4 +32,21 @@ public class ReviewController
         Iterable<Review> reviews = reviewService.getReviewsByBook(bookId);
         return new ResponseEntity<Iterable<Review>>(reviews, HttpStatus.OK);
     }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/getAllReviews")
+    public ResponseEntity<?> getAllReviews()
+    {
+        Iterable<Review> reviews = reviewService.getAllReviews();
+        return new ResponseEntity<Iterable<Review>>(reviews, HttpStatus.OK);
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/deleteReview/{reviewId}")
+    public ResponseEntity<?> deleteReview(@PathVariable Long reviewId)
+    {
+        reviewService.deleteReview(reviewId);
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
 }

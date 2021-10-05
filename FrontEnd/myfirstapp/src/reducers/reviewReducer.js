@@ -1,4 +1,4 @@
-import { UPDATE_REVIEW, GET_REVIEW, GET_ALL_REVIEWS} from "../actions/types";
+import { UPDATE_REVIEW, GET_REVIEW, GET_ALL_REVIEWS, REVIEW_LOADING } from "../actions/types";
 
 const initialState = {
   review: [],
@@ -8,6 +8,8 @@ const initialState = {
 
 export default function (state = initialState, action) {
   switch (action.type) {
+    case REVIEW_LOADING:
+      return { ...state, loading: true }
     case UPDATE_REVIEW:
       return { ...state, loading: false }
     case GET_REVIEW:
