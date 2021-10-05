@@ -143,7 +143,7 @@ function AccountSettings() {
     const createTransactions = () => {
         for (let i = 0; i < 10; i++) {
             const book = {
-                username: "user@user.com",
+                userName: "user@user.com",
                 bookIds: [faker.datatype.number(10),faker.datatype.number(10),faker.datatype.number(10),faker.datatype.number(10)],
             }
             dispatch(transactionEdit(book, history, true))
