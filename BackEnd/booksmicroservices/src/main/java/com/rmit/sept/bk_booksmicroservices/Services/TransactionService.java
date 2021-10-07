@@ -97,31 +97,13 @@ public class TransactionService {
         }
     }
 
-
-    // @Transactional
-    // public Transaction getTransactionByOrderId(int id)
-    // {
-    // try
-    // {
-    // return transactionRepository.getById(id);
-    // }
-    // catch(Exception e)
-    // {
-    // throw new TransactionException("No transaction with that order ID.");
-    // }
-    // }
-
-    // @Transactional
-    // public Transaction updateOrderStatus(Transaction transaction)
-    // {
-    // try {
-    // transaction.setOrderComplete(true);
-
-    // return transactionRepository.save(transaction);
-    // }
-    // catch (Exception e)
-    // {
-    // throw new TransactionException("Unable to create transaction");
-    // }
-    // }
+    @Transactional
+    public void deleteTransactionById(Long id) {
+        try {
+            transactionRepository.deleteById(id);
+        } catch (Exception e) {
+            throw new TransactionException("Error deleting.");
+        }
+    }
+  
 }
