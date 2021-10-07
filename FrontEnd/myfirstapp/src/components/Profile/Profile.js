@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserDetails, fetchUserDetails } from '../../actions/securityActions';
 import { userEdit } from '../../actions/userActions';
+import PasswordChange from './PasswordChange';
 
 function Profile() {
     const dispatch = useDispatch();
@@ -83,7 +84,7 @@ function Profile() {
                 <Form.Item style={{ justifyContent: "center", textAlign: "center" }}>
                     <Button type='submit' onClick={onSubmit}>Save Changes</Button>
                 </Form.Item>
-
+                <PasswordChange userID={user.id}/>
             </Form>
         </Col>
     </Row>

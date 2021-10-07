@@ -21,7 +21,7 @@ public class TransactionController {
     @Autowired
     private TransactionService transactionService;
 
-    //adding or removing a book - pass through username (email) + array of book ids
+    // adding or removing a book - pass through username (email) + array of book ids
     @CrossOrigin(origins = "*")
     @PostMapping("/saveTransaction")
     public ResponseEntity<Transaction> createNewTransaction(@RequestBody Transaction transaction) {
@@ -69,33 +69,18 @@ public class TransactionController {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/getSellerTransactions/{seller}")
-    public ResponseEntity<?> getSellerTransactions(@PathVariable String seller)
-    {
+    public ResponseEntity<?> getSellerTransactions(@PathVariable String seller) {
         ArrayList<Book> sellerBookTransactions = transactionService.getTransactionByBookSeller(seller);
-
 
         return new ResponseEntity<Iterable<Book>>(sellerBookTransactions, HttpStatus.OK);
     }
 
-    // @CrossOrigin(origins = "*")
-    // @PostMapping("/completeOrder/{transactionId}")
-    // public ResponseEntity<?> completeOrder(@PathVariable String transactionId)
-    // {
-    // Transaction transaction =
-    // transactionService.getTransactionById(Long.valueOf(transactionId));
-    // Transaction transaction1 = transactionService.updateOrderStatus(transaction);
-
-    // return new ResponseEntity<Transaction>(transaction1, HttpStatus.OK);
-    // }
-
-    // @CrossOrigin(origins = "*")
-    // @GetMapping("/getByOrderId/{orderId}")
-    // public ResponseEntity<?> getByOrderId(@PathVariable String orderId)
-    // {
-    // int ordId = Integer.parseInt(orderId);
-    // Transaction transaction = transactionService.getTransactionByOrderId(ordId);
-
-    // return new ResponseEntity<Transaction>(transaction, HttpStatus.OK);
-    // }
+    @CrossOrigin(origins = "*")
+    @PostMapping("/cancelTransaction")
+    public void cancelTransaction(@RequestBody Long id) {
+        System.out.println("I AM IN BACKEND");
+        System.out.println(id);
+        transactionService.deleteTransactionById(id);
+    }
 
 }

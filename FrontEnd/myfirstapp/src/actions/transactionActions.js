@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ERRORS, CREATE_TRANSACTION, GET_TRANSACTIONS,GET_SELLER_TRANSACTIONS, GET_USER_BOOKS, GET_ALL_TRANSACTIONS } from "./types";
+import { GET_ERRORS, CREATE_TRANSACTION, GET_TRANSACTIONS,GET_SELLER_TRANSACTIONS, GET_USER_BOOKS, GET_ALL_TRANSACTIONS, TRANSACTION_LOADING } from "./types";
 
 export const transactionEdit = (transaction, history, devTool) => async dispatch => {
     try {
@@ -111,18 +111,20 @@ export const getUserOwnedBooks = (username) => async dispatch => {
     }
 };
 
-export const cancelOrder = (id) => async dispatch => {
+export const cancelOrder = (id,user) => async dispatch => {
     try {
         const config = {
             headers: {
                 "Content-Type": "application/json",
             }
         }
-        const res = await axios.get(`http://localhost:8081/api/transactions/cancelOrder/${id}`,config)
+        dispatch({ type: TRANSACTION_LOADING })
+        const res = await axios.post(`http://localhost:8081/api/transactions/cancelTransaction`,id,config)
         dispatch({
             type: GET_ERRORS,
             payload: res.data
         });
+        dispatch(getUserTransaction(user))
     } catch (err) {
         dispatch({
             type: GET_ERRORS,

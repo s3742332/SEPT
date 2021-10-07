@@ -15,8 +15,10 @@ function SellerTransactions() {
         dispatch(getUser())
     }, [dispatch])
     useEffect(() => {
+        if(user.user.username){
         dispatch(getSellerTransaction(user.user.username))
-    }, [dispatch, user])
+    }
+}, [user.user.username])
 
     useEffect(() => {
         if (transactions.sellerTransaction) {
