@@ -113,3 +113,27 @@ export const logout = () => dispatch => {
         payload: {}
     });
 };
+
+
+export const changePassword = (data) => async dispatch => {
+
+
+    try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
+        const res = await axios.post(`http://localhost:8080/api/users/changePassword`, data, config)
+        dispatch({
+            type: GET_ERRORS,
+            payload: res.data
+        });
+    }
+    catch (err) {
+        dispatch({
+            type: GET_ERRORS,
+            payload: err?.response?.data
+        });
+    }
+};

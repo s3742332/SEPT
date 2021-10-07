@@ -14,14 +14,18 @@ function CustomerTransactions() {
         dispatch(getUser())
     }, [dispatch])
     useEffect(() => {
-        dispatch(getUserTransaction(user.user.username))
-    }, [dispatch, user])
+        if(user.user.username){
+            dispatch(getUserTransaction(user.user.username))
+        }
+    }, [user.user.username])
     useEffect(() => {
-        console.log("transaction", transactions.userTransaction)
-        setTransaction(transactions.userTransaction)
-    }, [transactions])
-    const handleCancel = (data, duration) => {
-        dispatch(cancelOrder(data.id))
+        if(!transactions.loading){
+            console.log("transaction", transactions.userTransaction)
+            setTransaction(transactions.userTransaction)
+        }
+    }, [transactions.loading])
+    const handleCancel = (data) => {
+        dispatch(cancelOrder(data.id, user.user.username))
     }
     const columns = [
         {
@@ -60,9 +64,9 @@ function CustomerTransactions() {
                 var start = moment(data.createdAt)
                 var duration = moment.duration(moment().diff(start)).asHours();
                 if (duration > 2) {
-                    return <Button size="small" type="danger" disabled onClick={() => handleCancel(data, duration)}>Cancel Order</Button>
+                    return <Button size="small" type="danger" disabled onClick={() => handleCancel(data)}>Cancel Order</Button>
                 } else {
-                    return <Button size="small" type="danger" onClick={() => handleCancel(data, duration)}>Cancel Order</Button>
+                    return <Button size="small" type="danger" onClick={() => handleCancel(data)}>Cancel Order</Button>
                 }
             },
         },
