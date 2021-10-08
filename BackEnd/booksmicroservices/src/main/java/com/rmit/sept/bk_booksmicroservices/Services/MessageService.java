@@ -6,15 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import com.rmit.sept.bk_booksmicroservices.Repositories.MessageRepository;
 
-import org.springframework.stereotype.Service;
-
 public class MessageService {
 
     @Autowired
-    private MessageService messageRepository;
+    private MessageRepository messageRepository;
 
     @Transactional
-    public Message saveOrUpdateMessage(Message message) {
+    public void saveOrUpdateReview(Message message) {
         try {
             messageRepository.save(message);
         } catch (Exception e) {
