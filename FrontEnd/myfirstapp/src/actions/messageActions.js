@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ERRORS, SAVE_MESSAGE } from "./types";
+import { GET_ERRORS, SAVE_MESSAGE, GET_MESSAGES } from "./types";
 
 export const saveMessage = (message) => async dispatch => {
     try {
@@ -22,17 +22,17 @@ export const saveMessage = (message) => async dispatch => {
     }
 };
 
-export const getBookList = () => async dispatch => {
+export const getMessages = () => async dispatch => {
     try {
         const config = {
             headers: {
                 "Content-Type": "application/json",
             }
         }
-        const res = await axios.get(`http://localhost:8081/api/books/getAllApprovedBooks`, config)
+        const res = await axios.get(`http://localhost:8081/api/books/getMessages`, config)
         console.log(res.data)
         dispatch({
-            type: GET_BOOK_LIST,
+            type: GET_MESSAGES,
             payload: res.data
         })
     } catch (err) {

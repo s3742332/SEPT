@@ -35,3 +35,4 @@ export const  GET_ALL_REVIEWS = "GET_ALL_REVIEWS";
 export const REVIEW_LOADING = "REVIEW_LOADING";
 // Message
 export const SAVE_MESSAGE = "SAVE_MESSAGE";
+export const GET_MESSAGES = "GET_MESSAGES";

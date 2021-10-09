@@ -1,4 +1,4 @@
-import { SAVE_MESSAGE } from "../actions/types";
+import { GET_MESSAGES, SAVE_MESSAGE } from "../actions/types";
 
 const initialState = {
     review: [],
@@ -9,6 +9,8 @@ const initialState = {
 export default function (state = initialState, action) {
     switch (action.type) {
         case SAVE_MESSAGE:
+            return { ...state, loading: true }
+        case GET_MESSAGES:
             return { ...state, loading: true }
         default:
             return state;
