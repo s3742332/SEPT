@@ -120,6 +120,14 @@ export const fetchUserTransaction = async () => {
     }
 };
 
+export const fetchAllTransactions = async () => {
+    try {
+        return await axios.get(`${TSCN_BASE_URL}/api/transactions/getAllTransactions/`,config);
+    } catch (e) {
+        return [];
+    }
+}
+
 export const fetchSellerTransaction = async () => {
     try {
         const username = "user@user.com";
@@ -137,6 +145,15 @@ export const fetchUserOwnedBooks = async () => {
         return [];
     }
 };
+
+export const fetchCancelOrder = async () => {
+    try {
+        const id = 1;
+        return await axios.post(`${TSCN_BASE_URL}/api/transactions/cancelTransaction`,id,config);
+    } catch (e) {
+        return [];
+    }
+}
 
 //============================================================================================
 

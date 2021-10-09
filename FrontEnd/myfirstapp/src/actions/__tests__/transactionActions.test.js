@@ -1,5 +1,5 @@
 import axios from "axios"
-import { TSCN_BASE_URL, config, fetchTransactionEdit, fetchUserTransaction, fetchSellerTransaction, fetchUserOwnedBooks } from "../../../utils"
+import { TSCN_BASE_URL, config, fetchTransactionEdit, fetchUserTransaction, fetchAllTransactions, fetchSellerTransaction, fetchUserOwnedBooks, fetchCancelOrder } from "../../../utils"
 
 jest.mock("axios");
 
@@ -58,6 +58,29 @@ describe("fetchUserTransaction", () => {
     });
 });
 
+describe("fetchAllTransactions", () => {
+    describe("when API call is successful", () => {
+        test("should return all transactions", async () => {
+            axios.get.mockResolvedValueOnce(config);
+
+            const result = await fetchAllTransactions();
+
+            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getAllTransactions/`,config);
+        });
+    });
+
+    describe("when API call fails", () => {
+        test("should return empty transactions", async () => {
+            const message = "Error retrieving all transactions";
+            axios.get.mockRejectedValueOnce(new Error(message));
+
+            const result = await fetchAllTransactions();
+
+            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getAllTransactions/`,config);
+        });
+    });
+});
+
 describe("fetchSellerTransaction", () => {
     describe("when API call is successful", () => {
         test("should return seller transaction", async () => {
@@ -107,6 +130,33 @@ describe("fetchUserOwnedBooks", () => {
             const result = await fetchUserOwnedBooks();
 
             expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getUserOwnedBooks/${username}`,config);
+            expect(result).toEqual([]);
+        });
+    });
+});
+
+describe("fetchCancelorder", () => {
+    describe("when API call is successful", () => {
+        test("should return cancel order successfully", async () => {
+            const id = 1;
+            axios.post.mockResolvedValueOnce(id, config);
+
+            const result = await fetchCancelOrder();
+
+            expect(axios.post).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/cancelTransaction`,id,config);
+            expect(result).toEqual(id);
+        });
+    });
+
+    describe("when API call fails", () => {
+        test("should return cancel order unsuccessfully", async () => {
+            const id = 1;
+            const message = "Error cancelling order";
+            axios.post.mockRejectedValueOnce(new Error(message));
+
+            const result = await fetchCancelOrder();
+
+            expect(axios.post).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/cancelTransaction`,id,config);
             expect(result).toEqual([]);
         });
     });
