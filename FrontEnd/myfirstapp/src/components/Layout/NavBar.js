@@ -51,7 +51,7 @@ function NavBar(props) {
     if (["admin"].includes(props.user.userType)) {
         return (
             <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
-                <div style={{ height: "32px", margin: "16px" }}><img src="logo192.png" style={{
+                <div style={{ height: "32px", margin: "16px" }}><img src="/logo192.png" style={{
                     maxWidth: "100%",
                     maxHeight: "100%",
                     objectFit: "contain"
@@ -66,7 +66,14 @@ function NavBar(props) {
                         <Menu.Item key="/books/pending" onClick={() => history.push('/books/pending')}>Pending Book Approvals</Menu.Item>
                         <Menu.Item key="/books/edit" onClick={() => history.push('/books/edit')}>Book Collection</Menu.Item>
                     </SubMenu>
-                    <Menu.Item key="7">Reports</Menu.Item>
+                    <SubMenu key={"moderation"} title="Moderation">
+                        <Menu.Item key="/moderation/bookreviews" onClick={() => history.push('/moderation/bookreviews')}>Book Reviews</Menu.Item>
+                        
+                    </SubMenu>
+                    <SubMenu key={"reports"} title="Reports">
+                        <Menu.Item key="/reports/transactions" onClick={() => history.push('/reports/transactions')}>Generate Transaction Report</Menu.Item>
+                        
+                    </SubMenu>
                 </Menu>
             </Sider>)
     }

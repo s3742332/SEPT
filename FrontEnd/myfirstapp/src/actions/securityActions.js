@@ -54,7 +54,7 @@ export const login = (LoginRequest, history) => async dispatch => {
             type: SET_CURRENT_USER,
             payload: decoded
         });
-        history.push("/");
+            history.push("/");        
     } catch (err) {
         console.log(err)
         dispatch({
@@ -112,4 +112,28 @@ export const logout = () => dispatch => {
         type: SET_CURRENT_USER,
         payload: {}
     });
+};
+
+
+export const changePassword = (data) => async dispatch => {
+
+
+    try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
+        const res = await axios.post(`http://localhost:8080/api/users/changePassword`, data, config)
+        dispatch({
+            type: GET_ERRORS,
+            payload: res.data
+        });
+    }
+    catch (err) {
+        dispatch({
+            type: GET_ERRORS,
+            payload: err?.response?.data
+        });
+    }
 };

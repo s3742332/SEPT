@@ -45,4 +45,31 @@ public class ReviewService
         }
     }
 
+    @Transactional
+    public Iterable<Review> getAllReviews()
+    {
+        try
+        {
+            return reviewRepository.findAll();
+        }
+        catch (Exception e)
+        {
+            throw new ReviewException("No reviews");
+        }
+    }
+
+    @Transactional
+    public void deleteReview(Long id)
+    {
+        try
+        {
+            reviewRepository.deleteById(id);
+        }
+        catch (Exception e)
+        {
+            throw new ReviewException("Unable to delete review.");
+        }
+    }
+
+
 }

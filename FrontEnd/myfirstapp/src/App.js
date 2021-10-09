@@ -39,6 +39,8 @@ import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import CategoryResult from "./components/Marketplace/CategoryResult";
 import Profile from "./components/Profile/Profile";
 import SellerTransactions from "./components/Transactions/SellerTransactions";
+import AdminBookReview from "./Review/AdminBookReview";
+import TransactionReport from "./components/Reports/TransactionReport";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const jwtToken = localStorage.getItem("jwtToken");
@@ -79,13 +81,15 @@ function App() {
             <AdminBreadcrumb />
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
               <Switch>
-                <Route exact path="/" component={AdminDashboard} />
+              <Route exact path="/" component={AdminDashboard} />
                 <Route exact path="/users/edit" component={AccountEdit} />
                 <Route exact path="/users/pending" component={PendingSeller} />
                 <Route exact path="/books/pending" component={PendingBook} />
                 <Route exact path="/books/edit" component={BookEdit} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/register" component={Register} />
+                <Route exact path="/moderation/bookreviews" component={AdminBookReview} />
+                <Route exact path="/reports/transactions" component={TransactionReport} />
               </Switch>
             </div>
           </Content>
@@ -118,7 +122,6 @@ function App() {
             <Route exact path="/inventory" component={Inventory} />
             <Route exact path="/category" component={CategoryResult} />
             <Route exact path="/profile" component={Profile} />
-            <Redirect to="/" />
           </Switch>
         </Content>
         <Footer style={{ textAlign: 'center' }}>SEPT Bookeroo 2021</Footer>
