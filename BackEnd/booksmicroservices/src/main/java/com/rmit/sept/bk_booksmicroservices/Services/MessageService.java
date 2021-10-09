@@ -3,9 +3,11 @@ package com.rmit.sept.bk_booksmicroservices.Services;
 import com.rmit.sept.bk_booksmicroservices.model.Message;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.rmit.sept.bk_booksmicroservices.Repositories.MessageRepository;
 
+@Service
 public class MessageService {
 
     @Autowired
