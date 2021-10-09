@@ -151,6 +151,33 @@ export const fetchCreateNewUser = async () => {
     }
 }
 
+export const fetchLogin = async () => {
+    try {
+        const LoginRequest = "request login";
+        return await axios.post("${USER_BASE_URL}/api/users/login", LoginRequest, config);
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchGetUserDetails = async () => {
+    try {
+        const username = "user@user.com"
+        return await axios.get("${USER_BASE_URL}/api/users/getUser/${username}", config);
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchChangePassword = async () => {
+    try {
+        const data = "abcd123";
+        return await axios.post("${USER_BASE_URL}/api/users/changePassword", data, config)
+    } catch (e) {
+        return [];
+    }
+}
+
 //============================================================================================
 
 // cartAction Test Utils
