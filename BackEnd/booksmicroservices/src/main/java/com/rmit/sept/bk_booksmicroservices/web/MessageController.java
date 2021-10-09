@@ -2,9 +2,7 @@ package com.rmit.sept.bk_booksmicroservices.web;
 
 import com.rmit.sept.bk_booksmicroservices.Repositories.MessageRepository;
 import com.rmit.sept.bk_booksmicroservices.Services.MessageService;
-import com.rmit.sept.bk_booksmicroservices.Services.ReviewService;
 import com.rmit.sept.bk_booksmicroservices.model.Message;
-import com.rmit.sept.bk_booksmicroservices.model.Review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

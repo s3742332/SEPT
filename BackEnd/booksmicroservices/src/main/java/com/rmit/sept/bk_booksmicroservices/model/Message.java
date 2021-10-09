@@ -2,7 +2,7 @@ package com.rmit.sept.bk_booksmicroservices.model;
 
 import javax.persistence.*;
 
-@Entity(name = "Review")
+@Entity(name = "Message")
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
