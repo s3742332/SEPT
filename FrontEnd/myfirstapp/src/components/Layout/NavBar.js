@@ -69,11 +69,12 @@ function NavBar(props) {
                     </SubMenu>
                     <SubMenu key={"moderation"} title="Moderation">
                         <Menu.Item key="/moderation/bookreviews" onClick={() => history.push('/moderation/bookreviews')}>Book Reviews</Menu.Item>
-                        
                     </SubMenu>
                     <SubMenu key={"reports"} title="Reports">
                         <Menu.Item key="/reports/transactions" onClick={() => history.push('/reports/transactions')}>Generate Transaction Report</Menu.Item>
-                        
+                    </SubMenu>
+                    <SubMenu key={"messages"} title="Messages">
+                        <Menu.Item key="/messages/all-messages" onClick={() => history.push('/view-messages')}>View Messages</Menu.Item>
                     </SubMenu>
                 </Menu>
             </Sider>)
