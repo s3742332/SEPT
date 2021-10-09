@@ -74,7 +74,7 @@ export const fetchBookList = async () => {
 export const fetchCategory = async () => {
     try {
         const category = 'Dystopian';
-        return await axios.get(`http://localhost:8082/api/books/getBooksInCategory/${category.category}`, config);
+        return await axios.get('${BOOK_BASE_URL}/api/books/getBooksInCategory/${category.category}', config);
     } catch (e) {
         return [];
     }
@@ -91,8 +91,17 @@ export const fetchPendingBookList = async () => {
 export const fetchSearchedBook = async () => {
     try {
         const query = "asdf";
-        const response = await axios.get(`http://localhost:8082/api/books/getSearchedBooks/${query}`, config);
+        const response = await axios.get('${BOOK_BASE_URL}/api/books/getSearchedBooks/${query}', config);
         return response;
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchSellUsed = async () => {
+    try {
+        const book = {bookName: "asdf", bookDescription: "qwerty"};
+        return await axios.post('${BOOK_BASE_URL}/api/books/sellUsedBook/', book, config);
     } catch (e) {
         return [];
     }

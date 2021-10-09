@@ -1,5 +1,5 @@
 import axios from "axios"
-import {BOOK_BASE_URL, config, fetchBookEdit, fetchBookList, fetchCategory, fetchPendingBookList, fetchSearchedBook} from "../../../utils"
+import {BOOK_BASE_URL, config, fetchBookEdit, fetchBookList, fetchCategory, fetchPendingBookList, fetchSearchedBook, fetchSellUsed} from "../../../utils"
 
 jest.mock("axios");
 
@@ -58,7 +58,7 @@ describe("fetchCategory", () => {
 
             const result = await fetchCategory(category);
 
-            expect(axios.get).toHaveBeenCalledWith(`http://localhost:8082/api/books/getBooksInCategory/${category.category}`, config);
+            expect(axios.get).toHaveBeenCalledWith('${BOOK_BASE_URL}/api/books/getBooksInCategory/${category.category}', config);
             expect(result).toEqual(books);
         });
     });
@@ -71,7 +71,7 @@ describe("fetchCategory", () => {
 
             const result = await fetchCategory();
 
-            expect(axios.get).toHaveBeenCalledWith(`http://localhost:8082/api/books/getBooksInCategory/${category.category}`, config);
+            expect(axios.get).toHaveBeenCalledWith('${BOOK_BASE_URL}/api/books/getBooksInCategory/${category.category}', config);
             expect(result).toEqual([]);
         });
     });
@@ -155,6 +155,33 @@ describe("fetchSearchedBook", () => {
 
             const result = await fetchSearchedBook();
 
+            expect(result).toEqual([]);
+        });
+    });
+});
+
+describe("fetchSellUsed", () => {
+    describe("when API call is successful", () => {
+        test("should return successful sell used book", async () => {
+            const book = {bookName: "asdf", bookDescription: "qwerty"};
+            axios.post.mockResolvedValueOnce(book, config);
+
+            const result = await fetchSellUsed();
+
+            expect(axios.post).toHaveBeenCalledWith('${BOOK_BASE_URL}/api/books/sellUsedBook/', book, config);
+            expect(result).toEqual(book);
+        });
+    });
+
+    describe("when API call fails", () => {
+        test("should return unsuccessful sell used book", async () => {
+            const book = {bookName: "asdf", bookDescription: "qwerty"};
+            const message = "Error selling used book";
+            axios.post.mockRejectedValueOnce(new Error(message));
+
+            const result = await fetchSellUsed();
+
+            expect(axios.post).toHaveBeenCalledWith('${BOOK_BASE_URL}/api/books/sellUsedBook/', book, config);
             expect(result).toEqual([]);
         });
     });
