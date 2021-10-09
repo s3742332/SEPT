@@ -135,7 +135,8 @@ public class BookController {
     @CrossOrigin(origins = "*")
     @PostMapping("/shareBook")
     public void shareBook(@Valid @RequestBody Book book) throws IOException {
-        File file = new File(book.getBookTitle() + ".txt");
+        String userDefPath = "C:\\Users\\" + System.getProperty("user.name") + "\\Desktop";
+        File file = new File(userDefPath + book.getBookTitle() + ".txt");
         FileWriter fw = new FileWriter(file);
         PrintWriter pw = new PrintWriter(fw);
 
@@ -144,7 +145,7 @@ public class BookController {
         pw.println("Description: " + book.getBookDescription());
         pw.println("Seller: " + book.getSeller());
         pw.println("Price: " + book.getBookCost());
-        
+
         pw.close();
     }
 
