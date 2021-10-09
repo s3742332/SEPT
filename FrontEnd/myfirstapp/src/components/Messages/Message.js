@@ -2,10 +2,14 @@ import React from "react";
 import { Button, Card, Input } from 'antd';
 import TextArea from "rc-textarea";
 import { useState } from "react";
+import { useDispatch, useSelector } from 'react-redux'
+import { saveMessage } from "../../actions/messageActions";
 
 const Message = () => {
     const [text, setText] = useState('')
     const [sent, setSent] = useState(false)
+    const security = useSelector(state => state.security);
+    const dispatch = useDispatch();
 
     const handleText = (e) => {
         e.preventDefault();
@@ -14,6 +18,12 @@ const Message = () => {
 
     const submitMessage = (e) => {
         e.preventDefault();
+        let message = {
+            username: security.user.fullName,
+            message: text
+        }
+        dispatch(saveMessage(message));
+
         setSent(true);
     }
 
