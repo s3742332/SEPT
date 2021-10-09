@@ -99,6 +99,15 @@
          assertEquals(transaction1, transactionService.getTransactionById(id));
      }
 
+     @Test
+     void deleteTransactionByIdTest() {
+         Mockito.when(transactionRepository.save(transaction1)).thenReturn(transaction1);
+
+         transactionService.deleteTransactionById(1L);
+
+         Mockito.verify(transactionRepository).deleteById(1L);
+     }
+
 //     @Test
 //     void getTransactionByBookSellerTest() {
 //
