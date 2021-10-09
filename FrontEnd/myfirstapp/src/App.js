@@ -41,6 +41,7 @@ import Profile from "./components/Profile/Profile";
 import SellerTransactions from "./components/Transactions/SellerTransactions";
 import AdminBookReview from "./Review/AdminBookReview";
 import TransactionReport from "./components/Reports/TransactionReport";
+import Message from "./components/Messages/Message";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const jwtToken = localStorage.getItem("jwtToken");
@@ -110,6 +111,7 @@ function App() {
             <Route exact path="/browse" component={Marketplace} />
             <Route exact path="/sell" component={Sell} />
             <Route exact path="/buy" component={BookDetails} />
+            <Route exact path="/message" component={Message} />
             <Route exact path="/shoppingcart" component={ShoppingCart} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />

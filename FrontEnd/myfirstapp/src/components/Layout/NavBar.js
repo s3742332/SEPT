@@ -42,6 +42,7 @@ function NavBar(props) {
                     <Menu.Item key="/browse" onClick={() => history.push('/browse')}>Browse</Menu.Item>
                     {["seller"].includes(props.user.userType) && <Menu.Item key="/sell" onClick={() => history.push('/sell')}>Sell</Menu.Item>}
                     <Menu.Item key="/about" onClick={() => history.push('/about')}>About</Menu.Item>
+                    <Menu.Item key="/message" onClick={() => history.push('/message')}>Contact Us</Menu.Item>
                 </Menu>
                 <AccountSettings/>
                 
