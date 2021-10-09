@@ -41,6 +41,8 @@ import Profile from "./components/Profile/Profile";
 import SellerTransactions from "./components/Transactions/SellerTransactions";
 import AdminBookReview from "./Review/AdminBookReview";
 import TransactionReport from "./components/Reports/TransactionReport";
+import Message from "./components/Messages/Message";
+import ViewMessages from "./components/Messages/ViewMessages";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const jwtToken = localStorage.getItem("jwtToken");
@@ -90,6 +92,7 @@ function App() {
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/moderation/bookreviews" component={AdminBookReview} />
                 <Route exact path="/reports/transactions" component={TransactionReport} />
+                <Route exact path="/view-messages" component={ViewMessages} />
               </Switch>
             </div>
           </Content>
@@ -110,13 +113,14 @@ function App() {
             <Route exact path="/browse" component={Marketplace} />
             <Route exact path="/sell" component={Sell} />
             <Route exact path="/buy" component={BookDetails} />
+            <Route exact path="/message" component={Message} />
             <Route exact path="/shoppingcart" component={ShoppingCart} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             {security.user.userType === "customer"?
             <Route exact path="/transactions" component={CustomerTransactions} />: 
             <Route exact path="/transactions" component={SellerTransactions} />}
-            
+
             <Route exact path="/details" component={BookDetails} />
             <Route exact path="/payment" component={Payment} />
             <Route exact path="/inventory" component={Inventory} />
