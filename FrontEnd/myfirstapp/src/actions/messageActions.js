@@ -29,8 +29,7 @@ export const getMessages = () => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        const res = await axios.get(`http://localhost:8081/api/books/getMessages`, config)
-        console.log(res.data)
+        const res = await axios.get(`http://localhost:8081/api/messages/getMessages`, config)
         dispatch({
             type: GET_MESSAGES,
             payload: res.data
