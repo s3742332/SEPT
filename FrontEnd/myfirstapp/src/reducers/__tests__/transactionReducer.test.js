@@ -1,5 +1,5 @@
 import transactionReducer from "../transactionReducer";
-import {CREATE_TRANSACTION, GET_ALL_TRANSACTIONS, GET_SELLER_TRANSACTIONS, GET_USER_BOOKS} from "../../actions/types";
+import {CREATE_TRANSACTION, GET_ALL_TRANSACTIONS, GET_TRANSACTIONS, GET_SELLER_TRANSACTIONS, GET_USER_BOOKS} from "../../actions/types";
 
 const initialState = {
     createTransaction: [],
