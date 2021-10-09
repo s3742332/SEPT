@@ -142,3 +142,21 @@ export const sellUsed = (book) => async dispatch => {
         });
     }
 };
+
+export const shareBook = (book) => async dispatch => {
+    try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
+        await axios.post(`http://localhost:8081/api/books/shareBook/`, book, config);
+
+    } catch (err) {
+        console.log('error', err)
+        dispatch({
+            type: GET_ERRORS,
+            payload: err.response.data
+        });
+    }
+};

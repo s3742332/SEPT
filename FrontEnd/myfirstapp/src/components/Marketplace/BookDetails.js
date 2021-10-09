@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { cartEdit, getUserCart } from '../../actions/cartActions';
 import { getUser } from '../../actions/securityActions';
 import BookReview from '../../Review/BookReview';
+import { shareBook } from '../../actions/bookActions';
 
 function BookDetails(props) {
     const dispatch = useDispatch();
@@ -54,6 +55,18 @@ function BookDetails(props) {
         //console.log("cart", cart.cart.cartContent)
         dispatch(cartEdit(data, history, false))
     }
+
+    const share = () => {
+        let book = {
+            "seller": bookData.seller,
+            "bookTitle": bookData.bookTitle,
+            "author": bookData.author,
+            "bookDescription": bookData.bookDescription,
+            "bookCost": bookData.bookCost
+        }
+        dispatch(shareBook(book));
+    }
+
     return (
         <Card>
             <div style={{ display: 'flex', padding: "1%" }}>
@@ -71,10 +84,10 @@ function BookDetails(props) {
                         to={{
                             pathname: "/shoppingcart",
                             state: { book: bookData }
-                        }}><Button type="primary" shape="round" style={{marginRight: 10}}>Buy Now</Button></Link>
-                    <Button type="primary" style={{marginRight: 10}} disabled={cartDisable} shape="round" onClick={addToCart}>{cartStatus}</Button>
-                    <Button type="primary" shape="round">Share</Button>
-                    <BookReview bookID={bookData.id}/>
+                        }}><Button type="primary" shape="round" style={{ marginRight: 10 }}>Buy Now</Button></Link>
+                    <Button type="primary" style={{ marginRight: 10 }} disabled={cartDisable} shape="round" onClick={addToCart}>{cartStatus}</Button>
+                    <Button type="primary" shape="round" onClick={share}>Share</Button>
+                    <BookReview bookID={bookData.id} />
                 </div>
             </div>
         </Card>
