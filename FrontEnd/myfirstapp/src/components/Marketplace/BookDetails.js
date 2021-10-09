@@ -71,8 +71,9 @@ function BookDetails(props) {
                         to={{
                             pathname: "/shoppingcart",
                             state: { book: bookData }
-                        }}><Button type="primary" shape="round">Buy Now</Button></Link>
-                    <Button type="primary" disabled={cartDisable} shape="round" onClick={addToCart}>{cartStatus}</Button>
+                        }}><Button type="primary" shape="round" style={{marginRight: 10}}>Buy Now</Button></Link>
+                    <Button type="primary" style={{marginRight: 10}} disabled={cartDisable} shape="round" onClick={addToCart}>{cartStatus}</Button>
+                    <Button type="primary" shape="round">Share</Button>
                     <BookReview bookID={bookData.id}/>
                 </div>
             </div>
