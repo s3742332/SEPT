@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Row, Col, Image, Button, Typography, Card } from 'antd'
+import { Row, Col, Image, Button, Typography, Card, Alert } from 'antd'
 
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -15,6 +15,7 @@ function BookDetails(props) {
     const cart = useSelector(state => state.cart);
     const [cartStatus, setCartStatus] = useState("Add to cart")
     const [cartDisable, setButtonDisable] = useState(false)
+    const [shared, setShared] = useState(false)
     const { Title } = Typography;
     useEffect(() => {
         dispatch(getUser())
@@ -65,10 +66,14 @@ function BookDetails(props) {
             "bookCost": bookData.bookCost
         }
         dispatch(shareBook(book));
+        setShared(true)
     }
 
     return (
         <Card>
+            {!shared ? '' :
+                <Alert message="Book Exported" type="success" />
+            }
             <div style={{ display: 'flex', padding: "1%" }}>
                 <img src={bookData.cover} alt="book cover" style={{
                     width: '50%',
