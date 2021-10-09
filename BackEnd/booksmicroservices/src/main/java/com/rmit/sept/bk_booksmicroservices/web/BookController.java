@@ -8,6 +8,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -125,6 +130,22 @@ public class BookController {
         }
         Book book1 = bookService.saveOrUpdateBook(book);
         return new ResponseEntity<Book>(book1, HttpStatus.CREATED);
+    }
+
+    @CrossOrigin(origins = "*")
+    @PostMapping("/shareBook")
+    public void shareBook(@Valid @RequestBody Book book) throws IOException {
+        File file = new File(book.getBookTitle() + ".txt");
+        FileWriter fw = new FileWriter(file);
+        PrintWriter pw = new PrintWriter(fw);
+
+        pw.println("Title: " + book.getBookTitle());
+        pw.println("Author: " + book.getAuthor());
+        pw.println("Description: " + book.getBookDescription());
+        pw.println("Seller: " + book.getSeller());
+        pw.println("Price: " + book.getBookCost());
+        
+        pw.close();
     }
 
 }
