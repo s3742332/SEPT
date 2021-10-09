@@ -11,6 +11,5 @@ public interface MessageRepository extends CrudRepository<Message, Long>
 {
     Message getById(Long id);
     List<Message> findMessageByUsername(String username);
-    Iterable<Message> findReviewsByBookId(int bookId);
-    void save(Message messagae);
+    
 }

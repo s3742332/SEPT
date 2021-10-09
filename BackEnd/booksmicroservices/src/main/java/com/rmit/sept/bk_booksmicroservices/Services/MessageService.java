@@ -12,7 +12,7 @@ public class MessageService {
     private MessageRepository messageRepository;
 
     @Transactional
-    public void saveOrUpdateReview(Message message) {
+    public void saveOrUpdateMessage(Message message) {
         try {
             messageRepository.save(message);
         } catch (Exception e) {
