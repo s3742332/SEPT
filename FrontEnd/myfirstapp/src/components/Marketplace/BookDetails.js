@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Row, Col, Image, Button, Typography, Card, Alert } from 'antd'
 
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory,Redirect } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { cartEdit, getUserCart } from '../../actions/cartActions';
 import { getUser } from '../../actions/securityActions';
@@ -28,9 +28,9 @@ function BookDetails(props) {
 
     }, [user])
     useEffect(() => {
-        setBookData(props.location.state.book)
-        console.log("BOOK SELECTED", props.location.state.book)
-    }, [props])
+        setBookData(props?.location?.state?.book)
+        console.log("BOOK SELECTED", props?.location?.state?.book)
+    }, [props?.location?.state?.book])
     useEffect(() => {
         console.log("CART DETECTED", cart.cart.cartContents)
     }, [cart])
@@ -70,6 +70,7 @@ function BookDetails(props) {
     }
 
     return (
+    (props?.location?.state?.book ? 
         <Card>
             {!shared ? '' :
                 <Alert message="Book Exported" type="success" />
@@ -95,7 +96,8 @@ function BookDetails(props) {
                     <BookReview bookID={bookData.id} />
                 </div>
             </div>
-        </Card>
+        </Card>: <Redirect to="/"/>)
+        
     )
 }
 
