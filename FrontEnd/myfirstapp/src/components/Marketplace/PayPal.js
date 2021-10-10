@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRef, useEffect } from 'react'
 
-export default function PayPal() {
+export default function PayPal(props) {
     const paypal = useRef()
 
     useEffect(() => {
@@ -11,10 +11,10 @@ export default function PayPal() {
                     intent: "CAPTURE",
                     purchase_unit: [
                         {
-                            description: "book",
+                            description: "books",
                             amount: {
                                 currency_code: 'AUD',
-                                value: 10.00
+                                value: props.price
                             }
                         }
                     ]

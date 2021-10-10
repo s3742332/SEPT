@@ -156,7 +156,7 @@ function Payment(props) {
                         <p>Total Price: {totalPrice}</p>
                         <Button type="primary" shape="round" onClick={handleSubmit} style={{ width: '40%' }}>Purchase</Button>
                         {errorMessage.final && <p style={{ color: "red" }}>{errorMessage.final}</p>}
-                        <PayPal />
+                        <PayPal price={totalPrice} />
                     </div>
                 </Card>
             </Col>
