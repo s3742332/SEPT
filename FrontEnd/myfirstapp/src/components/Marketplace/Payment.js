@@ -9,6 +9,7 @@ import { getUser } from '../../actions/securityActions';
 import { useHistory, withRouter } from 'react-router-dom'
 import valid from 'card-validator'
 import { cvv } from 'card-validator/dist/cvv';
+import PayPal from './PayPal';
 function Payment(props) {
     const [bookList, setBookList] = useState([])
     const [totalPrice, setTotalPrice] = useState(0);
@@ -155,6 +156,7 @@ function Payment(props) {
                         <p>Total Price: {totalPrice}</p>
                         <Button type="primary" shape="round" onClick={handleSubmit} style={{ width: '40%' }}>Purchase</Button>
                         {errorMessage.final && <p style={{ color: "red" }}>{errorMessage.final}</p>}
+                        <PayPal />
                     </div>
                 </Card>
             </Col>
