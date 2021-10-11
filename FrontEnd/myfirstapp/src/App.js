@@ -41,11 +41,15 @@ import Profile from "./components/Profile/Profile";
 import SellerTransactions from "./components/Transactions/SellerTransactions";
 import AdminBookReview from "./Review/AdminBookReview";
 import TransactionReport from "./components/Reports/TransactionReport";
+import Message from "./components/Messages/Message";
+import ViewMessages from "./components/Messages/ViewMessages";
+import SecureRoute from "./securityUtils/SecureRoute";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const jwtToken = localStorage.getItem("jwtToken");
   const dispatch = useDispatch();
   const security = useSelector(state => state.security);
+  const [loading, setLoading] = useState(true)
   useEffect(() => {
     if (jwtToken) {
       setJWTToken(jwtToken);
@@ -61,6 +65,7 @@ function App() {
         window.location.href = "/";
       }
     }
+    setLoading(false)
   }, [])
   useEffect(() => {
     dispatch(getUser())
@@ -82,14 +87,15 @@ function App() {
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
               <Switch>
               <Route exact path="/" component={AdminDashboard} />
-                <Route exact path="/users/edit" component={AccountEdit} />
-                <Route exact path="/users/pending" component={PendingSeller} />
-                <Route exact path="/books/pending" component={PendingBook} />
-                <Route exact path="/books/edit" component={BookEdit} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/register" component={Register} />
-                <Route exact path="/moderation/bookreviews" component={AdminBookReview} />
-                <Route exact path="/reports/transactions" component={TransactionReport} />
+                <SecureRoute exact path="/users/edit" component={AccountEdit} />
+                <SecureRoute exact path="/users/pending" component={PendingSeller} />
+                <SecureRoute exact path="/books/pending" component={PendingBook} />
+                <SecureRoute exact path="/books/edit" component={BookEdit} />
+                <SecureRoute exact path="/login" component={Login} />
+                <SecureRoute exact path="/register" component={Register} />
+                <SecureRoute exact path="/moderation/bookreviews" component={AdminBookReview} />
+                <SecureRoute exact path="/reports/transactions" component={TransactionReport} />
+                <SecureRoute exact path="/view-messages" component={ViewMessages} />
               </Switch>
             </div>
           </Content>
@@ -110,18 +116,19 @@ function App() {
             <Route exact path="/browse" component={Marketplace} />
             <Route exact path="/sell" component={Sell} />
             <Route exact path="/buy" component={BookDetails} />
-            <Route exact path="/shoppingcart" component={ShoppingCart} />
+            <Route exact path="/message" component={Message} />
+            <SecureRoute exact path="/shoppingcart" component={ShoppingCart}/>
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             {security.user.userType === "customer"?
-            <Route exact path="/transactions" component={CustomerTransactions} />: 
-            <Route exact path="/transactions" component={SellerTransactions} />}
-            
+            <SecureRoute exact path="/transactions" component={CustomerTransactions} />: 
+            <SecureRoute exact path="/transactions" component={SellerTransactions} />}
+
             <Route exact path="/details" component={BookDetails} />
-            <Route exact path="/payment" component={Payment} />
-            <Route exact path="/inventory" component={Inventory} />
+            <SecureRoute exact path="/payment" component={Payment} />
+            <SecureRoute exact path="/inventory" component={Inventory} />
             <Route exact path="/category" component={CategoryResult} />
-            <Route exact path="/profile" component={Profile} />
+            <SecureRoute exact path="/profile" component={Profile} />
           </Switch>
         </Content>
         <Footer style={{ textAlign: 'center' }}>SEPT Bookeroo 2021</Footer>
@@ -129,7 +136,7 @@ function App() {
     )
   }
   return (
-
+!loading && 
     isAdmin ? loadAdmin() : loadUser()
 
   );

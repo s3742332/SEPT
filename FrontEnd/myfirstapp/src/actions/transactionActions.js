@@ -10,7 +10,7 @@ export const transactionEdit = (transaction, history, devTool) => async dispatch
         }
         const res = await axios.post(`http://localhost:8081/api/transactions/saveTransaction`, transaction, config );
         if(res.status === 201 && !devTool) {
-            history.push('/confirmation')
+            history.push('/')
         }
         dispatch({
             type: CREATE_TRANSACTION,
