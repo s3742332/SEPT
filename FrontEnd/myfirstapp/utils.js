@@ -107,6 +107,15 @@ export const fetchSellUsed = async () => {
     }
 }
 
+export const fetchShareBook = async () => {
+    try {
+        const book = {bookName: "asdf", bookDescription: "qwerty"};
+        return await axios.post('${BOOK_BASE_URL}/api/books/shareBook/', book, config);
+    } catch (e) {
+        return [];
+    }
+}
+
 //============================================================================================
 
 // transactionAction Test Utils

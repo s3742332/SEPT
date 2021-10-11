@@ -1,5 +1,15 @@
 import axios from "axios"
-import {BOOK_BASE_URL, config, fetchBookEdit, fetchBookList, fetchCategory, fetchPendingBookList, fetchSearchedBook, fetchSellUsed} from "../../../utils"
+import {
+    BOOK_BASE_URL,
+    config,
+    fetchBookEdit,
+    fetchBookList,
+    fetchCategory,
+    fetchPendingBookList,
+    fetchSearchedBook,
+    fetchSellUsed,
+    fetchShareBook
+} from "../../../utils"
 
 jest.mock("axios");
 
@@ -182,6 +192,33 @@ describe("fetchSellUsed", () => {
             const result = await fetchSellUsed();
 
             expect(axios.post).toHaveBeenCalledWith('${BOOK_BASE_URL}/api/books/sellUsedBook/', book, config);
+            expect(result).toEqual([]);
+        });
+    });
+});
+
+describe("fetchShareBook", () => {
+    describe("when API call is successful", () => {
+        test("should return successful share book", async () => {
+            const book = {bookName: "asdf", bookDescription: "qwerty"};
+            axios.post.mockResolvedValueOnce(book, config);
+
+            const result = await fetchShareBook();
+
+            expect(axios.post).toHaveBeenCalledWith('${BOOK_BASE_URL}/api/books/shareBook/', book, config);
+            expect(result).toEqual(book);
+        });
+    });
+
+    describe("when API call fails", () => {
+        test("should return unsuccessful share book", async () => {
+            const book = {bookName: "asdf", bookDescription: "qwerty"};
+            const message = "Error sharing book";
+            axios.post.mockRejectedValueOnce(new Error(message));
+
+            const result = await fetchShareBook();
+
+            expect(axios.post).toHaveBeenCalledWith('${BOOK_BASE_URL}/api/books/shareBook/', book, config);
             expect(result).toEqual([]);
         });
     });
