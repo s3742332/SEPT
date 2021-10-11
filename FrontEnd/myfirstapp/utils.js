@@ -247,6 +247,25 @@ export const fetchGetReview = async () => {
     }
 }
 
+//============================================================================================
+// messageActions Test Utils
+export const fetchSaveMessage = async () => {
+    try {
+        const message = "Hello World!";
+        return await axios.post(`${BOOK_BASE_URL}/api/messages/saveMessage/`, message, config)
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchGetMessages = async () => {
+    try {
+        return await axios.get(`${BOOK_BASE_URL}/api/messages/getMessages`, config)
+    } catch (e) {
+        return [];
+    }
+}
+
 
 
 
