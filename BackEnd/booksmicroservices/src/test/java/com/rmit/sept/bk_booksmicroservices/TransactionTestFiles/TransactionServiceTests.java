@@ -31,6 +31,7 @@
 
      private static Transaction transaction1, transaction2, transaction3;
      private static Long[] bookIds_1, bookIds_2, bookIds_3;
+     private static Book book1, book2, book3, book4, book5, book6, book7;
 
      @InjectMocks
      private TransactionService transactionService;
@@ -97,6 +98,95 @@
 
          assertEquals(transaction1, transactionService.getTransactionById(id));
      }
+
+     @Test
+     void deleteTransactionByIdTest() {
+         Mockito.when(transactionRepository.save(transaction1)).thenReturn(transaction1);
+
+         transactionService.deleteTransactionById(1L);
+
+         Mockito.verify(transactionRepository).deleteById(1L);
+     }
+
+//     @Test
+//     void getTransactionByBookSellerTest() {
+//
+//         transactionRepository.save(transaction1);
+//         transactionRepository.save(transaction2);
+//         transactionRepository.save(transaction3);
+//         Iterable<Transaction> transactionsArray = transactionRepository.findAll();
+//
+//         createBooks();
+//
+//         ArrayList<Book> soldBySeller = new ArrayList<>();
+//
+//         for(Transaction transaction : transactionsArray) {
+//             Long[] ids = transaction.getBookIds();
+//             System.out.println(1);
+//
+//             ArrayList<Book> bookIds = new ArrayList<>();
+//             System.out.println(2);
+//
+//             for(Long id : ids) {
+//                 bookIds.add(bookService.getBookFromId(id));
+//                 System.out.println(3);
+//             }
+//
+//             for(Book book : bookIds) {
+//                 System.out.println(4);
+//                 if(book.getSeller().equals("Seller 2")) {
+//                     System.out.println(5);
+//                     soldBySeller.add(book);
+//                     System.out.println(6);
+//                 }
+//             }
+//         }
+//
+//         ArrayList<Book> seller_2_books = new ArrayList<>();
+//         seller_2_books.add(book2);
+//         seller_2_books.add(book3);
+//         seller_2_books.add(book6);
+//
+//         assertEquals(soldBySeller, seller_2_books);
+//
+//     }
+//
+//     void createBooks() {
+//         book1 = new Book();
+//         book1.setId(1L);
+//         book1.setSeller("Seller 1");
+//         bookService.saveOrUpdateBook(book1);
+//
+//         book2 = new Book();
+//         book2.setId(4L);
+//         book2.setSeller("Seller 2");
+//         bookService.saveOrUpdateBook(book2);
+//
+//         book3 = new Book();
+//         book3.setId(5L);
+//         book3.setSeller("Seller 2");
+//         bookService.saveOrUpdateBook(book3);
+//
+//         book4 = new Book();
+//         book4.setId(6L);
+//         book4.setSeller("Seller 3");
+//         bookService.saveOrUpdateBook(book4);
+//
+//         book5 = new Book();
+//         book5.setId(7L);
+//         book5.setSeller("Seller 3");
+//         bookService.saveOrUpdateBook(book5);
+//
+//         book6 = new Book();
+//         book6.setId(8L);
+//         book6.setSeller("Seller 2");
+//         bookService.saveOrUpdateBook(book6);
+//
+//         book7 = new Book();
+//         book7.setId(9L);
+//         book7.setSeller("Seller 1");
+//         bookService.saveOrUpdateBook(book7);
+//     }
 
 //     @Test
 //     @DisplayName("Should pass if the correct transaction by order ID was returned")

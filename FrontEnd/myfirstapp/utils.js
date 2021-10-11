@@ -74,7 +74,7 @@ export const fetchBookList = async () => {
 export const fetchCategory = async () => {
     try {
         const category = 'Dystopian';
-        return await axios.get(`http://localhost:8082/api/books/getBooksInCategory/${category.category}`, config);
+        return await axios.get('${BOOK_BASE_URL}/api/books/getBooksInCategory/${category.category}', config);
     } catch (e) {
         return [];
     }
@@ -91,8 +91,26 @@ export const fetchPendingBookList = async () => {
 export const fetchSearchedBook = async () => {
     try {
         const query = "asdf";
-        const response = await axios.get(`http://localhost:8082/api/books/getSearchedBooks/${query}`, config);
+        const response = await axios.get('${BOOK_BASE_URL}/api/books/getSearchedBooks/${query}', config);
         return response;
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchSellUsed = async () => {
+    try {
+        const book = {bookName: "asdf", bookDescription: "qwerty"};
+        return await axios.post('${BOOK_BASE_URL}/api/books/sellUsedBook/', book, config);
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchShareBook = async () => {
+    try {
+        const book = {bookName: "asdf", bookDescription: "qwerty"};
+        return await axios.post('${BOOK_BASE_URL}/api/books/shareBook/', book, config);
     } catch (e) {
         return [];
     }
@@ -120,6 +138,14 @@ export const fetchUserTransaction = async () => {
     }
 };
 
+export const fetchAllTransactions = async () => {
+    try {
+        return await axios.get(`${TSCN_BASE_URL}/api/transactions/getAllTransactions/`,config);
+    } catch (e) {
+        return [];
+    }
+}
+
 export const fetchSellerTransaction = async () => {
     try {
         const username = "user@user.com";
@@ -138,6 +164,15 @@ export const fetchUserOwnedBooks = async () => {
     }
 };
 
+export const fetchCancelOrder = async () => {
+    try {
+        const id = 1;
+        return await axios.post(`${TSCN_BASE_URL}/api/transactions/cancelTransaction`,id,config);
+    } catch (e) {
+        return [];
+    }
+}
+
 //============================================================================================
 
 // securityAction Test Utils
@@ -146,6 +181,33 @@ export const fetchCreateNewUser = async () => {
     try {
         const newUser = { id: 1, name: "New User"};
         return await axios.post("${USER_BASE_URL}/api/users/register", newUser, config);
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchLogin = async () => {
+    try {
+        const LoginRequest = "request login";
+        return await axios.post("${USER_BASE_URL}/api/users/login", LoginRequest, config);
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchGetUserDetails = async () => {
+    try {
+        const username = "user@user.com"
+        return await axios.get("${USER_BASE_URL}/api/users/getUser/${username}", config);
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchChangePassword = async () => {
+    try {
+        const data = "abcd123";
+        return await axios.post("${USER_BASE_URL}/api/users/changePassword", data, config)
     } catch (e) {
         return [];
     }
@@ -189,6 +251,25 @@ export const fetchGetReview = async () => {
     try {
         const review =  1;
         return await axios.get(`${BOOK_BASE_URL}/api/reviews/getBookReviews/${review}`, config);
+    } catch (e) {
+        return [];
+    }
+}
+
+//============================================================================================
+// messageActions Test Utils
+export const fetchSaveMessage = async () => {
+    try {
+        const message = "Hello World!";
+        return await axios.post(`${BOOK_BASE_URL}/api/messages/saveMessage/`, message, config)
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchGetMessages = async () => {
+    try {
+        return await axios.get(`${BOOK_BASE_URL}/api/messages/getMessages`, config)
     } catch (e) {
         return [];
     }
