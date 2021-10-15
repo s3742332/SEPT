@@ -1,4 +1,3 @@
-// maz todo
 import axios from "axios"
 import {BOOK_BASE_URL, config, fetchReviewEdit, fetchGetReview, fetchGetAllReviews, fetchRemoveReview} from "../../../utils" // change to my methods + add to utils.
 
@@ -59,7 +58,7 @@ describe("fetchGetReview", () => {
             expect(result).toEqual([]);
         });
     });
-///////// new tests get all reviews
+
     describe("fetchGetAllReviews", () => {
         describe("when API call is successful", () => {
             test("should return all reviews", async () => {
@@ -82,7 +81,7 @@ describe("fetchGetReview", () => {
             });
         });
     });
-///////// new test remove review
+
 describe("fetchRemoveReview", () => {
     describe("when API call is successful", () => {
         test("should return cancel review successfully", async () => {

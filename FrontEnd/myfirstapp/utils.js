@@ -255,7 +255,7 @@ export const fetchGetReview = async () => {
         return [];
     }
 }
-// new get all review
+
 export const fetchGetAllReviews = async () => {
     try {
         return await axios.get(`${BOOK_BASE_URL}/api/reviews/getAllReviews`,config);
@@ -264,7 +264,6 @@ export const fetchGetAllReviews = async () => {
     }
 }
 
-///new remove review
 export const fetchRemoveReview = async () => {
     try {
         const reviewId = 1;
