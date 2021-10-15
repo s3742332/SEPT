@@ -249,12 +249,31 @@ export const fetchReviewEdit = async () => {
 
 export const fetchGetReview = async () => {
     try {
-        const review =  1;
-        return await axios.get(`${BOOK_BASE_URL}/api/reviews/getBookReviews/${review}`, config);
+        const reviewId =  1;
+        return await axios.get(`${BOOK_BASE_URL}/api/reviews/getBookReviews/${reviewId}`, config);
     } catch (e) {
         return [];
     }
 }
+// new get all review
+export const fetchGetAllReviews = async () => {
+    try {
+        return await axios.get(`${BOOK_BASE_URL}/api/reviews/getAllReviews`,config);
+    } catch (e) {
+        return [];
+    }
+}
+
+///new remove review
+export const fetchRemoveReview = async () => {
+    try {
+        const reviewId = 1;
+        return await axios.post(`${BOOK_BASE_URL}/api/reviews/deleteReview/${reviewId}`,config);
+    } catch (e) {
+        return [];
+    }
+}
+
 
 //============================================================================================
 // messageActions Test Utils
