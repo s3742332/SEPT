@@ -45,7 +45,7 @@ function Register(props) {
     const user = {
       ...newUser,
       userType: isBusiness ? "seller" : "customer",
-      approved: isBusiness ? null : true
+      approved: isBusiness ? false : true
     }
     setNewUser(user)
     console.log("useeffect", isBusiness)
