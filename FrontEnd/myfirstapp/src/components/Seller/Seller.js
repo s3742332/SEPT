@@ -1,15 +1,18 @@
-import { Card, List } from "antd";
+import { Card, List, Input, Button } from "antd";
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { getUserAccountsList } from "../../actions/userActions";
 import { useLocation } from "react-router";
+import { sellerReviewSave } from "../../actions/sellerReviewActions";
 
 export default (props) => {
+    const { TextArea } = Input;
     const dispatch = useDispatch();
     const user = useSelector(state => state.user);
     const location = useLocation()
     const [account, setAccount] = useState({});
     const { seller } = location.state;
+    const [review, setReview] = useState({})
 
     useEffect(() => {
         dispatch(getUserAccountsList())
@@ -24,6 +27,20 @@ export default (props) => {
         }
     }, [user.loading, account])
 
+    const updateReviewText = (event) => {
+        console.log(event.target.value)
+        setReview({
+            username: seller,
+            review: event.target.value
+        })
+    }
+
+    const submitReview = async () => {
+        console.log(review)
+        await sellerReviewSave(review);
+        // window.location.reload(false);
+    }
+
     return (
         !account ? 'LOADING' :
             <div style={{ display: 'flex' }}>
@@ -36,6 +53,10 @@ export default (props) => {
                 </Card>
 
                 <Card style={{ width: '50%', margin: '5%' }}>
+                    <TextArea showCount maxLength={255} placeholder="Submit a Review" onChange={updateReviewText}/>
+                    <br />
+                    <Button type="primary" onClick={submitReview}>Submit</Button>
+                    <br />
                     <List
                         itemLayout="horizontal"
                         // dataSource={}
