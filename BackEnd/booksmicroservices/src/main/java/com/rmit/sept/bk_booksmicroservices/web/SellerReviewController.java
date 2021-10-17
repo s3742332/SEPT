@@ -24,4 +24,12 @@ public class SellerReviewController
         SellerReview review1 = sellerReviewService.saveOrUpdateSellerReview(review);
         return new ResponseEntity<SellerReview>(review1, HttpStatus.CREATED);
     }
+
+    @CrossOrigin(origins = "*")
+    @GetMapping("/getSellerReviews/{username}")
+    public ResponseEntity<?> getSellerReviews(@PathVariable String username)
+    {
+        Iterable<SellerReview> reviews = sellerReviewService.getReviewsByUsername(username);
+        return new ResponseEntity<Iterable<SellerReview>>(reviews, HttpStatus.OK);
+    }
 }
