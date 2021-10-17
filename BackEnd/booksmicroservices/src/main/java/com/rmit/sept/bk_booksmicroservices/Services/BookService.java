@@ -24,7 +24,8 @@ public class BookService {
             book.setStockLevel(book.getStockLevel());
             book.setCategory(book.getCategory());
             book.setUsed(book.isUsed());
-
+            book.setCover(book.getCover());
+            book.setPreview(book.getPreview());
             return bookRepository.save(book);
 
         }catch (Exception e){

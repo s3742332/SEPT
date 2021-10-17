@@ -2,13 +2,14 @@ import axios from "axios";
 import { GET_ERRORS, SAVE_MESSAGE, GET_MESSAGES } from "./types";
 
 export const saveMessage = (message) => async dispatch => {
+    
     try {
         const config = {
             headers: {
                 "Content-Type": "application/json",
             }
         }
-        const res = await axios.post(`http://localhost:8081/api/messages/saveMessage/`, message, config);
+        const res = await axios.post(`${process.env.REACT_APP_BOOK_URL}/api/messages/saveMessage/`, message, config);
         dispatch({
             type: SAVE_MESSAGE,
             payload: res.data
@@ -23,13 +24,14 @@ export const saveMessage = (message) => async dispatch => {
 };
 
 export const getMessages = () => async dispatch => {
+    
     try {
         const config = {
             headers: {
                 "Content-Type": "application/json",
             }
         }
-        const res = await axios.get(`http://localhost:8081/api/messages/getMessages`, config)
+        const res = await axios.get(`${process.env.REACT_APP_BOOK_URL}/api/messages/getMessages`, config)
         dispatch({
             type: GET_MESSAGES,
             payload: res.data
