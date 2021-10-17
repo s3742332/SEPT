@@ -2,7 +2,6 @@ import axios from "axios";
 import { GET_ERRORS, SAVE_SELLER_REVIEW } from "./types";
 
 export const sellerReviewSave = (review) => async dispatch => {
-    console.log("INSIDE ACTIONS")
     try {
         const config = {
             headers: {

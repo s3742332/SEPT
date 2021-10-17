@@ -28,7 +28,6 @@ export default (props) => {
     }, [user.loading, account])
 
     const updateReviewText = (event) => {
-        console.log(event.target.value)
         setReview({
             username: seller,
             review: event.target.value
@@ -36,9 +35,8 @@ export default (props) => {
     }
 
     const submitReview = async () => {
-        console.log(review)
-        await sellerReviewSave(review);
-        // window.location.reload(false);
+        await dispatch(sellerReviewSave(review));
+        window.location.reload(false);
     }
 
     return (
@@ -53,7 +51,7 @@ export default (props) => {
                 </Card>
 
                 <Card style={{ width: '50%', margin: '5%' }}>
-                    <TextArea showCount maxLength={255} placeholder="Submit a Review" onChange={updateReviewText}/>
+                    <TextArea showCount maxLength={255} placeholder="Submit a Review" onChange={updateReviewText} />
                     <br />
                     <Button type="primary" onClick={submitReview}>Submit</Button>
                     <br />
