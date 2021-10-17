@@ -1,6 +1,9 @@
 import React from 'react';
 import { useState } from 'react'
 import { bookEdit } from '../../actions/bookActions';
+import { uploadFile } from 'react-s3';
+import faker from 'faker';
+
 import {
     Form,
     Input,
@@ -20,13 +23,13 @@ import { UploadOutlined, PlusOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux'
 
 function Sell() {
+    
     const dispatch = useDispatch();
     const { Title } = Typography
     const { Option } = Select;
     const { TextArea } = Input;
     const security = useSelector(state => state.security);
     const [newBook, setNewBook] = useState({
-        seller: security.user.fullName,
         bookTitle: null,
         author: null,
         bookDescription: null,
@@ -35,17 +38,42 @@ function Sell() {
         approved: false,
         isbn: null,
         cover: null,
+        preview: null,
         category: null
     });
-    
+    const random = faker.random.alphaNumeric(25)
+    const config = {
+        bucketName: process.env.REACT_APP_S3_BUCKET_NAME,
+        dirName: random,
+        region: process.env.REACT_APP_S3_REGION,
+        accessKeyId: process.env.REACT_APP_S3_ACCESS_KEY_ID,
+        secretAccessKey: process.env.REACT_APP_SECRET_ACCESS_KEY,
+    }
+    const [bookCoverFile, setBookCoverFile] = useState()
+    const [bookPreviewFile, setBookPreviewFile] = useState()
     const children = [<Option value='fantasy'>fantasy</Option>, <Option value='adventure'>adventure</Option>, <Option value='thriller'>thriller</Option>, <Option value='romance'>romance</Option>, <Option value='contemporary'>contemporary</Option>, <Option value='distopian'>distopian</Option>, <Option value='mystery'>mystery</Option>, <Option value='horror'>horror</Option>];
 
     const [form] = Form.useForm();
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
+        
+        let bookData = {...newBook, seller: security.user.fullName};
         e.preventDefault();
+        await uploadFile(bookCoverFile, config)
+            .then(data => {
+                bookData= {...bookData, cover: data.location }
+                console.log("HERE1", {...bookData, cover: data.location })})
+            .catch(err => console.error(err))
+
+        await uploadFile(bookPreviewFile, config)
+            .then(data => {
+                bookData= {...bookData, preview: data.location }
+                console.log("HERE2", {...bookData, preview: data.location })})
+            .catch(err => console.error(err))
         //  console.log(newBook.category)
-        dispatch(bookEdit(newBook));
+        console.log("HERE3", bookData)
+        dispatch(bookEdit(bookData))
+
     }
 
     const handleChanges = (event) => {
@@ -59,9 +87,21 @@ function Sell() {
         console.log('selected: ', event)
         setNewBook({ ...newBook, category: event })
     }
+    const handleFileChanges = ({ file, fileList }) => {
+        setBookCoverFile(file.originFileObj)
 
+        //setNewBook({ ...newBook, bookCover: event })
+    }
+    const handleFileChanges1 = ({ file, fileList }) => {
+        setBookPreviewFile(file.originFileObj)
 
-    
+        //setNewBook({ ...newBook, bookCover: event })
+    }
+    const dummyRequest = ({ file, onSuccess }) => {
+        setTimeout(() => {
+            onSuccess("ok");
+        }, 0);
+    };
     return (
         <Row justify="center" style={{ height: "100%" }}>
             <Col>
@@ -97,10 +137,12 @@ function Sell() {
                         </Select>
                     </Form.Item>
                     <Form.Item label="Book Cover">
-                        <Input name="cover" />
+                        <Upload onChange={handleFileChanges} customRequest={dummyRequest} multiple={false}>
+                            <Button icon={<UploadOutlined />}>Upload</Button>
+                        </Upload>
                     </Form.Item>
                     <Form.Item label="Book PDF (Preview)">
-                        <Upload >
+                        <Upload onChange={handleFileChanges1} customRequest={dummyRequest} multiple={false}>
                             <Button icon={<UploadOutlined />}>Upload</Button>
                         </Upload>
                     </Form.Item>

@@ -2,13 +2,14 @@ import axios from "axios";
 import { GET_ERRORS, UPDATE_REVIEW, GET_REVIEW,  GET_ALL_REVIEWS,REVIEW_LOADING } from "./types";
 
 export const reviewEdit = (data, history, devTool) => async dispatch => {
+    
     try {
         const config = {
             headers: {
                 "Content-Type": "application/json",
             }
         }
-        const res = await axios.post(`http://localhost:8081/api/reviews/saveReview`, data, config );
+        const res = await axios.post(`${process.env.REACT_APP_BOOK_URL}/api/reviews/saveReview`, data, config );
         dispatch({
             type: UPDATE_REVIEW,
             payload: res.data
@@ -26,13 +27,14 @@ export const reviewEdit = (data, history, devTool) => async dispatch => {
 };
 
 export const getReview = (bookid, history, devTool) => async dispatch => {
+    
     try {
         const config = {
             headers: {
                 "Content-Type": "application/json",
             }
         }
-        const res = await axios.get(`http://localhost:8081/api/reviews/getBookReviews/${bookid}`,config)
+        const res = await axios.get(`${process.env.REACT_APP_BOOK_URL}/api/reviews/getBookReviews/${bookid}`,config)
         dispatch({
             type: GET_REVIEW,
             payload: res.data
@@ -47,6 +49,7 @@ export const getReview = (bookid, history, devTool) => async dispatch => {
 
 
 export const getAllReviews = () => async dispatch => {
+    
     try {
         const config = {
             headers: {
@@ -54,7 +57,7 @@ export const getAllReviews = () => async dispatch => {
             }
         }
         dispatch({ type: REVIEW_LOADING })
-        const res = await axios.get(`http://localhost:8081/api/reviews/getAllReviews/`,config)
+        const res = await axios.get(`${process.env.REACT_APP_BOOK_URL}/api/reviews/getAllReviews/`,config)
         dispatch({
             type: GET_ALL_REVIEWS,
             payload: res.data
@@ -68,6 +71,7 @@ export const getAllReviews = () => async dispatch => {
 };
 
 export const removeReview = (id, history, devTool) => async dispatch => {
+    
     try {
         const config = {
             headers: {
@@ -75,7 +79,7 @@ export const removeReview = (id, history, devTool) => async dispatch => {
             }
         }
         
-        const res = await axios.post(`http://localhost:8081/api/reviews/deleteReview/${id}`,config)
+        const res = await axios.post(`${process.env.REACT_APP_BOOK_URL}/api/reviews/deleteReview/${id}`,config)
         dispatch({
             type: GET_ERRORS,
             payload: res.data

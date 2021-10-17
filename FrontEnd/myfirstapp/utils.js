@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export const USER_BASE_URL = "http://localhost:8080"
-export const BOOK_BASE_URL = "http://localhost:8081"
-export const TSCN_BASE_URL = "http://localhost:8081"
-export const CART_BASE_URL = "http://localhost:8081"
+export const USER_BASE_URL = `${process.env.REACT_APP_LOGIN_URL}`
+export const BOOK_BASE_URL = `${process.env.REACT_APP_BOOK_URL}`
+export const TSCN_BASE_URL = `${process.env.REACT_APP_BOOK_URL}`
+export const CART_BASE_URL = `${process.env.REACT_APP_BOOK_URL}`
 
 export const config = {
     headers: {

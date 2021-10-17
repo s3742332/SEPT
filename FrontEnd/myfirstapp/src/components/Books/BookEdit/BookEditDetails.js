@@ -3,11 +3,11 @@ import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { Button, Input, Col, Row } from 'antd';
 import { bookEdit } from '../../../actions/bookActions';
-
+import Preview from '../../Preview'
 function BookEditDetails(props) {
     const [data, setData] = useState([])
-    const {TextArea} = Input;
-    const { id, bookTitle, author, bookDescription, bookCost, stockLevel, approved } = data;
+    const { TextArea } = Input;
+    const { id, bookTitle, author, bookDescription, bookCost, stockLevel, approved, cover, preview } = data;
     const dispatch = useDispatch();
     useEffect(() => {
         console.log(props.data)
@@ -107,6 +107,21 @@ function BookEditDetails(props) {
                             variant="filled"
                             onChange={handleChange}
                         />
+                    </Row>
+                    <Row className={"accountRow"}>
+                        <Col span={12}>
+                            <img src={cover} alt="book cover" style={{
+                                width: '50%',
+                                objectFit: "contain"
+                            }} />
+                        </Col>
+                        <Col span={12}>
+                        
+                            <Preview preview={preview} />
+
+
+                        </Col>
+
                     </Row>
                 </Col>
                 <Row justify={"end"}>
