@@ -37,3 +37,6 @@ export const REVIEW_LOADING = "REVIEW_LOADING";
 // Message
 export const SAVE_MESSAGE = "SAVE_MESSAGE";
 export const GET_MESSAGES = "GET_MESSAGES";
+// Seller Reviews
+export const SAVE_SELLER_REVIEW = "SAVE_SELLER_REVIEW"
+export const SELLER_REVIEWS = "SELLER_REVIEWS"

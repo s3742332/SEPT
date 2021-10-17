@@ -7,6 +7,7 @@ import transactionReducer from "./transactionReducer";
 import cartReducer from "./cartReducer";
 import reviewReducer from "./reviewReducer";
 import messageReducer from "./messageReducer";
+import sellerReviewReducer from "./sellerReviewReducer";
 
 export default combineReducers({
   errors: errorReducer,
@@ -16,6 +17,7 @@ export default combineReducers({
   transaction: transactionReducer,
   cart: cartReducer,
   review: reviewReducer,
-  message: messageReducer
+  message: messageReducer,
+  sellerReview: sellerReviewReducer
 });
 
