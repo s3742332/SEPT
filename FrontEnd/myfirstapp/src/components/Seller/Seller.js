@@ -5,7 +5,7 @@ import { getUserAccountsList } from "../../actions/userActions";
 import { useLocation } from "react-router";
 import { getSellerReviews, sellerReviewSave } from "../../actions/sellerReviewActions";
 
-export default (props) => {
+export default () => {
     const { TextArea } = Input;
     const dispatch = useDispatch();
     const user = useSelector(state => state.user);
@@ -31,15 +31,17 @@ export default (props) => {
     }, [user.loading, account])
 
     useEffect(() => {
-        dispatch(getSellerReviews(seller))
-    }, [dispatch])
+        dispatch(getSellerReviews(account.username))
+    }, [sellerReview.loading, account])
     useEffect(() => {
-        setReviews(sellerReview.reviews)
-    }, [])
+        if (!sellerReview.loading) {
+            setReviews(sellerReview.reviews)
+        }
+    }, [sellerReview.loading, sellerReview.reviews])
 
     const updateReviewText = (event) => {
         setReview({
-            username: seller,
+            username: account.username,
             review: event.target.value
         })
     }
@@ -61,6 +63,7 @@ export default (props) => {
                 </Card>
 
                 <Card style={{ width: '50%', margin: '5%' }}>
+                    <h1>Reviews</h1>
                     <TextArea showCount maxLength={255} placeholder="Submit a Review" onChange={updateReviewText} />
                     <br />
                     <Button type="primary" onClick={submitReview}>Submit</Button>
@@ -71,7 +74,6 @@ export default (props) => {
                         renderItem={item => (
                             <List.Item>
                                 <List.Item.Meta
-                                    title={item.username}
                                     description={item.review}
                                 />
                             </List.Item>

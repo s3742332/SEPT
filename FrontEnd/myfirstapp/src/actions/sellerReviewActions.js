@@ -30,8 +30,8 @@ export const getSellerReviews = (username) => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        dispatch({ type: REVIEW_LOADING })
-        const res = await axios.get(`http://localhost:8081/api/reviews/getAllReviews/${username}`,config)
+        const res = await axios.get(`http://localhost:8081/api/sellerreviews/getSellerReviews/${username}`,config)
+        console.log("123",res.data)
         dispatch({
             type: SELLER_REVIEWS,
             payload: res.data
