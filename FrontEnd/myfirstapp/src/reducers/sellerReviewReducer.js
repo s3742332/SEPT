@@ -1,4 +1,4 @@
-import { SAVE_SELLER_REVIEW } from "../actions/types";
+import { SAVE_SELLER_REVIEW, SELLER_REVIEWS } from "../actions/types";
 
 const initialState = {
   reviews: [],
@@ -9,8 +9,8 @@ export default function (state = initialState, action) {
   switch (action.type) {
     case SAVE_SELLER_REVIEW:
       return { ...state, loading: false }
-    // case GET_REVIEWS:
-    //   return { ...state, review: action.payload, loading: false }
+    case SELLER_REVIEWS:
+      return { ...state, reviews: action.payload, loading: false }
     default:
       return state;
   }

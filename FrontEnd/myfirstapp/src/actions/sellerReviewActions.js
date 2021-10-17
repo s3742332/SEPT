@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ERRORS, SAVE_SELLER_REVIEW } from "./types";
+import { GET_ERRORS, SELLER_REVIEWS, SAVE_SELLER_REVIEW, REVIEW_LOADING } from "./types";
 
 export const sellerReviewSave = (review) => async dispatch => {
     try {
@@ -19,6 +19,27 @@ export const sellerReviewSave = (review) => async dispatch => {
         dispatch({
             type: GET_ERRORS,
             payload: err.response.data
+        });
+    }
+};
+
+export const getSellerReviews = (username) => async dispatch => {
+    try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
+        dispatch({ type: REVIEW_LOADING })
+        const res = await axios.get(`http://localhost:8081/api/reviews/getAllReviews/${username}`,config)
+        dispatch({
+            type: SELLER_REVIEWS,
+            payload: res.data
+        });
+    } catch (err) {
+        dispatch({
+            type: GET_ERRORS,
+            payload: err
         });
     }
 };

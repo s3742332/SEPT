@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { getUserAccountsList } from "../../actions/userActions";
 import { useLocation } from "react-router";
-import { sellerReviewSave } from "../../actions/sellerReviewActions";
+import { getSellerReviews, sellerReviewSave } from "../../actions/sellerReviewActions";
 
 export default (props) => {
     const { TextArea } = Input;
@@ -13,6 +13,9 @@ export default (props) => {
     const [account, setAccount] = useState({});
     const { seller } = location.state;
     const [review, setReview] = useState({})
+    const [reviews, setReviews] = useState([])
+    const sellerReview = useSelector(state => state.sellerReview);
+
 
     useEffect(() => {
         dispatch(getUserAccountsList())
@@ -26,6 +29,13 @@ export default (props) => {
             });
         }
     }, [user.loading, account])
+
+    useEffect(() => {
+        dispatch(getSellerReviews(seller))
+    }, [dispatch])
+    useEffect(() => {
+        setReviews(sellerReview.reviews)
+    }, [])
 
     const updateReviewText = (event) => {
         setReview({
@@ -57,12 +67,12 @@ export default (props) => {
                     <br />
                     <List
                         itemLayout="horizontal"
-                        // dataSource={}
+                        dataSource={reviews}
                         renderItem={item => (
                             <List.Item>
                                 <List.Item.Meta
-                                    title="USER'S NAME"
-                                    description="REVIEW"
+                                    title={item.username}
+                                    description={item.review}
                                 />
                             </List.Item>
                         )}
