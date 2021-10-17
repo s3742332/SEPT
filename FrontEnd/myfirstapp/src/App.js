@@ -44,6 +44,7 @@ import TransactionReport from "./components/Reports/TransactionReport";
 import Message from "./components/Messages/Message";
 import ViewMessages from "./components/Messages/ViewMessages";
 import SecureRoute from "./securityUtils/SecureRoute";
+import Seller from "./components/Seller/Seller";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false)
   const jwtToken = localStorage.getItem("jwtToken");
@@ -128,6 +129,7 @@ function App() {
             <SecureRoute exact path="/payment" component={Payment} />
             <SecureRoute exact path="/inventory" component={Inventory} />
             <Route exact path="/category" component={CategoryResult} />
+            <Route exact path="/seller" component={Seller} />
             <SecureRoute exact path="/profile" component={Profile} />
           </Switch>
         </Content>

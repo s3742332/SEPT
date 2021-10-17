@@ -84,6 +84,12 @@ function BookDetails(props) {
                     <h1>{bookData.bookTitle}</h1>
                     <h4>{bookData.bookDescription}</h4>
                     <br /><br />
+                    <Link to={{
+                        pathname:'/seller',
+                        state: {seller: bookData.seller}
+                    }}>
+                    <p>Sold By: {bookData.seller}</p>
+                    </Link>
                     <h3>Stock Level: {bookData.stockLevel}</h3>
                     <h3>Price: {bookData.bookCost}</h3>
                     <Link
