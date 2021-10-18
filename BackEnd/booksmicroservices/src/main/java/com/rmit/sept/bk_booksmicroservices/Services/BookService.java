@@ -38,8 +38,6 @@ public class BookService {
     {
         try
         {
-            // System.out.println("GET ALL BOOKS");
-            // System.out.println(bookRepository);
             return bookRepository.findAll();
         }
         catch (Exception e)
@@ -54,7 +52,6 @@ public class BookService {
     {
         try
         {
-            System.out.println(bookRepository.findBooksByCategory(category));
             return bookRepository.findBooksByCategory(category);
         }
         catch (Exception e)
@@ -85,8 +82,6 @@ public class BookService {
         }
         catch (Exception e)
         {
-            System.out.println("ERROR IN BOOK RETRIEVAL");
-            System.out.println(e);
             throw new BookNotFoundException("Unable to retrieve book list");
         }
     }
@@ -99,8 +94,6 @@ public class BookService {
         }
         catch (Exception e)
         {
-            System.out.println("ERROR IN BOOK RETRIEVAL");
-            System.out.println(e);
             throw new BookNotFoundException("Unable to retrieve book list");
         }
     }
@@ -113,8 +106,6 @@ public class BookService {
         }
         catch (Exception e)
         {
-            System.out.println("ERROR IN BOOK RETRIEVAL");
-            System.out.println(e);
             throw new BookNotFoundException("Unable to retrieve book list");
         }
     }

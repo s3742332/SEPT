@@ -1,7 +1,6 @@
 package com.rmit.sept.bk_booksmicroservices.model;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity(name = "ShoppingCart")
 public class ShoppingCart {

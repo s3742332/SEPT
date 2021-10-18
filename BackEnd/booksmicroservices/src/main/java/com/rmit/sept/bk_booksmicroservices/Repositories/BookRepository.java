@@ -11,7 +11,6 @@ import java.util.List;
 @Repository
 public interface BookRepository extends CrudRepository<Book, Long> {
 
-    // Book findByAuthorAndTitle(String author, String title);
     Book getById(Long id);
 
     Book findBooksById(Long id);
@@ -24,8 +23,6 @@ public interface BookRepository extends CrudRepository<Book, Long> {
 
     List<Book> findBooksByUsed(boolean used);
 
-    // @Query("SELECT * FROM Book WHERE id IN(:idList)")
     @Query(value = "SELECT * FROM Book b WHERE b.id IN (:idList)", nativeQuery = true)
     Iterable<Book> findBooksByIds(@Param("idList") Long[] idList);
-
 }

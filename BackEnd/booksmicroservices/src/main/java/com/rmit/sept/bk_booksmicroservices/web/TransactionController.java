@@ -78,8 +78,6 @@ public class TransactionController {
     @CrossOrigin(origins = "*")
     @PostMapping("/cancelTransaction")
     public void cancelTransaction(@RequestBody Long id) {
-        System.out.println("I AM IN BACKEND");
-        System.out.println(id);
         transactionService.deleteTransactionById(id);
     }
 

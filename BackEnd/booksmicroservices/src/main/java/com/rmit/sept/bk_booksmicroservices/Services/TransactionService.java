@@ -33,8 +33,6 @@ public class TransactionService {
 
             return transactionRepository.save(transaction);
         } catch (Exception e) {
-            System.out.println("HELLO I AM HERE");
-            System.out.println(e);
             throw new TransactionException("Unable to create transaction");
         }
     }
@@ -63,36 +61,27 @@ public class TransactionService {
             Iterable<Transaction> transactions = transactionRepository.findAll();
             ArrayList<Book> soldBySeller = new ArrayList<>();
 
-            for (Transaction transaction : transactions)
-            {
+            for (Transaction transaction : transactions) {
                 Long[] ids = transaction.getBookIds();
 
                 ArrayList<Book> bookIds = new ArrayList<>();
 
-                for (Long id : ids)
-                {
+                for (Long id : ids) {
                     bookIds.add(bookService.getBookFromId(id));
                 }
 
                 System.out.println(bookIds.size());
 
-//                Iterable<Book> books = bookService.getBookFromIds(ids);
-                for (Book book : bookIds)
-                {
-                    Long bookId = book.getId();
-                    if (book.getSeller().equals(seller))
-                    {
-
-                            soldBySeller.add(book);
-
+                for (Book book : bookIds) {
+                    if (book.getSeller().equals(seller)) {
+                        soldBySeller.add(book);
                     }
                 }
             }
 
             return soldBySeller;
 
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new TransactionException("No transactions for that seller.");
         }
     }
@@ -105,5 +94,5 @@ public class TransactionService {
             throw new TransactionException("Error deleting.");
         }
     }
-  
+
 }
