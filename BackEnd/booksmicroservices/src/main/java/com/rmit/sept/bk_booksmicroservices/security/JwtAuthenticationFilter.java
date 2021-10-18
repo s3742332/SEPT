@@ -1,7 +1,5 @@
 package com.rmit.sept.bk_booksmicroservices.security;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -18,7 +16,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                     FilterChain filterChain) throws ServletException, IOException {
 
         try {
-
+            
         }catch (Exception ex){
             logger.error("Could not set user authentication in security context", ex);
         }
@@ -26,17 +24,5 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         filterChain.doFilter(httpServletRequest, httpServletResponse);
 
-    }
-
-
-
-    private String getJWTFromRequest(HttpServletRequest request){
-        String bearerToken = request.getHeader(SecurityConstant.HEADER_STRING);
-
-        if(StringUtils.hasText(bearerToken)&&bearerToken.startsWith(SecurityConstant.TOKEN_PREFIX)){
-            return bearerToken.substring(7, bearerToken.length());
-        }
-
-        return null;
     }
 }
