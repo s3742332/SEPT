@@ -112,4 +112,21 @@
 
          assertEquals(2, ((List<Book>) bookService.getAllBooksByCondition(true)).size());
      }
+
+     @Test
+     @DisplayName("Should pass if books returned has the correct condition")
+     void getBooksByIdsTest() {
+         when(bookRepository.findBooksByIds(new Long[]{1L, 3L})).thenReturn(Stream
+                 .of(book1, book3).collect(Collectors.toList()));
+
+         assertEquals(2, ((List<Book>) bookService.getBookFromIds(new Long[]{1L, 3L})).size());
+     }
+
+//     @Test
+//     @DisplayName("Should pass if books returned has the correct condition")
+//     void getBookFromIdTest() {
+//         when(bookRepository.findBooksById(1L)).thenReturn(book1);
+//
+//         assertEquals(book1, bookService.getBookFromId(1L));
+//     }
  }

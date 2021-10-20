@@ -293,6 +293,26 @@ export const fetchGetMessages = async () => {
     }
 }
 
+//============================================================================================
+// sellerReviewActions Test Utils
+export const fetchSellerReviewSave = async () => {
+    try {
+        const review = "abcdefg";
+        return await axios.post(`${BOOK_BASE_URL}/api/sellerreviews/saveSellerReview`, review, config)
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchGetSellerReviews = async () => {
+    try {
+        const username = "user@user.com";
+        return await axios.get(`${BOOK_BASE_URL}/api/sellerreviews/getSellerReviews/${username}`,config)
+    } catch (e) {
+        return [];
+    }
+}
+
 
 
 
