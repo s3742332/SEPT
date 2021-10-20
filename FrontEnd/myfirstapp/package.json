@@ -53,7 +53,8 @@
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
-    ]
+    ],
+    "transformIgnorePatterns": ["/node_modules/(?!react-pdf|bootstrap/dist/css/bootstrap.min.css|react-s3)"]
   },
   "devDependencies": {
     "enzyme": "^3.11.0",

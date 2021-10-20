@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react'
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack'
+import { Document, Page, pdfjs } from 'react-pdf'
+
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 function Preview(props) {
+    pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
     const [bookPreview, setBookPreview] = useState()

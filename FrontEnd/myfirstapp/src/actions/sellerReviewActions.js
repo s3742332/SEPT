@@ -8,7 +8,7 @@ export const sellerReviewSave = (review) => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        const res = await axios.post(`http://localhost:8081/api/sellerreviews/saveSellerReview`, review, config );
+        const res = await axios.post(`${process.env.REACT_APP_BOOK_URL}/api/sellerreviews/saveSellerReview`, review, config );
         dispatch({
             type: SAVE_SELLER_REVIEW,
             payload: res.data
@@ -30,7 +30,7 @@ export const getSellerReviews = (username) => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        const res = await axios.get(`http://localhost:8081/api/sellerreviews/getSellerReviews/${username}`,config)
+        const res = await axios.get(`${process.env.REACT_APP_BOOK_URL}/api/sellerreviews/getSellerReviews/${username}`,config)
         console.log("123",res.data)
         dispatch({
             type: SELLER_REVIEWS,
