@@ -42,10 +42,6 @@ public class UserTests {
     public void getConfirmPasswordTest(){
         assertEquals("Paxy" , user.getConfirmPassword());
     }
-//    @Test
-//    public void getCreate_AtTest(){
-//        assertEquals(new Date() , user.getCreate_At());
-//    }
     @Test
     public void getUserTypeTest(){
         assertEquals("Customer" , user.getUserType());
