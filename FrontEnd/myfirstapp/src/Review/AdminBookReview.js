@@ -10,16 +10,14 @@ function AdminBookReview() {
     const review = useSelector(state => state.review)
     useEffect(() => {
         dispatch(getAllReviews())
-
     }, [dispatch])
     useEffect(() => {
         if (!review.loading) {
             setReviewList(review.allReviews)
-            console.log(review.allReviews)
         }
     }, [review.loading])
 
-    const removeBookFromReview = (id)=> {
+    const removeBookFromReview = (id) => {
         dispatch(removeReview(id))
     }
     return (
@@ -32,15 +30,15 @@ function AdminBookReview() {
                         pageSize: 10,
                     }}
                     renderItem={item => (
-                        <List.Item style={{background: "white", padding: "1rem", borderRadius:"1rem", marginBottom:"10px"}}>
+                        <List.Item style={{ background: "white", padding: "1rem", borderRadius: "1rem", marginBottom: "10px" }}>
                             <List.Item.Meta
                                 title={<>
                                     <Space><Button type={"danger"} size={"small"} onClick={() => removeBookFromReview(item.id)}>Remove</Button></Space><br />{item.username}</>}
                                 description={<><Rate disabled defaultValue={item.rating} />
-                                <br/>
-                                {moment(item.createdAt).format("DD-MM-YYYY")}
                                     <br />
-                                    {"Book ID: "+item.bookId}
+                                    {moment(item.createdAt).format("DD-MM-YYYY")}
+                                    <br />
+                                    {"Book ID: " + item.bookId}
                                     <br />
                                     {item.review}</>}
                             />

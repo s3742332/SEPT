@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getUnapprovedList } from '../../../actions/userActions';
 import PendingSellerList from './PendingSellerList';
 import PendingSellerDetails from './PendingSellerDetails'
-import { Input, Typography, Breadcrumb } from 'antd';
+import { Input, Typography } from 'antd';
 function PendingSeller() {
 
     const [selectedUser, setSelectedUser] = useState([])
@@ -12,13 +12,11 @@ function PendingSeller() {
     const user = useSelector(state => state.user);
     const [filteredData, setFilteredData] = useState([]);
     const [search, setSearch] = useState("")
-    const [clear, setClear] = useState("")
     useEffect(() => {
         dispatch(getUnapprovedList())
     }, [dispatch])
     useEffect(() => {
         if(!user.loading) {
-            console.log("LOADING DONE", user.pendingSellers)
             setFilteredData( user.pendingSellers)
         }
     }, [user.loading])
@@ -34,13 +32,6 @@ function PendingSeller() {
         }
     }, [user.editLoading])
     const { Title } = Typography;
-    useEffect(() => {
-        search.length != 0 ? setClear("visible") : setClear("hidden")
-    }, [search])
-    const handleClear = () => {
-        setSearch("")
-        setFilteredData(user.pendingSellers)
-    }
 
     return (
         <Row>

@@ -1,8 +1,7 @@
 import React from 'react'
-import { List, Avatar } from 'antd'
+import { List } from 'antd'
 import { ShopFilled, UserOutlined } from '@ant-design/icons'
 function AccountEditList(props) {
-    const { loading } = props.list
     return (
         <List
             itemLayout="horizontal"

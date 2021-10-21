@@ -26,7 +26,7 @@ export const cartEdit = (cart, history, devTool) => async dispatch => {
     }
 };
 
-export const getUserCart = (username, history, devTool) => async dispatch => {
+export const getUserCart = (username) => async dispatch => {
     
     try {
         const config = {

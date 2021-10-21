@@ -10,7 +10,6 @@ export const userEdit = (user) => async dispatch => {
             }
         }
         dispatch({type: USER_EDIT_LOADING})
-        // let params = { id: user.id, approved: user.approved };
         const res = await axios.post(`${process.env.REACT_APP_LOGIN_URL}/api/users/updateApproved/`, user, config );
         dispatch({
             type: USER_EDIT,

@@ -1,6 +1,4 @@
-//import './styles.css';
 import React from 'react';
-import img from "./BookImages/DefaultCover.png";
 import { Card } from 'antd';
 
 

@@ -1,7 +1,6 @@
-import { ShoppingCartOutlined } from '@ant-design/icons';
-import { Menu, Dropdown, message, Row, Typography, Divider, Layout } from 'antd';
+import { Menu, Row, Layout } from 'antd';
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { withRouter, useHistory, useLocation } from 'react-router-dom'
 
 
@@ -15,11 +14,7 @@ function NavBar(props) {
     const onCollapse = () => {
         setCollapsed(!collapsed)
     }
-    const { Header, Content, Footer, Sider } = Layout;
-    const { Text } = Typography;
-
-
-
+    const { Sider } = Layout;
 
     if (["seller", "customer", undefined].includes(props.user.userType)) {
         return (

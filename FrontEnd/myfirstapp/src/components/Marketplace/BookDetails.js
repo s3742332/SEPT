@@ -31,10 +31,8 @@ function BookDetails(props) {
     }, [user])
     useEffect(() => {
         setBookData(props?.location?.state?.book)
-        console.log("BOOK SELECTED", props?.location?.state?.book)
     }, [props?.location?.state?.book])
     useEffect(() => {
-        console.log("CART DETECTED", cart.cart.cartContents)
     }, [cart])
     const addToCart = () => {
         setCartStatus("Added!")
@@ -46,16 +44,13 @@ function BookDetails(props) {
         const cartData = cart.cart.cartContents;
 
         if (cartData) {
-
             cartData.push(props.location.state.book.id)
-            console.log("CART DETECTED", cartData)
         }
         const data = {
             id: cart.cart.id,
             userName: user.user.username,
             cartContents: cartData ? cartData : [props.location.state.book.id]
         }
-        //console.log("cart", cart.cart.cartContent)
         dispatch(cartEdit(data, history, false))
     }
 
@@ -81,9 +76,8 @@ function BookDetails(props) {
                 {!shared ? '' :
                     <Alert message="Book Exported" type="success" />
                 }
-                <div style={{ display: 'flex', padding: "1%", position: 'relative', left: '50%', transform: 'translate(-40%)' }}>
-                    <div style={{ display: 'flex', alignItems: "center", flexDirection: "column", marginRight: 300 }}>
-                        <h2>Cover</h2>
+                <div style={{ display: 'flex', padding: "1%", position: 'relative', left: '50%', transform: 'translate(-50%)' }}>
+                    <div style={{ marginRight: 100 }}>
                         <img src={bookData.cover} alt="book cover" style={{
                             height: '80vh',
                             objectFit: "contain",
@@ -91,7 +85,6 @@ function BookDetails(props) {
                     </div>
 
                     <div>
-                        <h2>Details</h2>
                         <h1>{bookData.bookTitle}</h1>
                         <h4>{bookData.bookDescription}</h4>
                         <br /><br />
@@ -108,11 +101,13 @@ function BookDetails(props) {
                             to={{
                                 pathname: "/shoppingcart",
                                 state: { book: bookData }
-                            }}><Button type="primary" shape="round" style={{ marginRight: 10 }}>Buy Now</Button></Link>
+                            }}><Button type="primary" shape="round" style={{ marginRight: 10 }}>Buy Now</Button>
+                        </Link>
 
                         <Button type="primary" style={{ marginRight: 10 }} disabled={cartDisable} shape="round" onClick={addToCart}>{cartStatus}</Button>
                         <Button type="primary" shape="round" onClick={share} style={{ marginRight: 10 }}>Share</Button>
                         <Button type="primary" shape="round" onClick={handleModal}>Preview</Button>
+                        <br /><br />
                         <BookReview bookID={bookData.id} />
                     </div>
 
@@ -121,7 +116,6 @@ function BookDetails(props) {
                             <Preview preview={bookData.preview} />
                         </div>
                     </Modal>
-
                 </div>
             </Card> : <Redirect to="/" />)
 
