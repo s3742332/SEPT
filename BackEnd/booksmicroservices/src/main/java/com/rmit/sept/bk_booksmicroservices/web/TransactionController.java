@@ -4,6 +4,8 @@ import com.rmit.sept.bk_booksmicroservices.Services.BookService;
 import com.rmit.sept.bk_booksmicroservices.Services.TransactionService;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
 import com.rmit.sept.bk_booksmicroservices.model.Transaction;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,9 @@ import java.util.ArrayList;
 @RestController
 @RequestMapping("/api/transactions")
 public class TransactionController {
+
+    private static final Logger logger = LogManager.getLogger(TransactionController.class);
+
 
     @Autowired
     private BookService bookService;
@@ -26,6 +31,8 @@ public class TransactionController {
     @PostMapping("/saveTransaction")
     public ResponseEntity<Transaction> createNewTransaction(@RequestBody Transaction transaction) {
         Transaction transaction1 = transactionService.saveTransaction(transaction);
+        logger.log(org.apache.logging.log4j.Level.INFO, "Saving transaction");
+
         return new ResponseEntity<Transaction>(transaction1, HttpStatus.CREATED);
     }
 
@@ -33,6 +40,7 @@ public class TransactionController {
     @GetMapping("/getAllTransactions")
     public ResponseEntity<?> getAllTransactions() {
         Iterable<Transaction> transactionList = transactionService.getAllTransactions();
+        logger.log(org.apache.logging.log4j.Level.INFO, "Retrieving transaction");
 
         return new ResponseEntity<Iterable<Transaction>>(transactionList, HttpStatus.OK);
     }
@@ -47,6 +55,7 @@ public class TransactionController {
                 userTransactions.add(transaction);
             }
         }
+        logger.log(org.apache.logging.log4j.Level.INFO, "Retrieving all user transactions");
 
         return new ResponseEntity<Iterable<Transaction>>(userTransactions, HttpStatus.OK);
     }
@@ -71,6 +80,7 @@ public class TransactionController {
     @GetMapping("/getSellerTransactions/{seller}")
     public ResponseEntity<?> getSellerTransactions(@PathVariable String seller) {
         ArrayList<Book> sellerBookTransactions = transactionService.getTransactionByBookSeller(seller);
+        logger.log(org.apache.logging.log4j.Level.INFO, "Retrieving seller transactions");
 
         return new ResponseEntity<Iterable<Book>>(sellerBookTransactions, HttpStatus.OK);
     }
