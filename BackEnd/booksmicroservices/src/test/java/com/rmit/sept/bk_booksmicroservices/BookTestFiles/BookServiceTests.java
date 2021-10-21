@@ -13,8 +13,6 @@
  import org.mockito.junit.jupiter.MockitoExtension;
  import org.mockito.junit.jupiter.MockitoSettings;
  import org.mockito.quality.Strictness;
- import org.springframework.beans.factory.annotation.Autowired;
- import org.springframework.boot.test.mock.mockito.MockBean;
 
  import java.util.List;
  import java.util.stream.Collectors;
@@ -23,10 +21,6 @@
  import static org.junit.jupiter.api.Assertions.assertEquals;
  import static org.mockito.Mockito.*;
 
- //import static org.junit.Assert.assertEquals;
-
- // @ExtendWith(SpringExtension.class)
- // @SpringBootTest
  @ExtendWith(MockitoExtension.class)
  @MockitoSettings(strictness = Strictness.LENIENT)
  public class BookServiceTests {
@@ -112,4 +106,14 @@
 
          assertEquals(2, ((List<Book>) bookService.getAllBooksByCondition(true)).size());
      }
+
+     @Test
+     @DisplayName("Should pass if books returned has the correct condition")
+     void getBooksByIdsTest() {
+         when(bookRepository.findBooksByIds(new Long[]{1L, 3L})).thenReturn(Stream
+                 .of(book1, book3).collect(Collectors.toList()));
+
+         assertEquals(2, ((List<Book>) bookService.getBookFromIds(new Long[]{1L, 3L})).size());
+     }
+
  }
