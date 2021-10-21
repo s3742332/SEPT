@@ -2,7 +2,6 @@ package com.rmit.sept.bk_booksmicroservices.web;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 import com.rmit.sept.bk_booksmicroservices.Services.BookService;
@@ -71,38 +70,4 @@ public class ShoppingCartController {
         return new ResponseEntity<ShoppingCart>(cart, HttpStatus.OK);
 
     }
-    // @CrossOrigin(origins = "*")
-    // @PostMapping("/addToCart")
-    // public ResponseEntity<ShoppingCart> addToCart(@RequestBody String name, Long
-    // id) {
-    // Iterable<ShoppingCart> carts = shoppingCartService.getAllShoppingCarts();
-
-    // for (ShoppingCart shoppingCart : carts) {
-    // if (shoppingCart.getUserName().equals(name)) {
-    // Long[] newContent = Arrays.copyOf(shoppingCart.getCartContents(),
-    // shoppingCart.getCartContents().length + 1);
-    // newContent[newContent.length - 1 ] = id;
-    // shoppingCart.setCartContents(newContent);
-    // return new ResponseEntity<ShoppingCart>(shoppingCart, HttpStatus.CREATED);
-    // }
-    // }
-    // return null;
-    // }
-
-    // @CrossOrigin(origins = "*")
-    // @PostMapping("/removeFromCart")
-    // public ResponseEntity<ShoppingCart> removeFromCart(@RequestBody String name,
-    // Long id) {
-    // Iterable<ShoppingCart> carts = shoppingCartService.getAllShoppingCarts();
-
-    // for (ShoppingCart shoppingCart : carts) {
-    // if (shoppingCart.getUserName().equals(name)) {
-    // Long[] newContent = Arrays.copyOf(shoppingCart.getCartContents(),
-    // shoppingCart.getCartContents().length - 1);
-    // shoppingCart.setCartContents(newContent);
-    // return new ResponseEntity<ShoppingCart>(shoppingCart, HttpStatus.CREATED);
-    // }
-    // }
-    // return null;
-    // }
 }

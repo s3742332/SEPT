@@ -1,8 +1,6 @@
 package com.rmit.sept.bk_loginservices.services;
 
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import com.rmit.sept.bk_loginservices.Repositories.UserRepository;
 import com.rmit.sept.bk_loginservices.exceptions.UsernameAlreadyExistsException;
@@ -61,20 +59,13 @@ public class UserService {
     public Iterable<User> getAllApprovedUsers() {
         try {
             Iterable<User> allUsers = userRepository.findAll();
-            System.out.println("1");
             ArrayList<User> filteredUsers = new ArrayList<User>();
-            System.out.println("2");
             for (User user : allUsers) {
-                System.out.println("3");
                 if (user.getApproved()) {
-                    System.out.println("4");
                     filteredUsers.add(user);
-                    System.out.println("5");
                 }
-                System.out.println("6");
             }
             allUsers = filteredUsers;
-            System.out.println("7");
             return allUsers;
 
         } catch (Exception e) {
