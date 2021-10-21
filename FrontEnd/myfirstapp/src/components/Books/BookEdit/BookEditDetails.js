@@ -1,10 +1,11 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { Button, Input, Col, Row } from 'antd';
+import { Button, Input, Col, Row, Collapse } from 'antd';
 import { bookEdit } from '../../../actions/bookActions';
 import Preview from '../../Preview'
 function BookEditDetails(props) {
+    const { Panel } = Collapse;
     const [data, setData] = useState([])
     const { TextArea } = Input;
     const { id, bookTitle, author, bookDescription, bookCost, stockLevel, approved, cover, preview } = data;
@@ -108,21 +109,28 @@ function BookEditDetails(props) {
                             onChange={handleChange}
                         />
                     </Row>
-                    <Row className={"accountRow"}>
-                        <Col span={12}>
-                            <img src={cover} alt="book cover" style={{
-                                width: '50%',
-                                objectFit: "contain"
-                            }} />
-                        </Col>
-                        <Col span={12}>
-                        
-                            <Preview preview={preview} />
 
+                    <Collapse>
+                        <Panel header="Cover" key="1">
+                            <Row className={"accountRow"}>
+                                <Col span={12}>
+                                    <img src={cover} alt="book cover" style={{
+                                        width: '50%',
+                                        objectFit: "contain"
+                                    }} />
+                                </Col>
+                            </Row>
+                        </Panel>
+                        <Panel header="Preview" key="2">
+                            <Row className={"accountRow"}>
+                                <Col span={12} style={{display: 'flex'}}>
+                                    <div>{bookTitle}</div>
+                                    <Preview preview={preview} />
+                                </Col>
+                            </Row>
+                        </Panel>
+                    </Collapse>
 
-                        </Col>
-
-                    </Row>
                 </Col>
                 <Row justify={"end"}>
                     <Button style={{ marginRight: "1rem" }} size="large" type="danger" onClick={handleBlock}>Delete</Button>
