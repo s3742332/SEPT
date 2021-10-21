@@ -2,7 +2,6 @@ package com.rmit.sept.bk_booksmicroservices.ReviewTestFiles;
 
 import com.rmit.sept.bk_booksmicroservices.model.Review;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -44,18 +43,6 @@ public class ReviewTests {
     void testGetBookId() {
         assertEquals(1, review.getBookId());
     }
-
-//    @Test
-//    @DisplayName("Should return correct created at date/time")
-//    void testGetCreatedAt() {
-//        assertEquals(LocalDateTime.now(), review.getCreatedAt());
-//    }
-//
-//    @Test
-//    @DisplayName("Should return correct updated at date/time")
-//    void testGetUpdatedAt() {
-//        assertEquals(LocalDateTime.now(), review.getUpdatedAt());
-//    }
 
     @Test
     @DisplayName("Should return correct rating provided")

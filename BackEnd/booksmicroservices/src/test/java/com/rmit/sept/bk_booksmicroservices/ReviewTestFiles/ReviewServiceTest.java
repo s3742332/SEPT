@@ -1,13 +1,10 @@
 package com.rmit.sept.bk_booksmicroservices.ReviewTestFiles;
 
-import com.rmit.sept.bk_booksmicroservices.Repositories.BookRepository;
 import com.rmit.sept.bk_booksmicroservices.Repositories.ReviewRepository;
 import com.rmit.sept.bk_booksmicroservices.Services.BookService;
 import com.rmit.sept.bk_booksmicroservices.Services.ReviewService;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
 import com.rmit.sept.bk_booksmicroservices.model.Review;
-import com.rmit.sept.bk_booksmicroservices.model.Transaction;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -100,12 +97,4 @@ public class ReviewServiceTest {
 
         Mockito.verify(reviewRepository).deleteById(1L);
     }
-
-//    @Test
-//    void getReviewsByBookTest() {
-//        Mockito.when(reviewRepository.findReviewsByBookId(1)).thenReturn(review);
-//
-//        assertEquals(review, reviewService.getReviewsByBook(1));
-//
-//    }
 }

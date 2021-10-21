@@ -5,7 +5,6 @@ import com.rmit.sept.bk_booksmicroservices.Services.BookService;
 import com.rmit.sept.bk_booksmicroservices.Services.ShoppingCartService;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
 import com.rmit.sept.bk_booksmicroservices.model.ShoppingCart;
-import com.rmit.sept.bk_booksmicroservices.model.Transaction;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -1,5 +1,5 @@
 import axios from "axios"
-import { TSCN_BASE_URL, config, fetchTransactionEdit, fetchUserTransaction, fetchAllTransactions, fetchSellerTransaction, fetchUserOwnedBooks, fetchCancelOrder } from "../../../utils"
+import { BOOK_BASE_URL, config, fetchTransactionEdit, fetchUserTransaction, fetchAllTransactions, fetchSellerTransaction, fetchUserOwnedBooks, fetchCancelOrder } from "../../../utils"
 
 jest.mock("axios");
 
@@ -11,7 +11,7 @@ describe("fetchTransactionEdit", () => {
             
             const result = await fetchTransactionEdit();
 
-            expect(axios.post).toHaveBeenCalledWith('${TSCN_BASE_URL}/api/transactions/saveTransaction', transaction, config);
+            expect(axios.post).toHaveBeenCalledWith('${BOOK_BASE_URL}/api/transactions/saveTransaction', transaction, config);
             expect(result).toEqual(transaction);
         });
     });
@@ -25,7 +25,7 @@ describe("fetchTransactionEdit", () => {
 
             const result = await fetchTransactionEdit();
 
-            expect(axios.post).toHaveBeenCalledWith('${TSCN_BASE_URL}/api/transactions/saveTransaction', transaction, config);
+            expect(axios.post).toHaveBeenCalledWith('${BOOK_BASE_URL}/api/transactions/saveTransaction', transaction, config);
             expect(result).toEqual([]);
         });
     });
@@ -39,7 +39,7 @@ describe("fetchUserTransaction", () => {
 
             const result = await fetchUserTransaction();
 
-            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getAllUserTransactions/${username}`,config);
+            expect(axios.get).toHaveBeenCalledWith(`${BOOK_BASE_URL}/api/transactions/getAllUserTransactions/${username}`,config);
             expect(result).toEqual(username);
         });
     });
@@ -52,7 +52,7 @@ describe("fetchUserTransaction", () => {
 
             const result = await fetchUserTransaction();
 
-            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getAllUserTransactions/${username}`,config);
+            expect(axios.get).toHaveBeenCalledWith(`${BOOK_BASE_URL}/api/transactions/getAllUserTransactions/${username}`,config);
             expect(result).toEqual([]);
         });
     });
@@ -65,7 +65,7 @@ describe("fetchAllTransactions", () => {
 
             const result = await fetchAllTransactions();
 
-            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getAllTransactions/`,config);
+            expect(axios.get).toHaveBeenCalledWith(`${BOOK_BASE_URL}/api/transactions/getAllTransactions/`,config);
         });
     });
 
@@ -76,7 +76,7 @@ describe("fetchAllTransactions", () => {
 
             const result = await fetchAllTransactions();
 
-            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getAllTransactions/`,config);
+            expect(axios.get).toHaveBeenCalledWith(`${BOOK_BASE_URL}/api/transactions/getAllTransactions/`,config);
         });
     });
 });
@@ -89,7 +89,7 @@ describe("fetchSellerTransaction", () => {
 
             const result = await fetchSellerTransaction();
 
-            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getSellerTransactions/${username}`,config);
+            expect(axios.get).toHaveBeenCalledWith(`${BOOK_BASE_URL}/api/transactions/getSellerTransactions/${username}`,config);
             expect(result).toEqual(username);
         });
     });
@@ -102,7 +102,7 @@ describe("fetchSellerTransaction", () => {
 
             const result = await fetchSellerTransaction();
 
-            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getSellerTransactions/${username}`,config);
+            expect(axios.get).toHaveBeenCalledWith(`${BOOK_BASE_URL}/api/transactions/getSellerTransactions/${username}`,config);
             expect(result).toEqual([]);
         });
     });
@@ -116,7 +116,7 @@ describe("fetchUserOwnedBooks", () => {
 
             const result = await fetchUserOwnedBooks();
 
-            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getUserOwnedBooks/${username}`,config);
+            expect(axios.get).toHaveBeenCalledWith(`${BOOK_BASE_URL}/api/transactions/getUserOwnedBooks/${username}`,config);
             expect(result).toEqual(username);
         });
     });
@@ -129,7 +129,7 @@ describe("fetchUserOwnedBooks", () => {
 
             const result = await fetchUserOwnedBooks();
 
-            expect(axios.get).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/getUserOwnedBooks/${username}`,config);
+            expect(axios.get).toHaveBeenCalledWith(`${BOOK_BASE_URL}/api/transactions/getUserOwnedBooks/${username}`,config);
             expect(result).toEqual([]);
         });
     });
@@ -143,7 +143,7 @@ describe("fetchCancelorder", () => {
 
             const result = await fetchCancelOrder();
 
-            expect(axios.post).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/cancelTransaction`,id,config);
+            expect(axios.post).toHaveBeenCalledWith(`${BOOK_BASE_URL}/api/transactions/cancelTransaction`,id,config);
             expect(result).toEqual(id);
         });
     });
@@ -156,7 +156,7 @@ describe("fetchCancelorder", () => {
 
             const result = await fetchCancelOrder();
 
-            expect(axios.post).toHaveBeenCalledWith(`${TSCN_BASE_URL}/api/transactions/cancelTransaction`,id,config);
+            expect(axios.post).toHaveBeenCalledWith(`${BOOK_BASE_URL}/api/transactions/cancelTransaction`,id,config);
             expect(result).toEqual([]);
         });
     });

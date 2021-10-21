@@ -2,11 +2,8 @@ package com.rmit.sept.bk_booksmicroservices.MessageTestFiles;
 
 import com.rmit.sept.bk_booksmicroservices.Repositories.MessageRepository;
 import com.rmit.sept.bk_booksmicroservices.Services.MessageService;
-import com.rmit.sept.bk_booksmicroservices.model.Book;
 import com.rmit.sept.bk_booksmicroservices.model.Message;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
