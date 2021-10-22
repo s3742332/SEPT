@@ -32,7 +32,6 @@ public class CustomUserDetailsService implements UserDetailsService {
         return user;
     }
 
-
     @Transactional
     public User loadUserById(Long id){
         User user = userRepository.getById(id);
@@ -44,12 +43,4 @@ public class CustomUserDetailsService implements UserDetailsService {
         }
         return user;
     }
-
-    // @Transactional
-    // public User loadUserByName(String fullName){
-    //     User user = userRepository.getByName(fullName);
-    //     if(user==null) new UsernameNotFoundException("User not found");
-    //     System.out.print(user);
-    //     return user;
-    // }
 }

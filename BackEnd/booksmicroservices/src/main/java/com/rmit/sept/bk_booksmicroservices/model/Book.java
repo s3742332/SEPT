@@ -127,6 +127,7 @@ public class Book{
     public String getPreview() {
         return preview;
     }
+    
     public Boolean getApproved() {
         return approved;
     }

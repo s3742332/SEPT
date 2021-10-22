@@ -94,8 +94,6 @@ public class BookController {
     @CrossOrigin(origins = "*")
     @GetMapping("/getBooksInCategory/{category}")
     public ResponseEntity<?> getBooksInCategory(@PathVariable String category) {
-        // System.out.println(category);
-        // Iterable<Book> bookList = bookService.getAllBooksByCategory(category);
 
         Iterable<Book> bookList = bookService.getAllBooks();
         ArrayList<Book> approvedBooks = new ArrayList<Book>();
@@ -107,7 +105,6 @@ public class BookController {
         }
 
         return new ResponseEntity<Iterable<Book>>(approvedBooks, HttpStatus.OK);
-        // return "helo";
     }
 
     @CrossOrigin(origins = "*")

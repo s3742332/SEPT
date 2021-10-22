@@ -2,7 +2,6 @@ package com.rmit.sept.bk_booksmicroservices.MessageTestFiles;
 
 import com.rmit.sept.bk_booksmicroservices.model.Message;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
