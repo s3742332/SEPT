@@ -111,7 +111,6 @@ export const getSearchedBook = (query) => async dispatch => {
             cancelToken: cancelToken.token
         }
         const res = await axios.get(`${process.env.REACT_APP_BOOK_URL}/api/books/getSearchedBooks/${query}`, config)
-        // console.log(res.data)
         dispatch({
             type: GET_SEARCHED_BOOKS,
             payload: res.data

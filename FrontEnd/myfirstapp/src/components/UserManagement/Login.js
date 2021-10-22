@@ -14,10 +14,8 @@ function Login(props) {
     dispatch(login(user, props.history));
   }
   const onChange = (e) => {
-    console.log("THIS IS THE PLACE")
     setErrorMessage({});
     setUser({ ...user, [e.target.name]: e.target.value })
-    console.log(user)
   }
   
   useEffect(() => {

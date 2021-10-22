@@ -15,10 +15,10 @@ function SellerTransactions() {
         dispatch(getUser())
     }, [dispatch])
     useEffect(() => {
-        if(user.user.username){
-        dispatch(getSellerTransaction(user.user.username))
-    }
-}, [user.user.username])
+        if (user.user.username) {
+            dispatch(getSellerTransaction(user.user.username))
+        }
+    }, [user.user.username])
 
     useEffect(() => {
         if (transactions.sellerTransaction) {
@@ -36,9 +36,6 @@ function SellerTransactions() {
         }
     }, [transactions.sellerTransaction])
 
-useEffect(() => {
-    console.log("T",transaction)
-}, [transaction])
     const { Title } = Typography;
     return (
         <Row justify="center" style={{ height: "calc(100vh - 134px)" }}>
@@ -60,7 +57,6 @@ useEffect(() => {
                             style={{ height: "250px" }}
                             key={transactionData[0].id}
                             extra={
-                                //top is book cover, bottom is default image       
                                 <img src={
                                     transactionData[0].cover} alt={transactionData[0].cover} style={{
                                         height: "inherit",
@@ -68,10 +64,10 @@ useEffect(() => {
                                     }} />
                             }
                             actions={[
-                
-                                        <Space>{"Quuantity Sold: " + transactionData.length}</Space>,
-                
-                                    ]}
+
+                                <Space>{"Quuantity Sold: " + transactionData.length}</Space>,
+
+                            ]}
                         >
                             <List.Item.Meta
 

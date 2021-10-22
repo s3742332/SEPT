@@ -12,7 +12,6 @@ function BookEdit() {
     const book = useSelector(state => state.book);
     const [filteredData, setFilteredData] = useState([]);
     const [search, setSearch] = useState("")
-    const [clear, setClear] = useState("")
     useEffect(() => {
         dispatch(getBookList())
     }, [dispatch])
@@ -24,14 +23,6 @@ function BookEdit() {
     const handleSearch = (event) => {
         setSearch(event.target.value)
         setFilteredData(book.bookList.filter(data => data.title.toLowerCase().includes(event.target.value.toLowerCase())))
-    }
-
-    useEffect(() => {
-        search.length != 0 ? setClear("visible") : setClear("hidden")
-    }, [search])
-    const handleClear = () => {
-        setSearch("")
-        setFilteredData(book.bookList)
     }
     const handleFetch = () => {
         dispatch(getBookList())
