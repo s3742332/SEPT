@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
-import { Button, Input, Col, Row, Select  } from 'antd';
-import { userEdit } from '../../../actions/userActions';
+import { Button, Input, Col, Row, Select } from 'antd';
+import { blockUser, userEdit } from '../../../actions/userActions';
 
 function AccountEditDetails(props) {
     const [data, setData] = useState([])
@@ -20,8 +20,10 @@ function AccountEditDetails(props) {
     }
     const handleBlock = (e) => {
         e.preventDefault();
-        dispatch(userEdit(data));
+        console.log(id)
+        dispatch(blockUser(id));
     }
+
     const handleEdit = (e) => {
         e.preventDefault();
         dispatch(userEdit(data));
@@ -130,7 +132,8 @@ function AccountEditDetails(props) {
                     </Row>
                 </Col>
                 <Row justify={"end"}>
-                    <Button style={{ marginRight: "1rem" }} size="large" type="danger" onClick={handleBlock}>Delete</Button>
+                    <Button style={{ marginRight: "1rem" }} size="large" type="danger" onClick={handleBlock}>Block</Button>
+                   
                     <Button size="large" type="primary" onClick={handleEdit}>Edit</Button>
                 </Row>
             </Col>

@@ -13,8 +13,6 @@
  import org.mockito.junit.jupiter.MockitoExtension;
  import org.mockito.junit.jupiter.MockitoSettings;
  import org.mockito.quality.Strictness;
- import org.springframework.beans.factory.annotation.Autowired;
- import org.springframework.boot.test.mock.mockito.MockBean;
 
  import java.util.List;
  import java.util.stream.Collectors;
@@ -23,15 +21,11 @@
  import static org.junit.jupiter.api.Assertions.assertEquals;
  import static org.mockito.Mockito.*;
 
- //import static org.junit.Assert.assertEquals;
-
- // @ExtendWith(SpringExtension.class)
- // @SpringBootTest
  @ExtendWith(MockitoExtension.class)
  @MockitoSettings(strictness = Strictness.LENIENT)
  public class BookServiceTests {
 
-     private static Book book1, book2;
+     private static Book book1, book2, book3;
 
      @InjectMocks
      private BookService bookService;
@@ -50,6 +44,7 @@
          book1.setStockLevel(1);
          book1.setCategory(new String[]{"Dystopian", "Adventure"});
          book1.setId(1L);
+         book1.setUsed(true);
 
          book2 = new Book();
          book2.setBookTitle("Handmaids Tale");
@@ -59,6 +54,19 @@
          book2.setSeller("Company 2");
          book2.setStockLevel(1);
          book2.setCategory(new String[]{"Dystopian", "Drama"});
+         book2.setId(2L);
+         book2.setUsed(false);
+
+         book3 = new Book();
+         book3.setBookTitle("Macbeth");
+         book3.setAuthor("William Shakespeare");
+         book3.setBookCost(14.99);
+         book3.setBookDescription("How do you read Shakespearean language?");
+         book3.setSeller("Company 1");
+         book3.setStockLevel(1);
+         book3.setCategory(new String[]{"Adventure"});
+         book3.setId(3L);
+         book3.setUsed(true);
      }
 
      // Commented out tests stopped working ->
@@ -89,4 +97,23 @@
 
          assertEquals(2, ((List<Book>) bookService.getAllBooksByCategory("Dystopian")).size());
      }
+
+     @Test
+     @DisplayName("Should pass if books returned has the correct condition")
+     void getAllBooksByConditionTest() {
+         when(bookRepository.findBooksByUsed(true)).thenReturn(Stream
+                 .of(book1, book3).collect(Collectors.toList()));
+
+         assertEquals(2, ((List<Book>) bookService.getAllBooksByCondition(true)).size());
+     }
+
+     @Test
+     @DisplayName("Should pass if books returned has the correct condition")
+     void getBooksByIdsTest() {
+         when(bookRepository.findBooksByIds(new Long[]{1L, 3L})).thenReturn(Stream
+                 .of(book1, book3).collect(Collectors.toList()));
+
+         assertEquals(2, ((List<Book>) bookService.getBookFromIds(new Long[]{1L, 3L})).size());
+     }
+
  }

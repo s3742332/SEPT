@@ -1,8 +1,10 @@
 import { DollarCircleOutlined, ShopOutlined, ShoppingCartOutlined, SwapOutlined } from '@ant-design/icons';
 import { Button, Col, Row, Typography, Card } from 'antd'
 import React from 'react'
+import { useHistory } from 'react-router';
 
 function Home() {
+    const history = useHistory();
     const { Title } = Typography;
     const { Meta } = Card;
     return (
@@ -15,7 +17,7 @@ function Home() {
                 <Col>
                     <Title style={{ color: "white" }}>Welcome to Bookeroo!</Title>
                     <Title style={{ color: "white" }} variant="h3">Buy, Sell and Trade all your favourite books!</Title>
-                    <Button size="large" icon={<ShopOutlined />} type="primary">Explore the catalogue</Button>
+                    <Button size="large" onClick={()=> history.push('/browse')} icon={<ShopOutlined />} type="primary">Explore the catalogue</Button>
                 </Col>
             </Row>
             <Row style={{ height: "calc(100vh - 64px)", display: "flex" }} justify="center" align="middle">

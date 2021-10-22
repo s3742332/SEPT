@@ -52,18 +52,6 @@ public class CustomBookServiceDetails {
         return books;
     }
 
-//    public Book loadBooksByAuthorAndTitle(String author, String title)
-//    {
-//        Book book = bookRepository.findByAuthorAndTitle(author, title);
-//
-//        if(book == null)
-//        {
-//            new BookNotFoundException("No books found");
-//        }
-//
-//        return book;
-//    }
-
     @Transactional
     public Book loadBookById(Long id){
         Book book = bookRepository.getById(id);

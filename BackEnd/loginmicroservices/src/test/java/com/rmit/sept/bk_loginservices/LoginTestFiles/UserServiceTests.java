@@ -22,13 +22,16 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
-
 public class UserServiceTests {
+
     User user;
+
     @InjectMocks
     private UserService userService;
+
     @Mock
     private UserRepository userRepository;
+
     @BeforeEach
     void setup() {
         User user = new User();

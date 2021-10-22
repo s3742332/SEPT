@@ -6,14 +6,14 @@ import jwt_decode from "jwt-decode";
 
 export const createNewUser = (newUser, history, devTool) => async dispatch => {
 
-
+    
     try {
         const config = {
             headers: {
                 "Content-Type": "application/json",
             }
         }
-        const res = await axios.post("http://localhost:8080/api/users/register", newUser, config)
+        const res = await axios.post(`${process.env.REACT_APP_LOGIN_URL}/api/users/register`, newUser, config)
         if (res.status === 201 && !devTool) {
             history.push('/login')
         }
@@ -31,6 +31,7 @@ export const createNewUser = (newUser, history, devTool) => async dispatch => {
 };
 
 export const login = (LoginRequest, history) => async dispatch => {
+    
     try {
         const config = {
             headers: {
@@ -38,7 +39,7 @@ export const login = (LoginRequest, history) => async dispatch => {
             }
         }
         // post => Login Request
-        const res = await axios.post("http://localhost:8080/api/users/login", LoginRequest, config)
+        const res = await axios.post(`${process.env.REACT_APP_LOGIN_URL}/api/users/login`, LoginRequest, config)
         // extract token from res.data
         const { token } = res.data;
         console.log(token)
@@ -54,18 +55,18 @@ export const login = (LoginRequest, history) => async dispatch => {
             type: SET_CURRENT_USER,
             payload: decoded
         });
-        history.push("/");
+            history.push("/");        
     } catch (err) {
         console.log(err)
         dispatch({
             type: GET_ERRORS,
-            payload: err.response
+            payload: err?.response?.data
         });
     }
 };
 
 export const fetchUserDetails = (username) => async dispatch => {
-
+    
 
     try {
         const config = {
@@ -73,7 +74,7 @@ export const fetchUserDetails = (username) => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        const res = await axios.get(`http://localhost:8080/api/users/getUser/${username}`, config)
+        const res = await axios.get(`${process.env.REACT_APP_LOGIN_URL}/api/users/getUser/${username}`, config)
         dispatch({
             type: SET_CURRENT_USER_DETAILS,
             payload: res.data[0]
@@ -112,4 +113,29 @@ export const logout = () => dispatch => {
         type: SET_CURRENT_USER,
         payload: {}
     });
+    window.location.href = "/";
+};
+
+
+export const changePassword = (data) => async dispatch => {
+    
+
+    try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
+        const res = await axios.post(`${process.env.REACT_APP_LOGIN_URL}/api/users/changePassword`, data, config)
+        dispatch({
+            type: GET_ERRORS,
+            payload: res.data
+        });
+    }
+    catch (err) {
+        dispatch({
+            type: GET_ERRORS,
+            payload: err?.response?.data
+        });
+    }
 };

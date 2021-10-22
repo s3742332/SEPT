@@ -1,4 +1,4 @@
-import { USER_EDIT, INCREMENT, GET_ACCOUNTS, GET_PENDING_SELLERS, USER_LOADING, USER_EDIT_LOADING } from "../actions/types";
+import { USER_EDIT, INCREMENT, GET_ACCOUNTS, GET_UNAPPROVED_USERS, USER_LOADING, USER_EDIT_LOADING } from "../actions/types";
 
 const initialState = {
   pendingSellers: [],
@@ -16,7 +16,7 @@ export default function (state = initialState, action) {
       return { ...state, editLoading: true }
     case USER_EDIT:
       return { ...state, editLoading: false }
-    case GET_PENDING_SELLERS:
+    case GET_UNAPPROVED_USERS:
       return { ...state, pendingSellers: action.payload, loading: false }
     case GET_ACCOUNTS:
       return { ...state, userAccounts: action.payload, loading: false }

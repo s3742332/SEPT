@@ -9,6 +9,7 @@ import { getUser } from '../../actions/securityActions';
 import { useHistory, withRouter } from 'react-router-dom'
 import valid from 'card-validator'
 import { cvv } from 'card-validator/dist/cvv';
+import PayPal from './PayPal';
 function Payment(props) {
     const [bookList, setBookList] = useState([])
     const [totalPrice, setTotalPrice] = useState(0);
@@ -92,7 +93,7 @@ function Payment(props) {
     const handleAddress = (event) => {
         setAddress(event.target.value);
     };
-    
+
     const handleSubmit = () => {
         const error = errorMessage;
         delete error["final"]
@@ -102,6 +103,7 @@ function Payment(props) {
             books: props.location.state.cart,
             transactionCost: totalPrice,
         }
+        console.log(data)
         console.log(errorMessage)
         if ((name && address && cardNumber && CVV && expDate && email) && Object.keys(errorMessage).length === 0) {
             console.log("PASS")
@@ -113,51 +115,19 @@ function Payment(props) {
     }
 
     return (
-        <Row align="middle" justify="center" style={{ display: "flex", alignItems: "stretch" }}>
-            <Col xs="8">
-                <Card style={{ width: 'fit-content', position: 'relative', left: '50%', transform: 'translate(-50%)', padding: '1%', marginTop: '5%', height: "100%" }}>
-                    <h1>Delivery Details</h1>
-                    Email <br />
-                    <Input type="email" onChange={handleEmail} style={{ width: '300px', marginBottom: '3%' }}></Input><br />
-                    {errorMessage.email && <p style={{ color: "red" }}>{errorMessage.email}</p>}
-                    Address <br />
-                    <Input type='text' onChange={handleAddress} style={{ width: '300px', marginBottom: '5%' }}></Input><br />
-                </Card>
-            </Col>
-            <Col xs="8">
-                <Card style={{ width: 'fit-content', position: 'relative', left: '50%', transform: 'translate(-50%)', padding: '1%', marginTop: '5%', height: "100%" }}>
-                    <div >
-                        <h1>Payment Details</h1>
-                        Full Name <br />
-                        <Input onChange={handleName} style={{ width: '300px', marginBottom: '3%' }}></Input> <br />
-
-                        Card Number <br />
-                        <Input type='number' onChange={handleCardNumber} pattern="[0-9\s]" style={{ width: '300px', marginBottom: '3%' }}></Input><br />
-                        {errorMessage.card && <p style={{ color: "red" }}>{errorMessage.card}</p>}
-                        <Input.Group compact>
-                            Expiry Date <br />
-                            <DatePicker picker="month" onChange={handleExpDate} style={{ width: '300px', marginBottom: '3%' }} />
-                            {errorMessage.exp && <p style={{ color: "red" }}>{errorMessage.exp}</p>}
-                        </Input.Group><br />
-
-                        CVV Number <br />
-                        <Input type='number' onChange={handleCVV} pattern="[0-9\s]" style={{ width: '300px', marginBottom: '3%' }}></Input><br />
-                        {errorMessage.cvv && <p style={{ color: "red" }}>{errorMessage.cvv}</p>}
-
-                    </div>
-                </Card></Col>
             <Col xs="8">
                 <Card style={{ width: 'fit-content', position: 'relative', left: '50%', transform: 'translate(-50%)', padding: '1%', marginTop: '5%', height: "100%" }}>
                     <div >
                         <h1>Order Summary</h1>
                         <p>Total Books: {bookList.length}</p>
                         <p>Total Price: {totalPrice}</p>
-                        <Button type="primary" shape="round" onClick={handleSubmit} style={{ width: '40%' }}>Purchase</Button>
                         {errorMessage.final && <p style={{ color: "red" }}>{errorMessage.final}</p>}
+                        {totalPrice > 0 ?
+                            <PayPal price={totalPrice} userName={user.user.username} books={props.location.state.cart} transactionCost={totalPrice} history={history} />
+                            : ''}
                     </div>
                 </Card>
             </Col>
-        </Row>
 
 
     );

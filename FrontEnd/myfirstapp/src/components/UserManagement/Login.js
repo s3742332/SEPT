@@ -38,6 +38,7 @@ function Login(props) {
                   name="username"
                   onChange={onChange}
                 />
+                 {errorMessage?.username && <p style={{ color: "red" }}>{errorMessage.username}</p>}
               </div>
               <div className="form-group">
                 <input
@@ -47,8 +48,8 @@ function Login(props) {
                   name="password"
                   onChange={onChange}
                 />
+                   {errorMessage?.password && <p style={{ color: "red" }}>{errorMessage.password}</p>}
               </div>
-              {Object.keys(errorMessage)?.length > 0 && <p style={{ color: "red" }}>Invalid email or password!</p>}
               <input type="submit" onClick={onSubmit} className="btn btn-info btn-block mt-4" />
             </form>
           </div>

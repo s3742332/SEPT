@@ -5,7 +5,6 @@
  import com.rmit.sept.bk_booksmicroservices.Services.TransactionService;
  import com.rmit.sept.bk_booksmicroservices.model.Book;
  import com.rmit.sept.bk_booksmicroservices.model.Transaction;
- import com.rmit.sept.bk_booksmicroservices.Repositories.BookRepository;
  import org.junit.jupiter.api.BeforeEach;
  import org.junit.jupiter.api.DisplayName;
  import org.junit.jupiter.api.Test;
@@ -17,13 +16,11 @@
  import org.mockito.junit.jupiter.MockitoSettings;
  import org.mockito.quality.Strictness;
 
- import java.util.ArrayList;
  import java.util.List;
  import java.util.stream.Collectors;
  import java.util.stream.Stream;
 
  import static org.junit.jupiter.api.Assertions.assertEquals;
- import static org.mockito.Mockito.*;
 
  @ExtendWith(MockitoExtension.class)
  @MockitoSettings(strictness = Strictness.LENIENT)
@@ -98,18 +95,12 @@
          assertEquals(transaction1, transactionService.getTransactionById(id));
      }
 
-//     @Test
-//     @DisplayName("Should pass if the correct transaction by order ID was returned")
-//     void getTransactionByOrderIdTest() {
-//         Mockito.when(transactionRepository.findTransactionByOrderId(1)).thenReturn(transaction1);
-//
-//         assertEquals(transaction1, transactionService.getTransactionByOrderId(1));
-//     }
-//
-//     @Test
-//     void updateOrderStatusTest() {
-//         Transaction updatedTransaction = transaction3;
-//         transactionService.updateOrderStatus(updatedTransaction);
-//         verify(transactionRepository, times(1)).save(updatedTransaction);
-//     }
+     @Test
+     void deleteTransactionByIdTest() {
+         Mockito.when(transactionRepository.save(transaction1)).thenReturn(transaction1);
+
+         transactionService.deleteTransactionById(1L);
+
+         Mockito.verify(transactionRepository).deleteById(1L);
+     }
  }

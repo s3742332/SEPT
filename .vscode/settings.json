@@ -28,14 +28,6 @@
                         "java -jar ./target/booksmicroservices-0.0.1.jar"
                     ]
                 },
-                {
-                    "name": "transactions",
-                    "commands": [
-                        "cd ./BackEnd/transactionsmicroservices",
-                        "./mvnw package",
-                        "java -jar ./target/transactionsmicroservices-0.0.1.jar"
-                    ]
-                }
             ]
         },
     ]
