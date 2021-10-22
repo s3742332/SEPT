@@ -10,6 +10,8 @@ import com.rmit.sept.bk_loginservices.security.JwtTokenProvider;
 import com.rmit.sept.bk_loginservices.services.MapValidationErrorService;
 import com.rmit.sept.bk_loginservices.services.UserService;
 import com.rmit.sept.bk_loginservices.validator.UserValidator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +28,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -36,6 +40,9 @@ import java.util.ArrayList;
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
+
+    private static final Logger logger = LogManager.getLogger(UserController.class);
+
 
     @Autowired
     private MapValidationErrorService mapValidationErrorService;
@@ -63,6 +70,7 @@ public class UserController {
             return errorMap;
 
         User newUser = userService.saveUser(user);
+        logger.log(org.apache.logging.log4j.Level.INFO, "Registering User");
 
         return new ResponseEntity<User>(newUser, HttpStatus.CREATED);
     }
@@ -94,6 +102,7 @@ public class UserController {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = TOKEN_PREFIX + tokenProvider.generateToken(authentication);
+        logger.log(org.apache.logging.log4j.Level.INFO, "Logging in user");
 
         return ResponseEntity.ok(new JWTLoginSucessReponse(true, jwt));
     }
@@ -102,6 +111,7 @@ public class UserController {
     @GetMapping("/getAllUsers")
     public ResponseEntity<?> getAllUsers() {
         Iterable<User> userList = userService.getAllUsers();
+        logger.log(org.apache.logging.log4j.Level.INFO, "Retrieving Users");
 
         return new ResponseEntity<Iterable<User>>(userList, HttpStatus.OK);
     }
@@ -118,6 +128,7 @@ public class UserController {
         }
 
         userList = unapprovedUser;
+        logger.log(org.apache.logging.log4j.Level.INFO, "Retrieving unapproved Users");
 
         return new ResponseEntity<Iterable<User>>(userList, HttpStatus.OK);
     }
@@ -126,6 +137,7 @@ public class UserController {
     @GetMapping("/getAllApprovedUsers")
     public ResponseEntity<?> getAllApprovedBusiness() {
         Iterable<User> userList = userService.getAllApprovedUsers();
+        logger.log(org.apache.logging.log4j.Level.INFO, "Retrieving approved Users");
 
         return new ResponseEntity<Iterable<User>>(userList, HttpStatus.OK);
     }
@@ -141,6 +153,8 @@ public class UserController {
             }
         }
         userList = user;
+        logger.log(org.apache.logging.log4j.Level.INFO, "Retrieving User");
+
         return new ResponseEntity<Iterable<User>>(userList, HttpStatus.OK);
     }
 

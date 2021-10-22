@@ -5,12 +5,20 @@ import java.util.ArrayList;
 import com.rmit.sept.bk_loginservices.Repositories.UserRepository;
 import com.rmit.sept.bk_loginservices.exceptions.UsernameAlreadyExistsException;
 import com.rmit.sept.bk_loginservices.model.User;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 
 @Service
 public class UserService {
+
+    private static final Logger logger = LogManager.getLogger(UserService.class);
+
 
     @Autowired
     private UserRepository userRepository;
@@ -36,6 +44,8 @@ public class UserService {
             return userRepository.save(newUser);
 
         } catch (Exception e) {
+            logger.log(Level.ERROR, "Username already exists");
+
             throw new UsernameAlreadyExistsException("Username '" + newUser.getUsername() + "' already exists");
         }
     }
@@ -52,6 +62,8 @@ public class UserService {
             return userRepository.save(newUser);
 
         } catch (Exception e) {
+            logger.log(Level.ERROR, "Username already exists");
+
             throw new UsernameAlreadyExistsException("Username '" + newUser.getUsername() + "' already exists");
         }
     }
@@ -69,6 +81,8 @@ public class UserService {
             return allUsers;
 
         } catch (Exception e) {
+            logger.log(Level.ERROR, "Unable to retreive approved users");
+
             throw new UsernameAlreadyExistsException("Unable to retrieve approved user list");
         }
 
@@ -81,6 +95,8 @@ public class UserService {
             return allUsers;
 
         } catch (Exception e) {
+            logger.log(Level.ERROR, "Unable to retrieve users");
+
             throw new UsernameAlreadyExistsException("Unable to retrieve user list");
         }
 

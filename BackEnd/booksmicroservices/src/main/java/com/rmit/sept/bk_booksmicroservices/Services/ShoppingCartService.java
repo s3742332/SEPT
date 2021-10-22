@@ -4,12 +4,16 @@ import com.rmit.sept.bk_booksmicroservices.Repositories.ShoppingCartRepository;
 import com.rmit.sept.bk_booksmicroservices.Exceptions.ShoppingCartException;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
 import com.rmit.sept.bk_booksmicroservices.model.ShoppingCart;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ShoppingCartService {
+    private static final Logger logger = LogManager.getLogger(ShoppingCartService.class);
 
     @Autowired
     private ShoppingCartRepository shoppingCartRepository;
@@ -37,6 +41,8 @@ public class ShoppingCartService {
         }
         catch (Exception e)
         {
+            logger.log(Level.ERROR, "Unable to create shopping cart");
+
             throw new ShoppingCartException("Unable to create shopping cart");
         }
     }
@@ -50,6 +56,8 @@ public class ShoppingCartService {
         }
         catch (Exception e)
         {
+            logger.log(Level.ERROR, "Unable to retrieve shopping cart");
+
             throw new ShoppingCartException("Unable to retrieve shopping carts.");
         }
     }
