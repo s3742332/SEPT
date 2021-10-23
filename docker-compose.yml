@@ -9,10 +9,11 @@ services:
       - '8080:8080'
     environment:
       - spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-      - spring.jpa.database-platform=org.hibernate.dialect.MySQL5Dialect
       - spring.datasource.url=$RDS_URL
       - spring.datasource.username=$RDS_USERNAME
       - spring.datasource.password=$RDS_PASSWORD
+      - spring.h2.console.path=null
+      - spring.h2.console.enabled=false
   booksms:
     image: dannypham09/sept_booksms
     build:
@@ -22,11 +23,15 @@ services:
       - '8081:8081'
     environment:
       - spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-      - spring.jpa.database-platform=org.hibernate.dialect.MySQL5Dialect
       - spring.datasource.url=$RDS_URL
       - spring.datasource.username=$RDS_USERNAME
       - spring.datasource.password=$RDS_PASSWORD
+      - spring.h2.console.path=null
+      - spring.h2.console.enabled=false
   nginx:
+    depends_on:
+      - "loginms"
+      - "booksms"
     image: dannypham09/sept_nginx
     build:
       context: .
