@@ -103,11 +103,11 @@ workflows:
       - frontendbuild
       - frontendtest:
           requires:
-            - backendbuildandtest
             - frontendbuild
       - hold:
           type: approval
           requires:
+            - backendbuildandtest
             - frontendtest
           filters:
             branches:
