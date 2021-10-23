@@ -30,3 +30,4 @@ BackEnd/shoppingcartmicroservice/target/maven-archiver/pom.properties
 BackEnd/shoppingcartmicroservice/target/classes/application.properties
 BackEnd/shoppingcartmicroservice/HELP.md
 BackEnd/loginmicroservices/pom.xml
+FrontEnd/myfirstapp/.env

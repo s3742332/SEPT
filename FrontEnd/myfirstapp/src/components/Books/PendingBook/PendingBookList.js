@@ -1,6 +1,5 @@
 import React from 'react'
 import { List } from 'antd'
-import { ShopFilled, UserOutlined } from '@ant-design/icons'
 function PendingSellerList(props) {
     return (
         <List

@@ -16,7 +16,6 @@ export default () => {
     const [reviews, setReviews] = useState([])
     const sellerReview = useSelector(state => state.sellerReview);
 
-
     useEffect(() => {
         dispatch(getUserAccountsList())
     }, [dispatch])

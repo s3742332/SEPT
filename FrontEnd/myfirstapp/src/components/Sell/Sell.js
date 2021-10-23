@@ -8,12 +8,8 @@ import {
     Form,
     Input,
     Button,
-    Radio,
     Select,
-    Cascader,
-    DatePicker,
     InputNumber,
-    TreeSelect,
     Upload,
     Row,
     Col,
@@ -23,7 +19,7 @@ import { UploadOutlined, PlusOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux'
 
 function Sell() {
-    
+
     const dispatch = useDispatch();
     const { Title } = Typography
     const { Option } = Select;
@@ -56,22 +52,20 @@ function Sell() {
     const [form] = Form.useForm();
 
     const onSubmit = async (e) => {
-        
-        let bookData = {...newBook, seller: security.user.fullName};
+
+        let bookData = { ...newBook, seller: security.user.fullName };
         e.preventDefault();
         await uploadFile(bookCoverFile, config)
             .then(data => {
-                bookData= {...bookData, cover: data.location }
-                console.log("HERE1", {...bookData, cover: data.location })})
+                bookData = { ...bookData, cover: data.location }
+            })
             .catch(err => console.error(err))
 
         await uploadFile(bookPreviewFile, config)
             .then(data => {
-                bookData= {...bookData, preview: data.location }
-                console.log("HERE2", {...bookData, preview: data.location })})
+                bookData = { ...bookData, preview: data.location }
+            })
             .catch(err => console.error(err))
-        //  console.log(newBook.category)
-        console.log("HERE3", bookData)
         dispatch(bookEdit(bookData))
 
     }
@@ -79,23 +73,17 @@ function Sell() {
     const handleChanges = (event) => {
         event.preventDefault();
         setNewBook({ ...newBook, [event.target.name]: event.target.value });
-        console.log(newBook)
     }
 
 
     const handleCategoryChanges = (event) => {
-        console.log('selected: ', event)
         setNewBook({ ...newBook, category: event })
     }
     const handleFileChanges = ({ file, fileList }) => {
         setBookCoverFile(file.originFileObj)
-
-        //setNewBook({ ...newBook, bookCover: event })
     }
     const handleFileChanges1 = ({ file, fileList }) => {
         setBookPreviewFile(file.originFileObj)
-
-        //setNewBook({ ...newBook, bookCover: event })
     }
     const dummyRequest = ({ file, onSuccess }) => {
         setTimeout(() => {
