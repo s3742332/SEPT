@@ -1,5 +1,5 @@
 import axios from "axios"
-import {CART_BASE_URL, config, fetchCartEdit, fetchGetUserCart} from "../../../utils"
+import {BOOK_BASE_URL, config, fetchCartEdit, fetchGetUserCart} from "../../../utils"
 
 jest.mock("axios");
 
@@ -11,7 +11,7 @@ describe("fetchCartEdit", () => {
 
             const result = await fetchCartEdit();
 
-            expect(axios.post).toHaveBeenCalledWith("${CART_BASE_URL}/api/shoppingcarts/saveShoppingCart", cart, config);
+            expect(axios.post).toHaveBeenCalledWith("${BOOK_BASE_URL}/api/shoppingcarts/saveShoppingCart", cart, config);
             expect(result).toEqual(cart);
         });
     });
@@ -24,7 +24,7 @@ describe("fetchCartEdit", () => {
 
             const result = await fetchCartEdit();
 
-            expect(axios.post).toHaveBeenCalledWith("${CART_BASE_URL}/api/shoppingcarts/saveShoppingCart", cart, config);
+            expect(axios.post).toHaveBeenCalledWith("${BOOK_BASE_URL}/api/shoppingcarts/saveShoppingCart", cart, config);
             expect(result).toEqual([]);
         });
     });
@@ -38,7 +38,7 @@ describe("fetchGetUserCart", () => {
 
             const result = await fetchGetUserCart();
 
-            expect(axios.get).toHaveBeenCalledWith(`${CART_BASE_URL}/api/shoppingcarts/getUserCart/${username}`,config);
+            expect(axios.get).toHaveBeenCalledWith(`${BOOK_BASE_URL}/api/shoppingcarts/getUserCart/${username}`,config);
             expect(result).toEqual(username);
         });
     });
@@ -51,7 +51,7 @@ describe("fetchGetUserCart", () => {
 
             const result = await fetchGetUserCart();
 
-            expect(axios.get).toHaveBeenCalledWith(`${CART_BASE_URL}/api/shoppingcarts/getUserCart/${username}`,config);
+            expect(axios.get).toHaveBeenCalledWith(`${BOOK_BASE_URL}/api/shoppingcarts/getUserCart/${username}`,config);
             expect(result).toEqual([]);
         });
     });

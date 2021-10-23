@@ -1,10 +1,8 @@
-// import BookContainer from './BookContainer';
 import './styles.css';
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Layout, Col, Row, Menu, Breadcrumb, List, Avatar, Input, Space } from 'antd';
-import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
+import { List } from 'antd';
 import { getCategory } from '../../actions/bookActions';
 
 const CategoryResult = (props) => {
@@ -13,21 +11,12 @@ const CategoryResult = (props) => {
     const book = useSelector(state => state.book);
     const [filteredData, setFilteredData] = useState([]);
 
-
     useEffect(() => {
-        console.log(props.location.category)
         dispatch(getCategory(props.location.category))
     }, [dispatch, props.category])
     useEffect(() => {
         setFilteredData(book.searchedBooks)
     }, [book, filteredData])
-
-    const IconText = ({ icon, text }) => (
-        <Space>
-            {React.createElement(icon)}
-            {text}
-        </Space>
-    );
 
     return (
         <div
@@ -54,16 +43,13 @@ const CategoryResult = (props) => {
                     <Link
                         to={{
                             pathname: "/buy",
-                            state: {book: book}
+                            state: { book: book }
                         }}>
                         <div className='search-result'>
                             <List.Item
                                 key={book.Id}
                                 extra={
-                                    //top is book cover, bottom is default image
-                                    <object data={book.cover} style={{ width: '20%' }}>
-                                        <img src={book.cover} />
-                                    </object>
+                                    <img src={book.cover} style={{ width: '20%' }} />
                                 }
                             >
                                 <div style={{ width: '70%', overflowWrap: 'break-word' }}>

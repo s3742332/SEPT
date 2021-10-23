@@ -2,13 +2,14 @@ import axios from "axios";
 import { GET_ERRORS, UPDATE_CART, GET_CART } from "./types";
 
 export const cartEdit = (cart, history, devTool) => async dispatch => {
+    
     try {
         const config = {
             headers: {
                 "Content-Type": "application/json",
             }
         }
-        const res = await axios.post(`http://localhost:8081/api/shoppingcarts/saveShoppingCart`, cart, config );
+        const res = await axios.post(`${process.env.REACT_APP_BOOK_URL}/api/shoppingcarts/saveShoppingCart`, cart, config );
         dispatch({
             type: UPDATE_CART,
             payload: res.data
@@ -25,14 +26,15 @@ export const cartEdit = (cart, history, devTool) => async dispatch => {
     }
 };
 
-export const getUserCart = (username, history, devTool) => async dispatch => {
+export const getUserCart = (username) => async dispatch => {
+    
     try {
         const config = {
             headers: {
                 "Content-Type": "application/json",
             }
         }
-        const res = await axios.get(`http://localhost:8081/api/shoppingcarts/getUserCart/${username}`,config)
+        const res = await axios.get(`${process.env.REACT_APP_BOOK_URL}/api/shoppingcarts/getUserCart/${username}`,config)
         dispatch({
             type: GET_CART,
             payload: res.data

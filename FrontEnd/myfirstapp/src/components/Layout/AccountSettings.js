@@ -8,6 +8,8 @@ import { createNewUser } from "../../actions/securityActions";
 import { bookEdit } from "../../actions/bookActions";
 import faker from 'faker'
 import { transactionEdit } from '../../actions/transactionActions';
+import { reviewEdit } from '../../actions/reviewActions';
+
 function AccountSettings() {
     const dispatch = useDispatch();
     const security = useSelector(state => state.security);
@@ -71,7 +73,7 @@ function AccountSettings() {
     const createBook = () => {
         for (let i = 0; i < 10; i++) {
             const book = {
-                seller: faker.company.companyName(),
+                seller: "seller@seller.com",
                 bookTitle: faker.name.title(),
                 author: faker.name.findName(),
                 bookDescription: faker.commerce.productDescription(),
@@ -128,23 +130,22 @@ function AccountSettings() {
         dispatch(createNewUser(user, history, true))
     }
 
-    const createTransaction = () => {
-        const book = {
-            username: security.user.userName,
-            bookTitle: faker.name.title(),
-            author: faker.name.findName(),
-            transactionCost: faker.commerce.price(),
+    const createReviews = () => {
+        for (let i = 0; i < 10; i++) {
+            const review = {
+                username: "user@user.com",
+                rating: faker.datatype.number(5),
+                bookId: faker.datatype.number(10),
+                review: faker.lorem.paragraph()
+            }
+            dispatch(reviewEdit(review, history, true))
         }
-        dispatch(transactionEdit(book, history, true))
     }
-
     const createTransactions = () => {
         for (let i = 0; i < 10; i++) {
             const book = {
-                username: security.user.userName,
-                bookTitle: faker.name.title(),
-                author: faker.name.findName(),
-                transactionCost: faker.commerce.price(),
+                userName: "user@user.com",
+                bookIds: [faker.datatype.number(10),faker.datatype.number(10),faker.datatype.number(10),faker.datatype.number(10)],
             }
             dispatch(transactionEdit(book, history, true))
         }
@@ -197,8 +198,8 @@ function AccountSettings() {
                 <Button type="primary" onClick={createSeller}>
                     Insert 1 Seller
                 </Button>
-                <Button type="primary" onClick={createTransaction}>
-                    Insert 1 Transaction
+                <Button type="primary" onClick={createReviews}>
+                    Insert 10 Reviews
                 </Button>
                 <Button type="primary" onClick={createTransactions}>
                     Insert 10 Transaction

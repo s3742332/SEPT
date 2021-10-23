@@ -25,6 +25,7 @@ public class Book{
     private boolean approved;
     private String isbn;
     private String cover;
+    private String preview;
     private String[] category;
     private boolean used;
 
@@ -119,6 +120,14 @@ public class Book{
         return cover;
     }
 
+    public void setPreview(String preview) {
+        this.preview = preview;
+    }
+
+    public String getPreview() {
+        return preview;
+    }
+    
     public Boolean getApproved() {
         return approved;
     }

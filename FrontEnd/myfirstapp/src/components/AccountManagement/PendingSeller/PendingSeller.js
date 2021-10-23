@@ -1,10 +1,10 @@
 import { Col, Row } from 'antd';
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getPendingSellerList } from '../../../actions/userActions';
+import { getUnapprovedList } from '../../../actions/userActions';
 import PendingSellerList from './PendingSellerList';
 import PendingSellerDetails from './PendingSellerDetails'
-import { Input, Typography, Breadcrumb } from 'antd';
+import { Input, Typography } from 'antd';
 function PendingSeller() {
 
     const [selectedUser, setSelectedUser] = useState([])
@@ -12,13 +12,11 @@ function PendingSeller() {
     const user = useSelector(state => state.user);
     const [filteredData, setFilteredData] = useState([]);
     const [search, setSearch] = useState("")
-    const [clear, setClear] = useState("")
     useEffect(() => {
-        dispatch(getPendingSellerList())
+        dispatch(getUnapprovedList())
     }, [dispatch])
     useEffect(() => {
         if(!user.loading) {
-            console.log("LOADING DONE", user.pendingSellers)
             setFilteredData( user.pendingSellers)
         }
     }, [user.loading])
@@ -29,18 +27,11 @@ function PendingSeller() {
     }
     useEffect(() => {
         if(!user.editLoading) {
-            dispatch(getPendingSellerList())
+            dispatch(getUnapprovedList())
             setSelectedUser([])
         }
     }, [user.editLoading])
     const { Title } = Typography;
-    useEffect(() => {
-        search.length != 0 ? setClear("visible") : setClear("hidden")
-    }, [search])
-    const handleClear = () => {
-        setSearch("")
-        setFilteredData(user.pendingSellers)
-    }
 
     return (
         <Row>
@@ -52,7 +43,7 @@ function PendingSeller() {
                 <PendingSellerList list={user} filteredList={filteredData} setSelectedUser={setSelectedUser} />
             </Col>
             <Col xs={20} style={{ padding: "1rem" }}>
-                <Title level={2} style={{textAlign: "center"}}>Seller Information</Title>
+                <Title level={2} style={{textAlign: "center"}}>Pending Account Information</Title>
                 <PendingSellerDetails data={selectedUser} />
             </Col>
         </Row>

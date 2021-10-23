@@ -4,7 +4,7 @@ version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  backendbuild:
+  backendbuildandtest:
     docker:
       - image: cimg/openjdk:16.0.2
     steps:
@@ -36,44 +36,85 @@ jobs:
           command: |
             cd ~/project/FrontEnd/myfirstapp
             npm install
-
-  tests:
+      - persist_to_workspace:
+          root: ~/project/FrontEnd/myfirstapp
+          paths:
+            - node_modules
+  frontendtest:
     docker:
       - image: cimg/node:current-browsers
     steps:
       - checkout
       - attach_workspace:
-          at: ~/project/BackEnd
-      - run:
-          name: Run service
-          background: yes
-          command: |
-            java -jar ~/project/BackEnd/loginmicroservices/target/loginmicroservices-0.0.1.jar
-      - run:
-          name: Run service
-          background: yes
-          command: |
-            java -jar ~/project/BackEnd/booksmicroservices/target/booksmicroservices-0.0.1.jar
-      - run:
-          name: Install Dependencies
-          command: |
-            sudo apt update
-            cd ~/project/FrontEnd/myfirstapp
-            npm install
+          at: ~/project/FrontEnd/myfirstapp
       - run:
           name: Run front end test
           command: |
             cd ~/project/FrontEnd/myfirstapp
-            npm test -- --watchAll=false      
+            npm test -- --watchAll=false
+  builddockercompose:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project/BackEnd
+      - attach_workspace:
+          at: ~/project/FrontEnd/myfirstapp     
+      - run:
+          name: Authenticate to Docker
+          command: |
+            echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin   
+      - run:
+          name: Install Docker Compose
+          command: |
+            curl -L https://github.com/docker/compose/releases/download/1.25.3/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
+            chmod +x ~/docker-compose
+            sudo mv ~/docker-compose /usr/local/bin/docker-compose
+      - setup_remote_docker
+      - run:
+          name: Build docker compose
+          command: |
+            docker-compose build
+      - run:
+          name: Push docker compose
+          command: |
+            docker-compose push
+  deployAWS:
+    docker:
+      - image: cimg/base:stable 
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "6e:37:d5:02:80:f9:31:fe:bd:39:04:02:f9:2b:0b:60"
+      - run:
+          name: deploy
+          command: |
+            touch deploy.sh 
+            echo "docker-compose pull" >> deploy.sh 
+            echo "docker-compose up -d" >> deploy.sh 
+            ssh -o StrictHostKeyChecking=no ec2-user@$EC2_URL 'bash -s' <./deploy.sh
+
 workflows:
   build:
     jobs:
-      - backendbuild
-      - frontendbuild:
-          requires:
-            - backendbuild
-      - tests:
+      - backendbuildandtest
+      - frontendbuild
+      - frontendtest:
           requires:
             - frontendbuild
-            - backendbuild
-
+      - hold:
+          type: approval
+          requires:
+            - backendbuildandtest
+            - frontendtest
+          filters:
+            branches:
+              only: main
+      - builddockercompose:
+          requires:
+            - hold
+      - deployAWS:
+          requires:
+            - builddockercompose

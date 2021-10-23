@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getPendingBookList } from '../../../actions/bookActions';
 import PendingBookList from './PendingBookList';
 import PendingBookDetails from './PendingBookDetails'
-import { Input, Typography, Breadcrumb } from 'antd';
+import { Input, Typography } from 'antd';
 function PendingBook() {
 
     const [selectedBook, setSelectedBook] = useState([])
@@ -12,7 +12,6 @@ function PendingBook() {
     const book = useSelector(state => state.book);
     const [filteredData, setFilteredData] = useState([]);
     const [search, setSearch] = useState("")
-    const [clear, setClear] = useState("")
     useEffect(() => {
         dispatch(getPendingBookList())
     }, [dispatch])
@@ -32,14 +31,6 @@ function PendingBook() {
     const handleSearch = (event) => {
         setSearch(event.target.value)
         setFilteredData(book.bookList.filter(data => data.title.toLowerCase().includes(event.target.value.toLowerCase())))
-    }
-
-    useEffect(() => {
-        search.length != 0 ? setClear("visible") : setClear("hidden")
-    }, [search])
-    const handleClear = () => {
-        setSearch("")
-        setFilteredData(book.bookList)
     }
     const { Title } = Typography;
     return (

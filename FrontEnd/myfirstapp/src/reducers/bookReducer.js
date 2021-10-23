@@ -15,7 +15,7 @@ export default function (state = initialState, action) {
     case BOOK_EDIT_LOADING:
       return { ...state, editLoading: true }
     case UPDATE_BOOK:
-      return { ...state, editLoading: false }
+      return { ...state, update: action.payload, editLoading: false }
     case GET_BOOK_LIST:
       return { ...state, bookList: action.payload, loading: false }
     case GET_PENDING_BOOK_LIST:

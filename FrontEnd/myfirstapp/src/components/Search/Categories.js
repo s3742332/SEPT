@@ -46,7 +46,7 @@ function Categories() {
                     <Link to={{
                         pathname: "/category",
                         category: {
-                            category: categories[category].title.toLowerCase()
+                            category: categories[category].title
                         }
                     }}
                     >

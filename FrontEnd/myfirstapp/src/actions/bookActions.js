@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import { GET_ERRORS, GET_PENDING_BOOK_LIST, GET_BOOK_LIST, UPDATE_BOOK, GET_SEARCHED_BOOKS, BOOK_LOADING, BOOK_EDIT_LOADING, GET_CATEGORY } from "./types";
 
 export const bookEdit = (book) => async dispatch => {
@@ -9,7 +10,7 @@ export const bookEdit = (book) => async dispatch => {
             }
         }
         dispatch({ type: BOOK_EDIT_LOADING })
-        const res = await axios.post(`http://localhost:8081/api/books/saveBook/`, book, config);
+        const res = await axios.post(`${process.env.REACT_APP_BOOK_URL}/api/books/saveBook/`, book, config);
         dispatch({
             type: UPDATE_BOOK,
             payload: res.data
@@ -30,7 +31,7 @@ export const getBookList = () => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-        const res = await axios.get(`http://localhost:8081/api/books/getAllApprovedBooks`, config)
+        const res = await axios.get(`${process.env.REACT_APP_BOOK_URL}/api/books/getAllApprovedBooks`, config)
         console.log(res.data)
         dispatch({
             type: GET_BOOK_LIST,
@@ -45,6 +46,7 @@ export const getBookList = () => async dispatch => {
 };
 
 export const getCategory = (category) => async dispatch => {
+    
     try {
         const config = {
             headers: {
@@ -52,7 +54,7 @@ export const getCategory = (category) => async dispatch => {
             }
         }
         console.log('inside', category.category)
-        const res = await axios.get(`http://localhost:8081/api/books/getBooksInCategory/${category.category}`, config)
+        const res = await axios.get(`${process.env.REACT_APP_BOOK_URL}/api/books/getBooksInCategory/${category.category}`, config)
         console.log(res.data)
         dispatch({
             type: GET_CATEGORY,
@@ -67,6 +69,7 @@ export const getCategory = (category) => async dispatch => {
 };
 
 export const getPendingBookList = () => async dispatch => {
+    
     try {
         const config = {
             headers: {
@@ -74,7 +77,7 @@ export const getPendingBookList = () => async dispatch => {
             }
         }
         dispatch({ type: BOOK_LOADING })
-        const res = await axios.get(`http://localhost:8081/api/books/getAllPendingBooks`, config)
+        const res = await axios.get(`${process.env.REACT_APP_BOOK_URL}/api/books/getAllPendingBooks`, config)
         console.log(res.data)
         console.log(axios.defaults.headers.common)
         dispatch({
@@ -92,6 +95,7 @@ export const getPendingBookList = () => async dispatch => {
 //Define cancelToken outside the function so that the previous token is retained
 let cancelToken;
 export const getSearchedBook = (query) => async dispatch => {
+    
     //Check if there are any previous pending requests
     if (typeof cancelToken != typeof undefined) {
         cancelToken.cancel("Operation canceled due to new request.")
@@ -106,8 +110,7 @@ export const getSearchedBook = (query) => async dispatch => {
             },
             cancelToken: cancelToken.token
         }
-        const res = await axios.get(`http://localhost:8081/api/books/getSearchedBooks/${query}`, config)
-        // console.log(res.data)
+        const res = await axios.get(`${process.env.REACT_APP_BOOK_URL}/api/books/getSearchedBooks/${query}`, config)
         dispatch({
             type: GET_SEARCHED_BOOKS,
             payload: res.data
@@ -121,6 +124,7 @@ export const getSearchedBook = (query) => async dispatch => {
 };
 
 export const sellUsed = (book) => async dispatch => {
+    
     console.log("in front end")
     try {
         const config = {
@@ -129,11 +133,30 @@ export const sellUsed = (book) => async dispatch => {
             }
         }
         dispatch({ type: BOOK_EDIT_LOADING })
-        const res = await axios.post(`http://localhost:8081/api/books/sellUsedBook/`, book, config);
+        const res = await axios.post(`${process.env.REACT_APP_BOOK_URL}/api/books/sellUsedBook/`, book, config);
         dispatch({
             type: UPDATE_BOOK,
             payload: res.data
         })
+    } catch (err) {
+        console.log('error', err)
+        dispatch({
+            type: GET_ERRORS,
+            payload: err.response.data
+        });
+    }
+};
+
+export const shareBook = (book) => async dispatch => {
+    
+    try {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }
+        await axios.post(`${process.env.REACT_APP_BOOK_URL}/api/books/shareBook/`, book, config);
+
     } catch (err) {
         console.log('error', err)
         dispatch({

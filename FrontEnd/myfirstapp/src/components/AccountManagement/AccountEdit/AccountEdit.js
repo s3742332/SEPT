@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react'
-// import Grid from '@material-ui/core/Grid';
-// import { makeStyles } from '@material-ui/core/styles';
 import AccountEditDetails from './AccountEditDetails';
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserAccountsList } from '../../../actions/userActions';
 import AccountEditList from './AccountEditList';
-import { Layout, Menu, Breadcrumb, List, Avatar, Input } from 'antd';
-import { Col, Row, Typography } from 'antd';
+import { Col, Row, Typography, Input } from 'antd';
 function AccountEdit() {
 
     const [selectedUser, setSelectedUser] = useState([])
@@ -14,27 +11,26 @@ function AccountEdit() {
     const user = useSelector(state => state.user);
     const [filteredData, setFilteredData] = useState([]);
     const [search, setSearch] = useState("")
-    const [clear, setClear] = useState("")
     useEffect(() => {
         dispatch(getUserAccountsList())
     }, [dispatch])
     useEffect(() => {
+        if(!user.loading) {
         setFilteredData(user.userAccounts)
-        console.log(user.userAccounts)
-    }, [user])
+        }
+    }, [user.loading])
 
     const handleSearch = (event) => {
         setSearch(event.target.value)
         setFilteredData(user.userAccounts.filter(data => data.fullName.toLowerCase().includes(event.target.value.toLowerCase())))
     }
-
     useEffect(() => {
-        search.length != 0 ? setClear("visible") : setClear("hidden")
-    }, [search])
-    const handleClear = () => {
-        setSearch("")
-        setFilteredData(user.userAccounts)
-    }
+        if(!user.editLoading) {
+            dispatch(getUserAccountsList())
+            setSelectedUser([])
+        }
+    }, [user.editLoading])
+
     const { Title } = Typography;
     return (
         <Row>
@@ -52,6 +48,5 @@ function AccountEdit() {
         </Row>
     )
 }
-
 
 export default AccountEdit;

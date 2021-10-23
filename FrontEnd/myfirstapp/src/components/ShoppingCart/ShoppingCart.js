@@ -26,13 +26,11 @@ function ShoppingCart(props) {
 
             if (props.location.state?.book) {
                 const book = props.location.state?.book
-                console.log("SINGLE ITEM FOUND", book)
                 setTotalPrice(book.bookCost)
                 setBookList([book])
                 return;
             } else {
                 if (cart?.cart?.books) {
-                    console.log("SHOPPING CART DETECTED", cart.cart?.books)
                     var groupBy = function (xs, key) {
                         return xs.reduce(function (rv, x) {
                             (rv[x[key]] = rv[x[key]] || []).push(x);
@@ -50,7 +48,6 @@ function ShoppingCart(props) {
                             setDecrementDisable({ ...decrementDisable, [i]: false });
                         }
                     }
-                    console.log("GROUP", filtered);
                 }
 
             }
@@ -64,25 +61,20 @@ function ShoppingCart(props) {
             let disable = { ...decrementDisable, [bookID]: false }
             setDecrementDisable(disable);
         }
-        console.log("Incrementing")
         const cartData = cart.cart.cartContents;
 
         if (props.location.state?.book) {
-           
             const data = [...bookList, props.location.state.book]
-            console.log("AE",data)
             setBookList(data)
             return;
         } else
             if (cart?.cart?.books) {
                 cartData.push(bookID)
-                console.log("CART DETECTED", cartData)
                 const data = {
                     id: cart.cart.id,
                     userName: user.user.username,
                     cartContents: cartData ? cartData : [bookID]
                 }
-                //console.log("cart", cart.cart.cartContent)
                 dispatch(cartEdit(data, history, false))
 
             }
@@ -94,35 +86,48 @@ function ShoppingCart(props) {
             let disable = { ...decrementDisable, [bookID]: true }
             setDecrementDisable(disable);
         }
-        console.log("Decrementing")
         const cartData = cart.cart.cartContents;
 
         if (cartData) {
             cartData.sort().reverse();
             for (let i = 0; i < cartData.length; i++) {
                 if (cartData[i] === bookID) {
-                    //console.log("FOUND", cartData.splice(i,1))
                     cartData.splice(i, 1)
                     break;
                 }
             }
-            console.log("CART DETECTED", cartData)
             const data = {
                 id: cart.cart.id,
                 userName: user.user.username,
                 cartContents: cartData ? cartData : [bookID]
             }
-            //console.log("cart", cart.cart.cartContent)
             dispatch(cartEdit(data, history, false))
         }
-
     }
-    useEffect(() => {
-        console.log(totalPrice)
-    }, [totalPrice])
-    useEffect(() => {
-        console.log("disable", bookList)
-    }, [bookList])
+
+    const removeBookFromCart = (id) => {
+        const cartData = cart.cart.cartContents;
+        if (props.location.state?.book) {
+            setBookList([])
+            return;
+        }
+        else if (cartData) {
+            var i = 0;
+            while (i < cartData.length) {
+                if (cartData[i] === id) {
+                    cartData.splice(i, 1);
+                } else {
+                    ++i;
+                }
+            }
+            const data = {
+                id: cart.cart.id,
+                userName: user.user.username,
+                cartContents: cartData ? cartData : [id]
+            }
+            dispatch(cartEdit(data, history, false))
+        }
+    }
     const { Title, Text } = Typography
 
     return (
@@ -149,7 +154,6 @@ function ShoppingCart(props) {
                                     style={{ height: "250px" }}
                                     key={book.id}
                                     extra={
-                                        //top is book cover, bottom is default image       
                                         <img src={book.cover} alt={book.cover} style={{
                                             height: "inherit",
                                             objectFit: "scale-down"
@@ -159,6 +163,7 @@ function ShoppingCart(props) {
                                     <List.Item.Meta
 
                                         title={<>
+                                            <Space><Button type={"danger"} size={"small"} onClick={() => removeBookFromCart(book.id)}>Remove</Button></Space><br />
                                             <Link
                                                 to={{
                                                     pathname: "/buy",
@@ -189,7 +194,6 @@ function ShoppingCart(props) {
                                     style={{ height: "250px" }}
                                     key={book[0].id}
                                     extra={
-                                        //top is book cover, bottom is default image       
                                         <img src={book[0].cover} alt={book[0].cover} style={{
                                             height: "inherit",
                                             objectFit: "scale-down"
@@ -204,7 +208,7 @@ function ShoppingCart(props) {
                                     <List.Item.Meta
 
                                         title={<>
-                                            <Space><Button type={"danger"} size={"small"}>Remove</Button></Space><br />
+                                            <Space><Button type={"danger"} size={"small"} onClick={() => removeBookFromCart(book[0].id)}>Remove</Button></Space><br />
                                             <Link
                                                 to={{
                                                     pathname: "/buy",

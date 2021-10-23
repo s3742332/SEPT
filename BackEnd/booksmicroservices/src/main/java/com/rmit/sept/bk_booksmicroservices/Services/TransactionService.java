@@ -1,16 +1,22 @@
 package com.rmit.sept.bk_booksmicroservices.Services;
 
-import com.rmit.sept.bk_booksmicroservices.Repositories.TransactionRepository;
-
 import com.rmit.sept.bk_booksmicroservices.Exceptions.TransactionException;
+import com.rmit.sept.bk_booksmicroservices.Repositories.TransactionRepository;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
 import com.rmit.sept.bk_booksmicroservices.model.Transaction;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+
 @Service
 public class TransactionService {
+    private static final Logger logger = LogManager.getLogger(TransactionService.class);
+
 
     @Autowired
     private TransactionRepository transactionRepository;
@@ -32,8 +38,8 @@ public class TransactionService {
 
             return transactionRepository.save(transaction);
         } catch (Exception e) {
-            System.out.println("HELLO I AM HERE");
-            System.out.println(e);
+            logger.log(Level.ERROR, "Unable to create transaction");
+
             throw new TransactionException("Unable to create transaction");
         }
     }
@@ -43,6 +49,8 @@ public class TransactionService {
         try {
             return transactionRepository.findAll();
         } catch (Exception e) {
+            logger.log(Level.ERROR, "Unable to retrieve transaction");
+
             throw new TransactionException("Unable to retrieve transaction list.");
         }
     }
@@ -52,34 +60,54 @@ public class TransactionService {
         try {
             return transactionRepository.getById(id);
         } catch (Exception e) {
+            logger.log(Level.ERROR, "Unable to retrieve transaction with that ID");
+
             throw new TransactionException("No transaction with that ID.");
         }
     }
 
-    // @Transactional
-    // public Transaction getTransactionByOrderId(int id)
-    // {
-    // try
-    // {
-    // return transactionRepository.getById(id);
-    // }
-    // catch(Exception e)
-    // {
-    // throw new TransactionException("No transaction with that order ID.");
-    // }
-    // }
+    @Transactional
+    public ArrayList<Book> getTransactionByBookSeller(String seller) {
+        try {
+            Iterable<Transaction> transactions = transactionRepository.findAll();
+            ArrayList<Book> soldBySeller = new ArrayList<>();
 
-    // @Transactional
-    // public Transaction updateOrderStatus(Transaction transaction)
-    // {
-    // try {
-    // transaction.setOrderComplete(true);
+            for (Transaction transaction : transactions) {
+                Long[] ids = transaction.getBookIds();
 
-    // return transactionRepository.save(transaction);
-    // }
-    // catch (Exception e)
-    // {
-    // throw new TransactionException("Unable to create transaction");
-    // }
-    // }
+                ArrayList<Book> bookIds = new ArrayList<>();
+
+                for (Long id : ids) {
+                    bookIds.add(bookService.getBookFromId(id));
+                }
+
+                System.out.println(bookIds.size());
+
+                for (Book book : bookIds) {
+                    if (book.getSeller().equals(seller)) {
+                        soldBySeller.add(book);
+                    }
+                }
+            }
+
+            return soldBySeller;
+
+        } catch (Exception e) {
+            logger.log(Level.ERROR, "Unable to retrieve transaction with that seller");
+
+            throw new TransactionException("No transactions for that seller.");
+        }
+    }
+
+    @Transactional
+    public void deleteTransactionById(Long id) {
+        try {
+            transactionRepository.deleteById(id);
+        } catch (Exception e) {
+            logger.log(Level.ERROR, "Unable to delete transaction");
+
+            throw new TransactionException("Error deleting.");
+        }
+    }
+
 }

@@ -3,11 +3,12 @@ import { useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { Button, Input, Row, Col, Select } from 'antd';
 import { bookEdit } from '../../../actions/bookActions';
-
+import Preview from '../../Preview'
 function PendingSellerDetails(props) {
     const [data, setData] = useState([])
     const { TextArea } = Input;
-    const { id, bookTitle, author, bookDescription, bookCost, stockLevel, approved } = data;
+
+    const { id, bookTitle, author, bookDescription, bookCost, stockLevel, approved, cover, preview } = data;
     const dispatch = useDispatch();
     useEffect(() => {
         setData(props.data)
@@ -25,6 +26,7 @@ function PendingSellerDetails(props) {
         e.preventDefault();
         dispatch(bookEdit({ ...data, approved: true }));
     }
+
 
     return (
         (data ? data.length !== 0 ?
@@ -104,6 +106,20 @@ function PendingSellerDetails(props) {
                             variant="filled"
                             onChange={handleChange}
                         />
+                    </Row>
+                    <Row className={"accountRow"}>
+                        <Col span={12}>
+                            <img src={cover} alt="book cover" style={{
+                                width: '50%',
+                                objectFit: "contain"
+                            }} />
+                        </Col>
+                        <Col span={12}>
+
+                            <Preview preview={preview}/>
+
+                        </Col>
+
                     </Row>
                 </Col>
                 <Row justify={"end"}>

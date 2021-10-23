@@ -1,8 +1,8 @@
 package com.rmit.sept.bk_booksmicroservices.model;
 
+import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
-import java.util.List;
-
+import java.time.LocalDateTime;
 
 @Entity  (name="Transaction")
 public class Transaction {
@@ -16,6 +16,9 @@ public class Transaction {
     private Long[] bookIds;
 
     private String username;
+    @Column(updatable = false)
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 
     public Transaction() {
 
@@ -51,5 +54,13 @@ public class Transaction {
 
     public void setTransactionCost(double transactionCost) {
         this.transactionCost = transactionCost;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }

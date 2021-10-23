@@ -1,7 +1,6 @@
-import { ShoppingCartOutlined } from '@ant-design/icons';
-import { Menu, Dropdown, message, Row, Typography, Divider, Layout } from 'antd';
+import { Menu, Row, Layout } from 'antd';
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { withRouter, useHistory, useLocation } from 'react-router-dom'
 
 
@@ -15,11 +14,7 @@ function NavBar(props) {
     const onCollapse = () => {
         setCollapsed(!collapsed)
     }
-    const { Header, Content, Footer, Sider } = Layout;
-    const { Text } = Typography;
-
-
-
+    const { Sider } = Layout;
 
     if (["seller", "customer", undefined].includes(props.user.userType)) {
         return (
@@ -42,6 +37,7 @@ function NavBar(props) {
                     <Menu.Item key="/browse" onClick={() => history.push('/browse')}>Browse</Menu.Item>
                     {["seller"].includes(props.user.userType) && <Menu.Item key="/sell" onClick={() => history.push('/sell')}>Sell</Menu.Item>}
                     <Menu.Item key="/about" onClick={() => history.push('/about')}>About</Menu.Item>
+                    <Menu.Item key="/message" onClick={() => history.push('/message')}>Contact Us</Menu.Item>
                 </Menu>
                 <AccountSettings/>
                 
@@ -51,7 +47,7 @@ function NavBar(props) {
     if (["admin"].includes(props.user.userType)) {
         return (
             <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
-                <div style={{ height: "32px", margin: "16px" }}><img src="logo192.png" style={{
+                <div style={{ height: "32px", margin: "16px" }}><img src="/logo192.png" style={{
                     maxWidth: "100%",
                     maxHeight: "100%",
                     objectFit: "contain"
@@ -66,7 +62,15 @@ function NavBar(props) {
                         <Menu.Item key="/books/pending" onClick={() => history.push('/books/pending')}>Pending Book Approvals</Menu.Item>
                         <Menu.Item key="/books/edit" onClick={() => history.push('/books/edit')}>Book Collection</Menu.Item>
                     </SubMenu>
-                    <Menu.Item key="7">Reports</Menu.Item>
+                    <SubMenu key={"moderation"} title="Moderation">
+                        <Menu.Item key="/moderation/bookreviews" onClick={() => history.push('/moderation/bookreviews')}>Book Reviews</Menu.Item>
+                    </SubMenu>
+                    <SubMenu key={"reports"} title="Reports">
+                        <Menu.Item key="/reports/transactions" onClick={() => history.push('/reports/transactions')}>Generate Transaction Report</Menu.Item>
+                    </SubMenu>
+                    <SubMenu key={"messages"} title="Messages">
+                        <Menu.Item key="/messages/all-messages" onClick={() => history.push('/view-messages')}>View Messages</Menu.Item>
+                    </SubMenu>
                 </Menu>
             </Sider>)
     }
