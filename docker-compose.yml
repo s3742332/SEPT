@@ -14,6 +14,8 @@ services:
       - spring.datasource.password=$RDS_PASSWORD
       - spring.h2.console.path=null
       - spring.h2.console.enabled=false
+      - spring.jpa.generate-ddl=true
+      - spring.jpa.hibernate.ddl-auto=update
   booksms:
     image: dannypham09/sept_booksms
     build:
@@ -28,6 +30,8 @@ services:
       - spring.datasource.password=$RDS_PASSWORD
       - spring.h2.console.path=null
       - spring.h2.console.enabled=false
+      - spring.jpa.generate-ddl=true
+      - spring.jpa.hibernate.ddl-auto=update
   nginx:
     depends_on:
       - "loginms"
