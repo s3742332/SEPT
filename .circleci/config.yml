@@ -111,7 +111,7 @@ workflows:
             - frontendtest
           filters:
             branches:
-              only: master
+              only: main
       - builddockercompose:
           requires:
             - hold
