@@ -1,0 +1,40 @@
+version: '3.4'
+services:
+  loginms:
+    image: dannypham09/sept_loginms
+    build:
+      context: .
+      target: loginms
+    ports:
+      - '8080:8080'
+    environment:
+      - spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+      - spring.jpa.database-platform=org.hibernate.dialect.MySQL5Dialect
+      - spring.datasource.url=$RDS_URL
+      - spring.datasource.username=$RDS_USERNAME
+      - spring.datasource.password=$RDS_PASSWORD
+  booksms:
+    image: dannypham09/sept_booksms
+    build:
+      context: .
+      target: booksms
+    ports:
+      - '8081:8081'
+    environment:
+      - spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+      - spring.jpa.database-platform=org.hibernate.dialect.MySQL5Dialect
+      - spring.datasource.url=$RDS_URL
+      - spring.datasource.username=$RDS_USERNAME
+      - spring.datasource.password=$RDS_PASSWORD
+  nginx:
+    image: dannypham09/sept_nginx
+    build:
+      context: .
+      target: nginx
+      args:
+        - REACT_APP_S3_BUCKET_NAME=$S3_NAME
+        - REACT_APP_S3_REGION=$S3_REGION
+        - REACT_APP_S3_ACCESS_KEY_ID=$S3_ACCESS_KEY
+        - REACT_APP_SECRET_ACCESS_KEY=$S3_SECRET_KEY
+    ports:
+      - '80:80'
