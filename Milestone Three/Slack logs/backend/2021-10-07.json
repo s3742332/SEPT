@@ -1,0 +1,78 @@
+[
+    {
+        "client_msg_id": "3dc6341d-cbb8-4987-85ff-ffc53030e6f8",
+        "type": "message",
+        "text": "json input for changing password",
+        "user": "U02811FL3QF",
+        "ts": "1633600254.000300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "2084c3d9ca64",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-08-26\/2421685802051_2084c3d9ca649b7e9eb2_72.jpg",
+            "first_name": "",
+            "real_name": "Harris Charalambous",
+            "display_name": "Harris Charalambous",
+            "team": "T0295DCGC1W",
+            "name": "s3742332",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "NQ7xk",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "json input for changing password"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "363dde03-f9fe-442f-8eed-f717f10a15cd",
+        "type": "message",
+        "text": "{\n    “id”: 1,\n    “password”: “harris123”\n}",
+        "user": "U02811FL3QF",
+        "ts": "1633600255.000500",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "2084c3d9ca64",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-08-26\/2421685802051_2084c3d9ca649b7e9eb2_72.jpg",
+            "first_name": "",
+            "real_name": "Harris Charalambous",
+            "display_name": "Harris Charalambous",
+            "team": "T0295DCGC1W",
+            "name": "s3742332",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "jO2+F",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "{\n    “id”: 1,\n    “password”: “harris123”\n}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

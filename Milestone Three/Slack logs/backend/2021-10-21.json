@@ -1,0 +1,117 @@
+[
+    {
+        "client_msg_id": "b6304582-c6cd-4337-b78f-791a6a49c33f",
+        "type": "message",
+        "text": "• Access Key ID:\n• AKIATK6AUPQDPQCPISH7\n• Secret Access Key:\n• qTLA58ZbOv+mxioMagfhta3J8Q9Y3blt41FiMrpF\n",
+        "user": "U0295DJPBC0",
+        "ts": "1634808705.000200",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "8pv",
+                "elements": [
+                    {
+                        "type": "rich_text_list",
+                        "elements": [
+                            {
+                                "type": "rich_text_section",
+                                "elements": [
+                                    {
+                                        "type": "text",
+                                        "text": "Access Key ID:"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "rich_text_section",
+                                "elements": [
+                                    {
+                                        "type": "text",
+                                        "text": "AKIATK6AUPQDPQCPISH7"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "rich_text_section",
+                                "elements": [
+                                    {
+                                        "type": "text",
+                                        "text": "Secret Access Key:"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "rich_text_section",
+                                "elements": [
+                                    {
+                                        "type": "text",
+                                        "text": "qTLA58ZbOv+mxioMagfhta3J8Q9Y3blt41FiMrpF"
+                                    }
+                                ]
+                            }
+                        ],
+                        "style": "bullet",
+                        "indent": 0,
+                        "border": 0
+                    },
+                    {
+                        "type": "rich_text_section",
+                        "elements": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "7f7625a6-1732-46d1-a342-a3aebbd926c6",
+        "type": "message",
+        "text": "rds password V5x57CJ286zqtL",
+        "user": "U0295DJPBC0",
+        "ts": "1634810322.000400",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "99=H",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "rds password V5x57CJ286zqtL"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

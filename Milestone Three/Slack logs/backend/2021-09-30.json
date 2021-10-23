@@ -1,0 +1,1630 @@
+[
+    {
+        "client_msg_id": "cb331d53-bd3a-4288-9e72-d02b9b7e2590",
+        "type": "message",
+        "text": "{\n      “bookID”: 1,\n      “bookTitle”: “Title”,\n      “author”: “Author”,\n      “bookCost”: 25,\n      “seller”: “Seller”,\n      “stockLevel”: 1\n    }",
+        "user": "U028CMUCJ5B",
+        "ts": "1632988020.000100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "7i=i",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "{\n      “bookID”: 1,\n      “bookTitle”: “Title”,\n      “author”: “Author”,\n      “bookCost”: 25,\n      “seller”: “Seller”,\n      “stockLevel”: 1\n    }"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632976526.001100",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "17b00e76-ba0d-4cbd-bc7b-2b786c5ff7a8",
+        "type": "message",
+        "text": "sample json w return automatically setting it to used",
+        "user": "U028CMUCJ5B",
+        "ts": "1632988030.000300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "xs0",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "sample json w return automatically setting it to used"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632976526.001100",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "cd8b3160-59c5-4e4e-8acc-12368a30e880",
+        "type": "message",
+        "text": "{\n    “id”: 1,\n    “seller”: “Seller”,\n    “bookTitle”: “Title”,\n    “author”: “Author”,\n    “bookDescription”: *null*,\n    “bookCost”: 25.0,\n    “stockLevel”: 1,\n    “approved”: *false*,\n    “isbn”: *null*,\n    “cover”: *null*,\n    “category”: *null*,\n    “used”: *true*\n}",
+        "user": "U028CMUCJ5B",
+        "ts": "1632988045.000500",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "FH=",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "{\n    “id”: 1,\n    “seller”: “Seller”,\n    “bookTitle”: “Title”,\n    “author”: “Author”,\n    “bookDescription”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "null",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": ",\n    “bookCost”: 25.0,\n    “stockLevel”: 1,\n    “approved”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "false",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": ",\n    “isbn”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "null",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": ",\n    “cover”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "null",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": ",\n    “category”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "null",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": ",\n    “used”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "true",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": "\n}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632976526.001100",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "b05248a4-7e2b-41a6-aa5d-c06b17999ee8",
+        "type": "message",
+        "text": "<@U0295DJPBC0> <@U02811FL3QF>",
+        "user": "U028CMUCJ5B",
+        "ts": "1632988060.000700",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "d8xj",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "user",
+                                "user_id": "U0295DJPBC0"
+                            },
+                            {
+                                "type": "text",
+                                "text": " "
+                            },
+                            {
+                                "type": "user",
+                                "user_id": "U02811FL3QF"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "50f2e556-001e-41c8-9df5-642987f1ace1",
+        "type": "message",
+        "text": "not sure. since current transactions for customers only returns book ids",
+        "user": "U0295DJPBC0",
+        "ts": "1632988354.000900",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "6Dmn",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "not sure. since current transactions for customers only returns book ids"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "2bbd3fc4-1cbd-4655-b5c3-4da2bc809107",
+        "type": "message",
+        "text": "we can do the same with seller and make a strip books not sold by customer",
+        "user": "U0295DJPBC0",
+        "ts": "1632988390.001100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "XBtD",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "we can do the same with seller and make a strip books not sold by customer"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "76507732-19d9-446d-9a2c-5a8d3e1ffb70",
+        "type": "message",
+        "text": "I'm just brainstorming",
+        "user": "U0295DJPBC0",
+        "ts": "1632988398.001300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "ZeEr",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "I'm just brainstorming"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "b9752382-0c68-4d96-823a-6b75aebb3053",
+        "type": "message",
+        "text": "wait what is this for?",
+        "user": "U0295DJPBC0",
+        "ts": "1632988466.001500",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "vmwJ",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "wait what is this for?"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632976526.001100",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "c754e2c4-1f63-4bbd-aa19-91b842987027",
+        "type": "message",
+        "text": "selling used books?",
+        "user": "U0295DJPBC0",
+        "ts": "1632988480.001700",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "alOJk",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "selling used books?"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632976526.001100",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "b1b07414-f60c-4486-a125-c04d896cc0f5",
+        "type": "message",
+        "text": "yup that was my next task in the backlog",
+        "user": "U028CMUCJ5B",
+        "ts": "1632989552.001900",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "UozvR",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "yup that was my next task in the backlog"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632976526.001100",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "4be235a1-0740-4f1f-a132-6a4c53fbbaf9",
+        "type": "message",
+        "text": "i think for now just display the IDs and we can update it later",
+        "user": "U02811FL3QF",
+        "ts": "1632989704.002100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "2084c3d9ca64",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-08-26\/2421685802051_2084c3d9ca649b7e9eb2_72.jpg",
+            "first_name": "",
+            "real_name": "Harris Charalambous",
+            "display_name": "Harris Charalambous",
+            "team": "T0295DCGC1W",
+            "name": "s3742332",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "e0IBq",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "i think for now just display the IDs and we can update it later"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "bbfe9c90-0273-4863-a99b-40a17752926a",
+        "type": "message",
+        "text": "we can ask mohamed how in depth he wants it",
+        "user": "U02811FL3QF",
+        "ts": "1632989721.002300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "2084c3d9ca64",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-08-26\/2421685802051_2084c3d9ca649b7e9eb2_72.jpg",
+            "first_name": "",
+            "real_name": "Harris Charalambous",
+            "display_name": "Harris Charalambous",
+            "team": "T0295DCGC1W",
+            "name": "s3742332",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "i58",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "we can ask mohamed how in depth he wants it"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "c7d90790-152a-4c58-872b-999f916c3b61",
+        "type": "message",
+        "text": "every time i hear something new im shocked by how little theyre expecting",
+        "user": "U02811FL3QF",
+        "ts": "1632989737.002500",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "2084c3d9ca64",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-08-26\/2421685802051_2084c3d9ca649b7e9eb2_72.jpg",
+            "first_name": "",
+            "real_name": "Harris Charalambous",
+            "display_name": "Harris Charalambous",
+            "team": "T0295DCGC1W",
+            "name": "s3742332",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "HCoS",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "every time i hear something new im shocked by how little theyre expecting"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "6322fad6-bbe4-4799-8a71-4ed577f704b5",
+        "type": "message",
+        "text": "otherwise I created a getBooksFromIDs that you can import and use",
+        "user": "U02811FL3QF",
+        "ts": "1632989769.002700",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "2084c3d9ca64",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-08-26\/2421685802051_2084c3d9ca649b7e9eb2_72.jpg",
+            "first_name": "",
+            "real_name": "Harris Charalambous",
+            "display_name": "Harris Charalambous",
+            "team": "T0295DCGC1W",
+            "name": "s3742332",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "yev",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "otherwise I created a getBooksFromIDs that you can import and use"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "2327a367-b1d3-4345-a952-33b8903dddc5",
+        "type": "message",
+        "text": "and then from there get and return the title of those",
+        "user": "U02811FL3QF",
+        "ts": "1632989784.002900",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "2084c3d9ca64",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-08-26\/2421685802051_2084c3d9ca649b7e9eb2_72.jpg",
+            "first_name": "",
+            "real_name": "Harris Charalambous",
+            "display_name": "Harris Charalambous",
+            "team": "T0295DCGC1W",
+            "name": "s3742332",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "ZFM",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "and then from there get and return the title of those"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "104d9ffe-a21a-4b11-a8ce-f2d39216f961",
+        "type": "message",
+        "text": "okay i’ve done it to return all the books that a seller has sold",
+        "user": "U028CMUCJ5B",
+        "ts": "1632996200.003100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "UD7cR",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "okay i’ve done it to return all the books that a seller has sold"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "20f23ff5-a00f-4615-b4be-8ef4925a6c0e",
+        "type": "message",
+        "text": "if you add these books test books",
+        "user": "U028CMUCJ5B",
+        "ts": "1632996208.003300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "XFcFH",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "if you add these books test books"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "5ee4ae2c-2dae-432e-90ad-bfa6f46e0edc",
+        "type": "message",
+        "text": "{\n        “id”: 2,\n        “seller”: “Seller”,\n        “bookTitle”: “Title”,\n        “author”: “Author”,\n        “bookDescription”: *null*,\n        “bookCost”: 25.0,\n        “stockLevel”: 0,\n        “approved”: *false*,\n        “isbn”: *null*,\n        “cover”: *null*,\n        “category”: *null*,\n        “used”: *false*\n    },\n    {\n        “id”: 3,\n        “seller”: “Seller”,\n        “bookTitle”: “Title”,\n        “author”: “Author”,\n        “bookDescription”: *null*,\n        “bookCost”: 25.0,\n        “stockLevel”: 0,\n        “approved”: *false*,\n        “isbn”: *null*,\n        “cover”: *null*,\n        “category”: *null*,\n        “used”: *false*\n    }",
+        "user": "U028CMUCJ5B",
+        "ts": "1632996230.003500",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "7wA4",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "{\n        “id”: 2,\n        “seller”: “Seller”,\n        “bookTitle”: “Title”,\n        “author”: “Author”,\n        “bookDescription”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "null",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": ",\n        “bookCost”: 25.0,\n        “stockLevel”: 0,\n        “approved”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "false",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": ",\n        “isbn”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "null",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": ",\n        “cover”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "null",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": ",\n        “category”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "null",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": ",\n        “used”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "false",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": "\n    },\n    {\n        “id”: 3,\n        “seller”: “Seller”,\n        “bookTitle”: “Title”,\n        “author”: “Author”,\n        “bookDescription”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "null",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": ",\n        “bookCost”: 25.0,\n        “stockLevel”: 0,\n        “approved”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "false",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": ",\n        “isbn”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "null",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": ",\n        “cover”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "null",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": ",\n        “category”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "null",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": ",\n        “used”: "
+                            },
+                            {
+                                "type": "text",
+                                "text": "false",
+                                "style": {
+                                    "bold": true
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "text": "\n    }"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "43cec3b1-ea5e-43c6-84c2-a5cc1fd1812e",
+        "type": "message",
+        "text": "and then <http:\/\/localhost:8081\/api\/transactions\/getSellerTransactions\/Seller> it will return the book objects after they have featured in a transaction",
+        "user": "U028CMUCJ5B",
+        "ts": "1632996259.003700",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "kGj",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "and then "
+                            },
+                            {
+                                "type": "link",
+                                "url": "http:\/\/localhost:8081\/api\/transactions\/getSellerTransactions\/Seller"
+                            },
+                            {
+                                "type": "text",
+                                "text": " it will return the book objects after they have featured in a transaction"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "0ed26239-4ed8-4c03-8385-06915a1ef0c4",
+        "type": "message",
+        "text": "let me know if that works <@U0295DJPBC0> :slightly_smiling_face: at least we can then display books that they have sold even if it’s not in perfect transaction form",
+        "user": "U028CMUCJ5B",
+        "ts": "1632996471.003900",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "y93Z",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "let me know if that works "
+                            },
+                            {
+                                "type": "user",
+                                "user_id": "U0295DJPBC0"
+                            },
+                            {
+                                "type": "text",
+                                "text": " "
+                            },
+                            {
+                                "type": "emoji",
+                                "name": "slightly_smiling_face"
+                            },
+                            {
+                                "type": "text",
+                                "text": " at least we can then display books that they have sold even if it’s not in perfect transaction form"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "7b52e854-2a98-4533-b731-a8f0feb150d4",
+        "type": "message",
+        "text": "havent merged into dev yet its on branch tessa\/review. lmk if its okay and ill merge",
+        "user": "U028CMUCJ5B",
+        "ts": "1632997336.004100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "AW4eb",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "havent merged into dev yet its on branch tessa\/review. lmk if its okay and ill merge"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "56dc25df-b93b-4366-974b-3eaf0e82cffd",
+        "type": "message",
+        "text": "I'll have a look right now",
+        "user": "U0295DJPBC0",
+        "ts": "1632998078.004300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "UiZU",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "I'll have a look right now"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "b4e29ad9-1852-4217-ae1f-33fb8823a498",
+        "type": "message",
+        "text": "<@U028CMUCJ5B> I just bought a list of books and got an empty response :confused:",
+        "user": "U0295DJPBC0",
+        "ts": "1632998959.004500",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "x=g",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "user",
+                                "user_id": "U028CMUCJ5B"
+                            },
+                            {
+                                "type": "text",
+                                "text": " I just bought a list of books and got an empty response "
+                            },
+                            {
+                                "type": "emoji",
+                                "name": "confused"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "880845a4-5277-4a89-bf2a-786dd1a85855",
+        "type": "message",
+        "text": "Oh the seller name in dev tools is a name and not email",
+        "user": "U0295DJPBC0",
+        "ts": "1632998997.004700",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "wppS\/",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Oh the seller name in dev tools is a name and not email"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "9eeecb83-0c24-4cdf-ba9a-61d8f8a7532b",
+        "type": "message",
+        "text": "gimme a sec",
+        "user": "U0295DJPBC0",
+        "ts": "1632999004.004900",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "gLjU",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "gimme a sec"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "type": "message",
+        "text": "I have 2 orders",
+        "files": [
+            {
+                "id": "F02G6QX2R0A",
+                "created": 1632999279,
+                "timestamp": 1632999279,
+                "name": "image.png",
+                "title": "image.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "U0295DJPBC0",
+                "editable": false,
+                "size": 116201,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02G6QX2R0A\/image.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02G6QX2R0A\/download\/image.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "media_display_type": "unknown",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6QX2R0A-60ce05f67f\/image_64.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6QX2R0A-60ce05f67f\/image_80.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6QX2R0A-60ce05f67f\/image_360.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360_w": 360,
+                "thumb_360_h": 166,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6QX2R0A-60ce05f67f\/image_480.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_480_w": 480,
+                "thumb_480_h": 221,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6QX2R0A-60ce05f67f\/image_160.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6QX2R0A-60ce05f67f\/image_720.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720_w": 720,
+                "thumb_720_h": 332,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6QX2R0A-60ce05f67f\/image_800.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_800_w": 800,
+                "thumb_800_h": 368,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6QX2R0A-60ce05f67f\/image_960.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_960_w": 960,
+                "thumb_960_h": 442,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6QX2R0A-60ce05f67f\/image_1024.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 472,
+                "original_w": 2117,
+                "original_h": 975,
+                "thumb_tiny": "AwAWADDS70tJ3paACiiigAooooATvS0d6KACiiigAooooA\/\/2Q==",
+                "permalink": "https:\/\/softwarecrewworkspace.slack.com\/files\/U0295DJPBC0\/F02G6QX2R0A\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T0295DCGC1W-F02G6QX2R0A-0391ca3959",
+                "is_starred": false,
+                "has_rich_preview": false
+            }
+        ],
+        "upload": false,
+        "user": "U0295DJPBC0",
+        "display_as_bot": false,
+        "ts": "1632999299.005100",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "azO",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "I have 2 orders"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "client_msg_id": "664e880d-209c-4134-b0d2-705bdc76aeaa",
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "94d8ffee-df79-4762-bb81-3e499efa08df",
+        "type": "message",
+        "text": "How would we display this data?",
+        "user": "U0295DJPBC0",
+        "ts": "1632999315.005500",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "QVZ",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "How would we display this data?"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "9ee280f4-f775-4f8f-a3e5-104690c80e38",
+        "type": "message",
+        "text": "I bought 9 books in total but it shows 4",
+        "user": "U0295DJPBC0",
+        "ts": "1632999371.005700",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "x9iP",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "I bought 9 books in total but it shows 4"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "F02G6R2EW90",
+                "created": 1632999381,
+                "timestamp": 1632999381,
+                "name": "image.png",
+                "title": "image.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "U0295DJPBC0",
+                "editable": false,
+                "size": 21441,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02G6R2EW90\/image.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02G6R2EW90\/download\/image.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "media_display_type": "unknown",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6R2EW90-df3fc43616\/image_64.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6R2EW90-df3fc43616\/image_80.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6R2EW90-df3fc43616\/image_360.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360_w": 360,
+                "thumb_360_h": 79,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6R2EW90-df3fc43616\/image_480.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_480_w": 480,
+                "thumb_480_h": 105,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6R2EW90-df3fc43616\/image_160.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6R2EW90-df3fc43616\/image_720.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720_w": 720,
+                "thumb_720_h": 158,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6R2EW90-df3fc43616\/image_800.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_800_w": 800,
+                "thumb_800_h": 175,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6R2EW90-df3fc43616\/image_960.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_960_w": 960,
+                "thumb_960_h": 210,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02G6R2EW90-df3fc43616\/image_1024.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 224,
+                "original_w": 1407,
+                "original_h": 308,
+                "thumb_tiny": "AwAKADDSxRikooACoPalCgdKSigBcUGkooA\/\/9k=",
+                "permalink": "https:\/\/softwarecrewworkspace.slack.com\/files\/U0295DJPBC0\/F02G6R2EW90\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T0295DCGC1W-F02G6R2EW90-1bce8f88ef",
+                "is_starred": false,
+                "has_rich_preview": false
+            }
+        ],
+        "upload": false,
+        "user": "U0295DJPBC0",
+        "display_as_bot": false,
+        "ts": "1632999384.005900",
+        "client_msg_id": "a542ba71-5f69-4591-a2c7-b2033635b2f1",
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "4cd46eb7-9d11-4850-83cd-11c35feb629f",
+        "type": "message",
+        "text": "with the current output, it's more suited for metric style display, or should you modify it to make display it like a transactions list like customer order history?",
+        "user": "U0295DJPBC0",
+        "ts": "1632999472.006300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "OJVJz",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "with the current output, it's more suited for metric style display, or should you modify it to make display it like a transactions list like customer order history?"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "type": "message",
+        "text": "For instance, this is the user transactions order history right, can we do loops in the backend to remove \"3\" from each one. (Assuming that \"3\" is a different seller we don't want in the list. Whereas \"1\" is a book from the seller)",
+        "files": [
+            {
+                "id": "F02GWFABUQY",
+                "created": 1632999964,
+                "timestamp": 1632999964,
+                "name": "image.png",
+                "title": "image.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "U0295DJPBC0",
+                "editable": false,
+                "size": 52120,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02GWFABUQY\/image.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02GWFABUQY\/download\/image.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "media_display_type": "unknown",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GWFABUQY-4dd088fadf\/image_64.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GWFABUQY-4dd088fadf\/image_80.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GWFABUQY-4dd088fadf\/image_360.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360_w": 360,
+                "thumb_360_h": 114,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GWFABUQY-4dd088fadf\/image_480.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_480_w": 480,
+                "thumb_480_h": 152,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GWFABUQY-4dd088fadf\/image_160.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GWFABUQY-4dd088fadf\/image_720.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720_w": 720,
+                "thumb_720_h": 228,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GWFABUQY-4dd088fadf\/image_800.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_800_w": 800,
+                "thumb_800_h": 254,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GWFABUQY-4dd088fadf\/image_960.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_960_w": 960,
+                "thumb_960_h": 304,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GWFABUQY-4dd088fadf\/image_1024.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 325,
+                "original_w": 2040,
+                "original_h": 647,
+                "thumb_tiny": "AwAPADDSpaKKACiiigAooooA\/9k=",
+                "permalink": "https:\/\/softwarecrewworkspace.slack.com\/files\/U0295DJPBC0\/F02GWFABUQY\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T0295DCGC1W-F02GWFABUQY-fba71d7099",
+                "is_starred": false,
+                "has_rich_preview": false
+            }
+        ],
+        "upload": false,
+        "user": "U0295DJPBC0",
+        "display_as_bot": false,
+        "ts": "1633000036.006500",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "awtA",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "For instance, this is the user transactions order history right, can we do loops in the backend to remove \"3\" from each one. (Assuming that \"3\" is a different seller we don't want in the list. Whereas \"1\" is a book from the seller)"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "edited": {
+            "user": "U0295DJPBC0",
+            "ts": "1633000828.000000"
+        },
+        "client_msg_id": "d6bcbd59-07d8-4033-9568-c9c6fe2fd6d2",
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "09382766-c11a-4b8e-a89c-803632aa6226",
+        "type": "message",
+        "text": "the thing about doing that is that it would update the whole transaction entity… which would then screw up the buyers transaction. it should only return books that the seller has sold? does it do that correctly for you? it works on my end? if it’s easier i can just return ids of the books or titles of the books or whatever",
+        "user": "U028CMUCJ5B",
+        "ts": "1633037686.000100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "naq6",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "the thing about doing that is that it would update the whole transaction entity… which would then screw up the buyers transaction. it should only return books that the seller has sold? does it do that correctly for you? it works on my end? if it’s easier i can just return ids of the books or titles of the books or whatever"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    }
+]

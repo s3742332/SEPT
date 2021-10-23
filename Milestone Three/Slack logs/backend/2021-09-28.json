@@ -1,0 +1,162 @@
+[
+    {
+        "client_msg_id": "0eedfd49-119d-4e13-a3f7-56331c0261a1",
+        "type": "message",
+        "text": "Thanks for review, waiting for seller transactions now :slightly_smiling_face:",
+        "user": "U0295DJPBC0",
+        "ts": "1632839640.000200",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "edited": {
+            "user": "U0295DJPBC0",
+            "ts": "1632839668.000000"
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "Z+B",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Thanks for review, waiting for seller transactions now "
+                            },
+                            {
+                                "type": "emoji",
+                                "name": "slightly_smiling_face"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "c84e9f37-f53a-4b80-9f56-72d994e4fb52",
+        "type": "message",
+        "text": "what info are you wanting to display for seller transaction?",
+        "user": "U028CMUCJ5B",
+        "ts": "1632866491.000300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "Nzcb",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "what info are you wanting to display for seller transaction?"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "3d24cc62-fa65-41da-a4ea-280117475dbc",
+        "type": "message",
+        "text": "well the the books in each order",
+        "user": "U0295DJPBC0",
+        "ts": "1632870102.001000",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "ZHK",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "well the the books in each order"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "171bc83e-4a08-4d9b-bfd0-bca8f9f4b928",
+        "type": "message",
+        "text": "so like if a customer has the bookid\/s in their  transaction. then display it",
+        "user": "U0295DJPBC0",
+        "ts": "1632870348.002300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "wfi",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "so like if a customer has the bookid\/s in their  transaction. then display it"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

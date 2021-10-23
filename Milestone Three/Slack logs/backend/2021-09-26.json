@@ -1,0 +1,98 @@
+[
+    {
+        "client_msg_id": "ba77f036-ef91-47c4-9d8b-f2c41c8e9fef",
+        "type": "message",
+        "text": "<@U028CMUCJ5B> How is the review microservice coming along?",
+        "user": "U0295DJPBC0",
+        "ts": "1632653961.000300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "gZMuO",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "user",
+                                "user_id": "U028CMUCJ5B"
+                            },
+                            {
+                                "type": "text",
+                                "text": " How is the review microservice coming along?"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632653961.000300",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1632787722.000100",
+        "reply_users": [
+            "U028CMUCJ5B"
+        ],
+        "replies": [
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1632787722.000100"
+            }
+        ],
+        "is_locked": false,
+        "subscribed": true,
+        "last_read": "1632787722.000100"
+    },
+    {
+        "client_msg_id": "1d4a726d-d5c9-4571-95e9-aa6edb91a982",
+        "type": "message",
+        "text": "Aswell as seller sold books transactions",
+        "user": "U0295DJPBC0",
+        "ts": "1632654236.000700",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "I2xiM",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Aswell as seller sold books transactions"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

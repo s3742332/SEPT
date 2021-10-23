@@ -1,0 +1,659 @@
+[
+    {
+        "client_msg_id": "2f91caf0-6bc6-49a2-999b-5693ee4f5b6c",
+        "type": "message",
+        "text": "ofc the response shouldn't return other books from other sellers. only ones from the seller",
+        "user": "U0295DJPBC0",
+        "ts": "1632899328.003300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "tTalq",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "ofc the response shouldn't return other books from other sellers. only ones from the seller"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "4b5af491-0905-4680-94ef-656f4aeb2d5b",
+        "type": "message",
+        "text": "this will take me 2 secs to implement lol but im confused by what you actually need.. do we need another model for seller transaction ? <@U02811FL3QF> or do you just want the books displayed. idk how to show a transaction with just one specific book if there are multiple sellers in the order",
+        "user": "U028CMUCJ5B",
+        "ts": "1632913164.004600",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "Tai",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "this will take me 2 secs to implement lol but im confused by what you actually need.. do we need another model for seller transaction ? "
+                            },
+                            {
+                                "type": "user",
+                                "user_id": "U02811FL3QF"
+                            },
+                            {
+                                "type": "text",
+                                "text": " or do you just want the books displayed. idk how to show a transaction with just one specific book if there are multiple sellers in the order"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "reply_count": 50,
+        "reply_users_count": 3,
+        "latest_reply": "1633228274.000300",
+        "reply_users": [
+            "U0295DJPBC0",
+            "U02811FL3QF",
+            "U028CMUCJ5B"
+        ],
+        "replies": [
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632913279.004700"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632913469.004900"
+            },
+            {
+                "user": "U02811FL3QF",
+                "ts": "1632913726.005100"
+            },
+            {
+                "user": "U02811FL3QF",
+                "ts": "1632913794.005300"
+            },
+            {
+                "user": "U02811FL3QF",
+                "ts": "1632913822.005500"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1632974328.000100"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1632988060.000700"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632988354.000900"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632988390.001100"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632988398.001300"
+            },
+            {
+                "user": "U02811FL3QF",
+                "ts": "1632989704.002100"
+            },
+            {
+                "user": "U02811FL3QF",
+                "ts": "1632989721.002300"
+            },
+            {
+                "user": "U02811FL3QF",
+                "ts": "1632989737.002500"
+            },
+            {
+                "user": "U02811FL3QF",
+                "ts": "1632989769.002700"
+            },
+            {
+                "user": "U02811FL3QF",
+                "ts": "1632989784.002900"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1632996200.003100"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1632996208.003300"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1632996230.003500"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1632996259.003700"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1632996471.003900"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1632997336.004100"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632998078.004300"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632998959.004500"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632998997.004700"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632999004.004900"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632999299.005100"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632999315.005500"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632999371.005700"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632999384.005900"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632999472.006300"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633000036.006500"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1633037686.000100"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633078828.000100"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1633084479.000300"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1633084846.000500"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633085766.000100"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1633087540.001800"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633088266.002000"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633088371.002200"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1633122994.000100"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633132307.000100"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1633135189.000100"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633190254.000100"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633190263.000500"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633190302.000700"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1633215399.000100"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633215711.000300"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1633216350.000500"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633226040.000100"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1633228274.000300"
+            }
+        ],
+        "is_locked": false,
+        "subscribed": true,
+        "last_read": "1633228274.000300"
+    },
+    {
+        "client_msg_id": "0c6a6e12-c397-4a7d-9c4a-81a57604489f",
+        "type": "message",
+        "text": "I'm not sure how you are going to implement it. But as a seller, I would like to know which books are sold. So I should be able to see a transactions list. Of orders of books which i sold",
+        "user": "U0295DJPBC0",
+        "ts": "1632913279.004700",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "dDt",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "I'm not sure how you are going to implement it. But as a seller, I would like to know which books are sold. So I should be able to see a transactions list. Of orders of books which i sold"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "a215cdc2-036f-4af5-acbf-9910aa08a646",
+        "type": "message",
+        "text": "It's more of a query, so I don't think any data needs to be stored",
+        "user": "U0295DJPBC0",
+        "ts": "1632913469.004900",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "k7W8j",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "It's more of a query, so I don't think any data needs to be stored"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "955c0d60-9d49-41ab-b299-a4d6329d280c",
+        "type": "message",
+        "text": "Basically a seller will go to a \"books sold by me\" page and see all the books people have brought from them",
+        "user": "U02811FL3QF",
+        "ts": "1632913726.005100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "2084c3d9ca64",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-08-26\/2421685802051_2084c3d9ca649b7e9eb2_72.jpg",
+            "first_name": "",
+            "real_name": "Harris Charalambous",
+            "display_name": "Harris Charalambous",
+            "team": "T0295DCGC1W",
+            "name": "s3742332",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "eVoT",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Basically a seller will go to a \"books sold by me\" page and see all the books people have brought from them"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "491ff4fe-e236-4017-8fa9-eb7fe060b098",
+        "type": "message",
+        "text": "You need an API in transactions which is get all transactions where seller is: x",
+        "user": "U02811FL3QF",
+        "ts": "1632913794.005300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "2084c3d9ca64",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-08-26\/2421685802051_2084c3d9ca649b7e9eb2_72.jpg",
+            "first_name": "",
+            "real_name": "Harris Charalambous",
+            "display_name": "Harris Charalambous",
+            "team": "T0295DCGC1W",
+            "name": "s3742332",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "iZAt",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "You need an API in transactions which is get all transactions where seller is: x"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "eca0bcf5-3707-43a5-9b43-5bbdd747a537",
+        "type": "message",
+        "text": "I think that should be it. I think the only other thing after this for you this sprint is the sell books from inventory",
+        "user": "U02811FL3QF",
+        "ts": "1632913822.005500",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "2084c3d9ca64",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-08-26\/2421685802051_2084c3d9ca649b7e9eb2_72.jpg",
+            "first_name": "",
+            "real_name": "Harris Charalambous",
+            "display_name": "Harris Charalambous",
+            "team": "T0295DCGC1W",
+            "name": "s3742332",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "sc4",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "I think that should be it. I think the only other thing after this for you this sprint is the sell books from inventory"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "820ddb69-4d9e-4491-9ef0-90b58d760e7b",
+        "type": "message",
+        "text": "yeah i get that and that will be easy to do.. just wondering if you want the whole transaction to show or just the books sold? bc i can get it to return a list of books sold by seller but it wont show like a transaction because then it could include book ids from other sellers seeings as we have an array of book ids not just one book id",
+        "user": "U028CMUCJ5B",
+        "ts": "1632974328.000100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "COIB",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "yeah i get that and that will be easy to do.. just wondering if you want the whole transaction to show or just the books sold? bc i can get it to return a list of books sold by seller but it wont show like a transaction because then it could include book ids from other sellers seeings as we have an array of book ids not just one book id"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "3613c076-5978-4b06-b6eb-6f055b05a66a",
+        "type": "message",
+        "text": "i think sell used is done, it’s on branch tessa\/sellused under api \/sellUsedBook taking in a book object",
+        "user": "U028CMUCJ5B",
+        "ts": "1632976526.001100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "jnz",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "i think sell used is done, it’s on branch tessa\/sellused under api \/sellUsedBook taking in a book object"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632976526.001100",
+        "reply_count": 7,
+        "reply_users_count": 2,
+        "latest_reply": "1632989552.001900",
+        "reply_users": [
+            "U0295DJPBC0",
+            "U028CMUCJ5B"
+        ],
+        "replies": [
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632980233.000100"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1632988020.000100"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1632988030.000300"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1632988045.000500"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632988466.001500"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1632988480.001700"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1632989552.001900"
+            }
+        ],
+        "is_locked": false,
+        "subscribed": true,
+        "last_read": "1632989552.001900"
+    },
+    {
+        "client_msg_id": "95a3336e-71ed-41f8-8c1b-490906b90e38",
+        "type": "message",
+        "text": "can you provide sample input and output?",
+        "user": "U0295DJPBC0",
+        "ts": "1632980233.000100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "R5g5",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "can you provide sample input and output?"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632976526.001100",
+        "parent_user_id": "U028CMUCJ5B"
+    }
+]

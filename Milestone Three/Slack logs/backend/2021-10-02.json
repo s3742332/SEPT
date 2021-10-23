@@ -1,0 +1,387 @@
+[
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "F02GU1QSDED",
+                "created": 1633190250,
+                "timestamp": 1633190250,
+                "name": "image.png",
+                "title": "image.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "U0295DJPBC0",
+                "editable": false,
+                "size": 24797,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02GU1QSDED\/image.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02GU1QSDED\/download\/image.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "media_display_type": "unknown",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GU1QSDED-7040d7a8d1\/image_64.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GU1QSDED-7040d7a8d1\/image_80.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GU1QSDED-7040d7a8d1\/image_360.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360_w": 360,
+                "thumb_360_h": 87,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GU1QSDED-7040d7a8d1\/image_480.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_480_w": 480,
+                "thumb_480_h": 116,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GU1QSDED-7040d7a8d1\/image_160.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GU1QSDED-7040d7a8d1\/image_720.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720_w": 720,
+                "thumb_720_h": 174,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GU1QSDED-7040d7a8d1\/image_800.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_800_w": 800,
+                "thumb_800_h": 193,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GU1QSDED-7040d7a8d1\/image_960.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_960_w": 960,
+                "thumb_960_h": 232,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GU1QSDED-7040d7a8d1\/image_1024.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 248,
+                "original_w": 1596,
+                "original_h": 386,
+                "thumb_tiny": "AwALADC79ng\/55J\/3zR9ng\/55J\/3zUlFAEf2aDP+rX8qPs8H\/PJP++akooAj+zwf88k\/75o+zw\/88k\/75qSigD\/\/2Q==",
+                "permalink": "https:\/\/softwarecrewworkspace.slack.com\/files\/U0295DJPBC0\/F02GU1QSDED\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T0295DCGC1W-F02GU1QSDED-743e93df89",
+                "is_starred": false,
+                "has_rich_preview": false
+            }
+        ],
+        "upload": false,
+        "user": "U0295DJPBC0",
+        "display_as_bot": false,
+        "ts": "1633190254.000100",
+        "client_msg_id": "670ccd40-1103-4951-a386-4e69d509198f",
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "64d1610b-7bf1-4778-a915-48889c858caa",
+        "type": "message",
+        "text": "Customer buying books",
+        "user": "U0295DJPBC0",
+        "ts": "1633190263.000500",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "Ffk",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Customer buying books"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "type": "message",
+        "text": "books only show 1 each (from api) can you fix this so it shows the correct quantity",
+        "files": [
+            {
+                "id": "F02GFDS5FK5",
+                "created": 1633190279,
+                "timestamp": 1633190279,
+                "name": "image.png",
+                "title": "image.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "U0295DJPBC0",
+                "editable": false,
+                "size": 48834,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02GFDS5FK5\/image.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02GFDS5FK5\/download\/image.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "media_display_type": "unknown",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GFDS5FK5-eb56aa5d36\/image_64.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GFDS5FK5-eb56aa5d36\/image_80.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GFDS5FK5-eb56aa5d36\/image_360.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360_w": 360,
+                "thumb_360_h": 230,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GFDS5FK5-eb56aa5d36\/image_480.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_480_w": 480,
+                "thumb_480_h": 306,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GFDS5FK5-eb56aa5d36\/image_160.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GFDS5FK5-eb56aa5d36\/image_720.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720_w": 720,
+                "thumb_720_h": 460,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GFDS5FK5-eb56aa5d36\/image_800.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_800_w": 800,
+                "thumb_800_h": 511,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GFDS5FK5-eb56aa5d36\/image_960.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_960_w": 960,
+                "thumb_960_h": 613,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GFDS5FK5-eb56aa5d36\/image_1024.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 654,
+                "original_w": 1148,
+                "original_h": 733,
+                "thumb_tiny": "AwAeADC95MX\/ADzT\/vkUnlR\/880\/IVJScUAR+RF\/cX8qXyYx\/wAs0P4CpMUUAM8mP\/nmn\/fIo8mL\/nmn\/fIp9FABSY9zS0dKADHuaKTNLQAUUUUAf\/\/Z",
+                "permalink": "https:\/\/softwarecrewworkspace.slack.com\/files\/U0295DJPBC0\/F02GFDS5FK5\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T0295DCGC1W-F02GFDS5FK5-c6c3405a5a",
+                "is_starred": false,
+                "has_rich_preview": false
+            }
+        ],
+        "upload": false,
+        "user": "U0295DJPBC0",
+        "display_as_bot": false,
+        "ts": "1633190302.000700",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "P8N",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "books only show 1 each (from api) can you fix this so it shows the correct quantity"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "client_msg_id": "00691d0c-478b-47d7-ac66-4008386e81de",
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "c0ae32cf-e8b2-4abf-b372-a4259c378367",
+        "type": "message",
+        "text": "oh is the first order history for customer transactions?? i fixed seller. thats why quantity of seller is wrong. ill fix it",
+        "user": "U028CMUCJ5B",
+        "ts": "1633215399.000100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "vvRDA",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "oh is the first order history for customer transactions?? i fixed seller. thats why quantity of seller is wrong. ill fix it"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "376d7640-fb6f-4d8b-8441-4ced4791c4e8",
+        "type": "message",
+        "text": "no this is seller transactions",
+        "user": "U0295DJPBC0",
+        "ts": "1633215711.000300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "fGa",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "no this is seller transactions"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "5d9517eb-175d-4219-a4ab-00a66d91477c",
+        "type": "message",
+        "text": "i mean the picture above that picture. two pictures up",
+        "user": "U028CMUCJ5B",
+        "ts": "1633216350.000500",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "+DiV",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "i mean the picture above that picture. two pictures up"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "ff31c25a-f0a0-42b6-a166-4ec30fa0a859",
+        "type": "message",
+        "text": "ye that's customer.  I pushed my stuff to your branch\nso you can see yourself",
+        "user": "U0295DJPBC0",
+        "ts": "1633226040.000100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "ltnS4",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "ye that's customer.  I pushed my stuff to your branch\nso you can see yourself"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "8dc45817-b5ae-43d9-ad6b-47f86496214d",
+        "type": "message",
+        "text": "ah sweet sorry i got confused in our earlier messages i thoguht you wanted the duplicates out of the seller transactions! i’ll fix both up this arvo",
+        "user": "U028CMUCJ5B",
+        "ts": "1633228274.000300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "cbT3L",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "ah sweet sorry i got confused in our earlier messages i thoguht you wanted the duplicates out of the seller transactions! i’ll fix both up this arvo"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    }
+]

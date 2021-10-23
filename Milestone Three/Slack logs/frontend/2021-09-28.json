@@ -1,0 +1,405 @@
+[
+    {
+        "client_msg_id": "1bd5014e-b389-4152-a5b6-85efa8f3a6cf",
+        "type": "message",
+        "text": "<@U028MUSM01J> hey im getting a failed build on my branch. idk what it is or what’s happening but could you pls have a quick look at it? :slightly_smiling_face:",
+        "user": "U028CMUCJ5B",
+        "ts": "1632817825.000600",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "\/6g+l",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "user",
+                                "user_id": "U028MUSM01J"
+                            },
+                            {
+                                "type": "text",
+                                "text": " hey im getting a failed build on my branch. idk what it is or what’s happening but could you pls have a quick look at it? "
+                            },
+                            {
+                                "type": "emoji",
+                                "name": "slightly_smiling_face"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "b501596d-042c-424a-ad52-551b024bcb30",
+        "type": "message",
+        "text": "<@U028CMUCJ5B> i think its the tests, ive fixed them but i havent merged to dev yet, ill do it now",
+        "user": "U028MUSM01J",
+        "ts": "1632817870.001100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g85a3f76175d",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/85a3f76175d92fefe6ad3e1db0e8de72.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0010-72.png",
+            "first_name": "",
+            "real_name": "Clinton Thai",
+            "display_name": "Clinton Thai",
+            "team": "T0295DCGC1W",
+            "name": "s3840992",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "46M",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "user",
+                                "user_id": "U028CMUCJ5B"
+                            },
+                            {
+                                "type": "text",
+                                "text": " i think its the tests, ive fixed them but i havent merged to dev yet, ill do it now"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "f53b3f65-2645-438a-a9e4-f3bd307c027d",
+        "type": "message",
+        "text": "awesome thank you!!",
+        "user": "U028CMUCJ5B",
+        "ts": "1632817885.001300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "UTH2",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "awesome thank you!!"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "935a732d-deef-4a3f-8bcb-f2c303860ff8",
+        "type": "message",
+        "text": "<@U028CMUCJ5B> ive merged, should be able to pull from dev",
+        "user": "U028MUSM01J",
+        "ts": "1632819318.001600",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g85a3f76175d",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/85a3f76175d92fefe6ad3e1db0e8de72.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0010-72.png",
+            "first_name": "",
+            "real_name": "Clinton Thai",
+            "display_name": "Clinton Thai",
+            "team": "T0295DCGC1W",
+            "name": "s3840992",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "3Ny",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "user",
+                                "user_id": "U028CMUCJ5B"
+                            },
+                            {
+                                "type": "text",
+                                "text": " ive merged, should be able to pull from dev"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "2dae0adb-97a3-44ef-8ed0-e9d38e5091ad",
+        "type": "message",
+        "text": "let me know if the issue persists on your end",
+        "user": "U028MUSM01J",
+        "ts": "1632819328.001900",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g85a3f76175d",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/85a3f76175d92fefe6ad3e1db0e8de72.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0010-72.png",
+            "first_name": "",
+            "real_name": "Clinton Thai",
+            "display_name": "Clinton Thai",
+            "team": "T0295DCGC1W",
+            "name": "s3840992",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "jyCFF",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "let me know if the issue persists on your end"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "CAFF0CA8-8662-4654-8C84-033B1F81CC62",
+        "type": "message",
+        "text": "getting a build failure on the backend tests now :thinking_face:",
+        "user": "U028CMUCJ5B",
+        "ts": "1632825285.002400",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "BNZt",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "getting a build failure on the backend tests now "
+                            },
+                            {
+                                "type": "emoji",
+                                "name": "thinking_face"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "612777a0-b637-4c5a-82c6-a10cd52ff2f2",
+        "type": "message",
+        "text": "does it say which one specifically?",
+        "user": "U028MUSM01J",
+        "ts": "1632825345.002600",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g85a3f76175d",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/85a3f76175d92fefe6ad3e1db0e8de72.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0010-72.png",
+            "first_name": "",
+            "real_name": "Clinton Thai",
+            "display_name": "Clinton Thai",
+            "team": "T0295DCGC1W",
+            "name": "s3840992",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "GW7",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "does it say which one specifically?"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "8ded44b6-d95e-4329-90da-fbcd42c168d9",
+        "type": "message",
+        "text": "and its weird because circle ci test passed",
+        "user": "U028MUSM01J",
+        "ts": "1632825356.002900",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g85a3f76175d",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/85a3f76175d92fefe6ad3e1db0e8de72.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0010-72.png",
+            "first_name": "",
+            "real_name": "Clinton Thai",
+            "display_name": "Clinton Thai",
+            "team": "T0295DCGC1W",
+            "name": "s3840992",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "mA8",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "and its weird because circle ci test passed"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "text": "Reviews",
+        "files": [
+            {
+                "id": "F02FGQL2ZP1",
+                "created": 1632839684,
+                "timestamp": 1632839684,
+                "name": "image.png",
+                "title": "image.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "U0295DJPBC0",
+                "editable": false,
+                "size": 2807355,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02FGQL2ZP1\/image.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02FGQL2ZP1\/download\/image.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "media_display_type": "unknown",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FGQL2ZP1-2aa9e178f2\/image_64.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FGQL2ZP1-2aa9e178f2\/image_80.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FGQL2ZP1-2aa9e178f2\/image_360.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360_w": 360,
+                "thumb_360_h": 164,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FGQL2ZP1-2aa9e178f2\/image_480.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_480_w": 480,
+                "thumb_480_h": 219,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FGQL2ZP1-2aa9e178f2\/image_160.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FGQL2ZP1-2aa9e178f2\/image_720.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720_w": 720,
+                "thumb_720_h": 329,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FGQL2ZP1-2aa9e178f2\/image_800.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_800_w": 800,
+                "thumb_800_h": 365,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FGQL2ZP1-2aa9e178f2\/image_960.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_960_w": 960,
+                "thumb_960_h": 439,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FGQL2ZP1-2aa9e178f2\/image_1024.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 468,
+                "original_w": 2465,
+                "original_h": 1126,
+                "thumb_tiny": "AwAVADCq0k3msBI\/U8bqsPI4iQl298N7VVdGaZgBklj\/ADqy\/wAkSBhnAx+lJlx6jJpHj2hZH5GfvGtZCdi\/QVjSfOB8rdK2Y1G1TjkAUyBwz3FLRRigCAw8nn9KRoAwxu\/SpqB1oArtbHYFEhGO4FWVGFAznA60hp1ABRRRQB\/\/2Q==",
+                "permalink": "https:\/\/softwarecrewworkspace.slack.com\/files\/U0295DJPBC0\/F02FGQL2ZP1\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T0295DCGC1W-F02FGQL2ZP1-f8b2b33a1d",
+                "is_starred": false,
+                "has_rich_preview": false
+            }
+        ],
+        "upload": false,
+        "user": "U0295DJPBC0",
+        "display_as_bot": false,
+        "ts": "1632839690.000300",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "nxA",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Reviews"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "client_msg_id": "b12baab6-7bf3-4874-8105-f32e7500b679"
+    }
+]

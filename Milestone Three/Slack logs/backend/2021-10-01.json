@@ -1,0 +1,406 @@
+[
+    {
+        "client_msg_id": "61597fe2-da69-410f-83e9-33ee8eaaf114",
+        "type": "message",
+        "text": "I don't think so, for shopping cart, we have books(bookdata) as null in the database, but when running the api, it returns bookdata afterwards without modifying the database",
+        "user": "U0295DJPBC0",
+        "ts": "1633078828.000100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "A4rJ4",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "I don't think so, for shopping cart, we have books(bookdata) as null in the database, but when running the api, it returns bookdata afterwards without modifying the database"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "3d681617-66fa-4bed-a295-1fec813c4b62",
+        "type": "message",
+        "text": "mm yeah but that’s only for one user and one shopping cart. i’ll try do it but it’ll be messy code",
+        "user": "U028CMUCJ5B",
+        "ts": "1633084479.000300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "vfG3",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "mm yeah but that’s only for one user and one shopping cart. i’ll try do it but it’ll be messy code"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "ae824a95-2249-48c2-a993-a10802f53dbb",
+        "type": "message",
+        "text": "its a weigh up between bad practice coding and what you want to display. bc i would have to get the transactions then get the book ids then get the sellers then get the book ids that arent the sellers and remove them and then return a list of doing that for every transaction. i would argue its better just to display the book objects that have been sold or create a whole seller transaction model that creates a seller transaction at the same time as normal transaction is created",
+        "user": "U028CMUCJ5B",
+        "ts": "1633084846.000500",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "7UlOv",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "its a weigh up between bad practice coding and what you want to display. bc i would have to get the transactions then get the book ids then get the sellers then get the book ids that arent the sellers and remove them and then return a list of doing that for every transaction. i would argue its better just to display the book objects that have been sold or create a whole seller transaction model that creates a seller transaction at the same time as normal transaction is created"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "f683f73a-e09d-45cf-ae53-18cab1886b6b",
+        "type": "message",
+        "text": "If you want to take that approach then go for it, since i'm unsure how I would display this type of data, you would have to draw a sellers transactions page for me to understand. :thumbsup:",
+        "user": "U0295DJPBC0",
+        "ts": "1633085766.000100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "wEf",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "If you want to take that approach then go for it, since i'm unsure how I would display this type of data, you would have to draw a sellers transactions page for me to understand. "
+                            },
+                            {
+                                "type": "emoji",
+                                "name": "thumbsup"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "DB1A474C-606D-41F2-A200-662E6CFB6288",
+        "type": "message",
+        "text": "mmm i'm unsure how we would do it too let me think on it. for now can you just display the book objects or ids as harris said above? this will prob take longer ",
+        "user": "U028CMUCJ5B",
+        "ts": "1633087540.001800",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "HMIn1",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "mmm i'm unsure how we would do it too let me think on it. for now can you just display the book objects or ids as harris said above? this will prob take longer "
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "4e81463a-8a64-4c8f-847b-d2d6af40b6eb",
+        "type": "message",
+        "text": "Do you mean the sellertransactions api?",
+        "user": "U0295DJPBC0",
+        "ts": "1633088266.002000",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "n3L=S",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Do you mean the sellertransactions api?"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "f0ec3108-d498-40ae-a8ed-bde1a13fe42f",
+        "type": "message",
+        "text": "Idk what do to do with that type of data, it doesn't show all books I bought as mentioned above, and it's not like separated in different arrays to differentiate between orders",
+        "user": "U0295DJPBC0",
+        "ts": "1633088371.002200",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "2zU",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Idk what do to do with that type of data, it doesn't show all books I bought as mentioned above, and it's not like separated in different arrays to differentiate between orders"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "184e938b-21f7-42ae-9a2f-f4538cc5bc29",
+        "type": "message",
+        "text": "idk why it isnt working for you?\nyou have to do the flow of adding book, adding transaction then getting seller transaction. mine works fine can you show me the exact flow? and i think than rather showing it like a transaction, show the books how you would when showing books to sell or similar. creating a seller api is going to be convoluted and way more work than we can do today bc you would have to create a new actions on transactions and the seller api will be relatively confusing. i can do it next sprint but it will take a while",
+        "user": "U028CMUCJ5B",
+        "ts": "1633122994.000100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "eSNg",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "idk why it isnt working for you?\nyou have to do the flow of adding book, adding transaction then getting seller transaction. mine works fine can you show me the exact flow? and i think than rather showing it like a transaction, show the books how you would when showing books to sell or similar. creating a seller api is going to be convoluted and way more work than we can do today bc you would have to create a new actions on transactions and the seller api will be relatively confusing. i can do it next sprint but it will take a while"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "edce7ffc-8a51-4745-af6b-12d9fe573416",
+        "type": "message",
+        "text": "I havent looked at it since the first time I tried it out. did you fix the problem with it not displaying duplicate books? I can do it like the search page but I personally don't see the benefit of it with customer information.",
+        "user": "U0295DJPBC0",
+        "ts": "1633132307.000100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "n0ruB",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "I havent looked at it since the first time I tried it out. did you fix the problem with it not displaying duplicate books? I can do it like the search page but I personally don't see the benefit of it with customer information."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    },
+    {
+        "client_msg_id": "57e0fbdb-ba1c-4f47-b668-d56ccc774053",
+        "type": "message",
+        "text": "yeah i fixed the duplicate issue, ill look into how we would do seller api today",
+        "user": "U028CMUCJ5B",
+        "ts": "1633135189.000100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "hXWZ2",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "yeah i fixed the duplicate issue, ill look into how we would do seller api today"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632913164.004600",
+        "parent_user_id": "U028CMUCJ5B"
+    }
+]

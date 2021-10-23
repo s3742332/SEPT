@@ -1,0 +1,463 @@
+[
+    {
+        "client_msg_id": "39f99dcd-9d36-4f64-968f-581df41fe601",
+        "type": "message",
+        "text": "\/api\/reviews\/getAllReviews &amp;&amp; \/deleteReview\/{reviewId}. done and tested through postman on branch tessa\/addCreate. <@U0295DJPBC0> let me know if you need anything else before i merge\n{\n    “username”: “Tessa”,\n    “review”: “good”,\n    “bookId”: 1,\n    “rating”: 5\n}",
+        "user": "U028CMUCJ5B",
+        "ts": "1633422505.000300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "Xv4",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "\/api\/reviews\/getAllReviews && \/deleteReview\/{reviewId}. done and tested through postman on branch tessa\/addCreate. "
+                            },
+                            {
+                                "type": "user",
+                                "user_id": "U0295DJPBC0"
+                            },
+                            {
+                                "type": "text",
+                                "text": " let me know if you need anything else before i merge\n{\n    “username”: “Tessa”,\n    “review”: “good”,\n    “bookId”: 1,\n    “rating”: 5\n}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "da669448-f5d8-4c26-b1b2-550aee4e1c9c",
+        "type": "message",
+        "text": "Can you add create at aswell",
+        "user": "U0295DJPBC0",
+        "ts": "1633423055.000600",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "ztu",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Can you add create at aswell"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "50343faf-e1a6-4f8e-8e63-9d5abe9fc85e",
+        "type": "message",
+        "text": "there’s already an endpoint for \/saveReview and createdAt in the entity. is that what you mean?",
+        "user": "U028CMUCJ5B",
+        "ts": "1633423179.001200",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "J04rz",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "there’s already an endpoint for \/saveReview and createdAt in the entity. is that what you mean?"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "93664593-e954-477a-b0f1-23a91774188a",
+        "type": "message",
+        "text": "i mean with that json you showed",
+        "user": "U0295DJPBC0",
+        "ts": "1633423203.001500",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "zzq",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "i mean with that json you showed"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "88b390fd-367e-4c8b-991c-527dc7588ea9",
+        "type": "message",
+        "text": "is that fetching data?",
+        "user": "U0295DJPBC0",
+        "ts": "1633423213.001800",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "mlmY\/",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "is that fetching data?"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "915e11fc-3a84-4a6c-bd02-922089c46440",
+        "type": "message",
+        "text": "oh sorry nah that was just test data to save reviews. it auto adds created at when you create entity. this is the output of save. get all reviews just returns a list of the below. deleteReview is just a post to remove from the db table\n{\n    “username”: “Tessa”,\n    “review”: “good”,\n    “bookId”: 1,\n    “rating”: 5,\n    “createdAt”: “2021-10-05T19:26:00.187347\",\n    “updatedAt”: “2021-10-05T19:26:00.187392\"\n}",
+        "user": "U028CMUCJ5B",
+        "ts": "1633423309.003100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "o9LO",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "oh sorry nah that was just test data to save reviews. it auto adds created at when you create entity. this is the output of save. get all reviews just returns a list of the below. deleteReview is just a post to remove from the db table\n{\n    “username”: “Tessa”,\n    “review”: “good”,\n    “bookId”: 1,\n    “rating”: 5,\n    “createdAt”: “2021-10-05T19:26:00.187347\",\n    “updatedAt”: “2021-10-05T19:26:00.187392\"\n}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "8acc6db6-7d0c-4319-b3af-37e31d90b934",
+        "type": "message",
+        "text": "ok ty",
+        "user": "U0295DJPBC0",
+        "ts": "1633423332.003300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "x3MpH",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "ok ty"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "19121ba4-9937-439c-8026-e48e79be99e5",
+        "type": "message",
+        "text": "Can I get a password change api aswell. I don't think we're worrying about forget password. Just updating a logged in users password:\nHow I would imagine the post update password would work like:\n{\n\"username\": \"<mailto:user@user.com|user@user.com>\",\n\"password: \"123123\",\n\"newPassword: \"321321\",\n\"confirmNewPassword: \"321321\"\n}\nThis would search the username and match password, then set new encrypted password afterwards.",
+        "user": "U0295DJPBC0",
+        "ts": "1633432607.002700",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "dxM",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Can I get a password change api aswell. I don't think we're worrying about forget password. Just updating a logged in users password:\nHow I would imagine the post update password would work like:\n{\n\"username\": \""
+                            },
+                            {
+                                "type": "link",
+                                "url": "mailto:user@user.com",
+                                "text": "user@user.com"
+                            },
+                            {
+                                "type": "text",
+                                "text": "\",\n\"password: \"123123\",\n\"newPassword: \"321321\",\n\"confirmNewPassword: \"321321\"\n}\nThis would search the username and match password, then set new encrypted password afterwards."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "text": "<@U028MUSM01J> <@U028CN1Q5EZ> New allReview array in frontend reviewReducer causing a failure in test. Please fix ty",
+        "files": [
+            {
+                "id": "F02GPSVM9PD",
+                "created": 1633437740,
+                "timestamp": 1633437740,
+                "name": "image.png",
+                "title": "image.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "U0295DJPBC0",
+                "editable": false,
+                "size": 50813,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02GPSVM9PD\/image.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02GPSVM9PD\/download\/image.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "media_display_type": "unknown",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GPSVM9PD-93ce0bf2ec\/image_64.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GPSVM9PD-93ce0bf2ec\/image_80.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GPSVM9PD-93ce0bf2ec\/image_360.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360_w": 360,
+                "thumb_360_h": 227,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GPSVM9PD-93ce0bf2ec\/image_480.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_480_w": 480,
+                "thumb_480_h": 303,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GPSVM9PD-93ce0bf2ec\/image_160.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GPSVM9PD-93ce0bf2ec\/image_720.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720_w": 720,
+                "thumb_720_h": 454,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02GPSVM9PD-93ce0bf2ec\/image_800.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_800_w": 800,
+                "thumb_800_h": 505,
+                "original_w": 913,
+                "original_h": 576,
+                "thumb_tiny": "AwAeADCoGY\/xH86NzD+I\/nSUcUALvb+8fzo3t\/eP50nHrRx60ALvb+8fzo3t\/eP502igBQKXH1pRRQAmKQjBwc5p4GTxSSHJwOlA7aDKKKKBH\/\/Z",
+                "permalink": "https:\/\/softwarecrewworkspace.slack.com\/files\/U0295DJPBC0\/F02GPSVM9PD\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T0295DCGC1W-F02GPSVM9PD-91ad5754fe",
+                "is_starred": false,
+                "has_rich_preview": false
+            }
+        ],
+        "upload": false,
+        "user": "U0295DJPBC0",
+        "display_as_bot": false,
+        "ts": "1633437744.003600",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "3UpUa",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "user",
+                                "user_id": "U028MUSM01J"
+                            },
+                            {
+                                "type": "text",
+                                "text": " "
+                            },
+                            {
+                                "type": "user",
+                                "user_id": "U028CN1Q5EZ"
+                            },
+                            {
+                                "type": "text",
+                                "text": " New allReview array in frontend reviewReducer causing a failure in test. Please fix ty"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "client_msg_id": "e99ab936-b529-4e60-bae9-382e76370b82",
+        "thread_ts": "1633437744.003600",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1633476380.000100",
+        "reply_users": [
+            "U028CN1Q5EZ"
+        ],
+        "replies": [
+            {
+                "user": "U028CN1Q5EZ",
+                "ts": "1633476380.000100"
+            }
+        ],
+        "is_locked": false,
+        "subscribed": false
+    },
+    {
+        "client_msg_id": "c095c619-3e7e-47d1-acf5-d488cca39423",
+        "type": "message",
+        "text": "I'lll take a look and try and fix with Clinton, thanks for letting us know.",
+        "user": "U028CN1Q5EZ",
+        "ts": "1633476380.000100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "e631e9ac583d",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-09-27\/2531540930693_e631e9ac583d8c18fe0b_72.jpg",
+            "first_name": "",
+            "real_name": "Mazda Shahzadi",
+            "display_name": "Mazda Shahzadi",
+            "team": "T0295DCGC1W",
+            "name": "s3841929",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "5q12F",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "I'lll take a look and try and fix with Clinton, thanks for letting us know."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633437744.003600",
+        "parent_user_id": "U0295DJPBC0"
+    }
+]

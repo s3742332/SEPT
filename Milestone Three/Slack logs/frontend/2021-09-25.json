@@ -1,0 +1,154 @@
+[
+    {
+        "client_msg_id": "7e7d6724-9a6f-420a-9457-b9f08d697620",
+        "type": "message",
+        "text": "Hey guys, I have completed tests for PBI 5, 31 and have created tests for cart reducers, actions and cart + cartservice. I was updating the sprint backlog and was wondering if pbi 19 and 28 was missing a testing subtask?",
+        "user": "U028MUSM01J",
+        "ts": "1632565740.001200",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g85a3f76175d",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/85a3f76175d92fefe6ad3e1db0e8de72.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0010-72.png",
+            "first_name": "",
+            "real_name": "Clinton Thai",
+            "display_name": "Clinton Thai",
+            "team": "T0295DCGC1W",
+            "name": "s3840992",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "okd",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Hey guys, I have completed tests for PBI 5, 31 and have created tests for cart reducers, actions and cart + cartservice. I was updating the sprint backlog and was wondering if pbi 19 and 28 was missing a testing subtask?"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "c792d5e3-6138-4119-a592-198623fe71ee",
+        "type": "message",
+        "text": "<@U02811FL3QF>",
+        "user": "U028MUSM01J",
+        "ts": "1632565742.001400",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g85a3f76175d",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/85a3f76175d92fefe6ad3e1db0e8de72.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0010-72.png",
+            "first_name": "",
+            "real_name": "Clinton Thai",
+            "display_name": "Clinton Thai",
+            "team": "T0295DCGC1W",
+            "name": "s3840992",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "u8i",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "user",
+                                "user_id": "U02811FL3QF"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "676f7688-b793-4d87-92a6-98a003a1977c",
+        "type": "message",
+        "text": "Yeah they'll need to be tested but once they are completed, can you add in the tasks to the backlog",
+        "user": "U02811FL3QF",
+        "ts": "1632565869.002100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "2084c3d9ca64",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-08-26\/2421685802051_2084c3d9ca649b7e9eb2_72.jpg",
+            "first_name": "",
+            "real_name": "Harris Charalambous",
+            "display_name": "Harris Charalambous",
+            "team": "T0295DCGC1W",
+            "name": "s3742332",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "RbGo",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Yeah they'll need to be tested but once they are completed, can you add in the tasks to the backlog"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "16EDE236-1E03-4C72-9F9B-B601AEEEFEE5",
+        "type": "message",
+        "text": "If they are tests in relation to shoppingcart then ive already done them",
+        "user": "U028MUSM01J",
+        "ts": "1632566017.002700",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g85a3f76175d",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/85a3f76175d92fefe6ad3e1db0e8de72.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0010-72.png",
+            "first_name": "",
+            "real_name": "Clinton Thai",
+            "display_name": "Clinton Thai",
+            "team": "T0295DCGC1W",
+            "name": "s3840992",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "GeKGh",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "If they are tests in relation to shoppingcart then ive already done them"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

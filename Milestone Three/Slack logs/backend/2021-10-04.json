@@ -1,0 +1,717 @@
+[
+    {
+        "client_msg_id": "97a2c26e-8369-439c-b9bc-de0fabe707d7",
+        "type": "message",
+        "text": "Can I get created_at and orderstatus in customer transactions. tyty",
+        "user": "U0295DJPBC0",
+        "ts": "1633331692.000700",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "7pQ",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Can I get created_at and orderstatus in customer transactions. tyty"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633331692.000700",
+        "reply_count": 12,
+        "reply_users_count": 2,
+        "latest_reply": "1633336680.003000",
+        "reply_users": [
+            "U028CMUCJ5B",
+            "U0295DJPBC0"
+        ],
+        "replies": [
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1633331839.000800"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633332129.001000"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1633332237.001200"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633332503.001400"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633332510.001600"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633332549.001800"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633332774.002000"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1633332804.002200"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1633333136.002400"
+            },
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1633333606.002600"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633335798.002800"
+            },
+            {
+                "user": "U0295DJPBC0",
+                "ts": "1633336680.003000"
+            }
+        ],
+        "is_locked": false,
+        "subscribed": true,
+        "last_read": "1633336680.003000"
+    },
+    {
+        "client_msg_id": "5bc3a51e-4cff-4fda-8bf1-9d00463938d5",
+        "type": "message",
+        "text": "yep i’ll do rn and push straight to dev will only be two lines of code",
+        "user": "U028CMUCJ5B",
+        "ts": "1633331839.000800",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "Vj8",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "yep i’ll do rn and push straight to dev will only be two lines of code"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633331692.000700",
+        "parent_user_id": "U0295DJPBC0"
+    },
+    {
+        "client_msg_id": "1ac5ad0f-c464-4dac-a1c7-ea2f51141861",
+        "type": "message",
+        "text": "ok technically we only need created at now",
+        "user": "U0295DJPBC0",
+        "ts": "1633332129.001000",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "cM50",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "ok technically we only need created at now"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633331692.000700",
+        "parent_user_id": "U0295DJPBC0"
+    },
+    {
+        "client_msg_id": "795305d3-0ac8-447f-a168-affe22cc2ad2",
+        "type": "message",
+        "text": "done and pushed",
+        "user": "U028CMUCJ5B",
+        "ts": "1633332237.001200",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "8sJ",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "done and pushed"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633331692.000700",
+        "parent_user_id": "U0295DJPBC0"
+    },
+    {
+        "client_msg_id": "35a465d8-3dba-4665-b16a-51c90db125e9",
+        "type": "message",
+        "text": "your push removed some things",
+        "user": "U0295DJPBC0",
+        "ts": "1633332503.001400",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "\/4ir8",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "your push removed some things"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633331692.000700",
+        "parent_user_id": "U0295DJPBC0"
+    },
+    {
+        "client_msg_id": "b2c145ee-c8bc-43d1-9dcc-72aae3fa9216",
+        "type": "message",
+        "text": "<https:\/\/github.com\/s3742332\/SEPT\/commit\/a5f48d576c36374c10423a009ae17309042373dd>",
+        "user": "U0295DJPBC0",
+        "ts": "1633332510.001600",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "jTr",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "link",
+                                "url": "https:\/\/github.com\/s3742332\/SEPT\/commit\/a5f48d576c36374c10423a009ae17309042373dd"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633331692.000700",
+        "parent_user_id": "U0295DJPBC0"
+    },
+    {
+        "client_msg_id": "39eef9f7-0409-49c8-a183-a201db44f498",
+        "type": "message",
+        "text": "it reverted some things i did",
+        "user": "U0295DJPBC0",
+        "ts": "1633332549.001800",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "86I=",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "it reverted some things i did"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633331692.000700",
+        "parent_user_id": "U0295DJPBC0"
+    },
+    {
+        "client_msg_id": "4790ac45-3952-4193-9a4e-24e27579cd68",
+        "type": "message",
+        "text": "<@U028CMUCJ5B>",
+        "user": "U0295DJPBC0",
+        "ts": "1633332774.002000",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "grs",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "user",
+                                "user_id": "U028CMUCJ5B"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633331692.000700",
+        "parent_user_id": "U0295DJPBC0"
+    },
+    {
+        "client_msg_id": "1fde0ed8-ed87-4e2a-9ede-210293ce4f1e",
+        "type": "message",
+        "text": "ah weird lemme fix it up",
+        "user": "U028CMUCJ5B",
+        "ts": "1633332804.002200",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "CJg",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "ah weird lemme fix it up"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633331692.000700",
+        "parent_user_id": "U0295DJPBC0"
+    },
+    {
+        "client_msg_id": "cadde47c-1cd6-4c77-b62b-8ae4a4344349",
+        "type": "message",
+        "text": "reverted it back to dev before i pushed. i’ll do  a pr on diff branch to be safe",
+        "user": "U028CMUCJ5B",
+        "ts": "1633333136.002400",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "k0EY",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "reverted it back to dev before i pushed. i’ll do  a pr on diff branch to be safe"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633331692.000700",
+        "parent_user_id": "U0295DJPBC0"
+    },
+    {
+        "client_msg_id": "6d6b4df8-4630-4e9c-8c62-43a3667ca75b",
+        "type": "message",
+        "text": "k branch dev is reverted back. new branch also exists on tessa\/addCreate with created_At. if you’re happy w that i can merge",
+        "user": "U028CMUCJ5B",
+        "ts": "1633333606.002600",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "Z37",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "k branch dev is reverted back. new branch also exists on tessa\/addCreate with created_At. if you’re happy w that i can merge"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633331692.000700",
+        "parent_user_id": "U0295DJPBC0"
+    },
+    {
+        "client_msg_id": "a6e4a25c-be0a-4229-9e88-cc9cc2b83b1d",
+        "type": "message",
+        "text": "<@U028CMUCJ5B> i dont think you pushed created_at on tessa\/addcreate",
+        "user": "U0295DJPBC0",
+        "ts": "1633335798.002800",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "gxNH",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "user",
+                                "user_id": "U028CMUCJ5B"
+                            },
+                            {
+                                "type": "text",
+                                "text": " i dont think you pushed created_at on tessa\/addcreate"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633331692.000700",
+        "parent_user_id": "U0295DJPBC0"
+    },
+    {
+        "client_msg_id": "e251fdce-9d43-4633-97a6-e1449a72648f",
+        "type": "message",
+        "text": "dw ill do it",
+        "user": "U0295DJPBC0",
+        "ts": "1633336680.003000",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "X4u",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "dw ill do it"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633331692.000700",
+        "parent_user_id": "U0295DJPBC0"
+    },
+    {
+        "client_msg_id": "eebcff2d-3945-4f98-97b0-d55acc0bdda1",
+        "type": "message",
+        "text": "Hello, requesting get all reviews api",
+        "user": "U0295DJPBC0",
+        "ts": "1633339126.003600",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "bRCgS",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "Hello, requesting get all reviews api"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "fa9a16f6-e8a5-4016-9080-d01f54c58fb4",
+        "type": "message",
+        "text": "And a remove review using id",
+        "user": "U0295DJPBC0",
+        "ts": "1633339136.003800",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "Dv4El",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "And a remove review using id"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633339136.003800",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1633402356.000300",
+        "reply_users": [
+            "U028CMUCJ5B"
+        ],
+        "replies": [
+            {
+                "user": "U028CMUCJ5B",
+                "ts": "1633402356.000300"
+            }
+        ],
+        "is_locked": false,
+        "subscribed": true,
+        "last_read": "1633402356.000300"
+    },
+    {
+        "client_msg_id": "C66E0190-AE88-4F1F-8D10-D03B56B506A4",
+        "type": "message",
+        "text": "will add this this arvo for you",
+        "user": "U028CMUCJ5B",
+        "ts": "1633402356.000300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "D+Cs",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "will add this this arvo for you"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633339136.003800",
+        "parent_user_id": "U0295DJPBC0"
+    }
+]

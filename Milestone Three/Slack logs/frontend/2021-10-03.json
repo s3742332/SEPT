@@ -1,0 +1,117 @@
+[
+    {
+        "client_msg_id": "f2db89ac-2db1-4710-b04e-cc30e51b9e75",
+        "type": "message",
+        "text": "<@U028MUSM01J> <@U028CN1Q5EZ> Frontend actions have changed a bit, there is now a seller and customer transactions, but they both have different data because backend made it that way. Seller transactions has bookdata in a array, and customer is the same as before.  There is also another change in useractions, pending sellers are now unapproved users so it just gets all unapproved users. So some tests might be failing. If you guys can fix it up ty.",
+        "user": "U0295DJPBC0",
+        "ts": "1633327414.003200",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "Usx",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "user",
+                                "user_id": "U028MUSM01J"
+                            },
+                            {
+                                "type": "text",
+                                "text": " "
+                            },
+                            {
+                                "type": "user",
+                                "user_id": "U028CN1Q5EZ"
+                            },
+                            {
+                                "type": "text",
+                                "text": " Frontend actions have changed a bit, there is now a seller and customer transactions, but they both have different data because backend made it that way. Seller transactions has bookdata in a array, and customer is the same as before.  There is also another change in useractions, pending sellers are now unapproved users so it just gets all unapproved users. So some tests might be failing. If you guys can fix it up ty."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633327414.003200",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1633328248.003500",
+        "reply_users": [
+            "U028MUSM01J"
+        ],
+        "replies": [
+            {
+                "user": "U028MUSM01J",
+                "ts": "1633328248.003500"
+            }
+        ],
+        "is_locked": false,
+        "subscribed": false,
+        "reactions": [
+            {
+                "name": "white_check_mark",
+                "users": [
+                    "U028MUSM01J",
+                    "U028CN1Q5EZ"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "client_msg_id": "9562AB8D-6A84-42A8-AD0C-295BA6B4A6AF",
+        "type": "message",
+        "text": "ill work on it tonight",
+        "user": "U028MUSM01J",
+        "ts": "1633328248.003500",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g85a3f76175d",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/85a3f76175d92fefe6ad3e1db0e8de72.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0010-72.png",
+            "first_name": "",
+            "real_name": "Clinton Thai",
+            "display_name": "Clinton Thai",
+            "team": "T0295DCGC1W",
+            "name": "s3840992",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "F3Q",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "ill work on it tonight"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1633327414.003200",
+        "parent_user_id": "U0295DJPBC0"
+    }
+]

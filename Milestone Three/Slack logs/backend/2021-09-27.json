@@ -1,0 +1,581 @@
+[
+    {
+        "client_msg_id": "c1eb826b-e4a1-402a-904b-fcfdc9ddd869",
+        "type": "message",
+        "text": "will have it done this morning",
+        "user": "U028CMUCJ5B",
+        "ts": "1632787722.000100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "gJ7",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "will have it done this morning"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "thread_ts": "1632653961.000300",
+        "parent_user_id": "U0295DJPBC0"
+    },
+    {
+        "type": "message",
+        "text": "review is done but unable to test rn because i keep getting an issue with this query.. has anyone else had this problem?",
+        "files": [
+            {
+                "id": "F02FN88EGJ2",
+                "created": 1632790371,
+                "timestamp": 1632790371,
+                "name": "Screen Shot 2021-09-28 at 10.52.45 am.png",
+                "title": "Screen Shot 2021-09-28 at 10.52.45 am.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "U028CMUCJ5B",
+                "editable": false,
+                "size": 266119,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02FN88EGJ2\/screen_shot_2021-09-28_at_10.52.45_am.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T0295DCGC1W-F02FN88EGJ2\/download\/screen_shot_2021-09-28_at_10.52.45_am.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "media_display_type": "unknown",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FN88EGJ2-cf3fbf7dd7\/screen_shot_2021-09-28_at_10.52.45_am_64.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FN88EGJ2-cf3fbf7dd7\/screen_shot_2021-09-28_at_10.52.45_am_80.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FN88EGJ2-cf3fbf7dd7\/screen_shot_2021-09-28_at_10.52.45_am_360.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_360_w": 360,
+                "thumb_360_h": 195,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FN88EGJ2-cf3fbf7dd7\/screen_shot_2021-09-28_at_10.52.45_am_480.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_480_w": 480,
+                "thumb_480_h": 260,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FN88EGJ2-cf3fbf7dd7\/screen_shot_2021-09-28_at_10.52.45_am_160.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FN88EGJ2-cf3fbf7dd7\/screen_shot_2021-09-28_at_10.52.45_am_720.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_720_w": 720,
+                "thumb_720_h": 390,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FN88EGJ2-cf3fbf7dd7\/screen_shot_2021-09-28_at_10.52.45_am_800.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_800_w": 800,
+                "thumb_800_h": 433,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FN88EGJ2-cf3fbf7dd7\/screen_shot_2021-09-28_at_10.52.45_am_960.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_960_w": 960,
+                "thumb_960_h": 520,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T0295DCGC1W-F02FN88EGJ2-cf3fbf7dd7\/screen_shot_2021-09-28_at_10.52.45_am_1024.png?t=xoxe-2311454556064-2652291014961-2641897890180-b7568bd7c7bbfe2f28bf2a290d319c52",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 555,
+                "original_w": 1960,
+                "original_h": 1062,
+                "thumb_tiny": "AwAaADCpn3oyaO9FABuPqKTJ9aKSgBdx9aNx9aSigB3el2mk\/iH1p7UAM2mjaadRQAwqRSU9ulMoA\/\/Z",
+                "permalink": "https:\/\/softwarecrewworkspace.slack.com\/files\/U028CMUCJ5B\/F02FN88EGJ2\/screen_shot_2021-09-28_at_10.52.45_am.png",
+                "permalink_public": "https:\/\/slack-files.com\/T0295DCGC1W-F02FN88EGJ2-59a0218a8f",
+                "is_starred": false,
+                "has_rich_preview": false
+            }
+        ],
+        "upload": false,
+        "user": "U028CMUCJ5B",
+        "display_as_bot": false,
+        "ts": "1632790392.000700",
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "irq",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "review is done but unable to test rn because i keep getting an issue with this query.. has anyone else had this problem?"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "client_msg_id": "89f19d08-7267-4ab0-a37e-4a60c04bd156"
+    },
+    {
+        "client_msg_id": "e599ae6b-1e79-4ec9-aa34-dfc3daac0c1e",
+        "type": "message",
+        "text": "sweet. how do I use the review",
+        "user": "U0295DJPBC0",
+        "ts": "1632790539.001300",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "vcm5",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "sweet. how do I use the review"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "51c949be-6317-4533-a535-95ea59c79178",
+        "type": "message",
+        "text": "i’ll push it but as i said not sure if it works bc i cant build with that error. idk if its just my laptop or my IDE",
+        "user": "U028CMUCJ5B",
+        "ts": "1632790578.002000",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "Ouok",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "i’ll push it but as i said not sure if it works bc i cant build with that error. idk if its just my laptop or my IDE"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "16c1f691-ad75-44c5-a7e4-991c6ba8fb15",
+        "type": "message",
+        "text": "gimme a sec",
+        "user": "U028CMUCJ5B",
+        "ts": "1632790612.002200",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "1Lo",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "gimme a sec"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "bd6ad6f8-3ca0-4ccf-b0ce-bd371a612e36",
+        "type": "message",
+        "text": "I wouldn't push it until it works xd. I just wanted to know what's the in inputs and outputs",
+        "user": "U0295DJPBC0",
+        "ts": "1632790893.003000",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "mgv",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "I wouldn't push it until it works xd. I just wanted to know what's the in inputs and outputs"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "0b6b01eb-3828-4d48-90f3-b775bad49d61",
+        "type": "message",
+        "text": "dw fixed it",
+        "user": "U028CMUCJ5B",
+        "ts": "1632790904.003200",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "hP+",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "dw fixed it"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "71989923-80f8-41d8-8306-6487fcaad8dd",
+        "type": "message",
+        "text": "so i’ve got a post for save review and a get for get review by book id. are there any other endpoints you wanted?",
+        "user": "U028CMUCJ5B",
+        "ts": "1632790923.003700",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "+L56Z",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "so i’ve got a post for save review and a get for get review by book id. are there any other endpoints you wanted?"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "078ec5cf-44a6-40a3-85a3-874f5e035533",
+        "type": "message",
+        "text": "so essentially you parse the book id through to the review service to show all reviews for that book id",
+        "user": "U028CMUCJ5B",
+        "ts": "1632791033.004200",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "sEb",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "so essentially you parse the book id through to the review service to show all reviews for that book id"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "6c003111-946d-4fa3-9a51-6c394404aec7",
+        "type": "message",
+        "text": "I'll have a look later",
+        "user": "U0295DJPBC0",
+        "ts": "1632792187.004900",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "TalO",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "I'll have a look later"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "121994a4-29cd-4a69-a9a6-d8ecae67f4d8",
+        "type": "message",
+        "text": "it’s on branch tessa\/review. i wont merge until you’ve had a look in case we need more :slightly_smiling_face:",
+        "user": "U028CMUCJ5B",
+        "ts": "1632792672.005400",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "T8y+X",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "it’s on branch tessa\/review. i wont merge until you’ve had a look in case we need more "
+                            },
+                            {
+                                "type": "emoji",
+                                "name": "slightly_smiling_face"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "7d0dbe93-ff93-4413-a524-be2bb94f253a",
+        "type": "message",
+        "text": "{\n    “username”: “tessa”,\n    “review”: “this book is good”,\n    “bookId”: 71\n}",
+        "user": "U028CMUCJ5B",
+        "ts": "1632792697.005600",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "g8e0cff6399e",
+            "image_72": "https:\/\/secure.gravatar.com\/avatar\/8e0cff6399ee308d16a678953552af5b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2Fdf10d%2Fimg%2Favatars%2Fava_0013-72.png",
+            "first_name": "Tessa",
+            "real_name": "Tessa",
+            "display_name": "Tessa",
+            "team": "T0295DCGC1W",
+            "name": "s3775931",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "peD",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "{\n    “username”: “tessa”,\n    “review”: “this book is good”,\n    “bookId”: 71\n}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "1ed01cdd-f01f-4ed5-870e-94f467a5776f",
+        "type": "message",
+        "text": "maybe a rating like 5 star",
+        "user": "U0295DJPBC0",
+        "ts": "1632797282.006100",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "fx8I",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "maybe a rating like 5 star"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "client_msg_id": "46e51cc4-67d0-4dc0-8fb9-9e051bf0bb9f",
+        "type": "message",
+        "text": "could make it an int I think",
+        "user": "U0295DJPBC0",
+        "ts": "1632797292.006500",
+        "team": "T0295DCGC1W",
+        "user_team": "T0295DCGC1W",
+        "source_team": "T0295DCGC1W",
+        "user_profile": {
+            "avatar_hash": "5bf4403d5e1b",
+            "image_72": "https:\/\/avatars.slack-edge.com\/2021-07-19\/2293974360132_5bf4403d5e1bba006811_72.png",
+            "first_name": "",
+            "real_name": "Danny Pham",
+            "display_name": "Danny Pham",
+            "team": "T0295DCGC1W",
+            "name": "s3719046",
+            "is_restricted": false,
+            "is_ultra_restricted": false
+        },
+        "blocks": [
+            {
+                "type": "rich_text",
+                "block_id": "5Qu3",
+                "elements": [
+                    {
+                        "type": "rich_text_section",
+                        "elements": [
+                            {
+                                "type": "text",
+                                "text": "could make it an int I think"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
