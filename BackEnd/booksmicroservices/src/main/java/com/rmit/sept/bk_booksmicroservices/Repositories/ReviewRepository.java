@@ -13,5 +13,4 @@ public interface ReviewRepository extends CrudRepository<Review, Long>
     List<Review> findReviewByUsername(String username);
     Iterable<Review> findAll();
     Iterable<Review> findReviewsByBookId(int bookId);
-
 }

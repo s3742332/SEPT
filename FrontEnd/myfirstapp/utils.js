@@ -2,8 +2,6 @@ import axios from "axios";
 
 export const USER_BASE_URL = `${process.env.REACT_APP_LOGIN_URL}`
 export const BOOK_BASE_URL = `${process.env.REACT_APP_BOOK_URL}`
-export const TSCN_BASE_URL = `${process.env.REACT_APP_BOOK_URL}`
-export const CART_BASE_URL = `${process.env.REACT_APP_BOOK_URL}`
 
 export const config = {
     headers: {
@@ -123,7 +121,7 @@ export const fetchShareBook = async () => {
 export const fetchTransactionEdit = async () => {
     try {
         const transaction = { id: 1, userName: "Transaction 1"};
-        return await axios.post('${TSCN_BASE_URL}/api/transactions/saveTransaction', transaction, config)
+        return await axios.post('${BOOK_BASE_URL}/api/transactions/saveTransaction', transaction, config)
     } catch (e) {
         return [];
     }
@@ -132,7 +130,7 @@ export const fetchTransactionEdit = async () => {
 export const fetchUserTransaction = async () => {
     try {
         const username = "user@user.com";
-        return await axios.get(`${TSCN_BASE_URL}/api/transactions/getAllUserTransactions/${username}`,config);
+        return await axios.get(`${BOOK_BASE_URL}/api/transactions/getAllUserTransactions/${username}`,config);
     } catch (e) {
         return [];
     }
@@ -140,7 +138,7 @@ export const fetchUserTransaction = async () => {
 
 export const fetchAllTransactions = async () => {
     try {
-        return await axios.get(`${TSCN_BASE_URL}/api/transactions/getAllTransactions/`,config);
+        return await axios.get(`${BOOK_BASE_URL}/api/transactions/getAllTransactions/`,config);
     } catch (e) {
         return [];
     }
@@ -149,7 +147,7 @@ export const fetchAllTransactions = async () => {
 export const fetchSellerTransaction = async () => {
     try {
         const username = "user@user.com";
-        return await axios.get(`${TSCN_BASE_URL}/api/transactions/getSellerTransactions/${username}`,config);
+        return await axios.get(`${BOOK_BASE_URL}/api/transactions/getSellerTransactions/${username}`,config);
     } catch (e) {
         return [];
     }
@@ -158,7 +156,7 @@ export const fetchSellerTransaction = async () => {
 export const fetchUserOwnedBooks = async () => {
     try {
         const username = "user@user.com";
-        return await axios.get(`${TSCN_BASE_URL}/api/transactions/getUserOwnedBooks/${username}`,config);
+        return await axios.get(`${BOOK_BASE_URL}/api/transactions/getUserOwnedBooks/${username}`,config);
     } catch (e) {
         return [];
     }
@@ -167,7 +165,7 @@ export const fetchUserOwnedBooks = async () => {
 export const fetchCancelOrder = async () => {
     try {
         const id = 1;
-        return await axios.post(`${TSCN_BASE_URL}/api/transactions/cancelTransaction`,id,config);
+        return await axios.post(`${BOOK_BASE_URL}/api/transactions/cancelTransaction`,id,config);
     } catch (e) {
         return [];
     }
@@ -220,7 +218,7 @@ export const fetchChangePassword = async () => {
 export const fetchCartEdit = async () => {
     try {
         const cart = { id: 1, cartTotal: 39.99}
-        return await axios.post("${CART_BASE_URL}/api/shoppingcarts/saveShoppingCart", cart, config);
+        return await axios.post("${BOOK_BASE_URL}/api/shoppingcarts/saveShoppingCart", cart, config);
     } catch (e) {
         return [];
     }
@@ -229,7 +227,7 @@ export const fetchCartEdit = async () => {
 export const fetchGetUserCart = async () => {
     try {
         const username = "user@user.com";
-        return await axios.get(`${CART_BASE_URL}/api/shoppingcarts/getUserCart/${username}`,config);
+        return await axios.get(`${BOOK_BASE_URL}/api/shoppingcarts/getUserCart/${username}`,config);
     } catch (e) {
         return [];
     }
@@ -288,6 +286,26 @@ export const fetchSaveMessage = async () => {
 export const fetchGetMessages = async () => {
     try {
         return await axios.get(`${BOOK_BASE_URL}/api/messages/getMessages`, config)
+    } catch (e) {
+        return [];
+    }
+}
+
+//============================================================================================
+// sellerReviewActions Test Utils
+export const fetchSellerReviewSave = async () => {
+    try {
+        const review = "abcdefg";
+        return await axios.post(`${BOOK_BASE_URL}/api/sellerreviews/saveSellerReview`, review, config)
+    } catch (e) {
+        return [];
+    }
+}
+
+export const fetchGetSellerReviews = async () => {
+    try {
+        const username = "user@user.com";
+        return await axios.get(`${BOOK_BASE_URL}/api/sellerreviews/getSellerReviews/${username}`,config)
     } catch (e) {
         return [];
     }

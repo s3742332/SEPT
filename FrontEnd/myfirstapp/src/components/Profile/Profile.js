@@ -47,7 +47,6 @@ function Profile() {
     }
     const onSubmit = (e) => {
         e.preventDefault();
-        //  console.log(newBook.category)
         dispatch(userEdit(user));
     }
     const [form] = Form.useForm();

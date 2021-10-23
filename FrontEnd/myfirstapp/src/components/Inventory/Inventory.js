@@ -1,5 +1,4 @@
-import { Button, Card, Input, Row, Col, Modal } from 'antd';
-import { Link } from 'react-router-dom';
+import { Button, Card, Row, Col, Modal } from 'antd';
 import BookContainer from '../Marketplace/BookContainer';
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,7 +6,7 @@ import { getUserOwnedBooks } from '../../actions/transactionActions';
 import { sellUsed } from '../../actions/bookActions';
 
 
-export default function Inventory(props) {
+export default function Inventory() {
     const [modal, setModal] = useState(false);
     const [books, setBooks] = useState([])
     const [selectedBookTitle, setSelectedBookTitle] = useState('')

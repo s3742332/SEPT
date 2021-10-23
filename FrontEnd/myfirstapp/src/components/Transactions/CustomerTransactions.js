@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { getUser } from '../../actions/securityActions';
 import { cancelOrder, getUserTransaction } from '../../actions/transactionActions'
 import { useDispatch, useSelector } from 'react-redux'
-import { Table, Tag, Row, Col, Typography, Button } from 'antd';
+import { Table, Row, Col, Typography, Button } from 'antd';
 import moment from 'moment';
 
 function CustomerTransactions() {
@@ -20,7 +20,6 @@ function CustomerTransactions() {
     }, [user.user.username])
     useEffect(() => {
         if(!transactions.loading){
-            console.log("transaction", transactions.userTransaction)
             setTransaction(transactions.userTransaction)
         }
     }, [transactions.loading])

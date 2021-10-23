@@ -14,7 +14,7 @@ function BookReview(props) {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [newReview, setNewReview] = useState({})
     const { TextArea } = Input;
-    const {Title} = Typography;
+    const { Title } = Typography;
     useEffect(() => {
         if (props.bookID) {
             dispatch(getReview(props.bookID, history, false))
@@ -43,13 +43,10 @@ function BookReview(props) {
             setNewReview({ ...newReview, ["username"]: security.user.fullName, ["bookId"]: props.bookID })
 
     }, [security.user?.fullName, props.bookID])
-    useEffect(() => {
-        console.log("rewview", newReview)
-    }, [newReview])
     return (
         <div>
-            <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
-            <Title level={2}>Reviews</Title>
+            <div style={{justifyContent: "space-between", alignItems: "center" }}>
+                <Title level={2}>Reviews</Title>
                 <Button type="primary" shape="round" onClick={showModal}>
                     Leave Review
                 </Button>
@@ -71,10 +68,10 @@ function BookReview(props) {
                         <List.Item.Meta
                             title={item.username}
                             description={<><Rate disabled defaultValue={item.rating} />
-                            <br/>
-                            
-                            {moment(item.createdAt).format("DD-MM-YYYY")}
-                            <br />{item.review}</>}
+                                <br />
+
+                                {moment(item.createdAt).format("DD-MM-YYYY")}
+                                <br />{item.review}</>}
                         />
                     </List.Item>
                 )}

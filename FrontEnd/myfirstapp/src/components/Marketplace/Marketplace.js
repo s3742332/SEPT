@@ -1,11 +1,7 @@
-// import BookContainer from './BookContainer';
 import './styles.css';
-import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Layout, Col, Row, Menu, Breadcrumb, List, Avatar, Input } from 'antd';
-import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
-import { getBookList } from '../../actions/bookActions';
+import { Input } from 'antd';
 import Categories from '../Search/Categories';
 import SearchResult from './SearchResult';
 
@@ -20,13 +16,6 @@ const Marketplace = (props) => {
         event.preventDefault();
         setSearch(event.target.value);
     }
-
-    // useEffect(() => {
-    //     dispatch(getBookList())
-    // }, [dispatch])
-    // useEffect(() => {
-    //     setFilteredData(book.bookList)
-    // }, [book])
 
     return (<div>
         <h1 style={{ textAlign: 'center', paddingTop: '25px' }}>Book Catalogue</h1>

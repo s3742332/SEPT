@@ -26,7 +26,7 @@ export const transactionEdit = (transaction, history, devTool) => async dispatch
     }
 };
 
-export const getUserTransaction = (username, history, devTool) => async dispatch => {
+export const getUserTransaction = (username) => async dispatch => {
     
     try {
         const config = {
@@ -34,10 +34,7 @@ export const getUserTransaction = (username, history, devTool) => async dispatch
                 "Content-Type": "application/json",
             }
         }
-
-        console.log(username)
         const res = await axios.get(`${process.env.REACT_APP_BOOK_URL}/api/transactions/getAllUserTransactions/${username}`,config)
-        console.log(res.data)
         dispatch({
             type: GET_TRANSACTIONS,
             payload: res.data
@@ -80,10 +77,7 @@ export const getSellerTransaction = (username) => async dispatch => {
                 "Content-Type": "application/json",
             }
         }
-
-        console.log(username)
         const res = await axios.get(`${process.env.REACT_APP_BOOK_URL}/api/transactions/getSellerTransactions/${username}`,config)
-        console.log(res.data)
         dispatch({
             type: GET_SELLER_TRANSACTIONS,
             payload: res.data
@@ -96,7 +90,6 @@ export const getSellerTransaction = (username) => async dispatch => {
     }
 };
 export const getUserOwnedBooks = (username) => async dispatch => {
-    
     try {
         const config = {
             headers: {

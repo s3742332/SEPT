@@ -4,9 +4,7 @@ import setJWTToken from "../securityUtils/setJWTToken";
 import jwt_decode from "jwt-decode";
 
 
-export const createNewUser = (newUser, history, devTool) => async dispatch => {
-
-    
+export const createNewUser = (newUser, history, devTool) => async dispatch => {   
     try {
         const config = {
             headers: {
@@ -23,11 +21,7 @@ export const createNewUser = (newUser, history, devTool) => async dispatch => {
             type: GET_ERRORS,
             payload: err?.response?.data
         });
-
-
-
     }
-
 };
 
 export const login = (LoginRequest, history) => async dispatch => {
@@ -66,8 +60,6 @@ export const login = (LoginRequest, history) => async dispatch => {
 };
 
 export const fetchUserDetails = (username) => async dispatch => {
-    
-
     try {
         const config = {
             headers: {
@@ -118,8 +110,6 @@ export const logout = () => dispatch => {
 
 
 export const changePassword = (data) => async dispatch => {
-    
-
     try {
         const config = {
             headers: {

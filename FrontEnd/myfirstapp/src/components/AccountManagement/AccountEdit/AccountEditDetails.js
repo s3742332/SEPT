@@ -10,8 +10,6 @@ function AccountEditDetails(props) {
     const dispatch = useDispatch();
     useEffect(() => {
         setData(props.data)
-
-        console.log(props.data)
     }, [props.data])
 
     const handleChange = (e) => {
@@ -20,7 +18,6 @@ function AccountEditDetails(props) {
     }
     const handleBlock = (e) => {
         e.preventDefault();
-        console.log(id)
         dispatch(blockUser(id));
     }
 

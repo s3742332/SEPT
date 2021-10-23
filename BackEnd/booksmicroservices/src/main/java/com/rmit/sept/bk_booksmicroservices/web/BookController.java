@@ -2,13 +2,14 @@ package com.rmit.sept.bk_booksmicroservices.web;
 
 import com.rmit.sept.bk_booksmicroservices.Services.BookService;
 import com.rmit.sept.bk_booksmicroservices.model.Book;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -21,6 +22,8 @@ import java.util.List;
 @RequestMapping("/api/books")
 public class BookController {
 
+    private static final Logger logger = LogManager.getLogger(BookController.class);
+
     @Autowired
     private BookService bookService;
 
@@ -28,6 +31,7 @@ public class BookController {
     @PostMapping("/saveBook")
     public ResponseEntity<Book> createNewBook(@Valid @RequestBody Book book) {
         Book book1 = bookService.saveOrUpdateBook(book);
+        logger.log(org.apache.logging.log4j.Level.INFO, "Saving book");
         return new ResponseEntity<Book>(book1, HttpStatus.CREATED);
     }
 
@@ -35,7 +39,7 @@ public class BookController {
     @GetMapping("/getAllBooks")
     public ResponseEntity<?> getAllBook() {
         Iterable<Book> bookList = bookService.getAllBooks();
-
+        logger.log(org.apache.logging.log4j.Level.INFO, "Retrieving books");
         return new ResponseEntity<Iterable<Book>>(bookList, HttpStatus.OK);
     }
 
@@ -49,7 +53,7 @@ public class BookController {
                 unapprovedBooks.add(book);
             }
         }
-
+        logger.log(org.apache.logging.log4j.Level.INFO, "Retrieving pending books");
         return new ResponseEntity<Iterable<Book>>(unapprovedBooks, HttpStatus.OK);
     }
 
@@ -63,7 +67,7 @@ public class BookController {
                 approvedBooks.add(book);
             }
         }
-
+        logger.log(org.apache.logging.log4j.Level.INFO, "Retrieving approved books");
         return new ResponseEntity<Iterable<Book>>(approvedBooks, HttpStatus.OK);
     }
 
@@ -90,8 +94,6 @@ public class BookController {
     @CrossOrigin(origins = "*")
     @GetMapping("/getBooksInCategory/{category}")
     public ResponseEntity<?> getBooksInCategory(@PathVariable String category) {
-        // System.out.println(category);
-        // Iterable<Book> bookList = bookService.getAllBooksByCategory(category);
 
         Iterable<Book> bookList = bookService.getAllBooks();
         ArrayList<Book> approvedBooks = new ArrayList<Book>();
@@ -103,7 +105,6 @@ public class BookController {
         }
 
         return new ResponseEntity<Iterable<Book>>(approvedBooks, HttpStatus.OK);
-        // return "helo";
     }
 
     @CrossOrigin(origins = "*")
@@ -129,6 +130,7 @@ public class BookController {
             }
         }
         Book book1 = bookService.saveOrUpdateBook(book);
+        logger.log(org.apache.logging.log4j.Level.INFO, "Adding book to sell");
         return new ResponseEntity<Book>(book1, HttpStatus.CREATED);
     }
 

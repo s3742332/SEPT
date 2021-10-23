@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Row, Col, Image, Button, Typography, Card, Alert } from 'antd'
+import { Button, Card, Alert, Modal } from 'antd'
 
 import { Link, useHistory, Redirect } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -14,8 +14,9 @@ function BookDetails(props) {
     const user = useSelector(state => state.security);
     const cart = useSelector(state => state.cart);
     const [cartStatus, setCartStatus] = useState("Add to cart")
-    const [cartDisable, setButtonDisable] = useState(false)
-    const [shared, setShared] = useState(false)
+    const [cartDisable, setButtonDisable] = useState(false);
+    const [shared, setShared] = useState(false);
+    const [isModalVisible, setIsModalVisible] = useState(false);
 
 
     useEffect(() => {
@@ -30,10 +31,8 @@ function BookDetails(props) {
     }, [user])
     useEffect(() => {
         setBookData(props?.location?.state?.book)
-        console.log("BOOK SELECTED", props?.location?.state?.book)
     }, [props?.location?.state?.book])
     useEffect(() => {
-        console.log("CART DETECTED", cart.cart.cartContents)
     }, [cart])
     const addToCart = () => {
         setCartStatus("Added!")
@@ -45,16 +44,13 @@ function BookDetails(props) {
         const cartData = cart.cart.cartContents;
 
         if (cartData) {
-
             cartData.push(props.location.state.book.id)
-            console.log("CART DETECTED", cartData)
         }
         const data = {
             id: cart.cart.id,
             userName: user.user.username,
             cartContents: cartData ? cartData : [props.location.state.book.id]
         }
-        //console.log("cart", cart.cart.cartContent)
         dispatch(cartEdit(data, history, false))
     }
 
@@ -70,29 +66,34 @@ function BookDetails(props) {
         setShared(true)
     }
 
+    const handleModal = () => {
+        setIsModalVisible(!isModalVisible);
+    };
+
     return (
         (props?.location?.state?.book ?
             <Card>
                 {!shared ? '' :
                     <Alert message="Book Exported" type="success" />
                 }
-                <div style={{ display: 'flex', padding: "1%" }}>
-                    <div style={{ display: 'flex', alignItems: "center", flexDirection: "column" }}>
-                        <h2>Cover</h2>
+                <div style={{ display: 'flex', padding: "1%", position: 'relative', left: '50%', transform: 'translate(-50%)' }}>
+                    <div style={{ marginRight: 100 }}>
                         <img src={bookData.cover} alt="book cover" style={{
-                            width: '50%',
-                            objectFit: "contain"
+                            height: '80vh',
+                            objectFit: "contain",
                         }} />
                     </div>
-                    <div style={{ display: 'flex', alignItems: "center", flexDirection: "column" }}>
-                        <h2>Preview</h2>
-                        <Preview preview={bookData.preview} />
-                    </div>
+
                     <div>
-                        <h2>Details</h2>
                         <h1>{bookData.bookTitle}</h1>
                         <h4>{bookData.bookDescription}</h4>
                         <br /><br />
+                        <Link to={{
+                            pathname: '/seller',
+                            state: { seller: bookData.seller }
+                        }}>
+                            <p>Sold By: {bookData.seller}</p>
+                        </Link>
                         <h3>Stock Level: {bookData.stockLevel}</h3>
                         <h3>Price: {bookData.bookCost}</h3>
 
@@ -100,13 +101,21 @@ function BookDetails(props) {
                             to={{
                                 pathname: "/shoppingcart",
                                 state: { book: bookData }
-                            }}><Button type="primary" shape="round" style={{ marginRight: 10 }}>Buy Now</Button></Link>
-                        <Button type="primary" style={{ marginRight: 10 }} disabled={cartDisable} shape="round" onClick={addToCart}>{cartStatus}</Button>
-                        <Button type="primary" shape="round" onClick={share}>Share</Button>
-                        <BookReview bookID={bookData.id} />
+                            }}><Button type="primary" shape="round" style={{ marginRight: 10 }}>Buy Now</Button>
+                        </Link>
 
+                        <Button type="primary" style={{ marginRight: 10 }} disabled={cartDisable} shape="round" onClick={addToCart}>{cartStatus}</Button>
+                        <Button type="primary" shape="round" onClick={share} style={{ marginRight: 10 }}>Share</Button>
+                        <Button type="primary" shape="round" onClick={handleModal}>Preview</Button>
+                        <br /><br />
+                        <BookReview bookID={bookData.id} />
                     </div>
 
+                    <Modal title={bookData.bookTitle} visible={isModalVisible} cancelText=" " okText="Close" onOk={handleModal}>
+                        <div style={{ display: 'flex', alignItems: "center", flexDirection: "column" }}>
+                            <Preview preview={bookData.preview} />
+                        </div>
+                    </Modal>
                 </div>
             </Card> : <Redirect to="/" />)
 
